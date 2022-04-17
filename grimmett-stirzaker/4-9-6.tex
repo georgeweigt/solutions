@@ -1,0 +1,82 @@
+\section*{4.9.6}
+Let $\{Y_r:1\le r\le n\}$ be independent $N(0,1)$ random variables,
+and define $X_j=\sum_{r=1}^n c_{jr}Y_r$,
+$1\le r\le n$, for constants $c_{jr}$. Show that
+$$E(X_j\mid X_k)=\left(\sum_r c_{jr}c_{kr}\over\sum_r c_{kr}^2\right)
+X_k$$
+
+\bigskip
+\noindent
+It turns out that
+$$E(X_j\mid X_k)={\mathop{Cov}(X_j,X_k)\over\mathop{Var}X_k}X_k$$
+which I will prove later.
+Let $C$ be the coefficient matrix such that
+$$X=CY$$
+Then the covariance matrix $A$ is
+$$A=CC^T$$
+We have
+$$\mathop{Cov}(X_j,X_k)=A_{jk}=
+(\hbox{row $j$ of $C$})
+(\hbox{column $k$ of $C^T$})
+=\sum_r c_{jr}c_{kr}$$
+and
+$$\mathop{Var}X_k=A_{kk}=
+(\hbox{row $k$ of $C$})
+(\hbox{column $k$ of $C^T$})
+=\sum_r c_{kr}^2$$
+Hence
+$$E(X_j\mid X_k)=\left(\sum_r c_{jr}c_{kr}\over\sum_r c_{kr}^2\right)
+X_k$$
+%
+Now for the proof that
+$$E(Y\mid X)={\mathop{Cov}(X,Y)\over\mathop{Var}X}X$$
+for $X\sim N(0,\sigma_X^2)$ and $Y\sim N(0,\sigma_Y^2)$.
+We have
+$$f_{XY}(x,y)={1\over2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}}
+\exp\left[
+-{1\over2(1-\rho^2)}
+\left(
+{x^2\over\sigma_X^2}
+-{2\rho xy\over\sigma_X\sigma_Y}
++{y^2\over\sigma_Y^2}
+\right)\right]
+$$
+and
+$$f_{X}(x)={1\over\sqrt{2\pi}\sigma_X}
+\exp\left(-{x^2\over2\sigma_X^2}\right)$$
+Hence
+\begin{eqnarray*}
+f_{Y\mid X}(y\mid x)
+&=&{f_{XY}(x,y)\over f_X(x)}\\
+&=&{1\over\sqrt{2\pi}\sigma_Y\sqrt{1-\rho^2}}
+\exp\left[-{1\over2(1-\rho^2)}\left(
+{x^2\over\sigma_X^2}
+-{2\rho xy\over\sigma_X\sigma_Y}
++{y^2\over\sigma_Y^2}
+-{(1-\rho^2)x^2\over\sigma_X^2}
+\right)\right]\\
+%
+&=&{1\over\sqrt{2\pi}\sigma_Y\sqrt{1-\rho^2}}
+\exp\left[-{1\over2(1-\rho^2)}\left(
+{\rho^2x^2\over\sigma_X^2}
+-{2\rho xy\over\sigma_X\sigma_Y}
++{y^2\over\sigma_Y^2}
+\right)\right]\\
+%
+&=&{1\over\sqrt{2\pi}\sigma_Y\sqrt{1-\rho^2}}
+\exp\left[-{1\over2\sigma_Y^2(1-\rho^2)}\left(
+{\sigma_Y^2\rho^2x^2\over\sigma_X^2}
+-{2\sigma_Y\rho xy\over\sigma_X}
++y^2
+\right)\right]\\
+%
+&=&{1\over\sqrt{2\pi}\sigma_Y\sqrt{1-\rho^2}}
+\exp\left[-{1\over2\sigma_Y^2(1-\rho^2)}\left(
+y-{\sigma_Y\rho x\over\sigma_X}\right)^2\right]
+\end{eqnarray*}
+Therefore
+$$(Y\mid X=x)\sim N\left(
+{\sigma_Y\rho x\over\sigma_X},\sigma_Y^2(1-\rho^2)\right)$$
+Hence
+$$E(Y\mid X)={\sigma_Y\rho\over\sigma_X}X
+={\mathop{Cov}(X,Y)\over\mathop{Var}X}X$$

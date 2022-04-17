@@ -1,0 +1,19 @@
+\section*{1.3.5}
+Let $A_r$, $r\ge1$, be events such that $P(A_r)=1$ for all $r$.
+Show that $P(\cap_{r=1}^\infty A_r)=1$.
+
+\bigskip
+\noindent
+We have
+$$P(\cap_{r=1}^\infty A_r)=P((\cup_{r=1}^\infty A_r^c)^c)
+=1-P(\cup_{r=1}^\infty A_r^c)$$
+The probability of a union is bounded above by the sum.
+$$P(\cup_{r=1}^\infty A_r^c)\le\sum_{r=1}^\infty P(A_r^c)$$
+Since
+$$P(A_r^c)=1-P(A_r)=0$$
+we have
+$$\sum_{r=1}^\infty P(A_r^c)=0$$
+Hence
+$$P(\cup_{r=1}^\infty A_r^c)=0$$
+Therefore
+$$P(\cap_{r=1}^\infty A_r)=1-P(\cup_{r=1}^\infty A_r^c)=1$$

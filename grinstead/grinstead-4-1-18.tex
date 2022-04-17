@@ -1,0 +1,46 @@
+\section*{18.}
+A doctor assumes that a patient has one of three diseases
+$d_1$, $d_2$, or $d_3$. Before
+any test, he assumes an equal probability for each disease.
+He carries out a
+test that will be positive with probability {.}8 if the patient has $d_1$,
+{.}6 if he has
+disease $d_2$, and {.}4 if he has disease $d_3$.
+Given that the outcome of the test was
+positive, what probabilities should the doctor now assign to the three possible
+diseases?
+
+\bigskip
+\noindent
+We have
+\begin{eqnarray*}
+P(d_i)&=&1/3\\
+P(T\mid d_1)&=&0.8\\
+P(T\mid d_2)&=&0.6\\
+P(T\mid d_3)&=&0.4
+\end{eqnarray*}
+Use Bayes' formula.
+\begin{eqnarray*}
+P(d_1\mid T)&=&{P(T\mid d_1)P(d_1)
+\over P(T\mid d_1)P(d_1)+P(T\mid d_2)P(d_2)+P(T\mid d_3)P(d_3)
+}\\
+&=&{(0.8)(1/3)\over(0.8)(1/3)+(0.6)(1/3)+(0.4)(1/3)}\\
+&=&0.44
+\end{eqnarray*}
+%
+\begin{eqnarray*}
+P(d_2\mid T)&=&{P(T\mid d_2)P(d_2)
+\over P(T\mid d_1)P(d_1)+P(T\mid d_2)P(d_2)+P(T\mid d_3)P(d_3)
+}\\
+&=&{(0.6)(1/3)\over(0.8)(1/3)+(0.6)(1/3)+(0.4)(1/3)}\\
+&=&0.33
+\end{eqnarray*}
+%
+\begin{eqnarray*}
+P(d_3\mid T)&=&{P(T\mid d_3)P(d_3)
+\over P(T\mid d_1)P(d_1)+P(T\mid d_2)P(d_2)+P(T\mid d_3)P(d_3)
+}\\
+&=&{(0.4)(1/3)\over(0.8)(1/3)+(0.6)(1/3)+(0.4)(1/3)}\\
+&=&0.22
+\end{eqnarray*}
+

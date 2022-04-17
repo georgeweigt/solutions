@@ -1,0 +1,54 @@
+\section*{5.7.3}
+The cumulant generating function $K_X(\theta)$ of the random variable
+$X$ is defined by $K_X(\theta)=\log E(e^{\theta X})$, the logarithm
+of the moment generating function of $X$.
+If the latter is finite in a neighborhood of the origin, then $K_X$
+has a convergent Taylor expansion
+$$K_X(\theta)=\sum_{n=1}^\infty{1\over n!}k_n(X)\theta^n$$
+and $k_n$ is called the $n$th cumulant (or semi-invariant) of $X$.
+
+\bigskip
+\noindent
+(a) Express $k_1(X)$, $k_2(X)$, and $k_3(X)$ in terms of the
+moments of $X$.
+
+\bigskip
+\noindent
+Let
+$$M(\theta)=E(e^{\theta X})$$
+Then
+$$K_X(\theta)=\log M(\theta)$$
+For $\theta=0$ we have
+\begin{eqnarray*}
+k_1(X)&=&{d\log M(\theta)\over d\theta}
+={1\over M(\theta)}\cdot M'(\theta)=EX\\
+k_2(X)&=&{d^2\log M(\theta)\over d\theta^2}
+=-{1\over(M(\theta))^2}\cdot(M'(\theta))^2+
+{1\over M(\theta)}\cdot M''(\theta)=\mathop{Var}X\\
+k_3(X)&=&{d^3\log M(\theta)\over d\theta^3}=\mathop{Skewness}X
+\end{eqnarray*}
+
+\bigskip
+\noindent
+(b) If $X$ and $Y$ are independent random variables, show that
+$$k_n(X+Y)=k_n(X)+k_n(Y)$$
+
+\bigskip
+\noindent
+We have
+\begin{eqnarray*}
+K_{X+Y}(\theta)&=&\log E(e^{\theta(X+Y)})\\
+&=&\log E(e^{\theta X}\cdot e^{\theta Y})\\
+&=&\log(E(e^{\theta X})E(e^{\theta Y}))\\
+&=&\log E(e^{\theta X})+\log E(e^{\theta Y})\\
+&=&K_X(\theta)+K_Y(\theta)
+\end{eqnarray*}
+Hence
+\begin{eqnarray*}
+k_n(X+Y)&=&{d^n K_{X+Y}(\theta)\over d\theta^n}\\
+&=&{d^n(K_X(\theta)+K_Y(\theta))\over d\theta^n}\\
+&=&
+{d^nK_X(\theta)\over d\theta^n}
++{d^nK_Y(\theta)\over d\theta^n}\\
+&=&k_n(X)+k_n(Y)
+\end{eqnarray*}

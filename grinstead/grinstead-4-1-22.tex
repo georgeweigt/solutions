@@ -1,0 +1,29 @@
+\section*{22.}
+
+One coin in a collection of 65 has two heads. The rest are fair. If a coin,
+chosen at random from the lot and then tossed, turns up heads 6 times in a
+row, what is the probability that it is the two-headed coin?
+
+\bigskip
+\noindent
+The trick here is that the probability of getting six heads in a row
+is a conditional probability.
+Let $A$ be the event that six heads turn up and $B$ be the event that the
+coin is biased. We have
+$$P(A)=P(A\mid B)P(B)+P(A\mid B^c)P(B^c)=
+1\times{1\over65}+{1\over64}\times{64\over65}={2\over65}$$
+The probability that the coin is biased is
+$$P(B|A)={P(A\cap B)\over P(A)}={1/65\over 2/65}={1\over2}$$
+It is worth noting that the omegas in this problem are intersections.
+\begin{eqnarray*}
+\omega_1&=&A\cap B \\
+\omega_2&=&A\cap B^c \\
+\omega_3&=&A^c\cap B^c
+\end{eqnarray*}
+\begin{eqnarray*}
+P(\{\omega_1\})&=&1/65 \\
+P(\{\omega_2\})&=&(1/64)(64/65)=1/65 \\
+P(\{\omega_3\})&=&(63/64)(64/65)=63/65
+\end{eqnarray*}
+
+

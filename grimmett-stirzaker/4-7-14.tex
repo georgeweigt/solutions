@@ -1,0 +1,48 @@
+\section*{4.7.14}
+Let $X$ and $Y$ be independent and gamma distributed as
+$\Gamma(\lambda,\alpha)$, $\Gamma(\lambda,\beta)$ respectively.
+Show that $W=X+Y$ and $Z=X/(X+Y)$ are independent, and that
+$Z$ has the beta distribution with parameters $\alpha$, $\beta$.
+
+\bigskip
+\noindent
+The joint density of $X$ and $Y$ is
+$$f_{XY}(x,y)=
+\left({1\over\Gamma(\alpha)}\lambda^\alpha x^{\alpha-1}
+e^{-\lambda x}\right)
+\left({1\over\Gamma(\beta)}\lambda^\beta x^{\beta-1}
+e^{-\lambda x}\right)
+$$
+The inverse transform is
+$$x=wz,\quad y=w-wz$$
+The Jacobian transform is
+$$J_{T^{-1}}=\left(\matrix{
+\partial x/\partial w & \partial x/\partial z\cr
+\partial y/\partial w & \partial y/\partial z
+}\right)
+=\left(\matrix{
+z & w\cr
+1-z & -w
+}\right)$$
+%
+The absolute value of the determinant of the Jacobian is
+$$|\det J_{T^{-1}}|=|-wz-w(1-z)|=|w|=w$$
+We can drop the absolute value because the domain of $X$ and $Y$
+is $[0,\infty)$ hence $w$ is nonnegative.
+Put it all together
+\begin{eqnarray*}
+f_{WZ}(w,z)&=&f_{XY}(wz,w(1-z))\cdot w\\
+&=&
+\left({1\over\Gamma(\alpha)}\lambda^\alpha (wz)^{\alpha-1}
+e^{-\lambda wz}\right)
+\left({1\over\Gamma(\beta)}\lambda^\beta
+(w(1-z))^{\beta-1}e^{-\lambda w(1-z)}\right)w\\
+&=&f_W(w)f_Z(z)
+\end{eqnarray*}
+where
+$$f_W(w)={1\over\Gamma(\alpha+\beta)}\lambda^{\alpha+\beta}
+w^{\alpha+\beta-1}e^{-\lambda w}$$
+and
+$$f_Z(z)={\Gamma(\alpha+\beta)\over\Gamma(\alpha)\Gamma(\beta)}
+z^{\alpha-1}(1-z)^{\beta-1}$$
+Hence $W$ and $Z$ are independent and $Z\sim Beta(\alpha,\beta)$.

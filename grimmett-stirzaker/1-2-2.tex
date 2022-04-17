@@ -1,0 +1,45 @@
+\section*{1.2.2}
+Let $A$ and $B$ belong to some $\sigma$-field $\mathcal F$.
+Show that $\mathcal F$ contains the sets $A\cap B$, $A\setminus B$,
+and $A\mathbin{\Delta}B$.
+
+\medskip
+\begin{enumerate}
+\item Let $A,B\in\mathcal F$.
+\item By definition of a $\sigma$-field,
+$A^c\in\mathcal F$,
+$B^c\in\mathcal F$,
+and $A^c\cup B^c\in\mathcal F$.
+\item By De Morgan, $A^c\cup B^c=(A\cap B)^c$, hence
+$(A\cap B)^c\in\mathcal F$.
+\item By definition of a $\sigma$-field, the above assertion leads to
+$((A\cap B)^c)^c\in\mathcal F$.
+\item $((A\cap B)^c)^c=A\cap B$
+\item Hence $A\cap B\in\mathcal F$.
+\end{enumerate}
+
+\medskip
+\begin{enumerate}
+\item Let $A,B\in\mathcal F$.
+\item By definition of a $\sigma$-field,
+$A^c\in\mathcal F$,
+$B^c\in\mathcal F$,  and
+$A^c\cup B\in\mathcal F$.
+\item By De Morgan, $A^c\cup B=(A\cap B^c)^c$, hence
+$(A\cap B^c)^c\in\mathcal F$.
+\item By definition of a $\sigma$-field,
+the above assertion leads to $((A\cap B^c)^c)^c\in\mathcal F$.
+\item Hence $A\cap B^c\in\mathcal F$ and, since
+$A\cap B^c=A\setminus B$, we have $A\setminus B\in\mathcal F$.
+\end{enumerate}
+
+\medskip
+\begin{enumerate}
+\item Let $A,B\in\mathcal F$.
+\item By the proof above, $A\setminus B\in\mathcal F$
+and $B\setminus A\in\mathcal F$.
+\item Then by definition of a $\sigma$-field,
+$A\setminus B\cup B\setminus A\in\mathcal F$.
+\item By set logic we have $A\setminus B\cup B\setminus A=A\mathbin{\Delta}B$.
+\item Hence $A\mathbin{\Delta}B\in\mathcal F$.
+\end{enumerate}

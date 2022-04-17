@@ -1,0 +1,63 @@
+\section*{3.2.4}
+Three players, A, B, C, take turns to roll a die;
+they do this in the order ABCABCA$\ldots$.
+
+\bigskip
+\noindent
+(a) Show that the probability that, of the three players, A
+is the first to throw a 6, B is the second and C the third,
+is 216/1001.
+
+\bigskip
+\noindent
+The probability that A rolls a six before B and C is
+\begin{eqnarray*}
+P(A)&=&{1\over6}+\left({5\over6}\right)^3{1\over6}
++\left({5\over6}\right)^6{1\over6}+\cdots
+\\
+&=&{1\over6}\sum_{k=0}^\infty\left({5\over6}\right)^{3k}
+\\
+&=&{1\over6}\sum_{k=0}^\infty\left({125\over216}\right)^k
+\\
+&=&{1\over6}\cdot{1\over1-{125\over216}}
+\\
+&=&{36\over91}
+\end{eqnarray*}
+The probability that B rolls a six after A and before C is
+\begin{eqnarray*}
+P(B\mid A)&=&{1\over6}+\left({5\over6}\right)^2{1\over6}
++\left({5\over6}\right)^4{1\over6}+\cdots
+\\
+&=&{1\over6}\sum_{k=0}^\infty\left({5\over6}\right)^{2k}
+\\
+&=&{1\over6}\sum_{k=0}^\infty\left({25\over36}\right)^k
+\\
+&=&{1\over6}\cdot{1\over1-{25\over36}}
+\\
+&=&{6\over11}
+\end{eqnarray*}
+Given that A and B have already rolled a six, the probability that C
+rolls a six is 1.
+Hence
+$$P(ABC)=P(C\mid A\cap B)P(B\mid A)P(A)
+=1\cdot\left({6\over11}\right)\left({36\over91}\right)
+={216\over1001}$$
+
+\bigskip
+\noindent
+(b) Show that the probability that the first six to appear is
+thrown by A, the second 6 to appear is thrown by B, and the third
+6 to appear is thrown by C, is 46656/753571.
+
+\bigskip
+\noindent
+Player A has to roll a six before B or C so the probability is
+$P(A)$ as in part (a).
+After A rolls a six, B has to roll a six before A or C so the
+probability is also $P(A)$.
+After B rolls a six, C has to roll a six before A or B so the
+probability is again the same as $P(A)$. Therefore 
+$$P(A)=P(B\mid A)=P(C\mid A\cap B)={36\over91}$$
+We have
+$$P(ABC)=P(A)P(B\mid A)P(C\mid A\cap B)=\left({36\over91}\right)^3
+={46656\over753571}$$

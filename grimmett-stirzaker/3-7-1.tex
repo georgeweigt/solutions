@@ -1,0 +1,75 @@
+\section*{3.7.1}
+Show the following.
+
+\bigskip
+\noindent
+(a) $E(aY+bZ\mid X)=aE(Y\mid X)+bE(Z\mid X)$ for $a,b\in R$.
+
+\bigskip
+\noindent
+We have
+\begin{eqnarray*}
+E(aY+bZ\mid X)&=&\sum_{y,z}(ay+bz)
+{f_{XYZ}(x,y,z)\over f_X(x)}\\
+&=&a\sum_{y,z}y\cdot{f_{XYZ}(x,y,z)\over f_X(x)}
++b\sum_{y,z}z\cdot{f_{XYZ}(x,y,z)\over f_X(x)}\\
+&=&a\sum_yy\cdot{f_{XY}(x,y)\over f_X(x)}
++b\sum_zz\cdot{f_{XZ}(x,z)\over f_X(x)}\\
+&=&aE(Y\mid X)+bE(Z\mid X)
+\end{eqnarray*}
+%Since the above is true for all $X=x$, it must be true for the random
+%variable $X$ in general. Hence
+%$$E(aY+bZ\mid X)=aE(Y\mid X)+bE(Z\mid X)$$
+
+\bigskip
+\noindent
+(b) $E(Y\mid X)\ge0$ if $Y\ge0$.
+
+\bigskip
+\noindent
+We have
+$$E(Y\mid X)=\sum_yy\cdot{f_{XY}(x,y)\over f_X(x)}$$
+Since $f_{XY}$ and $f_X$ are positive, if all $y\ge0$ then the
+sum is positive.
+
+\bigskip
+\noindent
+(c) $E(1\mid X)=1$.
+$$E(1\mid X)=1\cdot{f_X(x)\over f_X(x)}=1$$
+
+\bigskip
+\noindent
+(d) if $X$ and $Y$ are independent then $E(Y\mid X)=E(Y)$.
+$$E(Y\mid X)=\sum_yy\cdot{f_{XY}(x,y)\over f_X(x)}
+=\sum_yy\cdot{f_X(x)f_Y(y)\over f_X(x)}=\sum_yy\cdot f_Y(y)=EY$$
+
+\bigskip
+\noindent
+(e) $E(Yg(X)\mid X)=g(X)E(Y\mid X)$.
+\begin{eqnarray*}
+E(Yg(X)\mid X)&=&\sum_yy\cdot g(x)\cdot{f_{XY}(x,y)\over f_X(x)}\\
+&=&g(x)\sum_yy\cdot{f_{XY}(x,y)\over f_X(x)}\\
+&=&g(X)E(Y\mid X)
+\end{eqnarray*}
+
+\bigskip
+\noindent
+(f) $E(E(Y\mid X,Z)\mid X)=E(Y\mid X)=E(E(Y\mid X)\mid X,Z)$.
+
+\bigskip
+\noindent
+Let $\psi(X,Z)=E(Y\mid X,Z)$. Then
+\begin{eqnarray*}
+E(\psi(X,Z)\mid X=x)&=&\sum_z\psi(x,z){f_{XZ}(x,z)\over f_X(x)}\\
+&=&\sum_z\left(
+\sum_yy\cdot{f_{XYZ}(x,y,z)\over f_{XZ}(x,z)}
+\right)
+{f_{XZ}(x,z)\over f_X(x)}\\
+&=&\sum_yy\cdot{f_{XY}(x,y)\over f_X(x)}\\
+&=&E(Y\mid X=x)
+\end{eqnarray*}
+%
+Let $\psi(X)=E(Y\mid X)$. Then
+$$E(\psi(X)\mid X=x,Z=z)=\psi(x)=E(Y\mid X=x)$$
+Therefore
+$$E(E(Y\mid X)\mid X,Z)=E(Y\mid X)$$

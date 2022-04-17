@@ -1,0 +1,106 @@
+\section*{3.6.8}
+Let $X$ and $Y$ have joint mass function
+$$f(j,k)={c(j+k)a^{j+k}\over j!\,k!},\quad j,k\ge0$$
+where $a$ is a constant.
+Find $c$, $P(X=j)$, $P(X+Y=r)$, and $E(X)$.
+
+\bigskip
+\noindent
+For $c$ we have
+\begin{eqnarray*}
+\sum_{j,k}f(j,k)
+&=&c\left[
+\sum_{j=0}^\infty{ja^j\over j!}
+\left(\sum_{k=0}^\infty{a^k\over k!}\right)
++
+\sum_{k=0}^\infty{ka^k\over k!}
+\left(\sum_{j=0}^\infty{a^j\over j!}\right)
+\right]\\
+%
+&=&c\left[
+\sum_{j=0}^\infty{ja^j\over j!}e^a
++
+\sum_{k=0}^\infty{ka^k\over k!}e^a
+\right]\\
+%
+&=&c\left[
+\sum_{j=1}^\infty{ja^j\over j!}e^a
++
+\sum_{k=1}^\infty{ka^k\over k!}e^a
+\right]\\
+%
+&=&c\left[
+a\sum_{j=1}^\infty{a^{j-1}\over(j-1)!}e^a
++
+a\sum_{k=1}^\infty{a^{k-1}\over(k-1)!}e^a
+\right]\\
+&=&c(ae^ae^a+ae^ae^a)\\
+&=&c\cdot2ae^{2a}
+\end{eqnarray*}
+Therefore
+$$c={1\over2ae^{2a}}$$
+
+\bigskip
+\noindent
+For $P(X=j)$ we have
+\begin{eqnarray*}
+\sum_k f(j,k)
+&=&{1\over2ae^{2a}}
+\left({ja^j\over j!}\sum_{k=0}^\infty{a^k\over k!}
++{a^j\over j!}\sum_{k=0}^\infty{ka^k\over k!}\right)\\
+&=&{1\over2ae^{2a}}\left(
+{ja^j\over j!}e^a+{a^j\over j!}ae^a
+\right)\\
+%&=&{1\over2e^a}\left({a^j\over j!}+{a^{j-1}\over(j-1)!}\right)
+&=&{1\over2e^a}\left({ja^{j-1}+a^j\over j!}\right)
+\end{eqnarray*}
+
+\bigskip
+\noindent
+For $P(X+Y=r)$ we have
+\begin{eqnarray*}
+\sum_j f(j,r-j)
+&=&{1\over 2ae^{2a}}\sum_{j=0}^\infty
+{(j+r-j)a^{j+r-j}\over j!\,(r-j)!}\\
+&=&{1\over2ae^{2a}}\cdot
+{ra^r\over r!}\sum_{j=0}^\infty{r!\over j!\,(r-j)!}\\
+&=&{1\over2ae^{2a}}\cdot{ra^r\over r!}\cdot2^r
+\end{eqnarray*}
+
+\bigskip
+\noindent
+For $E(X)$ we have
+\begin{eqnarray*}
+\sum_{j,k}jf(j,k)
+&=&{1\over2ae^{2a}}\left[
+\sum_{j=0}^\infty{j^2a^j\over j!}
+\left(\sum_{k=0}^\infty{a^k\over k!}\right)
++
+\sum_{j=0}^\infty{ja^j\over j!}
+\left(\sum_{k=0}^\infty{ka^k\over k!}\right)
+\right]\\
+%
+&=&{1\over2ae^{2a}}\left[
+\sum_{j=0}^\infty{j^2a^j\over j!}e^a
++
+a^2e^{2a}
+\right]\\
+%
+&=&{1\over2ae^{2a}}\left[
+a\sum_{j=1}^\infty{ja^{j-1}\over(j-1)!}e^a+a^2e^{2a}
+\right]\\
+%
+&=&{1\over2ae^{2a}}\left[
+a\sum_{j=0}^\infty{(j+1)a^j\over j!}e^a+a^2e^{2a}
+\right]\\
+%
+&=&{1\over2ae^{2a}}\left[
+a(ae^a+e^a)e^a+a^2e^{2a}
+\right]\\
+%
+&=&{1\over2ae^{2a}}\left[
+a^2e^{2a}+ae^{2a}+a^2e^{2a}\right]\\
+%
+&=&{2a^2e^{2a}+ae^{2a}\over2ae^{2a}}\\
+&=&a+{1\over2}
+\end{eqnarray*}

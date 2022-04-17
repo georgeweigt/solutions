@@ -1,0 +1,35 @@
+\section*{4.5.5}
+Let $X$ and $Y$ be independent continuous random variables.
+Show that
+$$E(g(X)h(Y))=E(g(X))E(h(Y))$$
+whenever these expectations exist.
+If $X$ and $Y$ have the exponential distribution with parameter 1,
+find $E[\exp({1\over2}(X+Y))]$.
+
+\begin{eqnarray*}
+E(g(x)h(y))
+&=&\int_{-\infty}^\infty\int_{-\infty}^\infty
+g(x)f_X(x)h(y)f_Y(y)\,dx,dy\\
+&=&\int_{-\infty}^\infty
+g(x)f_X(x)\,dx\left(
+\int_{-\infty}^\infty h(y)f_Y(y)\,dy\right)\\
+&=&\int_{-\infty}^\infty g(x)f_X(x)\,dx\cdot E(h(Y))\\
+&=&E(g(X))E(h(Y))
+\end{eqnarray*}
+
+\bigskip
+\noindent
+For $E[\exp({1\over2}(X+Y))]$ we have
+$$f_X(x)=e^{-x},\quad f_Y(y)=e^{-y},\quad f(x,y)=f_X(x)f_Y(y)
+=e^{-x}e^{-y}$$
+$$g(x,y)=\exp((x+y)/2)=e^{x/2}e^{y/2}$$
+\begin{eqnarray*}
+E[\exp((X+Y)/2)]
+&=&\int_0^\infty\int_0^\infty g(x,y)f(x,y)\,dx\,dy\\
+&=&\int_0^\infty\int_0^\infty e^{x/2}e^{y/2}e^{-x}e^{-y}\,dx\,dy\\
+&=&\left(\int_0^\infty e^{-x/2}\,dx\right)
+\left(\int_0^\infty e^{-y/2}\,dy\right)\\
+&=&\left(-2e^{-x/2}\bigg|_0^\infty\right)
+\left(-2e^{-y/2}\bigg|_0^\infty\right)\\
+&=&4
+\end{eqnarray*}

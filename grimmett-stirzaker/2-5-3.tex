@@ -1,0 +1,27 @@
+\section*{2.5.3}
+The random variables $X$ and $Y$ have joint distribution function
+\begin{displaymath}
+F_{X,Y}(x,y)=\left\{
+\begin{array}{ll}
+0 & \hbox{if $x<0$} \\
+(1-e^{-x})\left({1\over2}+{1\over\pi}\tan^{-1}y\right)
+&\hbox{if $x\ge0$}
+\end{array}
+\right.
+\end{displaymath}
+Show that $X$ and $Y$ are (jointly) continuously distributed.
+
+\bigskip
+\noindent
+The only term involving both $x$ and $y$ is
+$-e^{-x}\pi^{-1}\tan^{-1}y$ hence
+$$f(x,y)={dF(x,y)\over dx\,dy}={e^{-x}\over\pi(y^2+1)}
+I_{[0,\infty)}(x)$$
+We have
+\begin{eqnarray*}
+\int_0^x\int_{-\infty}^y{e^{-u}\over\pi(v^2+1)}\,dv\,du
+&=&\int^x{e^{-u}\over\pi}\left(\tan^{-1}y+{\pi\over2}\right)du\\
+&=&(1-e^{-x})\left({1\over2}+{1\over\pi}\tan^{-1}y\right)
+\end{eqnarray*}
+We have $f$ is an integrable function with $f:R^2\to[0,\infty)$
+hence $X$ and $Y$ are (jointly) continuous.

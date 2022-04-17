@@ -1,0 +1,63 @@
+\section*{4.10.2}
+Show that the mean of the $t(r)$ distribution is 0, and that the
+mean of the $F(r,s)$ distribution is $s/(s-2)$ if $s>2$.
+What happens if $s\le2$?
+
+\bigskip
+\noindent
+The mean of $t(r)$ is
+$$\int_{-\infty}^\infty t f_T(t)\,dt$$
+Since $f_T(t)$ is an even function, $tf_T(t)$ is an odd function
+hence the integral is zero.
+
+\bigskip
+\noindent
+For $F(r,s)$ we are given the density function
+$$f(x)={r\Gamma(r/2+s/2)\over s\Gamma(r/2)\Gamma(s/2)}
+\cdot
+{(rx/s)^{r/2-1}\over(1+rx/s)^{r/2+s/2}}
+$$
+Therefore the mean $\mu$ is
+$$\mu={r\Gamma(r/2+s/2)\over s\Gamma(r/2)\Gamma(s/2)}
+\int_0^\infty
+{x(rx/s)^{r/2-1}\over(1+rx/s)^{r/2+s/2}}\,dx$$
+We can pass $rx/s$ into the numerator of the integrand.
+$$\mu={\Gamma(r/2+s/2)\over\Gamma(r/2)\Gamma(s/2)}
+\int_0^\infty
+{(rx/s)^{r/2}\over(1+rx/s)^{r/2+s/2}}\,dx$$
+Now define $u$ and $v$ as follows.
+\begin{eqnarray*}
+u/2-1&=&r/2\cr
+v/2+1&=&s/2
+\end{eqnarray*}
+Now we can write the integral as
+$$\mu={\Gamma(r/2+s/2)\over\Gamma(r/2)\Gamma(s/2)}
+\int_0^\infty
+{(rx/s)^{u/2-1}\over(1+rx/s)^{u/2+v/2}}\,dx$$
+Next, define
+$$x=\left({v+2\over u-2}\right)uy/v
+\qquad dx/dy=\left({v+2\over u-2}\right)\left({u\over v}\right)$$
+Then
+$$rx/s=uy/v$$
+and we have
+$$\mu={\Gamma(r/2+s/2)\over\Gamma(r/2)\Gamma(s/2)}
+\left({v+2\over u-2}\right)\left({u\over v}\right)
+\int_0^\infty
+{(uy/v)^{u/2-1}\over(1+uy/v)^{u/2+v/2}}\,dy$$
+The integral is another $F$ distribution so it integrates
+to one over the normalization constant.
+$$\mu={\Gamma(r/2+s/2)\over\Gamma(r/2)\Gamma(s/2)}
+\left({v+2\over u-2}\right)\left({u\over v}\right)
+\left({v\over u}\right)
+{\Gamma(u/2)\Gamma(v/2)\over\Gamma(u/2+v/2)}$$
+Now back-substitute $u=r+2$ and $v=s-2$.
+$$\mu={\Gamma(r/2+s/2)\over\Gamma(r/2)\Gamma(s/2)}
+\left({s\over r}\right)
+{\Gamma(r/2+1)\Gamma(s/2-1)\over\Gamma(r/2+s/2)}$$
+Cancel terms and apply the identity $\Gamma(z+1)=z\Gamma(z)$.
+$$\mu={1\over\Gamma(r/2)(s/2-1)\Gamma(s/2-1)}
+\left({s\over r}\right)
+{(r/2)\Gamma(r/2)\Gamma(s/2-1)\over1}$$
+Now we can cancel terms and obtain
+$$\mu={s\over s-2}$$
+If $s\le2$ then the mean does not exist.

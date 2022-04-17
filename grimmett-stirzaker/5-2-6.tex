@@ -1,0 +1,66 @@
+\section*{5.2.6}
+An unfair coin is flipped repeatedly, where $P(H)=p=1-q$.
+Let $X$ be the number of flips until HTH first appears, and
+$Y$ the number of flips until either HTH or THT appears
+Show that
+$E(s^X)=(p^2qs^3)/(1-s+pqs^2-pq^2s^3)$
+and find $E(s^Y)$.
+
+\bigskip
+\noindent
+Let $X_1$ be the number of flips until H, $X_2$ be the number
+of subsequent flips until T, and then $X_3$ the result of the
+flip after that.
+\begin{eqnarray*}
+X_1&\sim&Geometric(p)\\
+X_2&\sim&Geometric(q)\\
+X_3&\sim&Bernoulli(p)
+\end{eqnarray*}
+We have
+\begin{eqnarray*}
+G_X(s)&=&E(s^X)\\
+&=&E(E(s^X\mid X_3))\\
+&=&E(s^{X_1+X_2+1})P(X_3=H)+E(s^{X_1+X_2+1+X})P(X_3=T)\\
+&=&G_{X_1}(s)G_{X_2}(s)\cdot s\cdot p
++G_{X_1}(s)G_{X_2}(s)G_1(s)G_X(s)\cdot s\cdot q
+\end{eqnarray*}
+Solving for $G_X(s)$ we have
+\begin{eqnarray*}
+G_X(s)&=&{
+G_{X_1}(s)G_{X_2}(s)\cdot s\cdot p
+\over
+1-G_{X_1}(s)G_{X_2}(s)\cdot s\cdot q
+}\\
+&=&{p^2qs^3\over(1-qs)(1-ps)}
+\cdot
+{(1-qs)(1-ps)\over(1-qs)(1-ps)-pq^2s^3}\\
+&=&
+{p^2qs^3\over1-s+pqs^2-pq^2s^3}
+\end{eqnarray*}
+
+\bigskip
+\noindent
+For $Y$ we can start with H, get T and then decide on the following
+flip.
+Or we can start with T, get H and then decide.
+\begin{eqnarray*}
+X_H=(1+Geom(p)+1)\cdot p+(1+Geom(p)+X_T)\cdot q\\
+X_T=(1+Geom(q)+1)\cdot q+(1+Geom(q)+X_H)\cdot p
+\end{eqnarray*}
+$$X=(X_H)\cdot p+(X_T)\cdot q$$
+Therefore
+\begin{eqnarray*}
+G_H(s)&=&{p^2s^3\over1-sq}+{pqs^2\over1-sq}G_T(s)\\
+G_T(s)&=&{q^2s^3\over1-sp}+{pqs^2\over1-sp}G_H(s)
+\end{eqnarray*}
+Solving we have
+\begin{eqnarray*}
+G_H(s)&=&{pq^3s^5-p^3s^4+p^2s^3\over1-s+pqs^2-p^2q^2s^4}\\
+G_T(s)&=&{p^3qs^5-q^3s^4+q^2s^3\over1-s+pqs^2-p^2q^2s^4}
+\end{eqnarray*}
+Finally
+\begin{eqnarray*}
+G_X(s)&=&G_H(s)\cdot p+G_T(s)\cdot q\\
+&=&{(p^2q^3+p^3q^2)s^5-(p^4+q^4)s^4+(p^3+q^3)s^3
+\over1-s+pqs^2-p^2q^2s^4}
+\end{eqnarray*}

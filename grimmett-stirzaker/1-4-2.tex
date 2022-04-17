@@ -1,0 +1,42 @@
+\section*{1.4.2}
+For events $A_1$, $A_2$, $\ldots$, $A_n$ satisfying
+$P(A_1\cap A_2\cap\cdots\cap A_{n-1})>0$,
+prove that
+\begin{eqnarray*}
+\lefteqn{P(A_1\cap A_2\cap\cdots\cap A_{n-1})}\\
+&&=P(A_1)P(A_2\mid A_1)P(A_3\mid A_1\cap A_2)\cdots
+P(A_n\mid A_1\cap A_2\cap\cdots\cap A_{n-1})
+\end{eqnarray*}
+
+\bigskip
+\noindent
+For $n=1$ we have
+$$P(A_1)=P(A_1)$$
+For $n=2$ we have
+$$P(A_1\cap A_2)=P(A_1)P(A_2\mid A_1)$$
+which is the definition of conditional probability.
+For $n=3$ note that
+$$P(A_3\mid A_1\cap A_2)={P(A_1\cap A_2\cap A_3)\over P(A_1\cap A_2)}$$
+hence
+\begin{eqnarray*}
+P(A_1\cap A_2\cap A_3)&=&P(A_1\cap A_2)P(A_3\mid A_1\cap A_2)\\
+&=&P(A_1)P(A_2\mid A_1)P(A_3\mid A_1\cap A_2)
+\end{eqnarray*}
+For the induction step, assume the equation is true for $n$.
+Then for $n+1$ we have
+$$P(A_{n+1}\mid A_1\cap A_2\cap\cdots\cap A_n)=
+{P(A_1\cap A_2\cap\cdots\cap A_{n+1})\over
+P(A_1\cap A_2\cap\cdots\cap A_n)}$$
+Hence
+\begin{eqnarray*}
+\lefteqn{P(A_1\cap A_2\cap\cdots\cap A_{n+1})}\\
+&&=
+P(A_1\cap A_2\cap\cdots\cap A_n)
+P(A_{n+1}\mid A_1\cap A_2\cap\cdots\cap A_n)\\
+&&=P(A_1)P(A_2\mid A_1)P(A_3\mid A_1\cap A_2)\cdots
+P(A_{n+1}\mid A_1\cap A_2\cap\cdots\cap A_n)
+\end{eqnarray*}
+This proves the equation is true for $n+1$ whenever it is true for
+$n$.
+Therefore by induction, it is true for all $n\in N$.
+

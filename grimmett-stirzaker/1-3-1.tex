@@ -1,0 +1,33 @@
+\section*{1.3.1}
+Let $A$ and $B$ be events with probabilities $P(A)={3\over4}$ and $P(B)={1\over3}$.
+Show that ${1\over12}\le P(A\cap B)\le {1\over3}$, and give examples to show that
+both extremes are possible. Find corresponding bounds for $P(A\cup B)$.
+
+\bigskip
+\noindent
+We have
+$$A\cap B\subseteq A,\quad A\cap B\subseteq B$$
+hence
+$$P(A\cap B)\le P(A),\quad P(A\cap B)\le P(B)$$
+Therefore
+$$P(A\cap B)\le{1\over3}$$
+In addition, we have
+$$P(A\cup B)=P(A)+P(B)-P(A\cap B)={13\over12}-P(A\cap B)$$
+hence
+$$P(A\cap B)\ge{1\over12}$$
+Therefore
+$${1\over12}\le P(A\cap B)\le {1\over3}$$
+Example. Let $\Omega=\{1,2,\ldots,12\}$ with $P(\{i\})={1\over12}$.
+Let $A=\{1,2,\ldots,9\}$ and $B=\{9,10,11,12\}$.
+Then $P(A)={3\over4}$, $P(B)={1\over3}$, and $P(A\cap B)=P(\{9\})={1\over12}$.
+Now let $B=\{1,2,3,4\}$.
+Then $P(B)$ is still ${1\over3}$ and $P(A\cap B)=P(\{1,2,3,4\})={1\over3}$.
+
+\bigskip
+\noindent
+For $P(A\cup B)$ we have
+$$P(A\cup B)=P(A)+P(B)-P(A\cap B)$$
+From the above result we have ${1\over12}\le P(A\cap B)\le {1\over 3}$. Hence
+$${3\over4}+{1\over3}-{1\over3}\le P(A\cup B)\le{3\over4}+{1\over3}-{1\over12}$$
+Therefore
+$${3\over4}\le P(A\cup B)\le1$$

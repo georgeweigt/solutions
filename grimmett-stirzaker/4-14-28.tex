@@ -1,0 +1,46 @@
+\section*{4.14.28}
+Let $Z$ be a random variable.
+Show that $g(p)=\log E|Z^p|$ is a convex function.
+
+\bigskip
+\noindent
+Let
+$$X=Z^{tx}\qquad Y=Z^{(1-t)y}$$
+where $t\in(0,1)$. Then
+$$XY=Z^{tx+(1-t)y}$$
+By Holder's inequality,
+$$
+E|XY|\le
+\left(E|X^{1/t}|\right)^t
+\left(E|Y^{1/(1-t)}|\right)^{1-t}
+$$
+Therefore
+$$\log E|Z^{tx+(1-t)y}|
+\le t\log E|Z^x|+(1-t)\log E|Z^y|$$
+
+\bigskip
+\noindent
+Deduce Lyapunov's inequality
+$$\left(E|Z^r|\right)^{1/r}\ge
+\left(E|Z^s|\right)^{1/s}\qquad
+\hbox{whenever $r\ge s>0$}$$
+
+\bigskip
+\noindent
+We have
+$$\log E|Z^{tx+(1-t)y}|
+\le t\log E|Z^x|+(1-t)\log E|Z^y|$$
+Let
+\begin{eqnarray*}
+t&=&s/r\\
+x&=&r\\
+y&=&0
+\end{eqnarray*}
+Note that $t\in(0,1]$ because $r\ge s$.
+Then
+$$tx+(1-t)y=s$$
+hence
+$$\log E|Z^s|\le{s\over r}\log E|Z^r|+(1-r/s)\log E1$$
+Therefore
+$${1\over s}\log E|Z^s|\le{1\over r}\log E|Z^r|$$
+hence Lyapunov's identity.

@@ -1,0 +1,22 @@
+\section*{1.8.5}
+Show that the probability that {\it exactly} one of the events
+$A$ and $B$ occurs is
+$$P(A)+P(B)-2P(A\cap B)$$
+
+\bigskip
+\noindent
+First a detour. Note that
+$$A=(A\setminus B)\cup(A\cap B)$$
+Since $A\setminus B$ and $A\cap B$ are disjoint we have
+$$P(A)=P(A\setminus B)+P(A\cap B)$$
+Hence
+$$P(A\setminus B)=P(A)-P(A\cap B)$$
+Now back to the original problem.
+The probability that exactly one of the events $A$ or $B$ occurs is
+$$P((A\setminus B)\cup(B\setminus A))$$
+Since $A\setminus B$ and $B\setminus A$ are disjoint events we have
+\begin{eqnarray*}
+P((A\setminus B)\cup(B\setminus A))&=&
+P(A)-P(A\cap B)+P(B)-P(A\cap B)\\
+&=&P(A)+P(B)-2P(A\cap B)
+\end{eqnarray*}

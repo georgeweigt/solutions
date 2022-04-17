@@ -1,0 +1,45 @@
+\section*{30.}
+Luxco, a wholesale lightbulb manufacturer, has two factories. Factory A sells
+bulbs in lots that consist of 1000 regular and 2000 softglow bulbs each. Random
+sampling has shown that on the average there tend to be about 2 bad
+regular bulbs and 11 bad softglow bulbs per lot. At factory B the lot size is
+reversed---there are 2000 regular and 1000 softglow per lot---and there tend
+to be 5 bad regular and 6 bad softglow bulbs per lot.
+
+\bigskip
+\noindent
+The manager of factory A asserts, ``We're obviously the better producer; our
+bad bulb rates are .2 percent and .55 percent compared to B's .25 percent and
+.6 percent. We're better at both regular and softglow bulbs by half of a tenth
+of a percent each.''
+
+\bigskip
+\noindent
+``Au contraire,'' counters the manager of B, ``each of our 3000 bulb lots contains
+only 11 bad bulbs, while A's 3000 bulb lots contain 13. So our .37
+percent bad bulb rate beats their .43 percent.''
+
+\bigskip
+\noindent
+Who is right?
+
+\bigskip
+\noindent
+Let us use total probability to try and determine who is correct.
+Let $R$ be the event that a regular bulb is manufactured and $S$ be
+the event that a softglow bulb is manufactured.
+Then factory A's probability of a bad bulb is
+\begin{eqnarray*}
+P(F)&=&P(F\mid R)P(R)+P(F\mid S)P(S)\\
+&=&\left({2\over1000}\right)\left({1000\over3000}\right)
++\left({11\over2000}\right)\left({2000\over3000}\right)\\
+&=&0.0043
+\end{eqnarray*}
+Factory B's probability of a bad bulb is
+\begin{eqnarray*}
+P(F)&=&P(F\mid R)P(R)+P(F\mid S)P(S)\\
+&=&\left({5\over2000}\right)\left({2000\over3000}\right)
++\left({6\over1000}\right)\left({1000\over3000}\right)\\
+&=&0.0037
+\end{eqnarray*}
+So it appears manager B is correct.

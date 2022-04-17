@@ -1,0 +1,22 @@
+\section*{3.3.5}
+Let $X$ have the mass function
+\begin{displaymath}
+f(x)=\left\{
+\begin{array}{ll}
+[x(x+1)]^{-1} & \hbox{if $x=1,2,\ldots$} \\
+0 & \hbox{otherwise}
+\end{array}
+\right.
+\end{displaymath}
+and let $\alpha\in R$. For what values of $\alpha$ is it the case
+that $E(X^\alpha)<\infty$?
+
+\bigskip
+\noindent
+We have
+$$E(X^\alpha)=\sum_{x=1}^\infty{x^\alpha\over x(x+1)}
+=\sum_{x=1}^\infty{x^{\alpha-1}\over x+1}$$
+In order for the series to converge we must have
+$${x^{\alpha-1}\over x+1}\le\left({1\over x}\right)^p$$
+where $p>1$. Therefore
+$$\alpha<1$$

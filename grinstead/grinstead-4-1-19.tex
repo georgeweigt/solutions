@@ -1,0 +1,28 @@
+\section*{19.}
+In a poker hand, John has a very strong hand and bets 5 dollars. The probability
+that Mary has a better hand is .04. If Mary had a better hand she
+would raise with probability .9, but with a poorer hand she would only raise
+with probability .1. If Mary raises, what is the probability that she has a
+better hand than John does?
+
+\bigskip
+\noindent
+Let $B$ be the event that Mary has a better hand and $R$ be the event that she
+raises.
+\begin{eqnarray*}
+P(B)&=&0.04\\
+P(R\mid B)&=&0.9\\
+P(R\mid B^c)&=&0.1
+\end{eqnarray*}
+Compute $P(R)$ using total probability.
+\begin{eqnarray*}
+P(R)&=&P(R\mid B)P(B)+P(R\mid B^c)P(B^c)\\
+&=&(0.9)(0.04)+(0.1)(0.96)\\
+&=&0.132
+\end{eqnarray*}
+Next we have
+$$P(B\cap R)=P(R\mid B)P(B)=(0.9)(0.04)=0.036$$
+Therefore
+$$P(B\mid R)={P(B\cap R)\over P(R)}={0.036\over0.132}=0.2727$$
+
+

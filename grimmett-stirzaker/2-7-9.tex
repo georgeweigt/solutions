@@ -1,0 +1,56 @@
+\section*{2.7.9}
+Express the distribution functions of
+$$X^+=\max\{0,X\},\quad
+X^-=-\min\{0,X\},\quad
+|X|=X^++X^-,\quad-X,$$
+in terms of the distribution function $F$ and the random variable $X$.
+
+\bigskip
+\noindent
+For $X^+$ we have $P(X^+<0)=0$ hence
+\begin{eqnarray*}
+F_{X^+}&=&P(\max\{0,X\}\le x)\\
+&=&P(X\le x)I_{[0,\infty)}(x)\\
+&=&F(x)I_{[0,\infty)}(x)
+\end{eqnarray*}
+
+\bigskip
+\noindent
+For $X^-$ we have $P(X^-<0)=0$ hence
+\begin{eqnarray*}
+F_{X^-}(x)&=&P(-\min\{0,X\}\le x)\\
+&=&P(-X\le x)I_{[0,\infty)}(x)\\
+&=&P(X\ge -x)I_{[0,\infty)}(x)\\
+&=&\bigg[1-\lim_{h\downarrow0}F(-x-h)\bigg]I_{[0,\infty)}(x)
+\end{eqnarray*}
+
+\bigskip
+\noindent
+For $|X|$ we have to think about what
+$\max\{0,X\}-\min\{0,X\}\le x$ does.
+What it does is give us a set of omegas.
+Calling the set $A$, we have
+$$A=\{\omega:\max\{0,X(\omega)\}-\min\{0,X(\omega)\}\le x\}$$
+We can see that all omegas such that $0\le X(\omega)\le x$ are
+included in the set.
+In addition, all omegas such that $-x\le X(\omega)\le0$ are
+included in the set.
+Therefore we can write $A$ as
+$$A=\{\omega:-x\le X(\omega)\le x\}$$
+Note that if $x<0$ then $A=\emptyset$.
+It follows that
+\begin{eqnarray*}
+F_{|X|}(x)&=&P(\max\{0,X\}-\min\{0,X\}\le x)\\
+&=&P(-x\le X\le x)I_{[0,\infty)}(x)\\
+&=&\bigg[F(x)-\lim_{h\downarrow0}F(-x-h)\bigg]I_{[0,\infty)}(x)
+\end{eqnarray*}
+
+
+\bigskip
+\noindent
+For $-X$ we have
+\begin{eqnarray*}
+F_{-X}(x)&=&P(-X\le x)\\
+&=&P(X\ge -x)\\
+&=&1-\lim_{h\downarrow0}F(-x-h)
+\end{eqnarray*}

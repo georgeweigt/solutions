@@ -1,0 +1,42 @@
+\section*{3.5.3}
+Let $X$ be Poisson distributed where 
+$P(X=n)=p_n(\lambda)=\lambda^ne^{-\lambda}/n!$
+for $n\ge0$. Show that
+$P(X\le n)=1-\int_0^\lambda p_n(x)\,dx$.
+
+\bigskip
+\noindent
+We have
+$$P(X\le n)=\sum_{k=0}^np_k(\lambda)
+=\sum_{k=0}^n{\lambda^ke^{-\lambda}\over k!}$$
+Taking the derivative we have
+\begin{eqnarray*}
+{d\over d\lambda}\sum_{k=0}^n{\lambda^ke^{-\lambda}\over k!}
+&=&\sum_{k=0}^n\left({k\lambda^{k-1}e^{-\lambda}\over k!}
+-{\lambda^ke^{-\lambda}\over k!}\right)
+\\
+&=&e^{-\lambda}\left(
+\sum_{k=0}^n{k\lambda^{k-1}\over k!}
+-\sum_{k=0}^n{\lambda^k\over k!}
+\right)
+\\
+&=&e^{-\lambda}\left(
+\sum_{k=0}^{n-1}{\lambda^k\over k!}
+-\sum_{k=0}^n{\lambda^k\over k!}
+\right)
+\\
+&=&-{\lambda^ne^{-\lambda}\over n!}=-p_n(\lambda)
+\end{eqnarray*}
+By the above result and the fundamental theorem of calculus we have
+\begin{eqnarray*}
+\int_0^\lambda-p_n(x)\,dx
+&=&\sum_{k=0}^n p_k(\lambda)
+-\sum_{k=0}^n p_k(0)
+\\
+&=&\sum_{k=0}^n p_k(\lambda)-1
+\end{eqnarray*}
+Note that, in the previous calculation, $\sum p_k(0)=p_0(0)=1$
+because $0^0=1$ and $0!=1$.
+We can rewrite the above result as
+$$1-\int_0^\lambda p_n(x)\,dx
+=\sum_{k=0}^n p_k(\lambda)=P(X\le n)$$

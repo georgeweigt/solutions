@@ -1,0 +1,63 @@
+\section*{5.2.3}
+(a) Let $X$ have the Poisson distribution with parameter $Y$,
+where $Y$ has the Poisson distribution with parameter $\mu$.
+Show that
+$$G_{X+Y}(x)=\exp\left[\mu\left(xe^{x-1}-1\right)\right]$$
+We have
+\begin{eqnarray*}
+G_{X+Y}(x)&=&E(E(x^{X+Y}\mid Y))\\
+&=&\sum_{y=0}^\infty E(x^Xx^Y)P(Y=y)\\
+&=&\sum_{y=0}^\infty E(x^Xx^Y)\cdot{e^{-\mu}\mu^y\over y!}
+\end{eqnarray*}
+Here is the tricky part. Since $Y$ is fixed and $X\sim Poisson(Y)$
+we have
+$$E(x^Xx^Y)=x^yE(x^X)=x^ye^{y(x-1)}$$
+Hence
+\begin{eqnarray*}
+G_{X+Y}(x)&=&\sum_{y=0}^\infty x^ye^{y(x-1)}\cdot
+{e^{-\mu}\mu^y\over y!}\\
+&=&e^{-\mu}\sum_{y=0}^\infty{\left(\mu xe^{x-1}\right)^y\over y!}\\
+&=&e^{-\mu}\exp\left(\mu xe^{x-1}\right)\\
+&=&\exp\left[\mu\left(xe^{x-1}-1\right)\right]
+\end{eqnarray*}
+
+\bigskip
+\noindent
+(b) Let $X_1$, $X_2$, $\ldots$ be independent identically distributed
+random variables with the logarithmic mass function
+$$f(k)={(1-p)^k\over k\log(1/p)},\qquad k\ge1$$
+where $0<p<1$. If $N$ is independent of the $X_i$ and has the
+Poisson distribution with parameter $\mu$, show that
+$Y=\sum_{i=1}^NX_i$ has a negative binomial distribution.
+
+\bigskip
+\noindent
+Per recitation 11 we have
+$$G_X(s)={\log(1-s(1-p))\over\log(p)}$$
+Next we have
+\begin{eqnarray*}
+G_Y(s)&=&G_N(G_X(s))\\
+&=&\sum_{n=0}^\infty[G_X(s)]^n\cdot{e^{-\mu}\mu^n\over n!}\\
+&=&e^{-\mu}\exp\left(\mu
+{\log(1-s(1-p))\over\log(p)}\right)\\
+&=&\exp\left[\mu\left(
+{\log(1-s(1-p))\over\log(p)}-1\right)\right]\\
+&=&\exp\left[\mu\left(
+{\log(1-s(1-p))-\log(p)\over\log(p)}\right)\right]\\
+&=&\exp\left[
+{\mu\over\log(p)}
+\log\left(
+{1-s(1-p)\over p}
+\right)\right]\\
+&=&\exp\left[
+\log\left(
+{1-s(1-p)\over p}
+\right)\right]^{\mu/\log(p)}\\
+&=&\left(
+{1-s(1-p)\over p}
+\right)^{\mu/\log(p)}
+\end{eqnarray*}
+Note that $0<p<1$ hence $\log(p)$ is negative. Therefore
+$$G_Y(s)=\left(
+{p\over1-s(1-p)}\right)^{\mu/\log(1/p)}
+\sim NegBinomial(\mu/\log(1/p),p)$$

@@ -1,0 +1,45 @@
+\section*{1.8.39}
+The $n$ passengers or a Bell-Air flight in an airplane with $n$
+seats have been told their seat numbers.
+They get on the plane one by one.
+The first person sits in the wrong seat.
+Subsequent passengers sit in their assigned seats whenever they find
+them available, or otherwise in a randomly chosen empty seat.
+What is the probability that the last passenger finds his seat free?
+
+\bigskip
+\noindent
+Without loss of generality, we can assume that passenger $n$ is
+assigned seat $n$.
+For $n=5$, the following table shows all of the sequences that lead
+to the last
+passenger sitting in his assigned seat.
+(For example, on the first line, the sequence is
+passenger 1 takes seat 2, passenger 2 takes seat 1, etc.)
+
+\bigskip
+\noindent
+\begin{tabular}{ll}
+Sequence & Probability \\
+12 21 33 44 55 & $1/4\times1/4\times1\times1\times1=1/16$ \\
+12 23 31 44 55 & $1/4\times1/4\times1/3\times1\times1=1/48$ \\
+12 23 34 41 55 & $1/4\times1/4\times1/3\times1/2\times1=1/96$ \\
+12 24 33 41 55 & $1/4\times1/4\times1\times1/2\times1=1/32$ \\
+13 22 31 44 55 & $1/4\times1\times1/3\times1\times1=1/12$ \\
+13 22 34 41 55 & $1/4\times1\times1/3\times1/2\times1=1/24$ \\
+14 22 33 41 55 & $1/4\times1\times1\times1/2\times1=1/8$
+\end{tabular}
+
+\bigskip
+\noindent
+Adding up all the above probabilities we have
+$$p={3\over8}$$
+Let $P(n)$ be the probability that, given $n$ passengers and
+$n$ seats, the last passenger sits in his assigned seat.
+Since the first passenger has $n-1$ choices, we can write
+$$P(n)={1\over n-1}K(n)$$
+I could not derive this, but through trial and error, it appears that
+$$K(n)={n-2\over2}$$
+Hence
+$$P(n)={n-2\over 2(n-1)}$$
+

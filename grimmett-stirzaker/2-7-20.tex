@@ -1,0 +1,32 @@
+\section*{2.7.20}
+(a) If $U$ and $V$ are jointly continuous, show that $P(U=V)=0$.
+
+\bigskip
+\noindent
+The challenge here is to write $P(U=V)$ in terms of the joint
+distribution function $F(u,v)$.
+If $U=V$ then the random vector $(U,V)$ falls on the line $u=v$.
+The probability that $(U,V)$ falls on the line $u=v$ is
+\begin{eqnarray*}
+P(U=V)&=&\lim_{h\downarrow0}P(u-h<U\le u,u-h<V\le u) \\
+&=&\lim_{h\downarrow0}\bigg[
+F(u,u)-F(u-h,u)-F(u,u-h)+F(u-h,u-h)\bigg]\\
+&=&0
+\end{eqnarray*}
+
+\bigskip
+\noindent
+(b) Let $X$ be uniformly distributed on $(0,1)$, and let
+$Y=X$. Then $X$ and $Y$ are continuous, and $P(X=Y)=1$.
+Is there a contradiction here?
+
+\bigskip
+\noindent
+We have
+$$P(X=Y)=P(\{\omega:X(\omega)=Y(\omega)\})$$
+Since $X(\omega)=Y(\omega)$ for all $\omega$ we have
+$$P(\{\omega:X(\omega)=Y(\omega)\})=P(\Omega)$$
+hence
+$$P(X=Y)=1$$
+For part (a) we do not have $U(\omega)=V(\omega)$ for all $\omega$.
+

@@ -1,0 +1,100 @@
+\section*{4.7.5}
+Let $X$ and $Y$ have the bivariate normal density function
+$$f(x,y)={1\over2\pi\sqrt{1-\rho^2}}
+\exp\left\{
+-{1\over2(1-\rho^2)}(x^2-2\rho xy+y^2)\right\}$$
+Show that $X$ and $Z=(Y-\rho X)/\sqrt{1-\rho^2}$ are independent
+$N(0,1)$ variables, and deduce that
+$$P(X>0,Y>0)={1\over4}+{1\over2\pi}\sin^{-1}\rho$$
+
+\bigskip
+\noindent
+We have
+$$\left(\matrix{
+X\cr
+Y}\right)
+\sim N\left(
+\left(\matrix{
+0\cr
+0}\right),
+\left(\matrix{
+1 & \rho\cr
+\rho & 1}\right)\right)
+$$
+Let
+$$\Sigma=\left(\matrix{
+1 & \rho\cr
+\rho & 1
+}\right)
+$$
+$$B=\left(\matrix{-{\rho\over\sqrt{1-\rho^2}}
+& {1\over\sqrt{1-\rho^2}}}\right)$$
+Then
+$$Z=B\left(\matrix{
+X\cr
+Y}\right)
+\sim N(0,B\Sigma B^T)=N(0,1)
+$$
+Hence $Z\sim N(0,1)$. Let
+$$B=\left(\matrix{
+1 & 0 \cr
+-{\rho\over\sqrt{1-\rho^2}} & {1\over\sqrt{1-\rho^2}}
+}\right)$$
+Then
+$$\left(\matrix{X\cr Z}\right)
+=
+B\left(\matrix{X\cr Y}\right)
+=N(0,B\Sigma B^T)=
+N\left(
+\left(\matrix{0\cr 0}\right),
+\left(\matrix{
+1 & 0\cr
+0 & 1
+}\right)\right)
+$$
+Since the covariant terms are 0, $X$ and $Z$ are independent.
+
+\bigskip
+\noindent
+For $P(X>0,Y>0)$ we need $f_{XZ}(x,z)$.
+For the inverse transform we have
+\begin{eqnarray*}
+X&=&X\\
+Y&=&\sqrt{1-\rho^2}Z+\rho X
+\end{eqnarray*}
+Hence
+$$J_{T^{-1}}=\left(\matrix{
+\partial X/\partial X & \partial X/\partial Z\cr\cr
+\partial Y/\partial X & \partial Y/\partial Z
+}\right)
+=\left(\matrix{
+1 & 0\cr\cr
+\rho & \sqrt{1-\rho^2}
+}\right)
+$$
+Therefore
+$$|\det J_{T^{-1}}|=\sqrt{1-\rho^2}$$
+We have
+\begin{eqnarray*}
+f_{XZ}(x,z)&=&f(x,\sqrt{1-\rho^2}z+\rho x)\cdot\sqrt{1-\rho^2}\\
+&=&{1\over2\pi}\exp\left(-{x^2\over2}-{z^2\over2}\right)
+\end{eqnarray*}
+Since $Y=\sqrt{1-\rho^2}Z+\rho X$ we have
+$$P(X>0,Y>0)=P(X>0,Z>-\rho X/\sqrt{1-\rho^2})$$
+Changing to polar coordinates we have
+$$\alpha=\tan^{-1}{z\over x}
+=\tan^{-1}{-\rho x/\sqrt{1-\rho^2}\over x}
+=-\tan^{-1}{\rho\over\sqrt{1-\rho^2}}=-\sin^{-1}\rho$$
+Hence
+\begin{eqnarray*}
+P(X>0,Y>0)
+&=&{1\over2\pi}\int_\alpha^{\pi/2}
+\int_0^\infty
+\exp(-r^2/2)\,r\,dr\,d\theta\\
+&=&{1\over2\pi}
+\int_\alpha^{\pi/2}\left(-\exp(-r^2/2)\bigg|_0^\infty\right)
+\,d\theta\\
+&=&{1\over2\pi}\int_\alpha^{\pi/2}d\theta\\
+&=&{1\over2\pi}\left({\pi\over2}+\sin^{-1}\rho\right)\\
+&=&{1\over4}+{1\over2\pi}\sin^{-1}\rho
+\end{eqnarray*}

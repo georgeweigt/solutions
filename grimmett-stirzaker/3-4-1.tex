@@ -1,0 +1,73 @@
+\section*{3.4.1}
+A biased coin is tossed $n$ times, and heads shows with probability
+$p$ on each toss. A {\it run} is a sequence of throws which result
+in the same outcome, so that, for example, the sequence HHTHTTH
+contains five runs. Show that the expected number of runs is
+$1+2(n-1)p(1-p)$. Find the variance of the number of runs.
+
+\bigskip
+\noindent
+A transition from H to T or T to H is what terminates one run and
+begins another.
+The probability of a transition is the probability of H to T
+plus the probability of T to H.
+
+\bigskip
+\noindent
+Let $A_k$ be the event that there is a transition between toss
+numbers $k$ and $k+1$.
+Let $I_k$ be the indicator function of $A_k$.
+Then
+$$EI_k=P(A_k)=p(1-p)+(1-p)p=2p(1-p)$$
+Let $X$ be the observed number of runs.
+We count the first toss as the beginning of a run.
+Each toss thereafter has the chance of being a transition.
+Hence the expected number of runs is
+$$EX=E\left(1+\sum_{k=1}^{n-1}I_k\right)
+=1+\sum_{k=1}^{n-1}EI_k=1+2(n-1)p(1-p)$$
+
+\bigskip
+\noindent
+For the variance, Jan's trick of computing
+$\mathop{Var}(X-1)$
+allows us to just count the transitions.
+Hence
+\begin{eqnarray*}
+E(X-1)^2
+&=&E\left(\sum_{i=1}^{n-1}I_k\right)^2\\
+&=&E\left(\sum_{i=1}^{n-1}\sum_{j=1}^{n-1}I_iI_k\right)\\
+&=&\sum_{i=1}^{n-1}\sum_{j=1}^{n-1}P(A_iA_j)
+\end{eqnarray*}
+There are three kinds of intersections of $A_i$ and $A_j$.
+
+\bigskip
+\noindent
+Case 1: For $i=j$ we have
+$$P(A_iA_j)=P(A_i)=2p(1-p)$$
+In the double summation, the condition $i=j$ occurs $n-1$ times.
+
+\bigskip
+\noindent
+Case 2: For $i-j=\pm1$ we have
+$$P(A_iA_j)=P(HTH)+P(THT)=p^2(1-p)+p(1-p)^2=p(1-p)$$
+In the double summation, the condition $i-j=\pm1$
+occurs $2(n-2)$ times.
+
+\bigskip
+\noindent
+Case 3: For $|i-j|>1$ we have
+$$P(A_iA_j)=P(A_i)P(A_j)=4p^2(1-p)^2$$
+In the double summation, the condition $|i-j|>1$ occurs
+$(n-1)^2-(n-1)-2(n-2)$ times.
+
+\bigskip
+\noindent
+Hence
+$$E(X-1)^2=
+(n-1)2p(1-p)+2(n-2)p(1-p)+[(n-1)^2-(n-1)-2(n-2)]4p^2(1-p)^2$$
+Therefore
+\begin{eqnarray*}
+\mathop{Var}X
+&=&E(X-1)^2-(E(X-1))^2\\
+&=&(4n^2-20n+24)p^4+(-8n^2+40n-48)p^3+(4n^2-24n+30)p^2+(4n-6)p
+\end{eqnarray*}

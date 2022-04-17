@@ -1,0 +1,35 @@
+\section*{1.8.29}
+The event $A$ is said to be repelled by the event $B$ if
+$P(A\mid B)<P(A)$, and to be attracted by $B$ if $P(A\mid B)>P(A)$.
+Show that if $B$ attracts $A$, then $A$ attracts $B$, and $B^c$
+repels $A$. If $A$ attracts $B$, and $B$ attracts $C$, does
+$A$ attract $C$?
+
+\bigskip
+\noindent
+Let $B$ attract $A$. Then
+$$P(A\mid B)>P(A)$$
+Hence
+$${P(A\cap B)\over P(B)}>P(A)$$
+Consequently
+$${P(A\cap B)\over P(A)}>P(B)\eqno(1)$$
+from which it follows
+$$P(B\mid A)>P(B)$$
+hence $A$ attracts $B$.
+For $B^c$ we have
+$$P(A\cap B^c)=P(A)-P(A\cap B)$$
+hence
+$$P(A\mid B^c)={P(A)-P(A\cap B)\over1-P(B)}$$
+From (1) we obtain
+$$P(A\cap B)>P(A)P(B)$$
+hence
+$$P(A\cap B^c)<{P(A)-P(A)P(B)\over1-P(B)}=P(A)$$
+Therefore $B^c$ repels $A$.
+
+\bigskip
+\noindent
+For the final question, the answer is no by the following
+counterexample.
+If $A$ and $C$ are disjoint then
+$P(C\mid A)=0$ so $A$ does not attract $C$.
+

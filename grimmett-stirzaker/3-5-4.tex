@@ -1,0 +1,115 @@
+\section*{3.5.4}
+A population of $b$ animals has had a number $a$ of its members
+captured, marked, and released.
+Let $X$ be the number of animals it is necessary to recapture
+(without re-release) in order to obtain $m$ marked animals.
+Show that
+$$P(X=n)={a\over b}
+{a-1\choose m-1}
+{b-a\choose n-m}
+\Bigg/
+{b-1\choose n-1}
+$$
+and find $EX$.
+
+\bigskip
+\noindent
+Let us consider the concrete example of $m=2$ and $n=3$.
+There are two sequences of events that can occur.
+Sequence $A$: The first animal is marked, the second is
+unmarked, the third is marked.
+Sequence $B$: The first animal is unmarked and then the next
+two animals are marked.
+The probabilities for the two sequences are
+\begin{eqnarray*}
+P(A)&=&{a\over b}\times\left(1-{a-1\over b-1}\right)
+\times{a-1\over b-2}
+\\
+P(B)&=&\left(1-{a\over b}\right)\times{a\over b-1}
+\times{a-1\over b-2}
+\end{eqnarray*}
+Now let us use common denominators.
+\begin{eqnarray*}
+P(A)&=&{a\over b}\times{b-a\over b-1}
+\times{a-1\over b-2}
+\\
+P(B)&=&{b-a\over b}\times{a\over b-1}
+\times{a-1\over b-2}
+\end{eqnarray*}
+What we see is that $P(A)=P(B)$, the factors are just reordered.
+So what we can do is disregard the order and just consider the
+factors in the numerator and denominator independently.
+
+\bigskip
+\noindent
+In the numerator, we are going to have a factor $a$ for the first
+marked animal captured, $a-1$ for the second, and so on down to
+$a-m+1$ because $m$ animals are captured altogether.
+Hence in the numerator we will have the following product.
+%$$\prod_a^{a-m+1}={a!\over(a-m)!}$$
+$$a(a-1)(a-2)\cdots(a-m+1)={a!\over(a-m)!}$$
+Now let us consider the $n-m$ unmarked animals that are captured.
+In the numerator again, we are going to have a factor
+$b-a$ for the first
+unmarked animal captured, $b-a-1$ for the second, and so on down
+to $(b-a)-(n-m)+1$.
+%$$\prod_{b-a}^{b-a-n+m+1}={(b-a)!\over(b-a-n+m)!}$$
+$$(b-a)(b-a-1)(b-a-2)\cdots(b-a-n+m+1)={(b-a)!\over(b-a-n+m)!}$$
+In the denominator we are going to have a factor $b$ for the first
+animal captured, $b-1$ for the second, on so on down to $b-n+1$
+since $n$ animals are captured altogether.
+%$$\prod_b^{b-n+1}={b!\over (b-n)!}$$
+$$b(b-1)(b-2)\cdots(b-n+1)={b!\over (b-n)!}$$
+Finally, we are going to have a combinatorial factor to account
+for all of the sequences of $m$ tagged and $n-m$ untagged animals.
+Note that the $n$th capture is a tagged animal.
+Therefore the number of sequences is
+$${n-1\choose m-1}={(n-1)!\over(m-1)!\,(n-m)!}$$
+Putting it all together we have
+$$P(X=n)={a!\over(a-m)!}
+\times{(b-a)!\over(b-a-n+m)!}
+\times{(b-n)!\over b!}
+\times{(n-1)!\over(m-1)!\,(n-m)!}
+$$
+Factoring out an $a$ and $b$ we have
+$$P(X=n)={a\over b}
+\times{(a-1)!\over(a-m)!}
+\times{(b-a)!\over(b-a-n+m)!}
+\times{(b-n)!\over(b-1)!}
+\times{(n-1)!\over(m-1)!\,(n-m)!}
+$$
+Rearranging...
+$$P(X=n)={a\over b}
+\times{(a-1)!\over(m-1)!\,(a-m)!}
+\times{(b-a)!\over(n-m)!\,(b-a-n+m)!}
+\times{(n-1)!\,(b-n)!\over(b-1)!}
+$$
+Hence
+$$P(X=n)={a\over b}
+{a-1\choose m-1}
+{b-a\choose n-m}
+\Bigg/
+{b-1\choose n-1}
+$$
+To compute $EX$, the following trick can be used.
+$${n\choose k}={n\over k}{n-1\choose k-1}$$
+We have
+$$EX=\sum_{n=m}^b{na{a-1\choose m-1}{b-a\choose n-m}
+\over b{b-1\choose n-1}}
+=\sum_{n=m}^bm{{a\choose m}{b-a\choose n-m}\over{b\choose n}}$$
+Next, we can write the above as
+$$
+EX=m{b+1\over a+1}\left[\sum_{n=m}^b{a+1\over b+1}
+{{a\choose m}{b-a\choose n-m}\over{b\choose n}}\right]
+$$
+Finally, change the label $n$ to $n-1$ and balance all terms
+involving $n$.
+$$
+EX=m{b+1\over a+1}\left[\sum_{n=m+1}^{b+1}{a+1\over b+1}
+{{a\choose m}{b-a\choose n-m-1}\over{b\choose n-1}}\right]
+$$
+The term in brackets is a negative hypergeometric mass function
+hence the sum over all its probabilities is 1.
+Therefore
+$$EX=m{b+1\over a+1}$$
+

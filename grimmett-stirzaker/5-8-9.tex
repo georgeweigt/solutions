@@ -1,0 +1,25 @@
+\section*{5.8.9}
+(a) Find the characteristic function of
+$f(x)={1\over2}e^{-|x|}$ for $x\in\mathbb R$.
+
+\bigskip
+\noindent
+This is the Laplace density function with $\lambda=1$ hence
+$$\phi(t)={1\over t^2+1}$$
+
+\bigskip
+\noindent
+(b) Find the characteristic function of
+$f(x)={1\over2}|x|e^{-|x|}$ for $x\in\mathbb R$.
+
+\bigskip
+\noindent
+We have
+\begin{eqnarray*}
+\phi(t)&=&{1\over2}\int_{-\infty}^\infty e^{itx}
+|x|e^{-|x|}\,dx\\
+&=&-{1\over2}\int_{-\infty}^0e^{itx}xe^x\,dx
++{1\over2}\int_0^\infty e^{itx}xe^{-x}\,dx\\
+&=&-{1\over2}{1\over(t-i)^2}+{1\over2}{1\over(1-it)^2}\\
+&=&{1\over1-2it-t^2}
+\end{eqnarray*}

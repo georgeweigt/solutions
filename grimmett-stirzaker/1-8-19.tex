@@ -1,0 +1,120 @@
+\section*{1.8.19}
+(a) Daisy hears it?
+
+\bigskip
+\noindent
+There are 64 possible outcomes.
+Each outcome is a network with four nodes.
+Let
+\begin{eqnarray*}
+A_1&=&\hbox{the set of all outcomes with arc $AD$} \\
+A_2&=&\hbox{the set of all outcomes with arcs $AB$, $BD$, and not $AD$} \\
+A_3&=&\hbox{the set of all outcomes with arcs $AC$, $CD$, and not $AD$} \\
+A_4&=&\hbox{the set of one outcome with arcs $AB$, $BC$, and $CD$ only} \\
+A_5&=&\hbox{the set of one outcome with arcs $AC$, $BC$, and $BD$ only}
+\end{eqnarray*}
+Each arc has probability $(1-p)$ hence
+\begin{eqnarray*}
+P(A_1)&=&1-p \\
+P(A_2)&=&p(1-p)^2 \\
+P(A_3)&=&p(1-p)^2 \\
+P(A_4)&=&p^3(1-p)^3 \\
+P(A_5)&=&p^3(1-p)^3
+\end{eqnarray*}
+All of the intersections are empty sets except
+$$P(A_2\cap A_3)=p(1-p)^4$$
+This intersection corresponds to the set of networks
+with arcs $AB$, $AC$, $BD$, $CD$, and not $AD$.
+Let $H$ be the event that $D$ hears it.
+Then
+\begin{eqnarray*}
+P(H)&=&P(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \\
+&=&P(A_1)+P(A_2)+P(A_3)+P(A_4)+P(A_5)-P(A_2\cap A_3) \\
+&=&1-p+2p(1-p)^2+2p^3(1-p)^3-p(1-p)^4
+\end{eqnarray*}
+
+\bigskip
+\noindent
+(b) Daisy hears it if Anne and Betty have quarreled?
+
+\bigskip
+\noindent
+Let $B$ be the set of outcomes such that there is no arc $AB$.
+Note that $P(B)=p$.
+We have
+\begin{eqnarray*}
+P(B\cap A_1)&=&p(1-p) \\
+P(B\cap A_2)&=&p^2(1-p)^2 \\
+P(B\cap A_3)&=&0 \\
+P(B\cap A_4)&=&0 \\
+P(B\cap A_5)&=&p^3(1-p)^3
+\end{eqnarray*}
+Note that $B\cap A_5=A_5$ so $P(A_5)$ does not change.
+Hence
+\begin{eqnarray*}
+P(H\mid B)&=&{P(
+(B\cap A_1)\cup
+(B\cap A_2)\cup
+(B\cap A_5)
+\over P(B)} \\
+&=&1-p+p(1-p)^2+p^2(1-p)^3
+\end{eqnarray*}
+
+\bigskip
+\noindent
+(c) Daisy hears it if Betty and Chloe have quarreled?
+
+\bigskip
+\noindent
+Let $B$ be the set of outcomes such that there is no arc $BC$.
+Note that $P(B)=p$.
+We have
+\begin{eqnarray*}
+P(B\cap A_1)&=&p(1-p) \\
+P(B\cap A_2)&=&p^2(1-p)^2 \\
+P(B\cap A_3)&=&p^2(1-p)^2 \\
+P(B\cap A_4)&=&0 \\
+P(B\cap A_5)&=&0
+\end{eqnarray*}
+In addtition
+$$P((B\cap A_2)\cap(B\cap A_3))=p^2(1-p)^4$$
+This intersection corresponds to the set of all networks with paths
+$AB$, $AC$, $BD$, $CD$, and not $AD$ and not $BC$.
+Hence
+\begin{eqnarray*}
+P(H\mid B)&=&{P(
+(B\cap A_1)\cup
+(B\cap A_2)\cup
+(B\cap A_3)
+\over P(B)} \\
+&=&1-p+2p(1-p)^2-p(1-p)^4
+\end{eqnarray*}
+
+\bigskip
+\noindent
+(d) Daisy hears it if she has quarreled with Anne?
+
+\bigskip
+\noindent
+Let $B$ be the set of outcomes such that there is no arc $AD$.
+Note that $P(B)=p$.
+We have
+\begin{eqnarray*}
+P(B\cap A_1)&=&0 \\
+P(B\cap A_2)&=&p(1-p)^2 \\
+P(B\cap A_3)&=&p(1-p)^2 \\
+P(B\cap A_4)&=&p^3(1-p)^3 \\
+P(B\cap A_5)&=&p^3(1-p)^3
+\end{eqnarray*}
+In addition
+$$P((B\cap A_2)\cap(B\cap A_3))=p^2(1-p)^4$$
+Hence
+\begin{eqnarray*}
+P(H\mid B)&=&{P(
+(B\cap A_2)\cup
+(B\cap A_3)\cup
+(B\cap A_4)\cup
+(B\cap A_5)
+\over P(B)} \\
+&=&2(1-p)^2+2p^2(1-p)^3-(1-p)^4
+\end{eqnarray*}

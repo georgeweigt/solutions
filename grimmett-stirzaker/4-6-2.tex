@@ -1,0 +1,19 @@
+\section*{4.6.2}
+Show that the conditional expectation $\psi(X)=E(Y\mid X)$
+satisfies $E(\psi(X)g(X))=E(Yg(X))$, for any function $g$
+for which both expectations exist.
+
+\bigskip
+\noindent
+See lecture \#26. We have
+\begin{eqnarray*}
+E(\psi(X)g(X))
+&=&\int_{-\infty}^{\infty}
+E(Y\mid X=x)g(x)f_X(x)\,dx\\
+&=&\int_{-\infty}^\infty
+\left(\int_{-\infty}^\infty y{f_{XY}(x,y)\over f_X(x)}\,dy\right)
+g(x)f_X(x)\,dx\\
+&=&\int_{-\infty}^\infty\int_{-\infty}^\infty
+yg(x)f_{XY}(x,y)\,dx\,dy\\
+&=&E(Yg(X))
+\end{eqnarray*}

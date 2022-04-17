@@ -1,0 +1,57 @@
+\section*{1.2.4}
+Let $\mathcal F$ be a $\sigma$-field of subsets of $\Omega$ and suppose that $B\in\mathcal F$.
+Show that ${\mathcal G}=\{A\cap B:A\in{\mathcal F}\}$ is a $\sigma$-field of subsets of $B$.
+
+\bigskip
+\noindent
+Show that $\emptyset\in\mathcal G$.
+\begin{enumerate}
+\item Let $A=\emptyset$.
+\item Then $A\in\mathcal F$ and $A\cap B=\emptyset$.
+\item Hence $\emptyset\in\mathcal G$.
+\end{enumerate}
+
+\bigskip
+\noindent
+Show that if $B_1,B_2,\ldots\in\mathcal G$ then $\cup_{i=1}^\infty B_i\in\mathcal G$.
+\begin{enumerate}
+\item Let $B_1,B_2,\ldots\in\mathcal G$.
+\item By the definition of $\mathcal G$ there are corresponding $A_i\in\mathcal F$
+such that\break $A_i\cap B=B_i$.
+\item Because $\mathcal F$ is a $\sigma$-field there is an $A$ in $\mathcal F$ such that\
+$A=\cup_{i=1}^\infty A_i$.
+\item By the definition of $\mathcal G$ we have $A\cap B\in\mathcal G$.
+\item By the distributive law we have\hfill\break
+$A\cap B=(\cup_{i=1}^\infty A_i)\cap B=\cup_{i=1}^\infty(A_i\cap B)
+=\cup_{i=1}^\infty B_i$.
+\item Hence $\cup_{i=1}^\infty B_i\in\mathcal G$.
+\end{enumerate}
+
+\bigskip
+\noindent
+Show that if $C\in\mathcal G$ then $C^c\in\mathcal G$.
+\begin{enumerate}
+\item Let $C\in\mathcal G$.
+\item Then there is an $A\in\mathcal F$ such that $A\cap B=C$.
+\item Since $\mathcal F$ is a field we have $A^c\in\mathcal F$.
+\item Consequently $A^c\cap B\in\mathcal G$.
+\item Note that $C^c=B-C=B\cap(A\cap B)^c=B\cap(A^c\cup B^c)=B\cap A^c$.
+\item Therefore $C^c\in\mathcal G$.
+\end{enumerate}
+
+\bigskip
+\noindent
+Show that every $C\in\mathcal G$ is a subset of $B$.
+\begin{enumerate}
+\item Let $B\in\mathcal F$ and $C\in\mathcal G$.
+\item By the definition of $\mathcal G$ we have $C=A\cap B$ for some
+$A\in\mathcal F$.
+\item It follows that for every $\omega\in C$ we have $\omega\in B$,
+hence $C\subseteq B$.
+\item Hence every $C\in\mathcal G$ is a subset of $B$.
+\end{enumerate}
+
+\bigskip
+\noindent
+Therefore $\mathcal G$ is a $\sigma$-field and
+$A\subseteq B$ for every $A\in\mathcal G$.

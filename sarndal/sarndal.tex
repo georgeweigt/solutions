@@ -1,0 +1,2164 @@
+\documentclass[12pt]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amssymb,amsmath,bm,mathrsfs}
+\usepackage{graphicx}
+
+\begin{document}
+
+\begin{center}
+STAT-605 Homework
+\end{center}
+
+\section*{2.1}
+(a) Determine the first-order inclusion probabilities.
+
+\begin{align*}
+\pi_1=\pi_8&={1\over 8}+5\times{1\over8}\times{1\over5}+{1\over8}
+\times{1\over6}={13\over48}=0.271\\
+\\
+\pi_2=\pi_7&={1\over8}+4\times{1\over8}\times{1\over5}+{1\over8}
+\times{1\over6}={59\over240}=0.246\\
+\\
+\pi_3=\pi_4=\pi_5=\pi_6&={1\over8}+3\times{1\over8}\times{1\over5}
++2\times{1\over8}\times{1\over6}={29\over120}=0.242
+\end{align*}
+
+(b) Determine the second-order inclusion probabilities.
+Is the design induced by the proposed sampling scheme measurable?
+
+We have
+\begin{align*}
+\pi_{kk}&=\pi_k\\
+\pi_{kl}&=0&\hbox{for $|k-l|=1$}\\
+\pi_{18}=\pi_{81}&={1\over8}\times{1\over6}+{1\over8}\times{1\over6}={1\over24}\\
+\pi_{1k}=\pi_{k1}&={1\over8}\times{1\over6}+{1\over8}\times
+{1\over5}={11\over240}&3\le k\le7\\
+\pi_{8k}=\pi_{k8}&={1\over8}\times{1\over6}+{1\over8}\times
+{1\over5}={11\over240}&2\le k\le6\\
+\pi_{kl}=\pi_{lk}&={1\over8}\times{1\over5}+{1\over8}\times{1\over5}={1\over20}&
+\hbox{otherwise}
+\end{align*}
+Hence
+\[
+\{\pi_{kl}\}=
+\left(
+\begin{array}{cccccccc}
+ 0.2708 &  0.0000 &  0.0458 &  0.0458 &  0.0458 &  0.0458 &  0.0458 &  0.0417\\
+ 0.0000 &  0.2458 &  0.0000 &  0.0500 &  0.0500 &  0.0500 &  0.0500 &  0.0458\\
+ 0.0458 &  0.0000 &  0.2417 &  0.0000 &  0.0500 &  0.0500 &  0.0500 &  0.0458\\
+ 0.0458 &  0.0500 &  0.0000 &  0.2417 &  0.0000 &  0.0500 &  0.0500 &  0.0458\\
+ 0.0458 &  0.0500 &  0.0500 &  0.0000 &  0.2417 &  0.0000 &  0.0500 &  0.0458\\
+ 0.0458 &  0.0500 &  0.0500 &  0.0500 &  0.0000 &  0.2417 &  0.0000 &  0.0458\\
+ 0.0458 &  0.0500 &  0.0500 &  0.0500 &  0.0500 &  0.0000 &  0.2458 &  0.0000\\
+ 0.0417 &  0.0458 &  0.0458 &  0.0458 &  0.0458 &  0.0458 &  0.0000 &  0.2708\\
+\end{array}\right)
+\]
+The design is not measurable because not all $\pi_{kl}>0$.
+
+%\newpage
+
+(c) Determine the covariances of the sample membership indicators.
+
+We have $\mathop{\rm Cov}(I_k,I_l)=\Delta_{kl}
+=\pi_{kl}-\pi_k\pi_l$ hence
+\[
+\{\mathop{\rm Cov}(I_k,I_l)\}=
+\left(
+\begin{array}{rrrrrrrr}
+ 0.1975 &  -0.0666 &  -0.0196 &  -0.0196 &  -0.0196 &  -0.0196 &  -0.0207 &  -0.0317\\
+ -0.0666 &  0.1854 &  -0.0594 &  -0.0094 &  -0.0094 &  -0.0094 &  -0.0104 &  -0.0207\\
+ -0.0196 &  -0.0594 &  0.1833 &  -0.0584 &  -0.0084 &  -0.0084 &  -0.0094 &  -0.0196\\
+ -0.0196 &  -0.0094 &  -0.0584 &  0.1833 &  -0.0584 &  -0.0084 &  -0.0094 &  -0.0196\\
+ -0.0196 &  -0.0094 &  -0.0084 &  -0.0584 &  0.1833 &  -0.0584 &  -0.0094 &  -0.0196\\
+ -0.0196 &  -0.0094 &  -0.0084 &  -0.0084 &  -0.0584 &  0.1833 &  -0.0594 &  -0.0196\\
+ -0.0207 &  -0.0104 &  -0.0094 &  -0.0094 &  -0.0094 &  -0.0594 &  0.1854 &  -0.0666\\
+ -0.0317 &  -0.0207 &  -0.0196 &  -0.0196 &  -0.0196 &  -0.0196 &  -0.0666 &  0.1975\\
+\end{array}
+\right)
+\]
+
+(d) Verify that Result 2.6.2 holds in the present application.
+
+For this design $n=2$.
+\begin{align*}
+\sum_U\pi_k&=2\times{13\over48}+2\times{59\over240}
++4\times{29/120}=2\quad\hbox{which is indeed $n$}
+\\
+\underset{k\ne l}{\sum\sum}\pi_{kl}&=2\quad
+\hbox{which is indeed $n(n-1)$}
+\\
+\sum_{l\ne1}\pi_{1l}&=0.271\quad\hbox{which is indeed $(n-1)\pi_1$}\\
+\sum_{l\ne2}\pi_{2l}&=0.246\quad\hbox{which is indeed $(n-1)\pi_2$}\\
+\sum_{l\ne3}\pi_{3l}&=0.242\quad\hbox{which is indeed $(n-1)\pi_3$}\\
+\sum_{l\ne4}\pi_{4l}&=0.242\quad\hbox{which is indeed $(n-1)\pi_4$}\\
+\sum_{l\ne5}\pi_{5l}&=0.242\quad\hbox{which is indeed $(n-1)\pi_5$}\\
+\sum_{l\ne6}\pi_{6l}&=0.242\quad\hbox{which is indeed $(n-1)\pi_6$}\\
+\sum_{l\ne7}\pi_{7l}&=0.246\quad\hbox{which is indeed $(n-1)\pi_7$}\\
+\sum_{l\ne8}\pi_{8l}&=0.271\quad\hbox{which is indeed $(n-1)\pi_8$}
+\end{align*}
+
+The following C code was used to generate the above tables and results.
+
+\begin{verbatim}
+	/* calculate 2nd order inclusion probabilities */
+
+	for (i = 0; i < 8; i++)
+		for (j = 0; j < 8; j++) {
+			if (abs(i - j) < 2)
+				continue;
+			if (i == 0 && j == 7 || i == 7 && j == 0)
+				p[i][j] = 1.0 / 24.0;
+			else if (i == 0 || i == 7 || j == 0 || j == 7)
+				p[i][j] = 11.0 / 240.0;
+			else
+				p[i][j] = 1.0 / 20.0;
+		}
+
+	p[0][0] = 13.0 / 48.0;
+	p[1][1] = 59.0 / 240.0;
+	p[2][2] = 29.0 / 120.0;
+	p[3][3] = 29.0 / 120.0;
+	p[4][4] = 29.0 / 120.0;
+	p[5][5] = 29.0 / 120.0;
+	p[6][6] = 59.0 / 240.0;
+	p[7][7] = 13.0 / 48.0;
+
+	printf("covariance of indicators\n");
+
+	for (i = 0; i < 8; i++)
+		for (j = 0; j < 8; j++)
+			cov[i][j] = p[i][j] - p[i][i] * p[j][j];
+
+	printf("2nd property of Result 2.6.2\n");
+
+	sum = 0.0;
+	for (i = 0; i < 8; i++)
+		for (j = 0; j < 8; j++)
+			if (i != j)
+				sum += p[i][j];
+	printf("%g\n", sum);
+
+	printf("3rd property of Result 2.62\n");
+
+	for (i = 0; i < 8; i++) {
+		sum = 0.0;
+		for (j = 0; j < 8; j++)
+			if (i != j)
+				sum += p[i][j];
+		printf("%g\n", sum);
+	}
+\end{verbatim}
+
+%\newpage
+
+\section*{2.4}
+We have $n=300$ and $N=800$.
+The first and second order inclusion probabilities are
+\[
+E(I_k)=\pi_k={n\over N}={3\over 8}\qquad E(I_kI_l)=\pi_{kl}={n(n-1)\over N(N-1)}={897\over 6392},\quad k\ne l
+\]
+For the expectation we have
+\begin{align*}
+E(n_s)&=E\left(\sum_{k=1}^{800}n_kI_k\right)\\
+&=\sum_{k=1}^{800}n_kE(I_k)\\
+%&=\sum_{k=1}^{800}n_k\pi_k\\
+&={3\over8}\sum_{k=1}^{800}n_k\\
+&={3\over8}\times1600\\
+&=600
+\end{align*}
+
+For the variance we have
+\begin{align*}
+\mathop{\rm Var}(n_s)&=\mathop{\rm Var}\left(\sum_{k=1}^{800}n_kI_k\right)\\
+&=\sum_{k=1}^{800}\sum_{l=1}^{800}\mathop{\rm Cov}(n_kI_k,n_lI_l)\\
+&=\sum_{k=1}^{800}\sum_{l=1}^{800}n_kn_l\mathop{\rm Cov}(I_k,I_l)\\
+&=\sum_{k=1}^{800}\sum_{l=1}^{800}n_kn_l(\pi_{kl}-\pi_k\pi_l)\\
+&=140.8
+\end{align*}
+
+The following R code was used to calculate the variance.
+\begin{verbatim}
+n = 300
+N = 800
+nk = c(rep(1,250),rep(2,350),rep(3,150),rep(4,50))
+nknl = nk %o% nk
+Cov = matrix(1,800,800) * n * (n - 1) / N / (N - 1)
+diag(Cov) = n / N
+Cov = Cov - (n / N) ^ 2
+Var = sum(nknl * Cov)
+print(Var)
+\end{verbatim}
+
+%\newpage
+
+\section*{2.9}
+The key is to write $E_{BE}(S^2_{ys})$ as a sum of conditional
+expectations.
+\begin{align*}
+E_{BE}(S^2_{ys})&=\sum_{n=2}^NE_{SI}(S^2_{ys}\mid n_s=n)P(n_s=n)\\
+&=
+S^2_{yU}\sum_{n=2}^NP(n_s=n)\qquad
+\hbox{This step is by exercise 2.8, proved below.}\\
+&=
+S^2_{yU}\bigg[1-P(n_s=0)-P(n_s=1)\bigg]\\
+&=
+S^2_{yU}\bigg[1-(1-\pi)^N-N\pi(1-\pi)^{N-1}\bigg]\\
+\end{align*}
+Therefore
+\begin{align*}
+{E_{BE}(S^2_{ys})-S^2_{yU}\over S^2_{yU}}
+&={E_{BE}(S^2_{ys})\over S^2_{yU}}-1\\
+&=
+1-(1-\pi)^N-N\pi(1-\pi)^{N-1}-1\\
+&=
+-(1-\pi)^{N-1}(1-\pi+N\pi)\\
+&=
+-(1-\pi)^{N-1}[1+(N-1)\pi]
+\end{align*}
+Proof that $E_{SI}(S^2_{ys})=S^2_{yU}$.
+%First a few preliminaries. We have
+%\begin{align*}
+%S^2_{ys}&={1\over n-1}\sum_s(y_k-\bar y_s)^2\\
+%&={1\over2n(n-1)}\underset{s}{\sum\sum}(y_k-y_l)^2\\
+%&={1\over2n(n-1)}\underset{U}{\sum\sum}(y_k-y_l)^2I_kI_l
+%\end{align*}
+%and
+%\begin{align*}
+%S^2_{yU}&={1\over N-1}\sum_U(y_k-\bar y_U)^2\\
+%&={1\over 2N(N-1)}\underset{U}{\sum\sum}(y_k-y_l)^2
+%\end{align*}
+%Recall that for the SI design we have
+%\[
+%\pi_{kl}={n(n-1)\over N(N-1)}
+%\]
+%Now we can put it all together.
+\begin{align*}
+E_{SI}(S^2_{ys})&=E\left[
+{1\over2n(n-1)}\underset{U}{\sum\sum}(y_k-y_l)^2I_kI_l
+\right]\\
+&=
+{1\over2n(n-1)}\underset{U}{\sum\sum}(y_k-y_l)^2E(I_kI_l)\\
+&=
+{1\over2n(n-1)}\underset{U}{\sum\sum}(y_k-y_l)^2\pi_{kl}\\
+&=
+{1\over2n(n-1)}{n(n-1)\over N(N-1)}\underset{U}{\sum\sum}(y_k-y_l)^2\\
+&=
+{1\over2N(N-1)}\underset{U}{\sum\sum}(y_k-y_l)^2\\
+&=S^2_{yU}
+\end{align*}
+
+%\newpage
+
+\section*{2.}
+Recall that $X=4,6,6,20$ acres of land and $Y=1,3,5,15$ acres or corn.
+
+(a) For $\pi_k\propto 1+0.5x_k$ we have
+\[
+c(1+0.5\cdot4)+c(1+0.5\cdot6)+c(1+0.5\cdot6)=1
+\]
+hence $c={1\over11}$ and the first-order inclusion probabilities
+are
+\[
+\pi_1={3\over11}\quad\pi_2={4\over11}\quad\pi_3={4\over11}
+\quad\pi_4=1
+\]
+The HT estimate of total acres of corn is
+\[
+\widehat t_\pi=\sum_{k\in U}{y_kI_k\over\pi_k}
+\]
+hence
+
+\begin{center}
+\begin{tabular}{ccccc}
+Sample & Measured & $\widehat t_\pi$ (in class) & $\widehat t_\pi$ (alternate)\\
+\hline
+1, 4 & 1, 15 & 18 & 18.67 & $=1\cdot{11\over3}+15$\\
+2, 4 & 3, 15 & 24 & 23.25 & $=3\cdot{11\over4}+15$\\
+3, 4 & 5, 15 & 30 & 28.75 & $=5\cdot{11\over4}+15$
+\end{tabular}
+\end{center}
+
+\begin{center}
+%\includegraphics[scale=0.5]{Rplot-2.pdf}
+\end{center}
+
+\begin{verbatim}
+# R code for the above plot
+plot(c(18,24,30),c(1/3,1/3,1/3),ylab="Probability",xlab="Acres of Corn",pch=23)
+points(c(18.67,23.25,28.75),c(3/11,4/11,4/11),pch=19)
+legend("topleft",c("In class","Alternate"),pch=c(23,19))
+title("Distribution of HT Estimators")
+\end{verbatim}
+
+%\newpage
+(b) Show directly from the randomization distribution that the HT
+estimator is unbiased under the alternative design.
+
+\[
+E(\widehat t_\pi)=
+{3\over11}\cdot18.67
++{4\over11}\cdot23.25
++{4\over11}\cdot28.75
+=24
+\]
+hence the estimator is unbiased because $\sum Y=1+3+5+15=24$.
+
+(c) Compute the design variance of the HT estimator under the
+alternative design directly from the randomization distribution.
+
+\[
+E(\widehat t_\pi^2)=
+{3\over11}\cdot18.67^2
++{4\over11}\cdot23.25^2
++{4\over11}\cdot28.75^2
+=592.17
+\]
+\[
+\mathop{\rm Var}(\widehat t_\pi)
+=E(\widehat t_\pi^2)-[E(\widehat t_\pi)]^2
+=592.17-24^2=16.17
+\]
+
+(d) For the alternative design write down all of the second-order
+inclusion probabilities $\{\pi_{kl}\}$ in a $4\times4$ table
+and write down all of the design covariances $\{\Delta_{kl}\}$
+in a $4\times4$ table.
+
+\[
+\{\pi_{kl}\}=
+\begin{pmatrix}
+{3\over11} & 0 & 0 & {3\over11}\\ \\
+0 & {4\over11} & 0 & {4\over11}\\ \\
+0 & 0 & {4\over11} & {4\over11}\\ \\
+{3\over11} & {4\over11} & {4\over11} & 1
+\end{pmatrix}
+\]
+
+\[
+\{\Delta_{kl}\}
+=\{\pi_{kl}\}-\{\pi_k\pi_l\}=\left(\begin{array}{rrrr}
+  0.19834711 &-0.09917355 &-0.09917355    &0.00000000\\
+ -0.09917355  &0.23140496 &-0.13223140    &0.00000000\\
+ -0.09917355 &-0.13223140  &0.23140496    &0.00000000\\
+  0.00000000  &0.00000000  &0.00000000    &0.00000000
+\end{array}\right)
+\]
+
+\begin{verbatim}
+# R code for covariance table
+pi.kl = rbind(c(3/11,0,0,3/11),c(0,4/11,0,4/11),c(0,0,4/11,4/11),c(3/11,4/11,4/11,1))
+pi.k = c(3/11,4/11,4/11,1)
+Delta = pi.kl - pi.k %o% pi.k
+print(Delta)
+\end{verbatim}
+
+%\newpage
+
+(e) Use the design covariances computed above and either of the forms
+of $V_p(\widehat t_\pi)$ to calculate the design variance of the
+HT estimator under the alternative design.
+Compare to (c) and compare to the design variance of HT under
+the original in-class design.
+
+\[
+V_p(\widehat t_\pi)=\underset{k, l\in U}{\sum\sum}
+\Delta_{kl}{y_k\over\pi_k}{y_l\over\pi_l}=16.17
+\]
+
+\begin{verbatim}
+# R code for the above calculation
+y = c(1,3,5,15)
+pi.k = c(3/11,4/11,4/11,1)
+yp = y / pi.k
+V = sum(Delta * yp %o% yp)
+print(V)
+\end{verbatim}
+
+Another way to compute the variance:
+
+\[
+V_p(\widehat t_\pi)=\underset{k,l\in U}{\sum\sum}
+\left({\pi_{kl}\over\pi_k\pi_l}-1\right)y_ky_l=16.17
+\]
+
+\begin{verbatim}
+# R code for the above calculation
+pi.k = c(3/11,4/11,4/11,1)
+pi.kl = rbind(c(3/11,0,0,3/11),c(0,4/11,0,4/11),c(0,0,4/11,4/11),c(3/11,4/11,4/11,1))
+y = c(1,3,5,15)
+p = pi.kl / (pi.k %o% pi.k) - 1
+V = sum(p * (y %o% y))
+print(V)
+\end{verbatim}
+
+For the original in-class design:
+
+\[
+V_p(\widehat t_\pi)=\underset{k,l\in U}{\sum\sum}
+\left({\pi_{kl}\over\pi_k\pi_l}-1\right)y_ky_l=24
+\]
+
+\begin{verbatim}
+# R code for the above calculation
+pi.k = c(1/3,1/3,1/3,1)
+pi.kl = rbind(c(1/3,0,0,1/3),c(0,1/3,0,1/3),c(0,0,1/3,1/3),c(1/3,1/3,1/3,1))
+y = c(1,3,5,15)
+p = pi.kl / (pi.k %o% pi.k) - 1
+V = sum(p * (y %o% y))
+print(V)
+\end{verbatim}
+
+Check using the discrete distribution.
+
+\[
+V_p(\widehat t_\pi)=
+{1\over3}\cdot18^2+{1\over3}\cdot24^2+{1\over3}\cdot30^2
+-24^2=600-576=24
+\]
+
+Comparisons:
+The result 16.17 matches (c) exactly.
+The variance of the alternate design is less than
+the in-class design.
+
+%\newpage
+
+\section*{3.}
+(a) True values of total population and average revenue using the MEANS procedure.
+\begin{verbatim}
+proc means data = mu284 sum;
+var P85;
+run;                                    
+                              Analysis Variable : P85
+
+                                             Sum
+                                    ------------
+                                         8339.00
+                                    ------------
+
+proc means data = mu284 mean stddev stderr;
+var RMT85;
+run;                           
+                             Analysis Variable : RMT85
+                             
+                           Mean         Std Dev       Std Error
+                    --------------------------------------------
+                     245.0880282     596.3325394      35.3858260
+                    --------------------------------------------
+\end{verbatim}
+
+(b) Estimates of total population and average revenue from sample using the SURVEYMEANS procedure.
+\begin{verbatim}
+proc surveyselect data = mu284 method = srs n = 90 seed = 2007 out = sample1;
+run;
+data sample;
+set sample1;
+w = 284/90;
+run;
+
+proc surveymeans data = sample rate = 0.3169014085 sum;
+var P85;
+weight w;
+run;
+                      Variable             Sum         Std Dev
+                      ----------------------------------------
+                      P85          7084.222222      641.342070
+                      ----------------------------------------
+
+proc surveymeans data = sample rate = 0.3169014085 mean;
+var RMT85;
+run;
+                                                     Std Error
+                      Variable            Mean         of Mean
+                      ----------------------------------------
+                      RMT85         188.900000       18.655218
+                      ----------------------------------------
+\end{verbatim}
+
+(c) Compare estimated and actual standard errors.
+
+\begin{center}
+\begin{tabular}{|l|r|r|}
+\hline
+& Standard Deviation & Standard Error of\\
+& of Total Population & Average Revenue\\
+\hline
+Actual & 0.00 & 35.39\\
+Estimator & 641.34 & 18.66\\
+\hline
+\end{tabular}
+\end{center}
+
+(d) The true value of the total population is 8339 which falls within the confidence interval.
+\begin{verbatim}
+proc surveymeans data = sample rate = 0.3169014085 clsum;
+var P85;
+weight w;
+run;
+                         Variable        95% CL for Sum
+                          ---------------------------------
+                          P85         5809.88919 8358.55525
+                          ---------------------------------
+\end{verbatim}
+
+The true value of the average revenue is 245 which falls outside of the confidence interval.
+\begin{verbatim}
+proc surveymeans data = sample rate = 0.3169014085 clm;
+var RMT85;
+run;
+                          Variable       95% CL for Mean
+                          ---------------------------------
+                          RMT85       151.832479 225.967521
+                          ---------------------------------
+\end{verbatim}
+
+
+\section*{3.10}
+(a) Compute the standard error of the $\pi$ estimator for each ordering.
+\[
+STDERR=\sqrt{V_{SY}(\hat t_\pi)}
+=
+\left[a\sum_{r=1}^at_{s_r}^2-t^2\right]^{1/2}
+\]
+\begin{align*}
+O_1:\quad STDERR&=\big[10\cdot286087326-51874^2\big]^{1/2}=13036.9\\
+O_2:\quad STDERR&=\big[10\cdot272064230-51874^2\big]^{1/2}=5452.6\\
+O_3:\quad STDERR&=\big[10\cdot270214732-51874^2\big]^{1/2}=3351.9
+\end{align*}
+
+\bigskip
+
+(b) Compute that standard error of the $\pi$ estimator under the SI design
+with $n=28$.
+\[
+SE=\sqrt{V_{SI}(\hat t_\pi)}
+=\left[N^2\left({1\over n}-{1\over N}\right)S_{yU}^2\right]^{1/2}
+=\left[280^2\times\left({1\over28}-{1\over280}\right)\times35932\right]^{1/2}
+=9515.7
+\]
+
+(c) Compute the homogeneity measure $\delta$ for each of the three orderings,
+and compute $\delta_{\rm min}$ as defined in section 3.4.
+
+We have
+\[
+SST=(N-1)S_{yU}^2=279\cdot35932=10025028
+\]
+\[
+\delta=1-{N-1\over N-a}\cdot{SST-SSB\over SST}
+=1-{279\over270}\cdot{10025028-SSB\over10025028}
+\]
+
+\begin{center}
+\begin{tabular}{|c|r|r|}
+\hline
+Order & $SSB=V_{SY}(\hat t_\pi)/N$ & $\delta$\\
+\hline
+1 & $607005$ & $0.02923$\\
+2 & $106180$ & $-0.02239$\\
+3 & $40127$ & $-0.02920$\\
+\hline
+\end{tabular}
+\end{center}
+
+\[
+\delta_{\rm min}=-{a-1\over N-a}=-{10-1\over280-10}=-0.03333
+\]
+
+%\newpage
+
+\section*{3.14}
+(a) Compute an unbiased estimate of the total of P85 for this population of size four.
+
+We have $y_k$ from P85 and $x_k$ from P75.
+
+\begin{center}
+\begin{tabular}{|r|r|r|}
+\hline
+$k$ & $y_k$ & $x_k$\\
+\hline
+16 & 653 & 671\\
+137 & 424 & 446\\
+114 & 229 & 247\\
+29 & 153 & 138\\
+\hline
+\end{tabular}
+\end{center}
+
+\[
+T_N=\sum_U x_k=671+446+247+138=1502
+\]
+%From equation 3.6.7 on p.\ 92 we have
+\[
+\pi_{16}=2\cdot{x_{16}\over T_N}=2\cdot{671\over1502}=0.8935
+\]
+\[
+\pi_{114}=2\cdot{x_{114}\over T_N}=2\cdot{247\over1502}=0.3289
+\]
+From p.\ 93 the estimate is
+\[
+\hat t_\pi=\sum_s{y_k\over\pi_k}={653\over0.8935}+{229\over0.3289}
+=1427
+\]
+
+(b) Compute an unbiased estimate of the variance. Also, compute the associated
+$cve$.
+
+From p.\ 92 we have
+\[
+c_k={x_k(T_N-x_k)\over T_N(T_N-2x_k)}=2.32, 0.514, 0.205, 0.102
+\]
+\[
+\sum_Uc_k=3.141
+\]
+\[
+\pi_{16,114}={2x_{16}x_{114}\over T_N\sum_U c_k}
+{T_N-x_{16}-x_{114}\over(T_N-2x_{16})(T_N-2x_{114})}=0.2544
+\]
+An unbiased estimate of the variance is
+\[
+\widehat V(\hat t_\pi)=-{\pi_{16,114}-\pi_{16}\pi_{114}\over\pi_{16,114}}
+\left({y_{16}\over\pi_{16}}-{y_{114}\over\pi_{114}}\right)^2=185.5
+\]
+The associated $cve$ (estimated coefficient of variation) from equation 2.7.4 on
+p.\ 42 is
+\[
+cve={\sqrt{\widehat V(\hat t_\pi)}\over\hat t_\pi}={\sqrt{185.5}\over1427}=0.009544
+\]
+
+%\newpage
+
+\section*{3.20}
+We have
+\begin{align*}
+E_{SY}(\widehat V)&=\sum_{r=1}^aE_{SY}(\widehat V\mid s=s_r)P(s=s_r)\\
+&=
+{1\over a}\sum_{r=1}^a\left(
+\underset{k,l\in s_r}{\sum\sum}
+{\pi_{kl}-\pi_k\pi_l\over\pi_{kl}}{y_k\over\pi_k}{y_l\over\pi_l}\right)\\
+&=
+{1\over a}\sum_{r=1}^a\left(
+\underset{k,l\in s_r}{\sum\sum}
+{a^{-1}-a^{-1}a^{-1}\over a^{-1}}
+{y_k\over a^{-1}}
+{y_l\over a^{-1}}\right)\\
+&=(a-1)\sum_{r=1}^a\left(\underset{k,l\in s_r}{\sum\sum}y_ky_l\right)\\
+&=(a-1)\sum_{r=1}^at_{s_r}^2
+\end{align*}
+Therefore
+\begin{align*}
+E_{SY}(\widehat V)-V_{SY}(\hat t_\pi)
+&=
+(a-1)\sum_{r=1}^at_{s_r}^2-\left(a\sum_{r=1}^at_{s_r}^2-t^2\right)\\
+&=
+t^2-\sum_{r=1}^at_{s_r}^2\\
+&=
+\left(\sum_{r=1}^at_{s_r}\right)^2-\sum_{r=1}^at_{s_r}^2\\
+&=
+\sum_{r=1}^a\sum_{r'=1}^at_{s_r}t_{s_{r'}}-\sum_{r=1}^at_{s_r}t_{s_r}\\
+&=
+\underset{r\ne r'}{\sum\sum}t_{s_r}t_{s_{r'}}
+\end{align*}
+
+%\newpage
+
+\section*{Appendix}
+
+Below is a one page excerpt of the R code for Exercise 3.10.
+
+\begin{verbatim}
+rm(list=ls(all=TRUE))
+
+DATA = read.table("mu284.txt",header=T)
+
+# Remove the four largest municipalities.
+p = order(DATA$P85,decreasing=TRUE)[1:4]
+DATA = DATA[-p,]
+
+rmt85 = DATA$RMT85
+a = 10
+s = 10 * (0:27)
+
+# O1: Appendix ordering
+
+tvec = c(
+sum(rmt85[s + 1]),
+sum(rmt85[s + 2]),
+sum(rmt85[s + 3]),
+sum(rmt85[s + 4]),
+sum(rmt85[s + 5]),
+sum(rmt85[s + 6]),
+sum(rmt85[s + 7]),
+sum(rmt85[s + 8]),
+sum(rmt85[s + 9]),
+sum(rmt85[s + 10]))
+
+print(tvec)
+print(sum(tvec))
+print(sum(tvec^2))
+
+t = sum(tvec)
+tbar = sum(tvec) / a
+
+V = a * sum(tvec^2) - t^2
+SE = sqrt(V)
+print(SE)
+V = a * sum((tvec - tbar)^2)
+SE = sqrt(V)
+print(SE)
+V1 = V
+\end{verbatim}
+
+
+\section*{3.15}
+First, a few preliminaries.
+The following statistics will be needed to determine the sample allocations.
+\[
+S_{xU_h}^2={1\over N_h-1}\sum_{U_h}x_k^2-{1\over N_h(N_h-1)}
+\left(\sum_{U_h}x_k\right)^2
+\]
+
+\begin{center}
+\begin{tabular}{|c|r|r|r|r|}
+\hline
+$h$ & $N_h$ & $\sum_{U_h}x_k$ & $\sum_{U_h}x_k^2$ & $S_{xU_h}$\\
+\hline
+1 & 44 & 1,518 & 52,764 & 3.023\\
+2 & 168 & 7,524 & 339,344 & 3.772\\
+3 & 56 & 3,198 & 184,168 & 5.290\\
+4 & 16 & 1,260 & 100,016 & 7.262\\
+\hline
+\end{tabular}
+\end{center}
+
+\[
+N=\sum_{h=1}^HN_h=284\qquad
+\sum_{h=1}^HN_hS_{xU_h}=1179\qquad
+\sum_Ux_k=13500
+\]
+
+(a) Allocate a total sample size of $n=40$.
+
+\begin{center}
+\begin{tabular}{|c|r|r|r|}
+\hline
+& Proportional Allocation & $x$-Optimal Allocation &
+Allocation Prop. to $x$-Total\\
+$h$ & $n_h=n\cdot N_h/N$ &
+$n_h=nN_hS_{xU_h}\big/\sum_{h=1}^HN_hS_{xU_h}$ &
+$n_h=n\sum_{U_h}x_k\big/\sum_Ux_k$\\
+\hline
+1 & 6 & 5 & 4\\
+2 & 24 & 21 & 23\\
+3 & 8 & 10 & 9\\
+4 & 2 & 4 & 4\\
+\hline
+\end{tabular}
+\end{center}
+
+(b) Compare the variance of an SI design to the
+variances of STSI for the three allocation methods.
+\[
+V_{SI}(\hat t_\pi)=N^2\left({1\over n}-{1\over N}\right)S_{yU}^2=91059
+\qquad(n=40,\,N=284,\,S_{yU}^2=52.56222)
+\]
+\[
+V_{STSI}(\hat t_\pi)=\sum_{h=1}^HN_h^2\left(
+{1\over n_h}-{1\over N_h}\right)S_{yU_h}^2
+\]
+
+\begin{center}
+\begin{tabular}{|l|r|}
+\hline
+Allocation & $V_{STSI}(\hat t_\pi)$ \\
+\hline
+Proportional & 44093\\
+$x$-Optimal & 45229\\
+$x$-Total & 45354\\
+\hline
+\end{tabular}
+\end{center}
+
+$V_{SI}(\hat t_\pi)=91059$ is higher than STSI for all allocation methods.
+
+%\newpage
+
+(i) SI sample of size 30 from MU284.
+
+\begin{verbatim}
+data mu284;
+w = 284/30;
+infile 'c:\sas\mu284b.txt';
+input LABEL   P85   P75   RMT85   CS82   SS82   S82   ME84   REV84   REG   CL;
+if S82 le 40 then STRATUM = 1;
+else if S82 le 50 then STRATUM = 2;
+else if S82 le 70 then STRATUM = 3;
+else STRATUM = 4;
+run;
+
+proc surveyselect data = mu284 method = srs n = 30 seed = 222007 out = sample;
+run;
+
+proc surveymeans data = sample rate = .1056338028 sum varsum clsum;
+var SS82;
+weight w;
+run;
+
+  Variable             Sum         Std Dev      Var of Sum        95% CL for Sum
+  ---------------------------------------------------------------------------------
+  SS82         6560.400000      379.907937          144330    5783.40103 7337.39897
+  ---------------------------------------------------------------------------------
+\end{verbatim}
+
+(ii) STSI sample size of 30 with proportional allocation.
+
+\begin{verbatim}
+proc sort data = mu284;
+by S82;
+run;
+
+proc surveyselect data = mu284 method = srs n = 30 seed = 222007 out = sample;
+strata STRATUM / alloc = prop;
+run;
+
+proc surveymeans data = sample rate = .1056338028 sum varsum clsum;
+var SS82;
+weight samplingweight;
+run;
+
+  Variable             Sum         Std Dev      Var of Sum        95% CL for Sum
+  ---------------------------------------------------------------------------------
+  SS82         6108.666667      336.077238          112948    5421.31154 6796.02180
+  ---------------------------------------------------------------------------------
+\end{verbatim}
+
+%\newpage
+
+(iii) STSI sample of size 30 with $x$-optimal allocation.
+
+\begin{verbatim}
+proc surveyselect data = mu284 method = srs n = 30 seed = 222007 out = sample;
+strata STRATUM / alloc = (.1128 .5374 .2512 .0985);
+run;
+
+proc surveymeans data = sample rate = .1056338028 sum varsum clsum;
+var SS82;
+weight samplingweight;
+run;
+
+  Variable             Sum         Std Dev      Var of Sum        95% CL for Sum
+  ---------------------------------------------------------------------------------
+  SS82         6106.666667      244.287107           59676    5607.04344 6606.28990
+  ---------------------------------------------------------------------------------
+\end{verbatim}
+
+(iv) STSI sample of size 30 with allocation proportional to $x$-total.
+
+\begin{verbatim}
+proc surveyselect data = mu284 method = srs n = 30 seed = 222007 out = sample;
+strata STRATUM / alloc = (.1124 .5573 .2369 .0933);
+run;
+
+proc surveymeans data = sample rate = .1056338028 sum varsum clsum;
+var SS82;
+weight samplingweight;
+run;
+
+  Variable             Sum         Std Dev      Var of Sum        95% CL for Sum
+  ---------------------------------------------------------------------------------
+  SS82         6010.196078      302.121114           91277    5392.28902 6628.10314
+  ---------------------------------------------------------------------------------
+\end{verbatim}
+
+%\newpage
+
+(v) Systematic $\pi$ps sample of size 30 with S82 as size measure.
+
+Assumption: No $x_k>450$ because the sampling interval is
+$a=\sum_Ux_k/n=13500/30=450$.
+If $x_k>450$ then SAS might repeat $y_k$ in the sample.
+
+\begin{verbatim}
+proc surveyselect data = mu284 method = pps_sys n = 30 seed = 222007 out = sample;
+size S82;
+control S82;
+run;
+
+proc surveymeans data = sample rate = .1056338028 sum varsum clsum;
+var SS82;
+weight samplingweight;
+run;
+
+  Variable             Sum         Std Dev      Var of Sum        95% CL for Sum
+  ---------------------------------------------------------------------------------
+  SS82         6496.201433      195.695379           38297    6095.95944 6896.44342
+  ---------------------------------------------------------------------------------
+\end{verbatim}
+
+\section*{Appendix}
+The following R code was used for parts (a) and (b).
+
+\begin{verbatim}
+rm(list=ls(all=TRUE))
+
+DATA = read.table("mu284.txt",header=T)
+
+Nh = c(44,168,56,16)
+x = c(1518,7524,3198,1260)
+x2 = c(52764,339344,184168,100016)
+
+s82 = DATA$S82
+st1 = DATA[s82 <= 40,]
+st2 = DATA[s82 >= 41 & s82 <= 50,]
+st3 = DATA[s82 >= 51 & s82 <= 70,]
+st4 = DATA[s82 >= 71,]
+
+print("Sx, method 1")
+Sx = sqrt(1 / (Nh - 1) * x2 - 1 / Nh / (Nh - 1) * x^2)
+print(Sx)
+
+print("Sx, method 2")
+Sx = c(sd(st1$S82),sd(st2$S82),sd(st3$S82),sd(st4$S82))
+print(Sx)
+
+n = 40
+N = sum(Nh)
+
+print("proportional allocation")
+nh = n * Nh / N
+print(round(nh))
+
+print("x-optimal allocation")
+nh = n * Nh * Sx / sum(Nh * Sx)
+print(round(nh))
+
+print("alloc. prop. to x-total")
+nh = n * x / sum(x)
+print(round(nh))
+
+y = c(sum(st1$SS82),sum(st2$SS82),sum(st3$SS82),sum(st4$SS82))
+y2 = c(sum(st1$SS82^2),sum(st2$SS82^2),sum(st3$SS82^2),sum(st4$SS82^2))
+
+S2y = 1 / (Nh - 1) * y2 - 1 / Nh / (Nh - 1) * y^2
+print("S2y, method 1")
+print(S2y)
+
+S2y = c(var(st1$SS82),var(st2$SS82),var(st3$SS82),var(st4$SS82))
+print("S2y, method 2")
+print(S2y)
+
+print("V_SI")
+V = N^2 * (1 / n - 1 / N) * var(DATA$SS82)
+print(V)
+
+print("V_STSI")
+
+nh = c(6,24,8,2)
+V = sum(Nh^2 * (1 / nh - 1 / Nh) * S2y)
+print(V)
+
+nh = c(5,21,10,4)
+V = sum(Nh^2 * (1 / nh - 1 / Nh) * S2y)
+print(V)
+
+nh = c(4,23,9,4)
+V = sum(Nh^2 * (1 / nh - 1 / Nh) * S2y)
+print(V)
+\end{verbatim}
+
+
+\section*{4.8}
+(a) Compute an unbiased estimate of the total of the variable CS82.
+
+First calculate $\hat t_i$ for each selected cluster $i$.
+\[
+\pi_{k\mid i}={n_i\over N_i}\qquad
+\hat t_i=\sum_{k\in s_i}{y_k\over\pi_{k\mid i}}
+\]
+%
+\begin{align*}
+\hat t_{11}&={8\over2/6}+{10\over2/6}=54\\
+\hat t_5&={13\over2/5}+{12\over2/5}=62.5\\
+\hat t_{20}&={11\over2/5}+{8\over2/5}=47.5\\
+\hat t_{48}&={2\over2/5}+{7\over2/5}=22.5\\
+\hat t_{14}&={16\over2/7}+{10\over2/7}=91
+\end{align*}
+Now calculate $\hat t_\pi$.
+\[
+\pi_{\mathrm Ii}={n_{\mathrm I}\over N_{\mathrm I}}={1\over10}\qquad
+\hat t_\pi=\sum_{i\in s_{\mathrm I}}{\hat t_i\over\pi_{\mathrm Ii}}
+={54+62.5+47.5+22.5+92\over1/10}=2775
+\]
+
+(b) Compute unbiased estimates of $V_{PSU}$, $V_{SSU}$, and
+$V=V_{PSU}+V_{SSU}$.
+Also, compute the corresponding $cve$.
+
+For SI we have
+\[
+\pi_{kl\mid i}={n_i(n_i-1)\over N_i(N_i-1)}\quad\hbox{when $k\ne l$}
+\]
+Hence
+\[
+\widehat V_i=\underset{k,l\in s_i}{\sum\sum}{\pi_{kl\mid i}-\pi_{k\mid i}\pi_{l\mid i}
+\over\pi_{kl\mid i}}{y_k\over\pi_{k\mid i}}{y_l\over\pi_{l\mid i}}
+\]
+\begin{center}
+\begin{tabular}{|r|r|}
+\hline
+$i$ & $\widehat V_i$\\
+\hline
+11 & 24.00\\
+5 & 3.75\\
+20 & 33.75\\
+48 & 93.75\\
+14 & 315.00\\
+\hline
+\end{tabular}
+\end{center}
+%
+\[
+\pi_{\mathrm Ii}={n_{\rm I}\over N_{\rm I}}={5\over50}={1\over10}
+\]
+\[
+\pi_{\mathrm Iij}={n_{\rm I}(n_{\rm I}-1)\over N_{\rm I}(N_{\rm I}-1)}
+={5(5-1)\over 50(50-1)}={2\over245}\quad\hbox{when $i\ne j$}
+\]
+\[
+\widehat V_{PSU}=\underset{i,j\in s_{\rm I}}{\sum\sum}
+{\pi_{\mathrm Iij}-\pi_{\mathrm Ii}\pi_{\mathrm Ij}
+\over\pi_{\mathrm Iij}}
+{\hat t_i\over\pi_{\mathrm Ii}}
+{\hat t_j\over\pi_{\mathrm Ij}}
+-\sum_{i\in s_{\rm I}}{1\over\pi_{\mathrm Ii}}
+\left({1\over\pi_{\mathrm Ii}}-1\right)\widehat V_i
+=277256.2-42322.5=234,933.7
+\]
+\[
+\widehat V_{SSU}=\sum_{i\in s_{\rm I}}{\widehat V_i\over\pi_{\mathrm Ii}^2}=47,025
+\]
+\[
+\widehat V=\widehat V_{PSU}+\widehat V_{SSU}=281,958.7
+\]
+\[
+cve(\hat t_\pi)={\sqrt{\widehat V}\over\hat t_\pi}={531\over2775}=0.19
+\]
+
+(c) Compute simplified variance estimates according to equations (4.6.1)
+and (4.6.2), as well as the corresponding $cve$s.
+Comment on your conclusions.
+
+\[
+\widehat V^*=-{1\over2}\underset{i,j\in s_{\rm I}}{\sum\sum}
+{\pi_{\mathrm Iij}-\pi_{\mathrm Ii}\pi_{\mathrm Ij}
+\over\pi_{\mathrm Iij}}
+\left({\hat t_i\over\pi_{\mathrm Ii}}-{\hat t_j\over\pi_{\mathrm Ij}}\right)^2
+=277,256.3
+\]
+%
+\[
+\widehat V^{**}={1\over n_{\rm I}(n_{\rm I}-1)}\sum_{i\in s_{\rm I}}
+\left({\hat t_i\over\pi_{\rm Ii}/n_{\rm I}}-\hat t_\pi\right)^2=308,062.5
+\]
+%
+\[
+{\sqrt{\widehat V^*}\over\hat t_\pi}={527\over2775}=0.19
+\]
+%
+\[
+{\sqrt{\widehat V^{**}}\over\hat t_\pi}={555\over2775}=0.20
+\]
+Both $\widehat V^*$ and $\widehat V^{**}$ are close to the unbiased estimator
+$\widehat V$ in part (b).
+
+%\newpage
+
+\section*{4.22}
+Show that in multistage sampling where the first stage design is SI
+(of $n_{\rm I}$ PSUs from $N_{\rm I}$), the simplified variance estimator
+\[
+\widehat V^{**}=N_{\rm I}^2{1\over n_{\rm I}(n_{\rm I}-1)}
+\sum_{i\in s_{\rm I}}\left[
+\hat t_i-\left(\sum_{i\in s_{\rm I}}\hat t_i/n_{\rm I}\right)\right]^2
+\]
+overestimates the variance of the $\pi$ estimator.
+
+By the identity
+\[
+\sum(y_i-\overline{y})^2=\sum y_i^2-{1\over n}\left(\sum y_i\right)^2
+\]
+we have
+\[
+\widehat V^{**}=N_{\rm I}^2{1\over n_{\rm I}(n_{\rm I}-1)}
+\left[\sum_{i\in s_{\rm I}}\hat t_i^2-{1\over n_{\rm I}}\left(\sum_{i\in s_{\rm I}}
+\hat t_i\right)^2\right]
+\]
+%Add indicators and sum over the universe.
+%\[
+%\widehat V^{**}=N_{\rm I}^2{1\over n_{\rm I}(n_{\rm I}-1)}
+%\left[\sum_{U_{\rm I}}\hat t_i^2I(i\in s_{\rm I})
+%-{1\over n_{\rm I}}\left(\sum_{U_{\rm I}}
+%\hat t_iI(i\in s_{\rm I})\right)^2\right]
+%\]
+Now take the expectation of the two sums individually.
+We have
+\begin{align*}
+E\left[\sum_{s_{\rm I}}\hat t_i^2\right]
+&=
+E_{\rm I}\left[\sum_{s_{\rm I}}E_{\rm II}(\hat t_i^2)\right]\\
+&=
+E_{\rm I}\left[
+\sum_{s_{\rm I}}t_i^2+\sum_{s_{\rm I}}V_i\right]\\
+&=
+\sum_{U_{\rm I}}\pi_{\mathrm Ii}t_i^2
++\sum_{U_{\rm I}}\pi_{\mathrm Ii}V_i
+\end{align*}
+and
+%
+%
+\begin{align*}
+E\left[-{1\over n_{\rm I}}\left(\sum_{s_{\rm I}}
+\hat t_i\right)^2\right]
+&=-{1\over n_{\rm I}}E_{\rm I}\left[
+\underset{s_{\rm I}}{\sum\sum}
+E_{\rm II}(\hat t_i\hat t_j)\right]\\
+&=
+-{1\over n_{\rm I}}E_{\rm I}\left[\underset{s_{\rm I}}{\sum\sum}
+t_it_j+\sum_{s_{\rm I}}V_i\right]\\
+&=-{1\over n_{\rm I}}\left(
+\underset{U_{\rm I}}{\sum\sum}
+\pi_{\mathrm Iij}t_it_j+\sum_{U_{\rm I}}\pi_{\mathrm Ii}V_i\right)\\
+\end{align*}
+%
+%
+%
+Therefore
+\begin{align*}
+E(\widehat V^{**})&=
+{N_{\rm I}^2\over n_{\rm I}(n_{\rm I}-1)}\left[
+\sum_{U_{\rm I}}\pi_{\mathrm Ii}t_i^2
++\sum_{U_{\rm I}}\pi_{\mathrm Ii}V_i
+-{1\over n_{\rm I}}\underset{U_{\rm I}}{\sum\sum}\pi_{\mathrm Iij}t_it_j
+-{1\over n_{\rm I}}\sum_{U_{\rm I}}\pi_{\mathrm Ii}V_i
+\right]\\
+&=
+{N_{\rm I}^2\over n_{\rm I}(n_{\rm I}-1)}\left[
+{n_{\rm I}\over N_{\rm I}}\sum_{U_{\rm I}}t_i^2
+%+{n_{\rm I}\over N_{\rm I}}\sum_{U_{\rm I}}V_i
+-{1\over n_{\rm I}}\underset{U_{\rm I}}{\sum\sum}\pi_{\mathrm Iij}t_it_j
++{n_{\rm I}\over N_{\rm I}}\sum_{U_{\rm I}}V_i
+-{1\over N_{\rm I}}\sum_{U_{\rm I}}V_i
+\right]\\
+&=
+{N_{\rm I}\over n_{\rm I}-1}\sum_{U_{\rm I}}t_i^2
+-{N_{\rm I}^2\over n_{\rm I}^2(n_{\rm I}-1)}\underset{U_{\rm I}}{\sum\sum}
+\pi_{\mathrm Iij}t_it_j
++{N_{\rm I}\over n_{\rm I}}\sum_{U_{\rm I}}V_i
+\end{align*}
+
+%\newpage
+
+Note that for the $V_i$ term in the above equation we have
+\[
+{N_{\rm I}\over n_{\rm I}}\sum_{U_{\rm I}}V_i=V_{SSU}
+\]
+Therefore
+\[
+E(\widehat V^{**})-V_{SSU}=
+{N_{\rm I}\over n_{\rm I}-1}\sum_{U_{\rm I}}t_i^2
+-{N_{\rm I}^2\over n_{\rm I}^2(n_{\rm I}-1)}
+\underset{U_{\rm I}}{\sum\sum}\pi_{\mathrm Iij}t_it_j
+\]
+In order to show that $\widehat V^{**}$ overestimates the variance we need to show
+that
+\[
+E(\widehat V^{**})-V_{SSU}
+%{N_{\rm I}\over n_{\rm I}-1}\sum_{U_{\rm I}}t_i^2
+%-{N_{\rm I}^2\over n_{\rm I}^2(n_{\rm I}-1)}\sum_{U_{\rm I}}\pi_{\mathrm Iij}t_it_j
+\ge V_{PSU}
+\]
+For SI we have
+\[
+V_{PSU}={N_{\rm I}^2\over n_{\rm I}^2}\underset{U_{\rm I}}{\sum\sum}
+(\pi_{\mathrm Iij}-\pi_{\mathrm Ii}\pi_{\mathrm Ij})t_it_j
+=
+{N_{\rm I}^2\over n_{\rm I}^2}\underset{U_{\rm I}}{\sum\sum}\pi_{\mathrm Iij}t_it_j
+-\underset{U_{\rm I}}{\sum\sum}t_it_j
+\]
+The following side calculation is for combining the double sums.
+\[
+{N_{\rm I}^2\over n_{\rm I}^2(n_{\rm I}-1)}
++{N_{\rm I}^2\over n_{\rm I}^2}
+=
+{N_{\rm I}^2+N_{\rm I}^2(n_{\rm I}-1)\over n_{\rm I}^2(n_{\rm I}-1)}
+={N_{\rm I}^2\over n_{\rm I}(n_{\rm I}-1)}
+\]
+Rearranging and collecting
+terms we have the following expression for
+$E(\widehat V^{**})-V_{SSU}\stackrel{?}{\ge}V_{PSU}$.
+\[
+{N_{\rm I}\over n_{\rm I}-1}\sum_{U_{\rm I}}t_i^2
++\underset{U_{\rm I}}{\sum\sum}t_it_j
+\stackrel{?}{\ge}
+{N_{\rm I}^2\over n_{\rm I}(n_{\rm I}-1)}
+\underset{U_{\rm I}}{\sum\sum}\pi_{\mathrm Iij}t_it_j
+\]
+Partition the right hand side.
+\[
+{N_{\rm I}\over n_{\rm I}-1}\sum_{U_{\rm I}}t_i^2
++\underset{U_{\rm I}}{\sum\sum}t_it_j
+\stackrel{?}{\ge}
+{N_{\rm I}\over N_{\rm I}-1}
+\underset{i\ne j}{\sum\sum}t_it_j
++
+{N_{\rm I}\over n_{\rm I}-1}\sum_{U_{\rm I}}t_i^2
+\]
+Cancel.
+\[
+\underset{U_{\rm I}}{\sum\sum}t_it_j
+\stackrel{?}{\ge}
+{N_{\rm I}\over N_{\rm I}-1}
+\underset{i\ne j}{\sum\sum}t_it_j
+\]
+Add a sum over $t_i^2$ to both sides to eliminate the $i\ne j$.
+\[
+\underset{U_{\rm I}}{\sum\sum}t_it_j
++{N_{\rm I}\over N_{\rm I}-1}\sum_{U_{\rm I}}t_i^2
+\stackrel{?}{\ge}
+{N_{\rm I}\over N_{\rm I}-1}
+\underset{U_{\rm I}}{\sum\sum}t_it_j
+\]
+Rearrange.
+\[
+{N_{\rm I}\over N_{\rm I}-1}\sum_{U_{\rm I}}t_i^2
+\stackrel{?}{\ge}
+{1\over N_{\rm I}-1}
+\underset{U_{\rm I}}{\sum\sum}t_it_j
+\]
+Multiply both sides by $N_{\rm I}-1$.
+\[
+N_{\rm I}\sum_{U_{\rm I}}t_i^2
+\ge
+\underset{U_{\rm I}}{\sum\sum}t_it_j
+\]
+The above is a true statement that will be proved on the next page.
+It follows from the above that
+\[
+E(\widehat V^{**})-V_{SSU}\ge V_{PSU}
+\]
+Therefore $\widehat V^{**}$ overestimates the variance.
+
+%\newpage
+
+What follows is a proof that
+\[
+N\sum_{i=1}^Nt_i^2\ge\sum_{i=1}^N\sum_{j=1}^Nt_it_j
+%=\left(\sum_{i=1}^N\sum_{j=1}^Nt_it_j\right)^2
+\]
+Begin with
+\[
+(t_i-t_j)^2\ge 0
+\]
+Hence
+\[
+t_i^2+t_j^2\ge2t_it_j
+\]
+It follows that
+\[
+Nt_i^2+\sum_{j=1}^Nt_j^2\ge2t_i\sum_{j=1}^Nt_j
+\]
+Sum over all $i$.
+\[
+\sum_{i=1}^N\left[Nt_i^2+\sum_{j=1}^Nt_j^2\right]
+\ge\sum_{i=1}^N\left[2t_i\sum_{j=1}^Nt_j\right]
+\]
+Rearrange.
+\[
+N\sum_{i=1}^Nt_i^2+N\sum_{j=1}^Nt_j^2
+\ge2\sum_{i=1}^Nt_i\sum_{j=1}^Nt_j
+\]
+Divide both sides by 2 and rearrange.
+\[
+N\sum_{i=1}^Nt_i^2
+\ge
+\sum_{i=1}^N\sum_{j=1}^Nt_it_j
+\]
+QED
+
+%\newpage
+
+\section*{4.23}
+The cluster totals are $4M-8$, $4M-4$, $4M$, $4M+4$, and $4M+8$.
+We have
+\[
+\bar t_{U_{\rm I}}={1\over N_{\rm I}}\sum_{U_{\rm I}}t_i=4M
+\]
+Hence
+\begin{align*}
+S_{tU_{\rm I}}^2&={1\over N_{\rm I}-1}
+\sum_{U_{\rm I}}(t_i-\bar t_{U_{\rm I}})^2\\
+&=
+{50\over249}\left[
+(4M-8-4M)^2+(4M-4-4M)^2+(4M-4M)^2
++(4M+4-4M)^2+(4M+8-4M)^2\right]\\
+&=32.1285
+\end{align*}
+We are given $S_{yU_i}^2=V_0$. Since each cluster has four elements we have
+\[
+{1\over3}\sum_{U_i}(y_k-\bar y_{U_i})^2=V_0
+\]
+For a cluster with mean $M-2$ we have
+\begin{align*}
+\sum_{U_i}(y_k-M+2)^2
+&=
+\sum_{U_i}y_k^2+4\sum_{U_i}y_k-2M\sum_{U_i}y_k-16M+4M^2+16\\
+&=
+\sum_{U_i}y_k^2+4(4M-8)-2M\sum_{U_i}y_k-16M+4M^2+16\\
+&=
+\sum_{U_i}y_k^2-2M\sum_{U_i}y_k+4M^2-16\\
+\end{align*}
+%
+For a cluster with mean $M-1$ we have
+\begin{align*}
+\sum_{U_i}(y_k-M+1)^2
+&=
+\sum_{U_i}y_k^2+2\sum_{U_i}y_k-2M\sum_{U_i}y_k-8M+4M^2+4\\
+&=
+\sum_{U_i}y_k^2+2(4M-4)-2M\sum_{U_i}y_k-8M+4M^2+4\\
+&=
+\sum_{U_i}y_k^2-2M\sum_{U_i}y_k+4M^2-4
+\end{align*}
+%
+For a cluster with mean $M$ we have
+\[
+\sum_{U_i}(y_k-M)^2=\sum_{U_i}y_k^2-2M\sum_{U_i} y_k+4M^2
+\]
+%
+For a cluster with mean $M+1$ we have
+\begin{align*}
+\sum_{U_i}(y_k-M-1)^2
+&=
+\sum_{U_i}y_k^2-2\sum_{U_i}y_k-2M\sum_{U_i}y_k+8M+4M^2+4\\
+&=
+\sum_{U_i}y_k^2-2(4M+4)-2M\sum_{U_i}y_k+8M+4M^2+4\\
+&=
+\sum_{U_i}y_k^2-2M\sum_{U_i}y_k+4M^2-4
+\end{align*}
+%
+Finally, for a cluster with mean $M+2$ we have
+\begin{align*}
+\sum_{U_i}(y_k-M-2)^2
+&=
+\sum_{U_i}y_k^2-4\sum_{U_i}y_k-2M\sum_{U_i}y_k+16M+4M^2+16\\
+&=
+\sum_{U_i}y_k^2-4(4M+8)-2M\sum_{U_i}y_k+16M+4M^2+16\\
+&=
+\sum_{U_i}y_k^2-2M\sum_{U_i}y_k+4M^2-16\\
+\end{align*}
+It follows that by summing over all 250 clusters $U_i$ we obtain
+\[
+\sum_{k=1}^{1000}y_k^2-2M\sum_{k=1}^{1000}y_k+1000M^2-2000
+=250\cdot3V_0=750V_0
+\]
+%
+Hence the population variance is
+\[
+S_{yU}^2={1\over999}\sum_{k=1}^{1000}(y_k-M)^2={750V_0+2000\over999}
+\]
+
+(a) $V_0=5$
+\[
+V_{SIC}(\hat t_\pi)={250^2\over25}
+\left(1-{25\over250}\right)\times32.1285=72,289
+\]
+\[
+V_{SI}(\hat t_\pi)={1000^2\over 100}\left(1-{100\over1000}\right)
+{750\cdot5+2000\over999}
+=51,802
+\]
+Hence $V_{SI}<V_{SIC}$.
+
+(b) $V_0=10$
+\[
+V_{SI}(\hat t_\pi)={1000^2\over 100}\left(1-{100\over1000}\right)
+{750\cdot10+2000\over999}
+=85,586
+\]
+Hence $V_{SIC}<V_{SI}$.
+
+%\newpage
+
+\section*{2.}
+In the table below, {\tt muni} is the estimate of the number of municipalities.
+The true values of P75, P85, and number of municipalities are all within the
+confidence intervals of the estimates.
+\begin{verbatim}
+                                 The MEANS Procedure
+
+                              Variable             Sum
+                              ------------------------
+                              P75              8182.00
+                              P85              8339.00
+                              ------------------------
+
+                              The SURVEYMEANS Procedure
+
+                                    Data Summary
+
+                        Number of Strata                   5
+                        Number of Clusters                10
+                        Number of Observations            20
+                        Sum of Weights            281.896848
+
+
+                                     Statistics
+
+          Variable             Sum         Std Dev        95% CL for Sum
+          -----------------------------------------------------------------
+          P75          8306.277004     1229.020764    5146.97855 11465.5755
+          P85          8662.886910     1201.077191    5575.41970 11750.3541
+          muni          281.896848       12.114596     250.75529   313.0384
+          -----------------------------------------------------------------
+
+dm "output;clear";
+dm "log;clear";
+
+* Read the mu284 data;
+
+data mu284;
+infile 'c:\sas\mu284.txt';
+input LABEL   P85   P75   RMT85   CS82   SS82   S82   ME84   REV84   REG   CL;
+drop RMT85 CS82 SS82 S82 ME84 REV84 REG;
+run;
+
+* Print the true sums;
+
+proc means data = mu284 sum;
+var P75 P85;
+run;
+
+* Compute the sum of P75 for each cluster;
+
+proc sort data = mu284;
+by CL;
+run;
+proc means data = mu284 noprint;
+by CL; * must be sorted on CL;
+var P75;
+output out = clusters sum = P75TOT;
+run;
+
+* Stratify;
+
+proc sort data = clusters;
+by P75TOT;
+run;
+data clusters;
+set clusters;
+ST = 1 + floor((_n_ - 1) / 10);
+run;
+
+* Stage I : Choose two clusters from each stratum using Brewer's method;
+
+proc surveyselect seed = 764532 data = clusters method = brewer out = selections;
+strata ST; * must be sorted on ST;
+size P75TOT;
+run;
+
+* Merge stage I selections back into mu284;
+
+proc sort data = selections;
+by CL;
+run;
+data mu284;
+merge mu284 selections;
+by CL; * both must be sorted on CL;
+run;
+
+* Drop the observations that are not in selected clusters;
+
+data mu284;
+set mu284;
+if ST ^= .;
+w = samplingweight; * save for later;
+drop selectionprob samplingweight; * to prevent surveyselect warning;
+run;
+
+* Choose two samples within each cluster using SI;
+
+proc sort data = mu284;
+by CL;
+run;
+proc surveyselect seed = 198777 data = mu284 method = srs sampsize = 2 out = sample;
+strata CL; * must be sorted on CL;
+run;
+
+* Correct the sampling weights;
+* For example, cluster 2 is selected from stratum 4;
+* Cluster 2 has _FREQ_ = 5 observations;
+* 2 observations are selected from cluster 2;
+* The selection probability is 2 / _FREQ_;
+* Hence multiply the weight by _FREQ_ / 2;
+
+data sample;
+set sample;
+w = w * _FREQ_ / 2;
+muni = 1; * for estimating number of municipalities;
+run;
+
+* Print the estimated sums;
+* There are ten clusters per stratum, hence total = 10;
+
+proc surveymeans data = sample total = 10 sum clsum;
+stratum ST;
+cluster CL;	* only affects the variance calculation;
+var P75 P85 muni;
+weight w;
+run;
+\end{verbatim}
+
+%\newpage
+
+\section*{Appendix}
+
+R code for Exercise 4.8.
+
+\begin{verbatim}
+rm(list=ls(all=TRUE))
+DATA = read.table("mu284.txt",header=T)
+CS82 = DATA$CS82
+print(sum(CS82))
+
+f = function(a,b,n,N) {
+pikl = rbind(
+c(n / N, n * (n - 1) / N / (N - 1)),
+c(n * (n - 1) / N / (N - 1), n / N))
+Delta = pikl - (n / N) ^ 2
+sum(Delta / pikl * (c(a,b) %o% c(a,b)) / (n / N)^2)
+}
+
+V1 = f(8,10,2,6)
+V2 = f(13,12,2,5)
+V3 = f(11,8,2,5)
+V4 = f(2,7,2,5)
+V5 = f(16,10,2,7)
+
+Vi = c(V1,V2,V3,V4,V5)
+print(Vi)
+
+nI = 5
+NI = 50
+pikl = matrix(2/245,5,5)
+diag(pikl) = 1/10
+Delta = pikl - (nI / NI)^2
+ti = c(54,62.5,47.5,22.5,91)
+V = sum(Delta / pikl * (ti %o% ti) / (nI / NI)^2)
+print(V)
+
+Vi = c(24,3.75,33.75,93.75,315)
+print(sum(90*Vi))
+print(V-sum(90*Vi))
+
+# part (c)
+V = -1/2 * sum(Delta / pikl * (outer(ti,ti,"-")*10)^2 )
+print(V)
+
+t = 10 * sum(ti)
+piIi = nI / NI
+V = 1 / nI / (nI - 1) * sum((ti / (piIi / nI)  - t) ^ 2)
+print(V)
+\end{verbatim}
+
+
+\section*{5.2}
+For BE we have
+\begin{align*}
+\hat t_{y\pi}&={1\over\pi}\sum_sy_k={1\over0.3}\times669,281=2,230,937\\
+\hat t_{z\pi}&={1\over\pi}\sum_sz_k={1\over0.3}\times608,902=2,029,673
+\end{align*}
+Therefore the estimate of $R$ is
+\[
+\widehat R={\hat t_{y\pi}\over\hat t_{z\pi}}=1.099
+\]
+For BE we have $\Delta_{kl}=0$ for $k\ne l$ hence
+\begin{align*}
+\widehat V(\widehat R)
+&=
+{1\over\hat t_{z\pi}^2}
+\underset{s}{\sum\sum}
+{\Delta_{kl}\over\pi_{kl}}
+{y_k-\widehat Rz_k\over\pi_k}
+{y_l-\widehat Rz_l\over\pi_l}\\
+&=
+{1\over\hat t_{z\pi}^2}
+{\pi-\pi^2\over\pi}
+{1\over\pi}
+{1\over\pi}
+\sum_s(y_k-\widehat Rz_k)^2\\
+&=
+{1\over2,029,673^2}\times{0.3-0.09\over0.027}\times3,496,228,001\\
+&=
+0.0066
+\end{align*}
+
+\[
+cve(\widehat R)={\sqrt{\widehat V(\widehat R)}\over\widehat R}
+={\sqrt{0.0066}\over1.099}\approx7.4\%
+\]
+
+%\newpage
+
+\section*{5.4}
+(a) Compute an estimate of the percentage increase in total population from
+1980 to 1983.
+The 1983 population is $y$ and the 1980 population is $z$.
+
+We have
+\begin{align*}
+\hat t_{y\pi}={N\over n}\sum_sy_k={124\over40}\times1560.4=4837.24\\
+\hat t_{z\pi}={N\over n}\sum_sz_k={124\over40}\times1447.7=4487.87
+\end{align*}
+Hence the estimate is
+\[
+100\times{\hat t_{y\pi}-\hat t_{z\pi}\over\hat t_{z\pi}}=7.78
+\]
+(b) Calculate an estimate of the variance of the estimator in (a).
+
+Let $\widehat R=\hat t_{y\pi}/\hat t_{z\pi}$. Then from p.\ 179 of the book
+\begin{align*}
+\widehat V(\widehat R)
+&=
+{n\over\left(\sum_sz_k\right)^2}
+\left(1-{n\over N}\right){1\over n-1}
+\sum_s(y_k-\widehat Rz_k)^2\\
+&=
+{n\over\left(\sum_sz_k\right)^2}
+\left(1-{n\over N}\right){1\over n-1}
+\left(\sum_sy_k^2-2\widehat R\sum_sy_kz_k+\widehat R^2\sum_sz_k^2\right)\\
+&=
+{40\over(1447.7)^2}
+\left(1-{40\over124}\right)
+{1\over40-1}
+(609,833.24-2\times1.0778\times558,395.94+(1.0778)^2\times511,520.87)\\
+&=0.00012
+\end{align*}
+The variance of the estimator in part (a) is
+\[
+\widehat V(100\widehat R-100)=100^2\times0.00012=1.2
+\]
+
+(c) The total of the variable P80 is 4,308.1.
+Use this information to calculate an unbiased estimate of the percentage in (a).
+Also, calculate an unbiased variance estimate of the unbiased estimator.
+Comment on your results.
+
+The unbiased estimate is
+\[
+100\times{\hat t_{y\pi}-t_z\over t_z}
+=
+100\times{4837.24-4308.1\over4308.1}=12.3
+\]
+We have
+\[
+S^2_{ys}={1\over n-1}\sum_sy_k^2-{1\over n(n-1)}\left(\sum_sy_k\right)^2
+=14075.9
+\]
+Hence
+\[
+\widehat V(\hat t_{y\pi})={N^2\over n^2}\left(1-{n\over N}\right)S_{ys}^2
+=3,665,380
+\]
+The variance of the unbiased estimator is
+\[
+\widehat V\left(100\cdot{\hat t_{y\pi}\over4308.1}-100\right)
+=\left(100\over4308.1\right)^2\times3,665,380=1975
+\]
+Comment: The estimator in part (a) is more efficient
+because the residuals $y_k-\widehat Rz_k$ are small.
+
+%\newpage
+
+\section*{5.8}
+\[
+\widehat B
+=
+{{N\over n}\sum_sz_ky_k\over{N\over n}\sum_sz_k^2}
+=
+{582,220\over72,768}=8.00
+\]
+From p.\ 179 of the book
+\begin{align*}
+\widehat V(\widehat B)
+&=
+{n\over\left(\sum_sz_k^2\right)^2}
+\left(1-{n\over N}\right){1\over n-1}
+\sum_s(z_ky_k-\widehat Bz_k^2)^2\\
+&=
+{n\over\left(\sum_sz_k^2\right)^2}
+\left(1-{n\over N}\right){1\over n-1}
+\left(\sum_sz_k^2y_k^2-2\widehat B\sum_sz_k^3y_k+\widehat B^2\sum_sz_k^4\right)\\
+&=
+{50\over72768^2}
+\left(1-{50\over281}\right){1\over50-1}
+%&\qquad\times
+\left(4.13155\times10^{10}-16\times4,911,948,478
++64\times586,102,776\right)\\
+&=0.037
+\end{align*}
+The confidence interval is
+\[
+8\pm1.96\times\sqrt{0.037}=8\pm0.38
+\]
+
+%\newpage
+
+\section*{2.}
+(a) Here are the SAS results for $n=25$ and $M=1000$.
+\begin{verbatim}
+                                 The MEANS Procedure
+
+                      Variable            Mean        Variance
+                      ----------------------------------------
+                      theta          2.4020437       5.2311402
+                      V              3.7993593       4.8782876
+                      ----------------------------------------
+\end{verbatim}
+i. From the above table,
+\begin{align*}
+{1\over M}\sum_{i=1}^M\widehat\theta^{(i)}&=2.402\\
+{1\over M}\sum_{i=1}^M\widehat V_{taylor}^{(i)}&=3.799\\
+{\tt var}(\widehat\theta^{(i)})&=5.231
+\end{align*}
+ii. The true value of $\theta$ is $1.919$ hence
+the approximate theoretical bias of $\widehat\theta$ is
+\[
+2.402-1.919=0.483
+\]
+iii. The approximate theoretical bias of $\widehat V_{taylor}$ is
+\[
+3.799-5.231=-1.432
+\]
+
+%\newpage
+
+(b) Here are the SAS results for $n=75$ and $M=1000$.
+\begin{verbatim}
+                                 The MEANS Procedure
+
+                      Variable            Mean        Variance
+                      ----------------------------------------
+                      theta          2.0638230       1.6836495
+                      V              1.3602821       0.2800629
+                      ----------------------------------------
+\end{verbatim}
+i. From the above table,
+\begin{align*}
+{1\over M}\sum_{i=1}^M\widehat\theta^{(i)}&=2.064\\
+{1\over M}\sum_{i=1}^M\widehat V_{taylor}^{(i)}&=1.360\\
+{\tt var}(\widehat\theta^{(i)})&=1.684
+\end{align*}
+ii. The true value of $\theta$ is $1.919$ hence
+the approximate theoretical bias of $\widehat\theta$ is
+\[
+2.064-1.919=0.145
+\]
+iii. The approximate theoretical bias of $\widehat V_{taylor}$ is
+\[
+1.360-1.684=-0.324
+\]
+
+(c) Comment:
+Increasing $n$ caused the estimated
+bias of $\widehat\theta$ and $\widehat V$ to decrease.
+Taylor linearization underestimated the variance
+as cautioned in Remark 5.5.3 on p.\ 176.
+
+*\newpage
+
+\section*{Appendix}
+
+\begin{verbatim}
+data mu284;
+infile 'c:\sas\mu284.txt';
+input LABEL   P85   P75   RMT85   CS82   SS82   S82   ME84   REV84   REG   CL;
+drop RMT85 CS82 SS82 S82 ME84 REV84 REG CL;
+run;
+
+* Sample M = 1000 times;
+
+proc surveyselect seed = 32907 data = mu284 method = srs n = 25 reps = 1000 out = sample;
+run;
+
+* Calculate yk^2, yk * zk, zk^2;
+
+data sample;
+set sample;
+yy = P85 * P85;
+yz = P85 * P75;
+zz = P75 * P75;
+run;
+
+* Calculate sums over yk, zk, yk^2, yk * zk, zk^2;
+
+proc means data = sample sum noprint;
+by replicate;
+var P85 P75 yy yz zz;
+output out = foo sum = sum_y sum_z sum_yy sum_yz sum_zz;
+run;
+
+* Calculate theta and V_taylor;
+
+data foo;
+set foo;
+n = _FREQ_;
+R = sum_y / sum_z;
+V = 10000 * n / sum_z ** 2 * (1 - n / 284) / (n - 1) *
+(sum_yy - 2 * R * sum_yz + R * R * sum_zz);
+theta = 100 * R - 100;
+run;
+
+* Print the mean and variance of theta and V_taylor;
+
+proc means data = foo mean var;
+var theta V;
+run;
+\end{verbatim}
+
+
+\section*{6.3}
+For the estimated total we have
+%
+\begin{align*}
+\hat t_y
+&=
+\sum_U(3x_{1k}+2x_{2k})+\sum_s{y_k-3x_{1k}-2x_{2k}\over n/N}\\
+&=
+3\sum_Ux_{1k}+2\sum_Ux_{2k}+{N\over n}\left(
+\sum_sy_k-3\sum_sx_{1k}-2\sum_sx_{2k}\right)\\
+&=
+3\cdot2508+2\cdot6153-{281\over35}(1019-3\cdot321-2\cdot803)\\
+&=
+7386
+\end{align*}
+%
+The sample variance statistic is
+%
+\begin{align*}
+S^2
+&=
+{1\over n-1}\sum_s\bigg[y_k-3x_{1k}-2x_{2k}-\overline{y_k-3x_{1k}-2x_{2k}}\bigg]^2\\
+&=
+{1\over n-1}\sum_s\bigg[y_k-3x_{1k}-2x_{2k}-\bar y_k+3\bar x_{1k}+2\bar x_{2k}\bigg]^2\\
+&=
+{1\over n-1}\sum_s\bigg[
+(y-\bar y_k)-3(x_{1k}-\bar x_{1k})-2(x_{2k}-\bar x_{2k})\bigg]^2\\
+&=
+{1\over n-1}\sum_s\bigg[(y_k-\bar y_k)^2-6(y_k-\bar y_k)(x_{1k}-\bar x_{1k})
+-4(y_k-\bar y_k)(x_{2k}-\bar x_{2k})\\
+&\qquad\qquad\qquad\qquad
+{}+9(x_{1k}-\bar x_{1k})^2+12(x_{1k}-\bar x_{1k})(x_{2k}-\bar x_{2k})
++4(x_{2k}-\bar x_{2k})^2\bigg]\\
+&=
+S_{ys}^2-6S_{yx_1s}-4S_{yx_2s}+9S_{x_1s}^2+12S_{x_1x_2s}+4S_{x_2s}^2\\
+&=
+742.34-6\cdot82.24-4\cdot152.86
++9\cdot20.44+12\cdot8.22+4\cdot60.41\\
+&=161.7
+\end{align*}
+%
+Hence
+%
+\[
+\widehat V(\hat t_y)={N^2\over n}\left(1-{n\over N}\right)S^2
+={281^2\over35}\left(1-{35\over281}\right)161.7
+=319362
+\]
+%
+The 95\% confidence interval is
+%
+\[
+7386\pm1.96\sqrt{319262}=7386\pm1108
+\]
+
+%\newpage
+
+\section*{6.5}
+Assuming SI sampling with $f=n/N$, the bias of $\hat t_{y,\rm alt}$ is
+\begin{align*}
+B(\hat t_{y,\rm alt})
+&=
+E(\hat t_{y,\rm alt})-t_y\\
+&=
+E\left[
+\sum_Uy_k^0+\sum_sD_k\right]-\sum_Uy_k\\
+&=
+E\left[\sum_Uy_k^0+\sum_UD_kI(k\in s)\right]-\sum_Uy_k\\
+&=
+\sum_Uy_k^0+{n\over N}\sum_UD_k-\sum_Uy_k\\
+&=
+{n\over N}\sum_UD_k-\sum_UD_k\\
+&=
+\left({n\over N}-1\right)\sum_UD_k
+\end{align*}
+Therefore $\hat t_{y,\rm alt}$ is biased if $n<N$ and $\sum_UD_k\ne0$.
+
+For the variance of $\hat t_{y,\rm alt}$ we have
+\[
+V(\hat t_{y,\rm alt})
+=V\left(\sum_Uy_k^0+\sum_sD_k\right)
+=\underset{U}{\sum\sum}\Delta_{kl}D_kD_l
+\]
+For the estimator (6.3.4) we have
+\[
+\hat t_{y,\rm dif}=\underset{U}{\sum\sum}\Delta_{kl}
+{D_k\over\pi_k}{D_l\over\pi_l}
+\]
+Therefore, assuming SI sampling we have
+\[
+V(\hat t_{y,\rm alt})={n^2\over N^2}V(\hat t_{y,\rm dif})
+\]
+Consequently
+\[
+V(\hat t_{y,\rm alt})\le V(\hat t_{y,\rm dif})
+\]
+For the mean square error of $\hat t_{y,\rm alt}$ we have
+\[
+MSE(\hat t_{y,\rm alt})
+=
+V(\hat t_{y,\rm alt})+[B(\hat t_{y,\rm alt})]^2\\
+=
+{n^2\over N^2}V(\hat t_{y,\rm dif})+[B(\hat t_{y,\rm alt})]^2
+\]
+Since $\hat t_{y,\rm dif}$ is unbiased we have
+$MSE(\hat t_{y,\rm dif})=V(\hat t_{y,\rm dif})$.
+Therefore
+\[
+MSE(\hat t_{y,\rm alt})={n^2\over N^2}MSE(\hat t_{y,\rm dif})+[B(\hat t_{y,\rm alt})]^2
+\]
+
+%\newpage
+
+\section*{6.14}
+Show that it is always true that
+\[
+\sum_s g_{ks}{e_{ks}\over\pi_k}=\sum_s{e_{ks}\over\pi_k}
+\]
+We have
+\begin{align*}
+\sum_sg_{ks}{e_{ks}\over\pi_k}
+&=
+\sum_s\left[
+1+(\mathbf t_x-\hat{\mathbf t}_{x\pi})^T
+\left(
+\sum_s{\mathbf x_k\mathbf x_k^T\over\sigma_k^2\pi_k}
+\right)^{-1}
+{\mathbf x_k\over\sigma_k^2}
+\right]
+{e_{ks}\over\pi_k}\\
+%
+&=
+\sum_s{e_{ks}\over\pi_k}
++(\mathbf t_x-\hat{\mathbf t}_{x\pi})^T
+\left(
+\sum_s{\mathbf x_k\mathbf x_k^T\over\sigma_k^2\pi_k}
+\right)^{-1}
+\left(\sum_s{\mathbf x_k\over\sigma_k^2}{e_{ks}\over\pi_k}\right)\\
+%
+&=
+\sum_s{e_{ks}\over\pi_k}
++(\mathbf t_x-\hat{\mathbf t}_{x\pi})^T
+\left(
+\sum_s{\mathbf x_k\mathbf x_k^T\over\sigma_k^2\pi_k}
+\right)^{-1}
+\left(\sum_s{\mathbf x_k\over\sigma_k^2}
+{y_k-\mathbf x_k^T\widehat{\mathbf B}\over\pi_k}\right)\\
+%
+&=
+\sum_s{e_{ks}\over\pi_k}
++(\mathbf t_x-\hat{\mathbf t}_{x\pi})^T
+\left(
+\sum_s{\mathbf x_k\mathbf x_k^T\over\sigma_k^2\pi_k}
+\right)^{-1}
+\left(
+\sum_s{\mathbf x_ky_k\over\sigma_k^2\pi_k}
+-\sum_s{\mathbf x_k\mathbf x_k^T\widehat{\mathbf B}\over\sigma_k^2\pi_k}
+\right)\\
+&=
+\sum_s{e_{ks}\over\pi_k}
++(\mathbf t_x-\hat{\mathbf t}_{x\pi})^T
+\left[
+\left(
+\sum_s{\mathbf x_k\mathbf x_k^T\over\sigma_k^2\pi_k}
+\right)^{-1}
+\left(\sum_s{\mathbf x_ky_k\over\sigma_k^2\pi_k}\right)
+-\left(
+\sum_s{\mathbf x_k\mathbf x_k^T\over\sigma_k^2\pi_k}
+\right)^{-1}
+\left(\sum_s{\mathbf x_k\mathbf x_k^T\over\sigma_k^2\pi_k}\right)
+\widehat{\mathbf B}
+\right]\\
+&=
+\sum_s{e_{ks}\over\pi_k}
++(\mathbf t_x-\hat{\mathbf t}_{x\pi})^T
+\left[\widehat{\mathbf B}-\widehat{\mathbf B}\right]\\
+&=
+\sum_s{e_{ks}\over\pi_k}
+\end{align*}
+
+%\newpage
+
+\section*{7.15}
+Consider the BE design with constant inclusion probability $\pi$ for all elements.
+Use Result 7.3.1 to find the approximate variance and the variance estimator
+of the ratio estimator $\hat t_{yra}$ given by (7.3.2).
+Show that roughly the same variance is obtained for the ratio estimator under SI
+sampling of $n$ from $N$, if $n=N\pi$, which is the expected sample size.
+
+The approximate variance is
+\begin{align*}
+AV(\hat t_{yra})
+&=
+\underset{U}{\sum\sum}
+\Delta_{kl}{y_k-Bx_k\over\pi_k}{y_l-Bx_l\over\pi_l}\\
+&=
+{\pi-\pi^2\over\pi^2}\sum_U(y_k-Bx_k)^2 & \hbox{because $\Delta_{kl}=0$ for $k\ne l$}\\
+&=
+\left({1\over\pi}-1\right)
+\sum_U(y_k-Bx_k)^2
+\end{align*}
+The variance estimator is
+\begin{align*}
+\widehat V(\hat t_{yra})
+&=
+\underset{s}{\sum\sum}
+{\Delta_{kl}\over\pi_{kl}}
+{g_{ks}(y_k-\widehat Bx_k)\over\pi_k}
+{g_{ls}(y_l-\widehat Bx_l)\over\pi_l}\\
+&=
+{\pi-\pi^2\over\pi^3}\sum_sg_{ks}^2(y_k-\widehat Bx_k)^2\\
+&=
+{1\over\pi}\left({1\over\pi}-1\right)
+\left({\sum_Ux_k\over{1\over\pi}\sum_s{x_k}}\right)^2
+\sum_s(y_k-\widehat Bx_k)^2\\
+&=
+(1-\pi)\left({\sum_Ux_k\over\sum_s{x_k}}\right)^2
+\sum_s(y_k-\widehat Bx_k)^2
+\end{align*}
+For SI with $n=N\pi$ the variance is
+\begin{align*}
+V(\hat t_{yra})
+&=
+{N^2\over N\pi}\left(1-{N\pi\over N}\right)
+\left\{
+{1\over N-1}\sum_s(y_k-Bx_k)^2-
+{1\over N(N-1)}\left[\sum_s(y_k-Bx_k)\right]^2\right\}\\
+&=
+{N\over N-1}\left({1\over\pi}-1\right)\sum_s(y_k-Bx_k)^2
+-{1\over N-1}\left({1\over\pi}-1\right)\left[\sum_s(y_k-Bx_k)\right]^2\\
+&\approx
+\left({1\over\pi}-1\right)\sum_s(y_k-Bx_k)^2
+\end{align*}
+This is roughly the same variance as for BE, especially for large $N$.
+For the variance estimator we have
+\begin{align*}
+\widehat V(\hat t_{tya})
+&=
+{N^2\pi^2\over N^2}
+\left(\sum_Ux_k\over\sum_sx_k\right)^2{N^2\over N\pi}
+\left(1-{N\pi\over N}\right)
+{1\over N\pi-1}\sum_s(y_k-\widehat Bx_k)^2\\
+&={N\pi\over N\pi-1}(1-\pi)\left(\sum_Ux_k\over\sum_sx_k\right)^2
+\sum_s(y_k-\widehat Bx_k)^2
+\end{align*}
+This is also roughly the same as for BE.
+
+%\newpage
+
+\section*{9.2}
+(a) The inclusion probability is
+\[
+\pi^*=\pi_{ak}\pi_{k\mid s_a}={160\over284}\times{20\over40}=0.2817
+\]
+Therefore the estimated total of SS82 is
+\begin{align*}
+\hat t_{\pi^*}&=\sum_{h=1}^4\sum_{s_h}{y_k\over\pi^*}\\
+&=20\cdot(17.05+19.75+22.40+32.25)/0.2817\\
+&=6422
+\end{align*}
+
+(b) Unbiased estimators of $V_1$ and $V_2$.
+\[
+N=284
+\qquad
+n_a=160
+\qquad
+n_{ah}=40
+\qquad
+n_h=20
+\]
+\[
+\delta_h={1\over n_h}{n_a-n_{ah}\over n_a-1}
+={1\over20}\times{160-40\over 160-1}=0.03774
+\]
+\[
+w_{ah}={n_{ah}\over n_a}={40\over160}=0.25
+\]
+\[
+\hat{\bar y}_U={\hat t_{\pi^*}\over N}={6422\over 284}=22.61
+\]
+\begin{align*}
+\widehat V_1
+&=
+{N^2\over n_a}\left(1-{n_a\over N}\right)
+\left[
+\sum_{h=1}^4w_{ah}(1-\delta_h)S_{ys_h}^2
++{n_a\over n_a-1}\sum_{h=1}^4w_{ah}(\bar y_{s_h}-\hat{\bar y}_U)^2
+\right]\\
+&=
+12407.1\\
+\\
+\widehat V_2
+&=N^2\sum_{h=1}^4w_{ah}^2{1-n_h/n_{ah}\over n_h}S_{ys_h}^2\\
+&=
+14534.5
+\end{align*}
+
+(c) Compute an approximately 95\% confidence interval for the total SS82.
+\[
+6422\pm1.96\sqrt{12407.1+14534.5}=6422\pm322
+\]
+
+%\newpage
+
+(d) Estimate the variance that would be obtained with a single-pass SI sample
+of size $n=80$.
+
+We have
+\begin{align*}
+S_{s_1}^2&={1\over19}\sum_{s_1}y_k^2-{20\over19}\times17.05^2=19.945\\
+S_{s_2}^2&={1\over19}\sum_{s_2}y_k^2-{20\over19}\times19.75^2=24.197\\
+S_{s_3}^2&={1\over19}\sum_{s_3}y_k^2-{20\over19}\times22.40^2=28.359\\
+S_{s_4}^2&={1\over19}\sum_{s_4}y_k^2-{20\over19}\times31.25^2=42.829
+\end{align*}
+Therefore
+\[
+\sum_{s_a}y_k^2=19\sum_{h=1}^4S_{ys_h}^2+20\sum_{h=1}^4\bar y_{s_h}^2=45373
+\]
+In addition
+\[
+\sum_{s_a}y_k=20\cdot(17.05+19.75+22.40+31.25)=1809
+\]
+Therefore
+\[
+S_{ys}^2
+={\sum y_k^2\over n-1}-{\left(\sum y_k\right)^2\over n(n-1)}
+={45373\over80-1}-{1809^2\over80(80-1)}=56.544
+\]
+Finally, the estimated variance for an SI sample of size $n=80$ is
+\[
+\widehat V(\hat t_{\pi})
+={N^2\over n}\left(1-{n\over N}\right)S_{ys}^2
+={284^2\over80}\left(1-{80\over284}\right)\times56.544=40949.5
+\]
+
+\end{document}

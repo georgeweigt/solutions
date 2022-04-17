@@ -1,0 +1,26 @@
+\section*{21.}
+It is desired to find the probability that in a bridge deal each player receives an
+ace. A student argues as follows. It does not matter where the first ace goes.
+The second ace must go to one of the other three players and this occurs with
+probability 3/4. Then the next must go to one of two, an event of probability
+1/2, and finally the last ace must go to the player who does not have an ace.
+This occurs with probability 1/4. The probability that all these events occur
+is the product (3/4)(1/2)(1/4) = 3/32. Is this argument correct?
+
+\bigskip
+\noindent
+No, but the result is close to the actual probability.
+
+\bigskip
+\noindent
+Probability that the first player has exactly one ace.
+$${{48\choose12}{4\choose1}\over{52\choose13}}=0.4388$$
+Probability that the second player has exactly one ace.
+$${{36\choose12}{3\choose1}\over{39\choose13}}=0.4623$$
+Probability that the third player has exactly one ace.
+$${{24\choose12}{2\choose1}\over{26\choose13}}=0.52$$
+Therefore
+$$p=(0.4388)(0.4623)(0.52)=0.1055$$
+which is close to
+$${3\over32}=0.0938$$
+

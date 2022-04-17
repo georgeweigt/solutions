@@ -1,0 +1,34 @@
+\section*{3.6.4}
+Let $X$ and $Y$ be discrete random variables with mean 0,
+variance 1, and covariance $\rho$.
+Show that $E(max[X^2,Y^2])\le1+\sqrt{1-\rho^2}$.
+
+\bigskip
+\noindent
+Since the mean is 0 and the variance is 1 we have
+$$E(X^2)=1,\quad E(Y^2)=1,\quad\hbox{and}\quad\rho=EXY$$
+Jan's closed form of the $max$ function is
+$$max(u,v)={u+v\over2}+{|u-v|\over2}$$
+Hence
+\begin{eqnarray*}
+E(max[X^2,Y^2])&=&{1\over2}E(X^2+Y^2)
++{1\over2}E(|X^2-Y^2|)\\
+&=&{1\over2}E(X^2)+{1\over2}E(Y^2)+{1\over2}E(|(X+Y)(X-Y)|)\\
+&=&1+{1\over2}E(|X+Y|\cdot|X-Y|)
+\end{eqnarray*}
+By Cauchy-Schwarz
+$$E(|X+Y|\cdot|X-Y|)\le\sqrt{E(|X+Y|^2)E(|X-Y|^2)}$$
+Because of the squares we can drop the absolute value and obtain
+$$E(|X+Y|\cdot|X-Y|)\le\sqrt{E((X+Y)^2)E((X-Y)^2)}$$
+We have
+$$E((X+Y)^2)=E(X^2)+2E(XY)+E(Y^2)=2+2E(XY)$$
+and
+$$E((X-Y)^2)+E(X^2)-2E(XY)+E(Y^2)=2-2E(XY)$$
+hence
+$$E(|X+Y|\cdot|X-Y|)\le\sqrt{4-4(EXY)^2}$$
+Therefore
+\begin{eqnarray*}
+E(max[X^2,Y^2])&\le&
+1+{1\over2}\sqrt{4-4(EXY)^2}\\
+&\le&1+\sqrt{1-\rho^2}
+\end{eqnarray*}

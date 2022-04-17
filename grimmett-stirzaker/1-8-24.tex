@@ -1,0 +1,29 @@
+\section*{1.8.24}
+The probability that the first $k$ balls are blue and the $k+1$ ball is red is
+$$p={b\over r+b}\times{b-1\over r+b-1}\times\cdots\times
+{b-k+1\over r+b-k+1}\times{r\over r+b-k}$$
+In terms of factorials we have
+$$p={b!/(b-k)!\over(r+b)!/(r+b-k-1)!}\times r$$
+Noting that $r=r!/(r-1)!$ we can write
+$$p={(r+b-k-1)!\over(r-1)!\,(b-k)!}\times{b!\,r!\over(r+b)!}$$
+We have
+$$
+{r+b-k-1\choose r-1}={(r+b-k-1)!\over (r-1)!\,(b-k)!}
+\quad
+\hbox{and}
+\quad
+{r+b\choose b}={(r+b)!\over b!\,r!}
+$$
+Therefore
+$$p={r+b-k-1\choose r-1}\bigg/{r+b\choose b}$$
+
+\bigskip
+\noindent
+(b) Find the probability that the last ball drawn is red.
+
+\bigskip
+\noindent
+After the $k+1$ draw, the urn contains $r-1$ red balls out of
+a total of $r+b-k-1$.
+Therefore the probability that the last ball drawn is red is
+$$p={r-1\over r+b-k-1}$$

@@ -1,0 +1,30 @@
+\section*{3.7.10}
+A coin shows heads with probability $p$.
+Let $X_n$ be the number of flips required to obtain a run of $n$
+consecutive heads.
+Show that $E(X_n)=\sum_{k=1}^np^{-k}$.
+
+\bigskip
+\noindent
+From Recitation \#7 we have the expected value of $X_n$ is
+the expected value of $X_{n-1}$ plus one flip times the probability
+that the result is heads, plus the expected value of starting all
+over again if the flip is tails.
+\begin{eqnarray*}
+EX_n&=&(EX_{n-1}+1)p+(EX_{n-1}+1+EX_n)(1-p)\\
+&=&pEX_{n-1}+p+EX_{n-1}+1+EX_n-pEX_{n-1}-p-pEX_n\\
+&=&EX_{n-1}+1+EX_n-pEX_n
+\end{eqnarray*}
+Hence
+$$EX_n={1\over p}EX_{n-1}+{1\over p}$$
+Since $X_1\sim Geom(p)$, we have $EX_1=p^{-1}$.
+Assume $EX_n=\sum_{k=1}^np^{-k}$.
+Then
+\begin{eqnarray*}
+EX_{n+1}&=&p^{-1}\sum_{k=1}^np^{-k}+p^{-1}\\
+&=&\sum_{k=1}^np^{-(k+1)}+p^{-1}\\
+&=&\sum_{k+2}^{n+1}p^{-k}+p^{-1}\\
+&=&\sum_{k=1}^{n+1}p^{-k}
+\end{eqnarray*}
+Hence by induction $EX_n=\sum_{k=1}^np^{-k}$ is true for all
+$n\in N$.

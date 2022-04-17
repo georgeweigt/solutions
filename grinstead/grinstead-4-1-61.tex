@@ -1,0 +1,25 @@
+\section*{61.}
+Prove that if $B_1$, $B_2$, $\ldots$, $B_n$ are mutually disjoint and
+collectively exhaustive,
+and if $A$ attracts some $B_i$, then $A$ must repel some $B_j$.
+
+\bigskip
+\noindent
+By hypothesis we have
+$$P(B_1)+P(B_2)+\cdots+P(B_n)=1$$
+Multiply both sides by $P(A)$.
+$$P(A)P(B_1)+P(A)P(B_2)+\cdots+P(A)P(B_n)=P(A)$$
+By total probability we have
+$$P(A\mid B_1)P(B_1)+P(A\mid B_2)P(B_2)+\cdots+P(A\mid B_n)P(B_n)=P(A)$$
+Subtract to obtain
+$$\sum_{k=1}^n\bigg[P(A\mid B_k)-P(A)\bigg]B_k=0$$
+Let $A$ attract $B_i$. Then
+$$P(B_i\mid A)>P(B)\quad\hbox{and}\quad P(A\mid B_i)>P(A)$$
+hence
+$$P(A\mid B_i)-P(A)>0$$
+To balance the sum and keep the result zero, there must be at least one term
+such that
+$$P(A\mid B_j)-P(A)<0$$
+Therefore there is a $B_j$ such that
+$$P(B_j\mid A)<P(B_j)$$
+

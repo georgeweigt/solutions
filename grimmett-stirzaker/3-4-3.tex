@@ -1,0 +1,19 @@
+\section*{3.4.3}
+Of the $2n$ people in a given collection of $n$ couples,
+exactly $m$ die. Assuming that the $m$ have been picked at random,
+find the mean number of surviving couples.
+
+\bigskip
+\noindent
+Let $A_k$ be the event that couple $k$ survives.
+Let $I_k$ be the indicator function of $A_k$.
+There are $2n\choose m$ ways of choosing who dies.
+The probability that a couple survives is the fraction of ways that
+$m$ deaths are distributed across the other $2n-2$ people.
+Hence
+$$EI_k=P(A_k)={{2n-2\choose m}\over{2n\choose m}}
+={(2n-2)!\over m!(2n-m-2)!}{m!(2n-m)!\over(2n!)}
+={(2n-m)(2n-m-1)\over2n(2n-1)}$$
+The expected number of couples that survive is
+$$E\left(\sum_{k=1}^nI_k\right)=\sum_{k=1}^nEI_k
+={(2n-m)(2n-m-1)\over2(2n-1)}$$
