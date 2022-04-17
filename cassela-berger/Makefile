@@ -1,7 +1,11 @@
+.PHONY: default clean
+
+%.pdf: %.tex
+	pdflatex $<
+
 default:
-	pdflatex cassela-berger.tex
-	mv cassela-berger.pdf ..
-	rm -rf rm -f *.aux *.log *.synctex.gz *.toc
+	for file in $$(ls *.tex | sed "s/\.tex/\.pdf/") ; do make $$file ; done
+	make clean
 
 clean:
-	rm -rf rm -f *.aux *.log *.synctex.gz *.toc
+	rm -f *.aux *.log *.out *.synctex.gz *.toc
