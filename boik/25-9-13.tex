@@ -1,0 +1,177 @@
+\section{Section 25.9, problem 13}
+Let $\bf X$ be an $n\times p$ matrix with rank $r$.
+Partition $\bf X$ as ${\bf X}=(\begin{matrix}{\bf X}_1&{\bf X}_2
+\end{matrix})$,
+where ${\bf X}_i$ is $n\times p_i$ and $p_1+p_2=p$.
+
+\bigskip
+\noindent
+(a) Show that
+${\cal R}({\bf X})={\cal R}([\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}
+\end{matrix}])$
+where
+${\bf X}_{2\cdot1}=({\bf I}-{\bf H}_1){\bf X}_2$
+and ${\bf H}_1=\mathop{\rm ppo}({\bf X}_1)$.
+
+\bigskip
+\noindent
+The solution is to show that ${\cal R}({\bf X})$ and
+${\cal R}([\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}\end{matrix}])$
+are subsets of each other.
+
+\bigskip
+\noindent
+Note that
+\begin{eqnarray*}
+{\bf X}_1({\bf X}_1'{\bf X}_1)^{-{}}{\bf X}_1'{\bf X}_2+{\bf X}_{2.1}
+&=&{\bf H}_1{\bf X}_2+({\bf I}-{\bf H}_1){\bf X}_2\\
+&=&{\bf X}_2
+\end{eqnarray*}
+It follows that
+$$(\begin{matrix}{\bf X}_1&{\bf X}_2\end{matrix})
+=(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}\end{matrix})
+\left(\begin{matrix}
+{\bf I} & ({\bf X}'{\bf X})^{-{}}{\bf X}_1'{\bf X}_2\cr
+{\bf 0} & {\bf I}
+\end{matrix}\right)
+$$
+By Theorem 11.5 on p. 83 we have
+$${\cal R}\left[
+(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}\end{matrix})\left(\begin{matrix}
+{\bf I} & ({\bf X}'{\bf X})^{-{}}{\bf X}_1'{\bf X}_2\cr
+{\bf 0} & {\bf I}
+\end{matrix}\right)
+\right]
+\subseteq
+{\cal R}\left[
+(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}\end{matrix})
+\right]
+$$
+Therefore
+$${\cal R}({\bf X})\subseteq
+{\cal R}[(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}\end{matrix})]$$
+Next, note that
+\begin{eqnarray*}
+-{\bf X}_1({\bf X}_1'{\bf X}_1)^{-{}}{\bf X}_1'{\bf X}_2+{\bf X}_2
+&=&-{\bf H}_1{\bf X}_2+{\bf X}_2\\
+&=&{\bf X}_{2.1}
+\end{eqnarray*}
+It follows that
+$$(\begin{matrix}{\bf X}_1&{\bf X}_{2.1}\end{matrix})
+=(\begin{matrix}{\bf X}_1&{\bf X}_2\end{matrix})\left(\begin{matrix}
+{\bf I} & -({\bf X}'{\bf X})^{-{}}{\bf X}_1'{\bf X}_2\cr
+{\bf 0} & {\bf I}
+\end{matrix}\right)
+$$
+By Theorem 11.5 on p. 83 we have
+$$
+{\cal R}\left[
+(\begin{matrix}{\bf X}_1&{\bf X}_2\end{matrix})\left(\begin{matrix}
+{\bf I} & -({\bf X}'{\bf X})^{-{}}{\bf X}_1'{\bf X}_2\cr
+{\bf 0} & {\bf I}
+\end{matrix}\right)
+\right]
+\subseteq
+{\cal R}\left[
+(\begin{matrix}{\bf X}_1&{\bf X}_2\end{matrix})
+\right]
+$$
+Therefore
+$$
+{\cal R}[(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}\end{matrix})]
+\subseteq
+{\cal R}({\bf X})
+$$
+Since ${\cal R}({\bf X})$ and
+${\cal R}[(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}\end{matrix})]$
+are subsets of each other we must have
+$${\cal R}({\bf X})={\cal R}[(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}
+\end{matrix})]$$
+
+\bigskip
+\noindent
+(b) Let ${\bf H}=\mathop{\rm ppo}({\bf X})$.
+Use the above result to show that
+${\bf H}={\bf H}_1+{\bf H}_{2\cdot1}$
+where ${\bf H}_{2\cdot1}=\mathop{\rm ppo}({\bf X}_{2\cdot1})$.
+
+\bigskip
+\noindent
+First, a preliminary calculation to show that
+${\bf X}_{2\cdot1}'{\bf X}_1=0$. We have
+\begin{eqnarray*}
+{\bf X}_{2\cdot1}'{\bf X}_1
+&=&[({\bf I}-{\bf H_1}){\bf X_2}]'{\bf X}_1\\
+&=&{\bf X}_2'({\bf I}-{\bf H}_1){\bf X}_1\\
+&=&{\bf X}_2'({\bf X}_1-{\bf H}_1{\bf X}_1)\\
+&=&0
+\end{eqnarray*}
+where ${\bf X}_1-{\bf H}_1{\bf X}_1=0$ because
+$\mathbf H_1=\mathop{\rm ppo}(\mathbf X_1)$.
+%
+Now for the main part of the proof.
+Let us compute
+$\mathop{\rm ppo}[(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}
+\end{matrix})]$.
+\begin{eqnarray*}
+\mathop{\rm ppo}[(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}
+\end{matrix})]
+&=&(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}\end{matrix})
+\left[
+\left(\begin{matrix}
+{\bf X}_1'\cr
+{\bf X}_{2\cdot1}'
+\end{matrix}\right)
+(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}\end{matrix})
+\right]^{-{}}
+\left(\begin{matrix}
+{\bf X}_1'\cr
+{\bf X}_{2\cdot1}'
+\end{matrix}\right)\\
+&=&
+(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}\end{matrix})
+%
+\left(
+\begin{matrix}
+{\bf X}_1'{\bf X}_1 & {\bf X}_1'{\bf X}_{2\cdot1}\cr
+{\bf X}_{2\cdot1}'{\bf X}_1 & {\bf X}_{2\cdot1}'{\bf X}_{2\cdot1}
+\end{matrix}\right)^{-{}}
+%
+\left(\begin{matrix}
+{\bf X}_1'\cr
+{\bf X}_{2\cdot1}'
+\end{matrix}\right)\\
+&=&
+(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}\end{matrix})
+\left[
+\begin{matrix}
+({\bf X}_1'{\bf X}_1)^{-{}} & {\bf 0}\cr
+{\bf 0} & ({\bf X}_{2\cdot1}'{\bf X}_{2\cdot1})^{-{}}
+\end{matrix}\right]
+%
+\left(\begin{matrix}
+{\bf X}_1'\cr
+{\bf X}_{2\cdot1}'
+\end{matrix}\right)\\
+&=&{\bf X}_1({\bf X}_1'{\bf X_1})^{-{}}{\bf X}_1'
++{\bf X}_{2\cdot1}({\bf X}_{2\cdot1}'{\bf X}_{2\cdot1})^{-{}}
+{\bf X}_{2\cdot1}'\\
+&=&{\bf H}_1+{\bf H}_{2\cdot1}
+\end{eqnarray*}
+By part (a) above we have
+${\cal R}({\bf X})={\cal R}[(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}
+\end{matrix})]$
+and consequently
+${\cal N}({\bf X}')={\cal N}[(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}
+\end{matrix})']$.
+Therefore by the uniqueness of projection operators we have
+$\mathop{\rm ppo}({\bf X})
+=\mathop{\rm ppo}[(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}
+\end{matrix})]$.
+Therefore
+$${\bf H}=
+\mathop{\rm ppo}({\bf X})
+=\mathop{\rm ppo}[(\begin{matrix}{\bf X}_1&{\bf X}_{2\cdot1}
+\end{matrix})]
+={\bf H}_1+{\bf H}_{2\cdot1}$$
+

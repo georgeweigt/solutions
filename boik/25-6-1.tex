@@ -1,0 +1,32 @@
+\section{Section 25.6, problem 1}
+Let $\bf A$ be a $p\times q$ matrix. It is obvious that
+${\bf A}={\bf 0}\,\Longrightarrow\,{\bf A}'{\bf A}={\bf 0}$.
+Verify that
+$${\bf A}'{\bf A}={\bf 0}\,\Longrightarrow\,{\bf A}={\bf 0}$$
+
+\bigskip
+\noindent
+Since ${\bf A}'{\bf A}={\bf 0}$ it follows that
+$\mathop{\rm rank}({\bf A}'{\bf A})=0$.
+By Theorem 8.18 (d) on p. 60,
+$\mathop{\rm rank}({\bf A}'{\bf A})=\mathop{\rm rank}({\bf A})$
+therefore $\mathop{\rm rank}({\bf A})=0$.
+Since only the zero matrix has rank zero, it follows that
+${\bf A}=\bf 0$.
+
+\bigskip
+\noindent
+Here is an alternate proof from he book.
+Partition $\bf A$ into columns. Then ${\bf A}'{\bf A}=\bf0$ implies
+$$\left(\begin{matrix}
+{\bf a}_1'\cr
+\vdots\cr
+{\bf a}_q'
+\end{matrix}\right)\left(\begin{matrix}
+{\bf a}_1 & \cdots & {\bf a}_q\end{matrix}\right)={\bf 0}
+$$
+It follows that
+$${\bf a}_i'{\bf a}_i=\sum_{j=1}^n a_{ij}^2=0\quad\hbox{for all $i$}$$
+Since $a_{ij}^2$ is non-negative, the only solution to the above
+equation is $a_{ij}=0$ for all $i$ and $j$.
+Therefore ${\bf A}=\bf 0$.

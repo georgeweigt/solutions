@@ -1,0 +1,78 @@
+\section{Section 25.2, problem 4}
+(a) Give a scalar expression for an appropriate linear model.
+$$y_{ijk}=\mu+\alpha_i+\beta_j+\gamma_{ij}+\varepsilon_{ijk},
+\quad i=1,2;\quad j=1,2,3;\quad k=1,\ldots,n_{ij}$$
+
+\bigskip
+\noindent
+(b) Write the liner model as ${\bf y}={\bf X}\vec\beta+\vec\varepsilon$.
+Give the entries of $\bf X$ and $\vec\beta$.
+$$\left(\begin{matrix}
+y_{111}\cr
+y_{121}\cr
+y_{122}\cr
+y_{131}\cr
+y_{211}\cr
+y_{221}\cr
+y_{231}\cr
+y_{232}
+\end{matrix}\right)=\left(\begin{array}{cccccccccccc}
+1 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0\cr
+1 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0\cr
+1 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0\cr
+1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0\cr
+1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\cr
+1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0\cr
+1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1\cr
+1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right)\left(\begin{matrix}
+\mu\cr
+\alpha_1\cr
+\alpha_2\cr
+\beta_1\cr
+\beta_2\cr
+\beta_3\cr
+\gamma_{11}\cr
+\gamma_{12}\cr
+\gamma_{13}\cr
+\gamma_{21}\cr
+\gamma_{22}\cr
+\gamma_{23}
+\end{matrix}\right)+\left(\begin{matrix}
+\varepsilon_{111}\cr
+\varepsilon_{121}\cr
+\varepsilon_{122}\cr
+\varepsilon_{131}\cr
+\varepsilon_{211}\cr
+\varepsilon_{221}\cr
+\varepsilon_{231}\cr
+\varepsilon_{232}
+\end{matrix}\right)
+$$
+$$
+{\bf X}=
+\left(\begin{array}{cccccccccccc}
+1 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0\cr
+1 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0\cr
+1 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0\cr
+1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0\cr
+1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\cr
+1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0\cr
+1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1\cr
+1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right),\quad
+\vec\beta=\left(\begin{matrix}
+\mu\cr
+\alpha_1\cr
+\alpha_2\cr
+\beta_1\cr
+\beta_2\cr
+\beta_3\cr
+\gamma_{11}\cr
+\gamma_{12}\cr
+\gamma_{13}\cr
+\gamma_{21}\cr
+\gamma_{22}\cr
+\gamma_{23}
+\end{matrix}\right)
+$$

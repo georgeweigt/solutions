@@ -1,0 +1,112 @@
+\section{Section 25.15, problem 10}
+Suppose that $\mathbf X$ is $n\times p$ with rank $p$ and
+$\bm{\widehat\beta}=(\mathbf X^T\mathbf X)^{-1}\mathbf X^T
+\mathbf y$ is the OLS estimator of $\bm\beta$ in the model
+$\mathbf y\sim N(\mathbf X\bm\beta,\sigma^2\mathbf I_n)$.
+
+\bigskip
+\noindent
+(a) Find
+\[
+Q=\max_{\mathbf c\ne\mathbf0}
+{(\mathbf c^T\bm{\widehat\beta})^2
+\over\mathbf c^T(\mathbf X^T\mathbf X)^{-1}\mathbf c}
+\]
+
+\bigskip
+\noindent
+Note that
+\[
+(\mathbf c^T\bm{\widehat\beta})^2
+=\mathbf c^T\bm{\widehat\beta}\bm{\widehat\beta}^T\mathbf c
+\]
+By Theorem 9.11 on p.\ 75 we have
+\[
+\max_{\mathbf c\ne\mathbf0}
+{\mathbf c^T\bm{\widehat\beta}\bm{\widehat\beta}^T\mathbf c
+\over\mathbf c^T(\mathbf X^T\mathbf X)^{-1}\mathbf c}
+=\hbox{maximum eigenvalue of}\;
+\mathbf X^T\mathbf X\bm{\widehat\beta}\bm{\widehat\beta}^T
+\]
+We have
+\begin{align*}
+\mathbf X^T\mathbf X\bm{\widehat\beta}\bm{\widehat\beta}^T
+&=
+\mathbf X^T\mathbf X(\mathbf X^T\mathbf X)^{-1}
+\mathbf X^T\mathbf y\mathbf y^T\mathbf X(\mathbf X^T\mathbf X)^{-1}\\
+&=
+\mathbf X^T\mathbf y\mathbf y^T\mathbf X(\mathbf X^T\mathbf X)^{-1}
+\end{align*}
+%
+By Theorem 9.4 (c) on p.\ 71, if $\lambda$ is an eigenvalue of
+the above then $\lambda$ is an eigenvalue of
+\[
+\mathbf y^T\mathbf X(\mathbf X^T\mathbf X)^{-1}\mathbf X^T\mathbf y\\
+=
+\mathbf y^T\mathbf H\mathbf y
+\]
+Since $\mathbf y^T\mathbf{Hy}$ is a scalar we have
+\[
+Q=\mathbf y^T\mathbf{Hy}
+\]
+
+\bigskip
+\noindent
+(b) Give an expression for the maximizer.
+
+\bigskip
+\noindent
+By Corollary 9.11.1 on p.\ 76, the maximizer of $Q$ is the eigenvector
+of $\mathbf X^T\mathbf X\bm{\widehat\beta}\bm{\widehat\beta}^T$
+that corresponds to the largest eigenvalue of same.
+Hence we want to solve for the eigenvector $\mathbf c$ in
+\[
+\mathbf X^T\mathbf y\mathbf y^T\mathbf X(\mathbf X^T\mathbf X)^{-1}
+\mathbf c
+=\mathbf y^T\mathbf{Hyc}
+\]
+Let $\mathbf c=\mathbf X^T\mathbf y$. Then
+\[
+\mathbf X^T\mathbf y\mathbf y^T\mathbf X(\mathbf X^T\mathbf X)^{-1}
+\mathbf X^T\mathbf y
+=
+\mathbf X^T\mathbf y\mathbf y^T\mathbf{Hy}
+=
+\mathbf y^T\mathbf{HyX}^T\mathbf y
+\]
+since $\mathbf y^T\mathbf{Hy}$ is a scalar. Hence
+\[
+\mathbf c=\mathbf X^T\mathbf y
+\]
+
+\bigskip
+\noindent
+(c) Find the distribution of $Q$.
+
+\bigskip
+\noindent
+We have
+\[
+{(\mathbf c^T\bm{\widehat\beta})^2
+\over\mathbf c^T(\mathbf X^T\mathbf X)^{-1}\mathbf c}
+=
+{[\mathbf y^T\mathbf X(\mathbf X^T\mathbf X)^{-1}
+\mathbf X^T\mathbf y]^2
+\over\mathbf y^T\mathbf X(\mathbf X^T\mathbf X)^{-1}\mathbf X^T\mathbf y
+}
+=\mathbf y^T\mathbf{Hy}
+\]
+Let $\mathbf A=\mathbf H/\sigma^2$.
+Then $\mathbf A\sigma^2\mathbf I$ is idempotent.
+By Theorem 14.7 on p.\ 146 we have $\mathbf y^T\mathbf{Ay}
+\sim\chi^2(p,\eta)$ where
+\[
+\eta={1\over2}\bm\beta^T\mathbf X^T\mathbf A\mathbf X\bm\beta
+=
+{1\over2\sigma^2}\bm\beta^T\mathbf X^T\mathbf{HX}\bm\beta
+=
+{1\over2\sigma^2}\bm\beta^T\mathbf X^T\mathbf X\bm\beta
+\]
+Hence $Q/\sigma^2\sim\chi^2(p,\eta)$.
+
+

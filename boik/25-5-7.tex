@@ -1,0 +1,28 @@
+\section{Section 25.5, problem 7}
+Let $\bf A$ be an $n\times n$ matrix for which ${\bf I}_n-{\bf A}$
+is nonsingular.
+If $\lambda$ is an eigenvalue of $\bf A$ show that $(1-\lambda)^{-1}$
+is an eigenvalue of $({\bf I}_n-{\bf A})^{-1}$.
+
+\bigskip
+\noindent
+Let $\vec x$ be the eigenvector associated with $\lambda$.
+Theorem 9.4 tells us that ${\bf C}^{-1}{\bf AC}x=\lambda x$ for any
+nonsingular matrix $\bf C$. Therefore we can write
+$$({\bf I}_n-{\bf A})^{-1}{\bf A}({\bf I}_n-{\bf A})\vec x
+=\lambda\vec x$$
+Note that
+\begin{eqnarray*}
+({\bf I}_n-{\bf A})^{-1}{\bf A}({\bf I}_n-{\bf A})\vec x
+&=&({\bf I}_n-{\bf A})^{-1}({\bf A}-{\bf A}^2)\vec x\\
+&=&({\bf I}_n-{\bf A})^{-1}({\bf A}\vec x-{\bf A}^2\vec x)\\
+&=&({\bf I}_n-{\bf A})^{-1}(\lambda\vec x-\lambda^2\vec x)\\
+&=&({\bf I}_n-{\bf A})^{-1}(\lambda-\lambda^2)\vec x
+\end{eqnarray*}
+It follows that
+$$({\bf I}_n-{\bf A})^{-1}(\lambda-\lambda^2)\vec x=\lambda\vec x$$
+Hence
+$$({\bf I}_n-{\bf A})^{-1}\vec x
+={\lambda\over\lambda-\lambda^2}\,\vec x={1\over1-\lambda}\,\vec x$$
+Therefore $(1-\lambda)^{-1}$ is an eigenvalue of
+$({\bf I}_n-{\bf A})^{-1}$.

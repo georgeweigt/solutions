@@ -1,0 +1,65 @@
+\section{Section 25.7, problem 4}
+Let ${\bf X}: n\times p$ be a rank-$r$ matrix with full-rank
+singular value decomposition
+$${\bf X}={\bf UDV}'$$
+Let ${\bf M}=\mathop{\rm ppo}(\bf X)$.
+Verify that ${\bf M}={\bf UU}'$.
+
+\bigskip
+\noindent
+%By definition of a perpendicular projection operator,
+%$\bf M$ is both symmetric and idempotent, that is,
+%${\bf M}={\bf M}^T$ and ${\bf M}^2={\bf M}$.
+By definition,
+$\mathop{\rm ppo}({\bf X})={\bf X}({\bf X}^T{\bf X})^{-{}}{\bf X}^T$.
+Hence
+$$
+{\bf M}={\bf UDV}^T\;
+({\bf V}{\bf D}^T{\bf U}^T\;{\bf UDV}^T)^{-{}}\;
+{\bf VD}^T{\bf U}^T
+$$
+Note that by definition of the full-rank SVD we have
+${\bf U}^T{\bf U}={\bf I}_r$.
+In addition, $\bf D$ is diagonal hence ${\bf D}={\bf D}^T$.
+Hence we can now write
+$$
+{\bf M}={\bf UDV}^T\;
+({\bf V}{\bf D}{\bf DV}^T)^{-{}}\;
+{\bf VD}{\bf U}^T
+$$
+Next we want to eliminate the generalized inverse in the
+above equation.
+By the definition of the full-rank SVD we have that
+${\bf D}^{-1}$ exists and that
+${\bf V}^T{\bf V}={\bf I}_r$.
+It follows that ${\bf D}^{-1}{\bf V}^T{\bf VD}={\bf I}_r$.
+Hence we can write
+\begin{eqnarray*}
+{\bf M}&=&
+{\bf U}\;
+({\bf D}^{-1}{\bf V}^T{\bf VD})\;
+{\bf DV}^T\;
+({\bf V}{\bf D}{\bf DV}^T)^{-{}}\;
+{\bf VD}\;
+({\bf DV}^T{\bf VD}^{-1})\;
+{\bf U}^T\\
+&=&
+{\bf U}\;
+({\bf D}^{-1}{\bf V}^T)\;
+{\bf VDDV}^T\;
+({\bf V}{\bf D}{\bf DV}^T)^{-{}}\;
+{\bf VDDV}^T
+({\bf VD}^{-1})\;
+{\bf U}^T\\
+&=&
+{\bf U}\;
+({\bf D}^{-1}{\bf V}^T)\;
+{\bf VDDV}^T
+({\bf VD}^{-1})\;
+{\bf U}^T\\
+&=&
+{\bf U}\;
+({\bf D}^{-1}{\bf DD}{\bf D}^{-1})\;
+{\bf U}^T\\
+&=&{\bf UU}^T
+\end{eqnarray*}

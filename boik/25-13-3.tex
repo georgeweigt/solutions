@@ -1,0 +1,70 @@
+
+\section{Section 25.13, problem 3}
+(a) Find a basis set of estimable functions for $\bm\theta$.
+
+\bigskip
+\noindent
+Let $L_1=L_2=L_3=L_4=0$.
+Then by the SAS output, the linear function
+\[
+\psi=L_5\theta_1+L_6\theta_2+L_7\theta_3-(L_5+L_6+L_7)\theta_4
+\] is estimable.
+Let $\bm\ell^T=\begin{pmatrix}
+L_5 & L_6 & L_7\end{pmatrix}$ and let
+\[
+\mathbf K^T=
+\begin{pmatrix}
+1 & 0 & 0 & -1\\
+0 & 1 & 0 & -1\\
+0 & 0 & 1 & -1
+\end{pmatrix}
+\]
+Then
+\[
+\bm\ell^T\mathbf K^T=
+\begin{pmatrix}
+L_5 & L_6 & L_7 & -L_5-L_6-L_7
+\end{pmatrix}
+\]
+and
+\[
+\psi=L_5\theta_1+L_6\theta_2+L_7\theta_3-(L_5+L_6+L_7)\theta_4=
+\bm\ell^T\mathbf K^T
+\begin{pmatrix}
+\theta_1\\
+\theta_2\\
+\theta_3\\
+\theta_4
+\end{pmatrix}
+\]
+Since the rows of $\mathbf K^T$ are linearly independent,
+a basis set $\bm\psi$ of estimable functions for $\bm\theta$ is
+\[
+\bm\psi=
+\mathbf K^T
+\begin{pmatrix}
+\theta_1\\
+\theta_2\\
+\theta_3\\
+\theta_4
+\end{pmatrix}
+=\begin{pmatrix}
+\theta_1-\theta_4\\
+\theta_2-\theta_4\\
+\theta_3-\theta_4
+\end{pmatrix}
+\]
+
+\bigskip
+\noindent
+(b) Let $\mu_{ij}$ be the expectation of an observation in level
+$i$ of factor A and level $j$ of factor B.
+The sample size in cell $(1,4)$ is zero.
+Determine whether or not $\mu_{14}$ is estimable.
+
+\bigskip
+\noindent
+We have $\mu_{14}=\mu+\tau_1+\theta_4$.
+This corresponds to $L_1=L_2=L_8=1$ and all other $L_i=0$.
+By the SAS output this linear function is estimable because
+$L_8=L_1$ and $L_4=L_1-L_2$. Therefore $\mu_{14}$ is estimable.

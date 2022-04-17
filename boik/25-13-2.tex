@@ -1,0 +1,74 @@
+\section{Section 25.13, problem 2}
+(a) Find a basis set of estimable functions for $\bm\gamma$.
+
+\bigskip
+\noindent
+Let $L_1,L_2,\cdots,L_8=0$. Then by the SAS output the following
+linear function is estimable.
+\[
+\begin{pmatrix}
+L_9\\
+L_{10}\\
+-L_9-L_{10}\\
+0\\
+-L_9\\
+L_{13}\\
+0\\
+L_9-L_{13}\\
+0\\
+-L_{10}-L_{13}\\
+L_9+L_{10}\\
+-L_9+L_{13}
+\end{pmatrix}^T
+\cdot
+\begin{pmatrix}
+\gamma_{11}\\
+\gamma_{12}\\
+\gamma_{13}\\
+\gamma_{14}\\
+\gamma_{21}\\
+\gamma_{22}\\
+\gamma_{23}\\
+\gamma_{24}\\
+\gamma_{31}\\
+\gamma_{32}\\
+\gamma_{33}\\
+\gamma_{34}
+\end{pmatrix}
+\]
+Let $\bm\ell^T=\begin{pmatrix}L_9 & L_{10} & L_{13}\end{pmatrix}$
+and let
+\[
+\mathbf K^T=
+\left(\begin{array}{rrrrrrrrrrrrrr}
+1 & 0 & -1 & 0 & & -1 & 0 & 0 & 1 & & 0 & 0 & 1 & -1\\
+0 & 1 & -1 & 0 & & 0 & 0 & 0 & 0 & & 0 & -1 & 1 & 0\\
+0 & 0 & 0 & 0 & & 0 & 1 & 0 & -1 & & 0 & -1 & 0 & 1
+\end{array}\right)
+\]
+Then the above estimable function is equivalent to
+$\bm\ell^T\mathbf K^T\bm\gamma$.
+Since the rows of $\mathbf K^T$ are linearly independent,
+a basis set of estimable functions of $\bm\gamma$ is
+\[
+\bm\psi=\mathbf K^T\bm\gamma=
+\begin{pmatrix}
+\gamma_{11}-\gamma_{13}-\gamma_{21}+\gamma_{24}
++\gamma_{33}-\gamma_{34}\\
+\gamma_{12}-\gamma_{13}-\gamma_{32}+\gamma_{33}\\
+\gamma_{22}-\gamma_{24}-\gamma_{32}+\gamma_{34}
+\end{pmatrix}
+\]
+
+\bigskip
+\noindent
+(b) Let $\mu_{ij}$ be the expectation of an observation in level $i$
+of factor A and level $j$ of factor B. The sample size in cell
+$(1,4)$ is zero. Determine whether or not $\mu_{14}$ is estimable.
+
+\bigskip
+\noindent
+We have $\mu_{14}=\mu+\tau_1+\theta_4+\gamma_{14}$.
+Let $L_1=L_2=L_8=1$ and all other $L_i=0$.
+Then by the SAS output $\mu_{14}$ is not estimable because
+$L_{11}\ne L_2$.

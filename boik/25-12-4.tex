@@ -1,0 +1,155 @@
+\section{Section 25.12, problem 4}
+Consider the linear model
+$\mathbf y=\mathbf X\bm\beta+\bm\varepsilon$ where $\mathbf X$
+is $n\times p$ with rank $r$ and $\mathop{\rm Var}(\mathbf y)
+=\bm\Sigma=\sigma^2\mathbf I_n$.
+The ordinary least squares estimator of $\bm\beta$ is the
+minimizer of
+\[
+SSE(\bm\beta)=(\mathbf y-\mathbf X\bm\beta)^T
+(\mathbf y-\mathbf X\bm\beta)
+\]
+
+\bigskip
+\noindent
+(d) Show that $\mathbf e=\mathbf y-\mathbf X\bm{\tilde\beta}$
+and $\mathbf{\hat y}$ are orthogonal.
+
+\bigskip
+\noindent
+Let $\bm\Omega=\mathbf I$.
+Then by Theorem 15.5 on p.\ 158 the minimizer is
+\[
+\bm{\tilde\beta}=(\mathbf X^T\mathbf X)^{-{}}\mathbf X^T\mathbf y
+\]
+Let $\mathbf H=\mathop{\rm ppo}(\mathbf X)=
+\mathbf X(\mathbf X^T\mathbf X)^{-{}}\mathbf X^T$.
+Then
+$\mathbf{\hat y}=\mathbf{Hy}$ and
+$\mathbf e=(\mathbf I-\mathbf H)\mathbf y$.
+Hence
+\[
+\mathbf{\hat y}^T\mathbf e
+=\mathbf y^T\mathbf H(\mathbf I-\mathbf H)\mathbf y=0
+\]
+Therefore $\mathbf e$ and $\mathbf{\hat y}$ are orthogonal.
+
+\bigskip
+\noindent
+(f) Verify that
+$SSE(\bm{\tilde\beta})=\mathbf y^T(\mathbf I-\mathbf H)\mathbf y$
+where $\mathbf H=\mathop{\rm ppo}(\mathbf X)$.
+
+\bigskip
+\noindent
+Note that $\mathbf{\hat y}=\mathbf{Hy}=\mathbf X\bm{\tilde\beta}$
+and $(\mathbf I-\mathbf H)=(\mathbf I-\mathbf H)^T
+=(\mathbf I-\mathbf H)^2$.
+Therefore
+\begin{align*}
+SSE(\bm{\tilde\beta})
+&=(\mathbf y-\mathbf{Hy})^T(\mathbf y-\mathbf{Hy})\\
+&=\mathbf y^T(\mathbf I-\mathbf H)^T(\mathbf I-\mathbf H)\mathbf y\\
+&=\mathbf y^T(\mathbf I-\mathbf H)\mathbf y
+\end{align*}
+
+\bigskip
+\noindent
+(g) The sample Pearson product-moment correlation between two
+variables, say $U$ and $V$, is
+\[
+r_{u,v}={
+\sum_{i=1}^n(u_i-\bar u)(v_i-\bar v)
+\over
+\sqrt{
+\left[\sum_{i=1}^n(u_i-\bar u)^2\right]
+\left[\sum_{i=1}^n(v_i-\bar v)^2\right]
+}
+}
+\]
+Show that
+\[
+r_{u,v}={
+\mathbf u^T(\mathbf I_n-\mathbf H_1)\mathbf v
+\over
+\sqrt{
+[\mathbf u^T(\mathbf I_n-\mathbf H_1)\mathbf u]
+[\mathbf v^T(\mathbf I_n-\mathbf H_1)\mathbf v]
+}
+}
+\]
+for $\mathbf H_1=\mathop{\rm ppo}(\mathbf 1_n)$.
+
+\bigskip
+\noindent
+From p.\ 135 we have
+$\mathop{\rm ppo}(\mathbf 1_n)=\mathbf 1_nn^{-1}\mathbf 1_n^T$.
+Therefore
+\begin{align*}
+\mathbf u^T(\mathbf I_n-\mathbf H_1)\mathbf v
+&=\mathbf u^T\mathbf v-\mathbf u^T\mathbf 1_nn^{-1}\mathbf 1_n^T\mathbf v\\
+&=\sum_{i=1}^nu_iv_i-{1\over n}
+\left(\sum_{i=1}^n u_i\right)\left(\sum_{i=1}^nv_i\right)\\
+&=\sum_{i=1}^nu_iv_i-n
+\left({1\over n}\sum_{i=1}^n u_i\right)
+\left({1\over n}\sum_{i=1}^nv_i\right)\\
+&=\sum_{i=1}^nu_iv_i-n\bar u\bar v\\
+&=\sum_{i=1}^nu_iv_i-n\bar u\bar v-n\bar u\bar v+n\bar u\bar v\\
+&=\sum_{i=1}^nu_iv_i
+-\bar u\sum_{i=1}^n v_i
+-\bar v\sum_{i=1}^n u_i
++\sum_{i=1}^n\bar u\bar v\\
+&=\sum_{i=1}^n(u_i-\bar u)(v_i-\bar v)
+\end{align*}
+Likewise
+\[
+\mathbf u^T(\mathbf I_n-\mathbf H_1)\mathbf u
+=\sum_{i=1}(u_i-\bar u)(u_i-\bar u)=\sum_{i=1}^n(u_i-\bar u)^2
+\]
+and
+\[
+\mathbf v^T(\mathbf I_n-\mathbf H_1)\mathbf v
+=\sum_{i=1}(v_i-\bar v)(v_i-\bar v)=\sum_{i=1}^n(v_i-\bar v)^2
+\]
+Hence the equality of the two forms of $r_{u,v}$ is shown to be true.
+
+\bigskip
+\noindent
+(h) Suppose that the first column of $\mathbf X$ is $\mathbf 1_n$.
+Compute the correlation between the fitted values
+$\mathbf{\hat y}=\mathbf{Hy}$ and the residual values
+$\mathbf e=(\mathbf I-\mathbf H)\mathbf y$.
+
+\bigskip
+\noindent
+The key here is that $\mathbf H\mathbf 1_n=\mathbf 1_n$ because
+$\mathbf 1_n\in{\cal R}(\mathbf X)$.
+Hence
+\[
+\mathbf{HH_1}
+=\mathbf{H1}_nn^{-1}\mathbf 1_n^T
+=\mathbf 1_nn^{-1}\mathbf 1_n^T=\mathbf H_1
+\]
+and
+\[
+\mathbf H_1\mathbf H
+=\mathbf 1_nn^{-1}\mathbf 1_n^T\mathbf H
+=\mathbf 1_nn^{-1}(\mathbf H\mathbf 1_n)^T=\mathbf H_1
+\]
+Hence the numerator of $r_{u,v}$ is
+\begin{align*}
+(\mathbf{Hy})^T(\mathbf I-\mathbf H_1)
+(\mathbf I-\mathbf H)\mathbf y
+&=\mathbf y^T\mathbf H(\mathbf I-\mathbf H-\mathbf H_1+\mathbf{H_1H})
+\mathbf y\\
+&=\mathbf y^T
+(\mathbf H-\mathbf{HH}-\mathbf{HH}_1+\mathbf{HH}_1\mathbf H)
+\mathbf y\\
+&=\mathbf y^T
+(\mathbf H-\mathbf H-\mathbf  H_1+\mathbf H_1)
+\mathbf y\\
+&=0
+\end{align*}
+Therefore the correlation is zero.
+%(Note to myself: As long as $\mathbf 1_n\in{\cal R}(\mathbf X)$
+%then the correlation will be zero.)

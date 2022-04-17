@@ -1,0 +1,179 @@
+\section{Section 25.12, problem 3}
+Let $\mathbf X$ be the design matrix that corresponds to a
+one-way classification with $k$ levels.
+That is, $\mathbf X=\begin{pmatrix}\mathbf 1_N
+&\oplus_{j=1}^k\mathbf 1_{n_j}\end{pmatrix}$, where $n_j$ is the sample size
+in the $j^{\rm th}$ treatment for $j=1,\ldots,k$
+and $N=\sum_{j=1}^kn_j$.
+
+\bigskip
+\noindent
+(a) Verify that
+$$\mathbf X^T\mathbf X=
+\begin{pmatrix}
+N & \mathbf n^T\cr
+\mathbf n & \mathbf D
+\end{pmatrix},\,
+\hbox{where
+$\mathbf n=\begin{pmatrix}
+n_1\cr
+n_2\cr
+\vdots\cr
+n_k
+\end{pmatrix}
+$ and
+$\mathbf D=\begin{pmatrix}
+n_1 & 0 & \cdots & 0\cr
+0 & n_2 & \cdots & 0\cr
+\vdots & \vdots & \ddots & \vdots\cr
+0 & 0 & \cdots & n_k
+\end{pmatrix}
+$}
+$$
+
+\bigskip
+\noindent
+The trick is to split up the leading column of ones in $\mathbf X$
+and then do a block multiply.
+We have
+\begin{align*}
+\mathbf X^T\mathbf X
+%&= \begin{pmatrix}
+%\mathbf 1_N^T\\
+%\oplus_{j=1}^k\mathbf 1_{n_j}^T
+%\end{pmatrix}
+%\begin{pmatrix}
+%\mathbf 1_N & \oplus_{j=1}^k\mathbf 1_{n_j}
+%\end{pmatrix}\\
+&=\left(\begin{array}{llll}
+\mathbf 1_{n_1}^T & \mathbf 1_{n_2}^T & \cdots & \mathbf 1_{n_k}^T\\
+\mathbf 1_{n_1}^T & \mathbf 0 & \cdots & \mathbf 0\\
+\mathbf 0 & \mathbf 1_{n_2}^T & \cdots & \mathbf 0\\
+\vdots & \vdots & \ddots & \vdots\\
+\mathbf 0 & \mathbf 0 & \cdots & \mathbf 1_{n_k}^T
+\end{array}\right)
+\left(\begin{array}{lllll}
+\mathbf 1_{n_1} & \mathbf 1_{n_1} & \mathbf 0 & \cdots & \mathbf 0\\
+\mathbf 1_{n_2} & \mathbf 0 & \mathbf 1_{n_2} & \cdots & \mathbf 0\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+\mathbf 1_{n_k} & \mathbf 0 & \mathbf 0 & \cdots & \mathbf 1_{n_k}
+\end{array}\right)\\
+&=\begin{pmatrix}
+N & n_1 & n_2 & \cdots & n_k\\
+n_1 & n_1 & 0 & \cdots & 0\\
+n_2 & 0 & n_2 & \cdots & 0\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+n_k & 0 & 0 & \cdots & n_k
+\end{pmatrix}\\
+&=\begin{pmatrix}
+N & \mathbf n^T\cr
+\mathbf n & \mathbf D
+\end{pmatrix}
+%
+\end{align*}
+
+\bigskip
+\noindent
+(b) Verify that $\mathop{\rm rank}(\mathbf X^T\mathbf X)=k$.
+
+\bigskip
+\noindent
+By inspection there are $k$ linearly independent columns in $\mathbf X$, hence
+$\mathop{\rm rank}(\mathbf X)=k$.
+It follows that
+$\mathop{\rm rank}(\mathbf X^T\mathbf X)
+=\mathop{\rm rank}(\mathbf X)=k$.
+
+\bigskip
+\noindent
+(c) Partition $\mathbf X^T\mathbf X$ as
+$$\mathbf X^T\mathbf X=\begin{pmatrix}
+\mathbf A_{11} & \mathbf A_{12}\\
+\mathbf A_{21} & \mathbf A_{22}
+\end{pmatrix}
+$$
+where $\mathbf A_{11}$ is $k\times k$.
+Verify that $\mathbf A_{11}$ is nonsingular.
+Hint: use results in \#7 on page 64 of the notes to
+show that the determinant of $\mathbf A_{11}$ is non-zero
+(i.e., partition $\mathbf A_{11}$).
+
+\bigskip
+\noindent
+From part (a) we have
+\begin{equation*}
+\mathbf A_{11}=\begin{pmatrix}
+N & n_1 & n_2 & \cdots & n_{k-1}\\
+n_1 & n_1 & 0 & \cdots & 0\\
+n_2 & 0 & n_2 & \cdots & 0\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+n_{k-1} & 0 & 0 & \cdots & n_{k-1}
+\end{pmatrix}
+\end{equation*}
+Partition $\mathbf A_{11}$ as
+\begin{equation*}
+\mathbf A_{11}
+\begin{pmatrix}
+N & \mathbf B_{12}\\
+\mathbf B_{21} & \mathbf B_{22}
+\end{pmatrix}
+\end{equation*}
+Then by the result on p.\ 64 we have
+\begin{align*}
+|\mathbf A_{11}|
+&=|\mathbf B_{22}|
+\left(N-\mathbf B_{12}\mathbf B_{22}^{-1}\mathbf B_{21}\right)\\
+&=\left(\prod_{j=1}^{k-1}n_j\right)
+\left(N-\sum_{j=1}^{k-1}n_j\right)\\
+&=\left(\prod_{j=1}^{k-1}n_j\right)n_k\\
+&=\prod_{j=1}^kn_j
+\end{align*}
+Therefore $\mathbf A_{11}$ is nonsingular.
+
+\bigskip
+\noindent
+(d) Using R the result is
+\[
+\bm{\tilde\beta}_R=\left(\begin{array}{r}
+28.80\\
+-16.63\\
+-11.37\\
+-0.80\\
+0.00
+\end{array}\right)
+\]
+which matches the SAS solution because
+\begin{align*}
+\bar y_1&=12.17\\
+\bar y_2&=17.43\\
+\bar y_3&=28.00\\
+\bar y_4&=28.80
+\end{align*}
+Hence
+\[
+\bm{\tilde\beta}_{SAS}
+=\begin{pmatrix}
+\bar y_4\\
+\bar y_1-\bar y_4\\
+\bar y_2-\bar y_4\\
+\bar y_3-\bar y_4\\
+0
+\end{pmatrix}
+=\begin{pmatrix}
+28.80\\
+12.17-28.80\\
+17.43-28.80\\
+28.00-28.80\\
+0
+\end{pmatrix}
+=
+\left(\begin{array}{r}
+28.80\\
+-16.63\\
+-11.37\\
+-0.80\\
+0.00
+\end{array}\right)
+=\bm{\tilde\beta}_R
+\]
+

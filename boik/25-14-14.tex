@@ -1,0 +1,141 @@
+
+\section{Section 25.14, problem 14}
+(a) Verify that $\mu_i-\overline{\mu}=\tau_i-\overline{\tau}_i$
+where $\overline{\mu}=N^{-1}\sum_{i=1}^kn_i\mu_i
+=k^{-1}\sum_{i=1}^k\mu_i$.
+
+\bigskip
+\noindent
+The planned study has $n$ observations
+per group, hence $n_i=n$ for all $i$.
+Recall that $\mu_i=\mu_0-\tau_i$ hence $\tau_i=\mu_i-\mu_0$.
+It follows that
+\begin{align*}
+\overline{\tau}&={1\over N}\sum_{i=1}^kn(\mu_i-\mu_0)\\
+&={1\over N}\sum_{i=1}^kn\mu_i-{1\over N}\sum_{i=1}^kn\mu_0\\
+&=\overline{\mu}-\mu_0
+\end{align*}
+Therefore
+\[
+\tau_i-\overline{\tau}=(\mu_i-\mu_0)-(\overline{\mu}-\mu_0)
+=\mu_i-\overline{\mu}
+\]
+
+\bigskip
+\noindent
+(b) Verify that the noncentrality parameter for the numerator of the
+test statistic simplifies to
+\[
+\lambda
+=
+{\displaystyle\sum_{i=1}^kn_i(\tau_i-\overline{\tau})^2\over2\sigma^2}
+=
+{\displaystyle\sum_{i=1}^kn(\mu_i-\overline{\mu})^2\over2\sigma^2}
+=
+{\displaystyle n\sum_{i=1}^k(\mu_i-\overline{\mu})^2\over2\sigma^2}
+\]
+
+\bigskip
+\noindent
+Note that
+\[
+\mathbf X\bm\beta=
+\begin{pmatrix}
+\mathbf 1_{n_1} & \mathbf1_{n_1} & \mathbf 0 & \mathbf 0
+& \cdots & \mathbf 0\\
+\mathbf 1_{n_2} & \mathbf 0 & \mathbf1_{n_2} & \mathbf0 & \cdots & \mathbf0\\
+\vdots\\
+\mathbf1_{n_k} & \mathbf0 & \mathbf0 & \mathbf0 & \cdots
+& \mathbf1_{n_k}
+\end{pmatrix}
+\begin{pmatrix}
+\mu\\
+\tau_1\\
+\tau_2\\
+\vdots\\
+\tau_k
+\end{pmatrix}
+=
+\begin{pmatrix}
+\mu\mathbf1_{n_1}+\tau_1\mathbf1_{n_1}\\
+\mu\mathbf1_{n_2}+\tau_2\mathbf1_{n_2}\\
+\vdots\\
+\mu\mathbf1_{n_k}+\tau_k\mathbf1_{n_k}
+\end{pmatrix}
+\]
+and
+\begin{align*}
+N^{-1}\mathbf1_N^T\mathbf X\bm\beta
+&=
+N^{-1}
+\begin{pmatrix}
+\mathbf1_{n_1}^T&\mathbf1_{n_2}^T
+&\cdots&\mathbf1_{n_k}^T
+\end{pmatrix}\mathbf X\bm\beta\\
+&=N^{-1}\sum_{i=1}^k(n_i\mu+n_i\tau_i)\\
+&=\mu+\overline{\tau}
+\end{align*}
+%
+From Exercise \#8 and Theorem 14.7 we have
+\begin{align*}
+\lambda&={1\over2}\bm\beta^T\mathbf X^T
+(\mathbf H-\mathbf H_0)\mathbf X\bm\beta/\sigma^2\\
+&=
+{1\over2\sigma^2}(
+\bm\beta^T\mathbf X^T\mathbf X\bm\beta
+-\bm\beta^T\mathbf X^T\mathbf 1_NN^{-1}
+\mathbf 1_N^T\mathbf X\bm\beta)\\
+&=
+{1\over2\sigma^2}\left[
+\sum_{i=1}^k
+(\mu\mathbf 1_{n_i}^T+\tau_i\mathbf 1_{n_i}^T)
+(\mu\mathbf 1_{n_i}+\tau_i\mathbf 1_{n_i})-
+\sum_{i=1}^k(n_i\mu+n_i\tau_i)(\mu+\overline{\tau})
+\right]\\
+&=
+{1\over2\sigma^2}\left[
+\sum_{i=1}^k(n_i\mu^2+2n_i\mu\tau_i+n_i\tau_i^2)
+-\sum_{i=1}^k(n_i\mu^2+n_i\mu\overline{\tau}+n_i\tau_i\mu
++n_i\tau_i\overline{\tau})
+\right]\\
+&=
+{1\over2\sigma^2}\left[
+N\mu^2+2N\mu\overline{\tau}+\sum_{i=1}^kn_i\tau_i^2
+-N\mu^2-N\mu\overline{\tau}-N\mu\overline{\tau}
+-N\overline{\tau}^2
+\right]\\
+&=
+{1\over2\sigma^2}\left[
+\sum_{i=1}^kn_i\tau_i^2-N\overline{\tau}^2
+\right]\\
+&=
+{1\over2\sigma^2}\left[
+\sum_{i=1}^kn_i\tau_i^2-2N\overline{\tau}^2+N\overline{\tau}^2
+\right]\\
+&=
+{1\over2\sigma^2}\left[
+\sum_{i=1}^kn_i\tau_i^2
+-\sum_{i=1}^k2n_i\tau_i\overline{\tau}
++\sum_{i=1}^kn_i\overline{\tau}^2
+\right]\\
+&=
+{1\over2\sigma^2}\sum_{i=1}^k
+(n_i\tau_i^2-2n_i\tau_i\overline{\tau}+n_i\overline{\tau}^2)\\
+&=
+{1\over2\sigma^2}\sum_{i=1}^nn_i(\tau_i-\overline{\tau})^2
+\end{align*}
+As mentioned in part (a), for the planned study $n_i=n$ for all $i$.
+Hence $n_i$ becomes $n$ and can be factored out of the sum.
+The equivalence of $\tau_i-\overline{\tau}$ and
+$\mu_i-\overline{\mu}$ was established in part (a).
+Therefore
+\[
+\lambda
+=
+{\displaystyle\sum_{i=1}^kn_i(\tau_i-\overline{\tau})^2\over2\sigma^2}
+=
+{\displaystyle\sum_{i=1}^kn(\mu_i-\overline{\mu})^2\over2\sigma^2}
+=
+{\displaystyle n\sum_{i=1}^k(\mu_i-\overline{\mu})^2\over2\sigma^2}
+\]
+

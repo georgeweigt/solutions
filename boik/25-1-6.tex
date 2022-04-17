@@ -1,0 +1,48 @@
+\section{Section 25.1, problem 6}
+(a) Let $\bf A$ be a $p\times q$ matrix and let $\bf B$ be a
+$q\times p$ matrix. Verify that
+$\mathop{\rm tr}({\bf AB})=\mathop{\rm tr}({\bf BA})$.
+
+\bigskip
+\noindent
+The matrix product $\bf AB$ is a square matrix.
+Therefore $\mathop{\rm tr}({\bf AB})=\mathop{\rm tr}({\bf BA})$
+by Theorem 8.11.
+
+\bigskip
+\noindent
+Theorem 8.11 (a) is proved in the book, but here is another proof.
+We have
+\begin{eqnarray*}
+\mathop{\rm tr}({\bf AB})&=&\sum_{i=1}^p
+\left(\sum_{j=1}^q A_{ij}B_{ji}\right)\\
+\mathop{\rm tr}({\bf BA})&=&\sum_{j=1}^q
+\left(\sum_{i=1}^p B_{ji}A_{ij}\right)
+\end{eqnarray*}
+Since scalar sums and products are individually commutative,
+we can reorder terms and factors to obtain
+$$\mathop{\rm tr}({\bf AB})=\sum_{i=1}^p\sum_{j=1}^q A_{ij}B_{ji}
+=\sum_{j=1}^q\sum_{i=1}^p B_{ji}A_{ij}
+=\mathop{\rm tr}({\bf BA})$$
+
+\bigskip
+\noindent
+(b) Let $\bf A$ be a $p\times q$ matrix, let $\bf B$ be a
+$q\times s$ matrix, and let $\bf C$ be an $s\times p$ matrix.
+Use the previous result to verify that
+$\mathop{\rm tr}({\bf ABC})=\mathop{\rm tr}({\bf BCA})
+=\mathop{\rm tr}({\bf CAB})$.
+
+\bigskip
+\noindent
+Let $\bf D=BC$ which is a $q\times p$ matrix.
+Then $\bf AD$ is a square $p\times p$ matrix.
+By the above result, $\mathop{\rm tr}({\bf AD})=\mathop{\rm tr}({\bf DA})$.
+Hence $\mathop{\rm tr}({\bf ABC})=\mathop{\rm tr}({\bf BCA})$.
+
+\bigskip
+\noindent
+Let $\bf E=CA$ which is an $s\times q$ matrix.
+Then $\bf BE$ is a square $q\times q$ matrix.
+By the above result, $\mathop{\rm tr}({\bf BE})=\mathop{\rm tr}({\bf EB})$.
+Hence $\mathop{\rm tr}({\bf BCA})=\mathop{\rm tr}({\bf CAB})$.

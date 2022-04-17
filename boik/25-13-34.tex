@@ -1,0 +1,186 @@
+\section{Section 25.13, problem 34}
+(a) The following SAS code was used to fit the full and reduced
+models.
+\begin{verbatim}
+data new;
+infile 'c:\sas\salinity-data.txt';
+input y x;
+x2 = x**2;
+x3 = x**3;
+proc glm
+data = new;
+model y = x;
+proc glm
+data = new;
+model y = x x2 x3;
+run;
+\end{verbatim}
+The salient results are shown in the following table.
+
+\begin{center}
+\begin{tabular}{lcc}
+Model & SSE & DF\\
+\hline
+Full & 124.50 & 14\\
+Reduced & 127.96 & 16
+\end{tabular}
+\end{center}
+
+\noindent
+The test statistic is
+\[
+F^*={127.96-124.50\over124.50}\times{14\over16-14}=0.1945
+\]
+The associated $p$-value (using R code) is
+\[
+{\tt 1-pf(0.1945,2,14)}=0.83
+\]
+The large $p$-value indicates that the null hypothesis should not be rejected.
+Conclusion:
+There is no statistical difference between the full and reduced
+models.
+
+\bigskip
+\noindent
+The following R code fits the full and reduced models using matrix calculations.
+The results are the same as for the SAS code.
+(R code is used because SAS Learning Edition 4.1 does not include
+PROC IML).
+
+\begin{verbatim}
+y = c(
+59.5,53.3,56.8,63.1,58.7,
+55.2,59.1,52.8,54.5,
+51.7,48.8,53.9,49.0,
+44.6,48.5,41.0,47.3,46.1)
+
+x = c(
+1.6,1.6,1.6,1.6,1.6,
+3.8,3.8,3.8,3.8,
+6.0,6.0,6.0,6.0,
+10.2,10.2,10.2,10.2,10.2)
+
+x2 = x^2
+x3 = x^3
+
+# full model
+
+X = cbind(1,x,x^2,x^3)
+beta = solve(t(X) %*% X) %*% t(X) %*% y
+e = y - X %*% beta
+sse.f = t(e) %*% e
+print(sse.f)
+
+# reduced model
+
+X = cbind(1,x)
+beta = solve(t(X) %*% X) %*% t(X) %*% y
+e = y - X %*% beta
+sse.r = t(e) %*% e
+print(sse.r)
+
+# test statistic
+
+F = (sse.r - sse.f) / sse.f * 14/2
+print(F)
+pvalue = 1 - pf(F,2,14)
+print(pvalue)
+\end{verbatim}
+
+\bigskip
+\noindent
+Here is the output for the above code.
+\begin{verbatim}
+        [,1]
+[1,] 124.498
+         [,1]
+[1,] 127.9559
+          [,1]
+[1,] 0.1944210
+          [,1]
+[1,] 0.8254967
+\end{verbatim}
+
+\bigskip
+\noindent
+(b) Use the estimable function approach. The following SAS code
+uses a CONTRAST statement within PROC GLM
+to test $\beta_2=\beta_3=0$.
+\begin{verbatim}
+data new;
+infile 'c:\sas\salinity-data.txt';
+input y x;
+x2 = x**2;
+x3 = x**3;
+proc print
+data = new;
+run;
+proc glm
+data = new;
+model y = x x2 x3;
+contrast 'test' intercept 0 x 0 x2 1 x3 0,
+                intercept 0 x 0 x2 0 x3 1;
+run;
+\end{verbatim}
+
+\bigskip
+\noindent
+Here is the salient SAS output.
+\begin{verbatim}
+Contrast   DF   Contrast SS   Mean Square   F Value   Pr > F
+test        2    3.45786003    1.72893001      0.19   0.8255
+\end{verbatim}
+The large $p$-value (0.83) indicates that the null hypothesis should
+not be rejected.
+Conclusion: $\beta_2$ and $\beta_3$ are not statistically
+different from zero.
+
+\bigskip
+\noindent
+The following R code does the calculation directly using matrices.
+The results are the same as for the SAS code.
+\begin{verbatim}
+y = c(
+59.5,53.3,56.8,63.1,58.7,
+55.2,59.1,52.8,54.5,
+51.7,48.8,53.9,49.0,
+44.6,48.5,41.0,47.3,46.1)
+
+x = c(
+1.6,1.6,1.6,1.6,1.6,
+3.8,3.8,3.8,3.8,
+6.0,6.0,6.0,6.0,
+10.2,10.2,10.2,10.2,10.2)
+
+x2 = x^2; x3 = x^3
+
+X = cbind(1,x,x^2,x^3)
+beta = solve(t(X) %*% X) %*% t(X) %*% y
+e = y - X %*% beta
+sse = t(e) %*% e
+n = length(y)
+r = 4
+mse = sse / (n - r)
+
+# test statistic
+
+C = t(rbind(c(0,0,1,0),c(0,0,0,1)))
+delta0 = c(0,0)
+q = 2
+a = t(C) %*% beta - delta0
+G = solve(t(C) %*% solve(t(X) %*% X) %*% C)
+F = t(a) %*% G %*% a / q / mse
+print(F)
+pvalue = 1 - pf(F, q, n - r)
+print(pvalue)
+\end{verbatim}
+
+\bigskip
+\noindent
+Here is the output for the above code.
+\begin{verbatim}
+          [,1]
+[1,] 0.1944210
+          [,1]
+[1,] 0.8254967
+\end{verbatim}

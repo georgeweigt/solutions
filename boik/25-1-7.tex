@@ -1,0 +1,25 @@
+\section{Section 25.1, problem 7 (a)}
+Let $\bf A$ be an $n\times q$ matrix and let $\bf\Omega$ be an
+$n\times n$ symmetric matrix.
+Show that
+$$\mathop{\rm trace}({\bf A}'{\bf\Omega}{\bf A})={\bf a}'({\bf I}_q
+\otimes{\bf\Omega}){\bf a}$$
+where ${\bf a}=\mathop{\rm vec}({\bf A})$.
+
+\bigskip
+\noindent
+Note that
+$${\bf A}'{\bf\Omega}{\bf A}={\bf A}'{\bf\Omega}{\bf A}{\bf I}_q$$
+By Theorem 8.19 (b) and by
+$\mathop{\rm vec}'({\bf A}'')={\bf a}'$ we have
+$$\mathop{\rm trace}({\bf A}'{\bf\Omega}{\bf A}{\bf I}_q)
+={\bf a}'\mathop{\rm vec}({\bf\Omega}{\bf A}{\bf I}_q)$$
+By Theorem 8.19 (a) and by ${\bf I}'_q={\bf I}_q$ we have
+$$\mathop{\rm vec}({\bf\Omega}{\bf A}{\bf I}_q)
+=({\bf I}_q\otimes{\bf\Omega}){\bf a}$$
+Hence
+$$\mathop{\rm trace}({\bf A}'{\bf\Omega}{\bf A}{\bf I}_q)
+={\bf a}'\mathop{\rm vec}({\bf\Omega}{\bf A}{\bf I}_q)
+={\bf a}'({\bf I}_q
+\otimes{\bf\Omega}){\bf a}$$
+Note: It does not appear that $\bf\Omega$ is required to be symmetric.

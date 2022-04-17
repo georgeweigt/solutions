@@ -1,0 +1,40 @@
+\section{Section 25.8, problem 4}
+Let $\bf A$ be a $p\times q$ matrix and let $\bf B$ be a $q\times s$
+matrix.
+
+\bigskip
+\noindent
+(a) Verify that ${\cal R}({\bf AB})\subseteq{\cal R}({\bf A})$.
+
+\bigskip
+\noindent
+Let ${\bf x}\in{\cal R}({\bf AB})$.
+Then by definition ${\bf x}={\bf ABb}$ for some $\bf b$.
+Let ${\bf a}={\bf Bb}$.
+Then ${\bf x}={\bf Aa}$.
+It follows that ${\bf x}\in{\cal R}({\bf A})$.
+Hence ${\cal R}({\bf AB})\subseteq{\cal R}({\bf A})$.
+
+\bigskip
+\noindent
+(b) Verify that ${\cal R}({\bf AB})={\cal R}({\bf A})$
+if $\mathop{\rm rank}({\bf AB})=\mathop{\rm rank}({\bf A})$.
+
+\bigskip
+\noindent
+The first step is to show that the dimensions of the vector spaces
+${\cal R}({\bf AB})$ and ${\cal R}({\bf A})$ are equal.
+By Theorem 11.4 (d) on p. 83,
+$\mathop{\rm Dim}[{\cal R}({\bf X})]=\mathop{\rm rank}({\bf X})$.
+Therefore
+$\mathop{\rm rank}({\bf AB})=\mathop{\rm rank}({\bf A})$
+implies
+$$\mathop{\rm Dim}[{\cal R}({\bf AB})]
+=\mathop{\rm Dim}[{\cal R}({\bf A})]
+$$
+From part (a) above we have
+$${\cal R}({\bf AB})\subseteq{\cal R}({\bf A})$$
+By method 3 on p. 82, if two vector spaces have the same dimension
+and one is a subset of the other, then the two vector spaces
+are equivalent. Hence
+$${\cal R}({\bf AB})={\cal R}({\bf A})$$

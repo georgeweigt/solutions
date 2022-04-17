@@ -1,0 +1,23 @@
+\section{Section 25.3, problem 6}
+Prove the Woodbury Binomial Inverse Theorem.
+
+\bigskip
+\noindent
+We have
+\begin{eqnarray*}
+&&({\bf A}+{\bf BCD})[{\bf A}^{-1}-{\bf A}^{-1}{\bf B}({\bf C}^{-1}+{\bf D}{\bf A}^{-1}{\bf B})^{-1}{\bf DA}^{-1}]\\
+\\
+&&={\bf I}+{\bf BCDA}^{-1}
+-{\bf B}({\bf C}^{-1}+{\bf D}{\bf A}^{-1}{\bf B})^{-1}{\bf DA}^{-1}
+-{\bf BCDA}^{-1}{\bf B}({\bf C}^{-1}+{\bf D}{\bf A}^{-1}{\bf B})^{-1}{\bf DA}^{-1}\\
+\\
+&&={\bf I}+{\bf BCDA}^{-1}-{\bf B}\bigg[({\bf C}^{-1}+{\bf DA}^{-1}{\bf B})^{-1}+{\bf C}\bigg({\bf DA}^{-1}{\bf B}({\bf C}^{-1}+{\bf DA}^{-1}{\bf B})^{-1}\bigg)\bigg]{\bf DA}^{-1}\\
+\\
+&&={\bf I}+{\bf BCDA}^{-1}-{\bf B}\bigg[({\bf C}^{-1}+{\bf DA}^{-1}{\bf B})^{-1}
++{\bf C}\bigg({\bf I}-{\bf C}^{-1}({\bf C}^{-1}+{\bf DA}^{-1}{\bf B})^{-1}\bigg)\bigg]{\bf DA}^{-1}\\
+\\
+&&={\bf I}+{\bf BCDA}^{-1}-{\bf B}\bigg[({\bf C}^{-1}+{\bf DA}^{-1}{\bf B})^{-1}+{\bf C}-({\bf C}^{-1}+{\bf DA}^{-1}{\bf B})^{-1}\bigg]{\bf DA}^{-1}\\
+\\
+&&={\bf I}+{\bf BCDA}^{-1}-{\bf BCDA}^{-1}\\
+&&={\bf I}
+\end{eqnarray*}

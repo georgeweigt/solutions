@@ -1,0 +1,138 @@
+\section*{Lesson learned from 25.12.5}
+Theorem 11.29 on p.\ 101 is indispensable for doing
+problems involving $\mathbf P=\mathbf X(\mathbf X^T
+\bm\Omega^{-1}\mathbf X)^{-{}}\mathbf X^T\bm\Omega^{-1}$.
+The theorem says
+\[\mathbf P\bm\Omega=\bm\Omega\mathbf P^T\]
+and
+\[\bm\Omega^{-1}\mathbf P=\mathbf P^T\bm\Omega^{-1}\]
+
+\section{Section 25.12, problem 5}
+Consider the linear model
+\[
+\mathbf y=\mathbf X\bm\beta+\bm\varepsilon
+\]
+where $\mathbf X$ is $n\times p$ with rank $r$.
+Let $\bm{\tilde\beta}$ be any solution to the normal equations
+$\mathbf X^T\bm\Omega^{-1}\mathbf X\bm\beta
+=\mathbf X^T\bm\Omega^{-1}\mathbf y$ where $\bm\Omega$
+is positive definite.
+Define $\mathbf{\hat y}$ and $\mathbf e$ as
+$\mathbf{\hat y}=\mathbf X\bm{\tilde\beta}$ and
+$\mathbf e=\mathbf y-\mathbf{\hat y}$.
+
+\bigskip
+\noindent
+(a) What vector spaces do $\mathbf y$, $\mathbf{\hat y}$,
+and $\mathbf e$ live in?
+
+\bigskip
+\noindent
+$\mathbf y\in{\cal R}(\bm\Omega)$,
+$\mathbf{\hat y}\in{\cal R}(\mathbf X)$,
+$\mathbf e\in{\cal N}(\mathbf X^T\bm\Omega^{-1})$.
+
+\bigskip
+\noindent
+(b) Verify that $\mathbf{\hat y}\perp\mathbf e$ in the metric
+$\bm\Omega^{-1}$.
+That is, verify that $\mathbf{\hat y}^T\bm\Omega^{-1}\mathbf e=0$.
+
+\bigskip
+\noindent
+By Theorem 11.29 on p.\ 101 we have
+$\mathbf P^T\bm\Omega^{-1}=\bm\Omega^{-1}\mathbf P$.
+Therefore
+\begin{align*}
+\mathbf{\hat y}^T\bm\Omega^{-1}\mathbf e
+&=(\mathbf{Py})^T\bm\Omega^{-1}(\mathbf I-\mathbf P)\mathbf y\\
+&=\mathbf y^T\mathbf P^T\bm\Omega^{-1}(\mathbf I-\mathbf P)
+\mathbf y\\
+&=\mathbf y^T\bm\Omega^{-1}\mathbf P(\mathbf I-\mathbf P)\mathbf y\\
+&=0
+\end{align*}
+
+\bigskip
+\noindent
+(c) Find $\mathrm E(\mathbf{\hat y})$ and
+$\mathop{\rm Var}(\mathbf{\hat y})$.
+
+\bigskip
+\noindent
+Let $\mathbf P=\mathbf X(\mathbf X^T\bm\Omega^{-1}\mathbf X)\mathbf X^T
+\bm\Omega^{-1}$.
+Then $\mathbf{PX}=\mathbf X$ and we have
+%
+\begin{align*}
+\mathrm E(\mathbf{\hat y})
+&=\mathrm E(\mathbf{Py})\\
+&=\mathbf P\mathrm E(\mathbf y)\\
+&=\mathbf{PX}\bm\beta\\
+&=\mathbf X\bm\beta\\
+\\
+\mathop{\rm Var}(\mathbf{\hat y})
+&=\mathop{\rm Var}(\mathbf{Py})\\
+&=\mathbf P\mathop{\rm Var}(\mathbf y)\mathbf P^T\\
+&=\mathbf P\sigma^2\bm\Omega\mathbf P^T\\
+&=\sigma^2\mathbf X(\mathbf X^T\bm\Omega^{-1}\mathbf X)^{-{}}
+\mathbf X^T\bm\Omega^{-1}\bm\Omega\bm\Omega^{-1}
+\mathbf X[(\mathbf X^T\bm\Omega^{-1}\mathbf X)^{-{}}]^T
+\mathbf X^T\\
+&=\sigma^2\mathbf X(\mathbf X^T\bm\Omega^{-1}\mathbf X)^{-{}}
+\mathbf X^T\bm\Omega^{-1}\mathbf X[(\mathbf X^T\bm\Omega^{-1}
+\mathbf X)^{-{}}]^T\mathbf X^T\\
+&=\sigma^2\mathbf X[(\mathbf X^T\bm\Omega^{-1}
+\mathbf X)^{-{}}]^T\mathbf X^T\\
+&=\sigma^2\bm\Omega\mathbf P^T\\
+&=\sigma^2\mathbf P\bm\Omega
+\end{align*}
+
+\bigskip
+\noindent
+(d) Find $\mathrm E(\mathbf e)$ and $\mathop{\rm Var}(\mathbf e)$.
+
+\bigskip
+\noindent
+Use $\mathbf P\bm\Omega=\bm\Omega\mathbf P^T$ from Theorem 11.29
+on p.\ 101.
+\begin{align*}
+\mathrm E(\mathbf e)
+&=\mathrm E(\mathbf y-\mathbf{\hat y})\\
+&=\mathrm E(\mathbf y)-\mathrm E(\mathbf{\hat y})\\
+&=\mathbf X\bm\beta-\mathbf X\bm\beta\\
+&=0\\
+\\
+\mathop{\mathrm Var}(\mathbf e)
+&=\mathop{\rm Var}[(\mathbf I-\mathbf P)\mathbf y]\\
+&=(\mathbf I-\mathbf P)\mathop{\rm Var}(\mathbf y)
+(\mathbf I-\mathbf P)^T\\
+&=(\mathbf I-\mathbf P)\sigma^2\bm\Omega
+(\mathbf I-\mathbf P^T)\\
+&=\sigma^2(\mathbf I-\mathbf P)(\bm\Omega-\bm\Omega\mathbf P^T)\\
+&=\sigma^2(\bm\Omega-\bm\Omega\mathbf P^T
+-\mathbf P\bm\Omega+\mathbf P\bm\Omega\mathbf P^T)\\
+&=\sigma^2(\bm\Omega-\mathbf P\bm\Omega
+-\mathbf P\bm\Omega+\mathbf P\bm\Omega)\\
+&=\sigma^2(\bm\Omega-\mathbf P\bm\Omega)\\
+&=\sigma^2(\mathbf I-\mathbf P)\bm\Omega
+\end{align*}
+
+\bigskip
+\noindent
+(e) Find $\mathop{\rm Cov}(\mathbf{\hat y},\bm\Omega^{-1}\mathbf e)$.
+
+\bigskip
+\noindent
+\begin{align*}
+\mathop{\rm Cov}(\mathbf{\hat y},\bm\Omega^{-1}\mathbf e)
+&=\mathop{\rm Cov}(\mathbf{Py},\bm\Omega^{-1}(\mathbf I
+-\mathbf P)\mathbf y\\
+&=\mathbf P\mathop{\rm Cov}(\mathbf y,\mathbf y)
+[\bm\Omega^{-1}(\mathbf I-\mathbf P)]^T\\
+&=\mathbf P\sigma^2\bm\Omega(\mathbf I-\mathbf P^T)\bm\Omega^{-1}\\
+&=\sigma^2\mathbf P\bm\Omega(\bm\Omega^{-1}-\mathbf P^T\bm\Omega^{-1})\\
+&=\sigma^2\mathbf P\bm\Omega(\bm\Omega^{-1}-\bm\Omega^{-1}\mathbf P)\\
+&=\sigma^2\mathbf P(\mathbf I-\mathbf P)\\
+&=0
+\end{align*}
+

@@ -1,0 +1,111 @@
+
+\section{Section 25.11, problem 1}
+Let $\mathbf y$ be a random $n$-vector and let $\mathbf z$
+be a random $m$-vector. Suppose that
+\[
+\begin{pmatrix}
+\mathbf y\cr
+\mathbf z
+\end{pmatrix}\sim\left[
+\begin{pmatrix}
+\bm\mu_y\cr
+\bm\mu_z
+\end{pmatrix},\begin{pmatrix}
+\bm\Sigma_{yy},\bm\Sigma_{yz}\cr
+\bm\Sigma_{zy},\bm\Sigma_{zz}
+\end{pmatrix}
+\right]
+\]
+Let $\mathbf A$: $n\times n$;
+$\mathbf B$: $b\times n$;
+and $\mathbf C$: $c\times m$ be matrices of constants.
+
+\bigskip
+\noindent
+(a) Prove that $\mathop{\rm Cov}(\mathbf{By},\mathbf{Cz})
+=\mathbf{B\Sigma}_{yz}\mathbf C^T$.
+
+\bigskip
+\noindent
+We are given $\mathop{\rm Cov}(\mathbf y,\mathbf z)=\bm\Sigma_{yz}$.
+Then $\mathop{\rm Cov}(\mathbf{By},\mathbf{Cz})
+=\mathbf{B\Sigma}_{yz}\mathbf C^T$
+follows directly from Theorem 14.1 (c) on p.\ 134.
+
+\bigskip
+\noindent
+(b) Prove that $\mathop{\rm Var}(\mathbf{By})
+=\mathbf{B\Sigma}_{yy}\mathbf B^T$.
+
+\bigskip
+\noindent
+We are given $\mathop{\rm Var}(\mathbf y)=\bm\Sigma_{yy}$.
+Then $\mathop{\rm Var}(\mathbf{By})
+=\mathbf{B\Sigma}_{yy}\mathbf B^T$
+follows directly from Theorem 14.1 (d) on p.\ 134.
+
+\bigskip
+\noindent
+(c) Prove that
+$\mathrm E(\mathbf y^T\mathbf{Ay})
+=\mathop{\rm trace}(\mathbf{A\Sigma}_{yy})
++\bm\mu_y^T\mathbf A\bm\mu_y$
+whether or not $\mathbf A$ is symmetric.
+
+\bigskip
+\noindent
+By properties of the trace operator we have
+\begin{eqnarray*}
+\mathop{\rm trace}(\mathbf A\bm\Sigma_{yy})
+&=&\mathop{\rm trace}[(\mathbf A\bm\Sigma_{yy})^T]\\
+&=&\mathop{\rm trace}(\bm\Sigma_{yy}^T\mathbf A^T)\\
+&=&\mathop{\rm trace}(\mathbf A^T\bm\Sigma_{yy}^T)
+\end{eqnarray*}
+Then by symmetry of $\bm\Sigma_{yy}$ we have
+$$
+\mathop{\rm trace}(\mathbf A\bm\Sigma_{yy})
+=\mathop{\rm trace}(\mathbf A^T\bm\Sigma_{yy})
+$$
+Therefore
+\begin{eqnarray*}
+\mathop{\rm trace}(\mathbf{A\Sigma}_{yy})
+&=&
+{1\over2}\left[
+\mathop{\rm trace}(\mathbf{A\Sigma}_{yy})
++
+\mathop{\rm trace}(\mathbf A^T\bm\Sigma_{yy})
+\right]\\
+&=&
+\mathop{\rm trace}\left[
+{1\over2}(\mathbf A+\mathbf A^T)\bm\Sigma_{yy}
+\right]\\
+&=&\mathop{\rm trace}(\mathbf A^*\bm\Sigma_{yy})
+\end{eqnarray*}
+where $\mathbf A^*={1\over2}(\mathbf A+\mathbf A^T)$.
+Therefore if $\mathbf A$ is not symmetric then it can be replaced
+with $\mathbf A^*$ with no change to the value of the trace.
+
+\bigskip
+\noindent
+By Theorem 9.5 on p.\ 73 the quadratic forms
+$\mathbf y^T\mathbf{Ay}$
+and
+$\bm\mu_y^T\mathbf A\bm\mu_y$
+do not require $\mathbf A$ to be symmetric.
+By this and the trace result above,
+$\mathrm E(\mathbf y^T\mathbf{Ay})
+=\mathop{\rm trace}(\mathbf{A\Sigma}_{yy})
++\bm\mu_y^T\mathbf A\bm\mu_y$
+whether or not $\mathbf A$ is symmetric.
+
+\bigskip
+\noindent
+(d) Verify that the matrix $\mathbf T$ of the quadratic form
+$\mathbf y^T\mathbf{Ty}$ can be assumed wlog to be symmetric.
+
+\bigskip
+\noindent
+The above follows directly from Theorem 9.5 on p.\ 73.
+
+
+

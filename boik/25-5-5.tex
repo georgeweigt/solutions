@@ -1,0 +1,22 @@
+\section{Section 25.5, problem 5}
+Let $\bf A$ be an $n\times n$ matrix with eigenvalues $\lambda_i$
+for $i=1,\ldots,n$, and let $\bf B$ be a $p\times p$ matrix with
+eigenvalues $\theta_j$ for $j=1,\ldots,p$.
+Verify that $\lambda_i\theta_j$ is an eigenvalue of
+${\bf A}\otimes{\bf B}$.
+
+\bigskip
+\noindent
+Let $\vec x_i$ be the eigenvector associated with $\lambda_i$
+and $\vec y_j$ be the eigenvector associated with $\theta_j$.
+By definition we have
+$${\bf A}\vec x_i=\lambda_i\vec x\quad\hbox{and}\quad
+{\bf B}\vec y_j=\theta_j\vec y$$
+Therefore
+$${\bf A}\vec x\otimes{\bf B}\vec y
+=\lambda_i\vec x\otimes\theta_j\vec y$$
+By Theorem 8.2 on p. 42 it follows that
+$$({\bf A}\otimes{\bf B})(\vec x\otimes\vec y)
+=\lambda_i\theta_j(\vec x\otimes\vec y)$$
+Therefore $\lambda_i\theta_j$ is an eigenvalue of
+${\bf A}\otimes{\bf B}$.

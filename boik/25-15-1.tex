@@ -1,0 +1,99 @@
+
+\section{Section 25.15, problem 1}
+Consider a two-way classification with interaction and with
+$n_{ij}>0$ observations per cell. Write the model as
+\[
+y_{ijk}=\mu+\tau_i+\theta_j+\gamma_{ij}+\varepsilon_{ijk}
+\]
+where $\varepsilon_{ijk}\stackrel{\rm iid}{\sim}
+N(0,\sigma^2)$. Denote the $a\times b$ matrix of expected cell means
+by $\mathbf M=\{\mu_{ij}\}$, denote the population marginal means
+for Factor A (equally weight all cell means) by $\bm\mu_A$ and for
+Factor B by $\bm\mu_B$.
+
+\bigskip
+\noindent
+(a) Define ``main effect contrast of Factor A.''
+
+\bigskip
+\noindent
+See p. 213. It is a contrast of marginal means of Factor A.
+
+\bigskip
+\noindent
+(b) Suppose $a=3$ and $b=4$. The researcher wants to compare the
+first level of Factor A with the average of the remaining two levels
+of Factor A. Give the SAS commands required (i) to estimate and
+(ii) to test this main effect contrast.
+
+\bigskip
+\noindent
+The following SAS command does both.
+\begin{verbatim}
+estimate 'foo' A 8 -4 -4 A*B 2 2 2 2 -1 -1 -1 -1 -1 -1 -1 -1 /divisor=8
+\end{verbatim}
+
+\bigskip
+\noindent
+(c) Suppose $a=3$ and $b=4$. The researcher wants to test a basis
+set of contrasts among the levels of Factor A.
+Give the SAS command that will product the $F$ test.
+
+\bigskip
+\noindent
+The CONTRAST statement produces an $F$ test.
+\begin{verbatim}
+proc glm data = foo;
+class A B;
+model y = A|B;
+contrast 'H0' intercept 1 A 1 0 0 B .25 .25 .25 .25 A*B .25 .25 .25 .25 0 0 0 0 0 0 0 0,
+              intercept 1 A 0 1 0 B .25 .25 .25 .25 A*B 0 0 0 0 .25 .25 .25 .25 0 0 0 0,
+              intercept 1 A 0 0 1 B .25 .25 .25 .25 A*B 0 0 0 0 0 0 0 0 .25 .25 .25 .25;
+run;
+\end{verbatim}
+
+\bigskip
+\noindent
+(d) Define ``simple main effect contrast of Factor A.''
+
+\bigskip
+\noindent
+See p.\ 215. It is a contrast of cell means at a
+fixed level of Factor B. For example, $\mathbf M_{11}-\mathbf M_{21}$.
+
+\bigskip
+\noindent
+(e) Suppose $a=3$ and $b=4$. The researcher wants to compare the first
+level of Factor A with the average of the remaining two levels of
+Factor A at level 2 of Factor B. Give the SAS commands required
+(i) to estimate and (ii) to test this simple main effect contrast.
+
+\begin{align*}
+\mu_{12}-{\mu_{22}+\mu_{32}\over2}
+&=\mu+\tau_1+\theta_2+\gamma_{12}-
+{\mu+\tau_2+\theta_2+\gamma_{22}+\mu+\tau_3+\theta_2+\gamma_{32}
+\over2}\\
+&=\tau_1-{1\over2}\tau_2-{1\over2}\tau_3+\gamma_{12}
+-{1\over2}\gamma_{22}-{1\over2}\gamma_{32}
+\end{align*}
+
+\begin{verbatim}
+estimate 'foo' A 2 -1 -1 A*B 0 2 0 0 0 -1 0 0 0 -1 0 0 /divisor=2;
+\end{verbatim}
+
+\bigskip
+\noindent
+(f) Define ``interaction contrast.''
+
+\bigskip
+\noindent
+It is a contrast of cell means in which all the row coefficients
+sum to zero and all the column coefficients sum to zero.
+
+\bigskip
+\noindent
+(g) Define ``product interaction contrast.''
+
+
+
+ 

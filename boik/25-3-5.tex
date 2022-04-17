@@ -1,0 +1,45 @@
+\section{Section 25.3, problem 5}
+Show that $\bf G$ is the inverse of $\bf X$.
+We have
+\begin{eqnarray*}
+{\bf X}_{11}{\bf G}_{11}&=&{\bf I}+{\bf X}_{12}{\bf X}_{22\cdot1}^{-1}{\bf X}_{21}{\bf X}_{11}^{-1}\\
+{\bf X}_{12}{\bf G}_{21}&=&-{\bf X}_{12}{\bf X}_{22\cdot1}^{-1}{\bf X}_{21}{\bf X}_{11}^{-1}\\
+\\
+{\bf X}_{11}{\bf G}_{12}&=&-{\bf X}_{12}{\bf X}_{22\cdot1}^{-1}\\
+{\bf X}_{12}{\bf G}_{22}&=&{\bf X}_{12}{\bf X}_{22\cdot1}^{-1}\\
+\\
+{\bf X}_{21}{\bf G}_{11}&=&{\bf X}_{21}{\bf X}_{11}^{-1}+
+{\bf X}_{21}{\bf X}_{11}^{-1}{\bf X}_{12}{\bf X}_{22\cdot1}^{-1}{\bf X}_{21}{\bf X}_{11}^{-1}\\
+{\bf X}_{22}{\bf G}_{21}&=&-{\bf X}_{22}{\bf X}_{22\cdot1}^{-1}{\bf X}_{21}{\bf X}_{11}^{-1}\\
+\\
+{\bf X}_{21}{\bf G}_{12}&=&-{\bf X}_{21}{\bf X}_{11}^{-1}{\bf X}_{12}{\bf X}_{22\cdot1}^{-1}\\
+{\bf X}_{22}{\bf G}_{22}&=&{\bf X}_{22}{\bf X}_{22\cdot1}^{-1}
+\end{eqnarray*}
+Hence
+\begin{eqnarray*}
+{\bf X}_{11}{\bf G}_{11}+{\bf X}_{12}{\bf G}_{21}&=&{\bf I}\\
+\\
+{\bf X}_{11}{\bf G}_{11}+{\bf X}_{12}{\bf G}_{22}&=&{\bf 0}\\
+\\
+{\bf X}_{21}{\bf G}_{11}+{\bf X}_{22}{\bf G}_{21}&=&{\bf X}_{21}{\bf X}_{11}^{-1}+
+({\bf X}_{21}{\bf X}_{11}^{-1}{\bf X}_{12}-{\bf X}_{22}){\bf X}_{22\cdot1}^{-1}{\bf X}_{21}{\bf X}_{11}^{-1}\\
+&=&{\bf X}_{21}{\bf X}_{11}^{-1}-{\bf X}_{22\cdot1}{\bf X}_{22\cdot1}^{-1}{\bf X}_{21}{\bf X}_{11}^{-1}\\
+&=&{\bf 0}\\
+\\
+{\bf X}_{21}{\bf G}_{12}+{\bf X}_{22}{\bf G}_{22}&=&-{\bf X}_{21}{\bf X}_{11}^{-1}{\bf X}_{12}{\bf X}_{22\cdot1}^{-1}
++{\bf X}_{22}{\bf X}_{22\cdot1}^{-1}\\
+&=&{\bf X}_{22\cdot1}{\bf X}_{22}^{-1}\\
+&=&{\bf I}
+\end{eqnarray*}
+Therefore
+$$\left(\begin{matrix}
+{\bf X}_{11} & {\bf X}_{12}\cr
+{\bf X}_{21} & {\bf X}_{22}
+\end{matrix}\right)\left(\begin{matrix}
+{\bf G}_{11} & {\bf G}_{12}\cr
+{\bf G}_{21} & {\bf G}_{22}
+\end{matrix}\right)=\left(\begin{matrix}
+{\bf I} & {\bf 0}\cr
+{\bf 0} & {\bf I}
+\end{matrix}\right)
+$$

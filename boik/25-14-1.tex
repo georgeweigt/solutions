@@ -1,0 +1,73 @@
+
+\section{Section 25.14, problem 1}
+Consider the linear model $\mathbf y\sim N(\mathbf X\bm\beta,
+\sigma^2\bm\Omega)$ where $\mathbf X$ is $n\times p$ with rank
+$r$ and $\bm\Omega>0$ is known.
+Partition $\mathbf X$ as
+$\mathbf X=\begin{pmatrix}\mathbf X_1 & \mathbf X_2\end{pmatrix}$
+where $\mathbf X_j$ is $n\times p_j$ with rank $r_j$.
+Partition $\bm\beta$ conformably.
+
+\bigskip
+\noindent
+(a) Verify that the likelihood ratio test for
+$H_0:E(\mathbf y)\in\mathcal R(\mathbf X_1)$ against
+$H_a:E(\mathbf y)\in\mathcal R(\mathbf X)$,
+$E(\mathbf y)\ne\mathcal R(\mathbf X_1)$ is to reject
+$H_0$ for large
+\[
+Q={
+\mathbf y^T\bm\Omega^{-1}(\mathbf P-\mathbf P_1)\mathbf y
+\over
+\mathbf y^T\bm\Omega^{-1}(\mathbf I-\mathbf P)\mathbf y
+}
+\]
+where $\mathbf P=\mathbf X(\mathbf X^T\bm\Omega^{-1}\mathbf X)^{-{}}
+\mathbf X^T\bm\Omega^{-1}$ and
+$\mathbf P_1=\mathbf X_1(\mathbf X_1^T\bm\Omega^{-1}\mathbf X_1)^{-{}}
+\mathbf X_1^T\bm\Omega^{-1}$.
+
+\bigskip
+\noindent
+We have
+\begin{align*}
+SSE(\bm{\widetilde\beta}_0)-SSE(\bm{\widetilde\beta})
+&=
+\mathbf y^T\bm\Omega^{-1}(\mathbf I-\mathbf P_1)\mathbf y-
+\mathbf y^T\bm\Omega^{-1}(\mathbf I-\mathbf P)\mathbf y\\
+&=
+\mathbf y^T\bm\Omega^{-1}\bigg[
+(\mathbf I-\mathbf P_1)-(\mathbf I-\mathbf P)\bigg]\mathbf y\\
+&=
+\mathbf y^T\bm\Omega^{-1}(\mathbf P-\mathbf P_1)\mathbf y
+\end{align*}
+Hence
+\[
+F=Q\times{n-r\over r-r_1}
+\]
+Large values of $Q$ correspond to large values of $F$ hence
+by Theorem 16.1 reject $H_0$ for large values of $Q$.
+
+\bigskip
+\noindent
+(b) Verify that $\bm{\widetilde\beta}\amalg\widehat\sigma^2$.
+
+\bigskip
+\noindent
+By Theorem 15.23 (c) we have
+$\bm{\widetilde\beta}\amalg\widehat\sigma^2$.
+
+\bigskip
+\noindent
+(c) Verify that $Q\sim F(\nu_1,\nu_2,\lambda)$ and find
+expressions for $\nu_1$, $\nu_2$, and $\lambda$.
+
+\bigskip
+\noindent
+(e) Find a matrix $\mathbf C$ so that the hypotheses are
+equivalent to
+$H_{0'}:E(\mathbf y)\in\mathcal R(\mathbf X)$,
+$\mathbf C^T\bm\beta=\mathbf 0$ versus
+$H_{a'}:E(\mathbf y)\in\mathcal R(\mathbf X)$,
+$\mathbf C^T\bm\beta\ne\mathbf0$.
+

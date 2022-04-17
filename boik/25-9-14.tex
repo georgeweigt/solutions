@@ -1,0 +1,52 @@
+\section{Section 25.9, problem 14}
+Consider the linear model ${\bf y}={\bf X}\vec\beta+\vec\varepsilon$.
+Suppose hat
+$${\bf X}=\left(\begin{matrix}
+1 & 6\cr
+1 & -3\cr
+1 & 8
+\end{matrix}\right)\quad\hbox{and that}\quad
+{\bf y}=\left(\begin{matrix}
+4\cr
+8\cr
+10
+\end{matrix}\right)
+$$
+is observed.
+
+\bigskip
+\noindent
+(a) Use Matlab to compute the projection of $\bf y$ onto
+${\cal R}({\bf X})$ along ${\cal N}({\bf X}')$.
+Also compute the residual vector $\bf e$.
+
+\bigskip
+\noindent
+Note that $\hat{\mathbf y}=\bf Hy$ is the projection of
+$\bf y$ onto ${\cal R}({\bf X})$ along ${\cal N}({\bf X}')$
+so we need to compute the hat matrix $\bf H$.
+We have
+$${\bf H}={\bf X}'({\bf X}'{\bf X})^{-{}}{\bf X}'=\left(\begin{matrix}
+0.413 & 0.107 & 0.481\cr
+0.107 & 0.981 & -0.087\cr
+0.481 & -0.087 & 0.607
+\end{matrix}\right)
+$$
+$$\hat{\bf y}={\bf Hy}=\left(\begin{matrix}
+7.31\cr
+7.40\cr
+7.29
+\end{matrix}\right)\qquad
+{\bf e}=({\bf I}-{\bf H}){\bf y}=\left(\begin{matrix}
+-3.31\cr
+0.60\cr
+2.71
+\end{matrix}\right)
+$$
+
+%\bigskip
+%\noindent
+%(b)
+%\begin{center}
+%\includegraphics[scale=0.4]{hw4-1.png}
+%\end{center}

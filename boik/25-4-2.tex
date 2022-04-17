@@ -1,0 +1,48 @@
+\section{Section 25.4, problem 2}
+Let $\bf A$ be a $p\times p$ symmetric matrix with rank $r$.
+Justify your answers to the following T/F questions.
+
+\bigskip
+\noindent
+(a) T or F: ${\bf A}^{-{}}$ must be symmetric for any $r$.
+
+\bigskip
+\noindent
+False. By Theorem 8.6 (b) on p. 54,
+if $\bf A$ is singular (which is the case
+when $r<p$) then a non-symmetric generalized inverse of $\bf A$
+always exists.
+
+\bigskip
+\noindent
+(b) T or F: ${\bf A}^{-{}}$ can be chosen to be symmetric for
+any $r$.
+
+\bigskip
+\noindent
+True. If $r=p$ then ${\bf A}^{-{}}={\bf A}^{-1}$.
+Since $\bf A$ is symmetric we have
+$${\bf A}^{-1}=({\bf A}^T)^{-1}=({\bf A}^{-1})^T$$
+therefore ${\bf A}^{-1}$ is symmetric as well.
+If $r<p$ then $\bf A$ is singular.
+Then by Theorem 8.6 (a) on p. 54
+a symmetric generalized inverse always exists.
+
+\bigskip
+\noindent
+(c) T or F: ${\bf A}^{-{}}$ must be symmetric when $r=p$.
+
+\bigskip
+\noindent
+True, by the above first argument for part (b).
+
+\bigskip
+\noindent
+(d) T or F: $({\bf A}^{-{}})^T=({\bf A}^T)^{-{}}$.
+
+\bigskip
+\noindent
+True. We have
+$${\bf A}^T({\bf A}^{-{}})^T{\bf A}^T
+=({\bf AA}^{-{}}{\bf A})^T={\bf A}^T$$
+Hence $({\bf A}^{-{}})^T$ is a generalized inverse of ${\bf A}^T$.

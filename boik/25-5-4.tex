@@ -1,0 +1,33 @@
+\section{Section 25.5, problem 4}
+Let $\bf Q$ be an $n\times n$ nonsingular matrix and let $\bf A$
+be an $n\times n$ matrix.
+Verify that if $\lambda$ is an eigenvalue of $\bf A$,
+then $\lambda$ is an eigenvalue of ${\bf Q}^{-1}\bf AQ$.
+
+\bigskip
+\noindent
+Since $\lambda$ is an eigenvalue of $\bf A$ we have
+${\bf A}x=\lambda x$ where $x$ is the associated eigenvector.
+It follows that
+$${\bf Q}^{-1}{\bf A}({\bf QQ}^{-1})x{\bf Q}
+={\bf Q}^{-1}\lambda x\bf Q$$
+The above equation can be rewritten as
+$$({\bf Q}^{-1}{\bf A}{\bf Q})({\bf Q}^{-1}x{\bf Q})
+=\lambda({\bf Q}^{-1}x\bf Q)$$
+Hence $\lambda$ is an eigenvalue of ${\bf Q}^{-1}\bf AQ$
+and ${\bf Q}^{-1}x\bf Q$ is its eigenvector.
+
+\bigskip
+\noindent
+The book uses the following proof in Theorem 9.4.
+\begin{eqnarray*}
+|{\bf A}-\lambda{\bf I}|=0
+&\Longrightarrow&|{\bf Q}^{-1}|
+\times|{\bf A}-\lambda{\bf I}|
+\times|{\bf Q}|=0\\
+&\Longrightarrow&
+|{\bf Q}^{-1}({\bf A}-\lambda{\bf I}){\bf Q}|=0\\
+&\Longrightarrow&
+|{\bf Q}^{-1}{\bf AQ}-\lambda{\bf I}|=0
+\end{eqnarray*}
+Therefore $\lambda$ is an eigenvalue of ${\bf Q}^{-1}{\bf AQ}$.

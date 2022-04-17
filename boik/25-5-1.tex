@@ -1,0 +1,33 @@
+\section{Section 25.5, problem 1}
+(a) Let $\bf A$ be an $n\times n$ symmetric matrix.
+Show that ${\bf A}={\bf 0}$ iff all eigenvalues of $\bf A$ are zero.
+
+\bigskip
+\noindent
+Since $\bf A$ is symmetric, by Theorem 9.3 it can be diagonalized
+as ${\bf A}={\bf U\Lambda U}'$ where $\bf\Lambda$ is a diagonal
+matrix of eigenvalues and $\bf U$ is an orthogonal matrix.
+Therefore ${\bf\Lambda}=\bf0$ implies ${\bf A}=\bf0$.
+We can also write ${\bf U}'{\bf AU}=\bf\Lambda$ from which it follows
+that ${\bf A}=\bf0$ implies ${\bf\Lambda=0}$.
+Therefore ${\bf A}={\bf 0}$ iff all eigenvalues of $\bf A$ are zero.
+
+\bigskip
+\noindent
+(b) If $\bf A$ is not symmetric, then the above result does not hold.
+Compute the eigenvalues of
+$${\bf A}=\left(\begin{matrix}
+0 & 1\cr
+0 & 0
+\end{matrix}\right)
+$$
+
+\bigskip
+\noindent
+The eigenvalues are the solutions to the following equation.
+$$\left|\begin{matrix}
+-\lambda & 1\cr
+0 & -\lambda
+\end{matrix}\right|=\lambda^2=0
+$$
+Hence both eigenvalues are zero but ${\bf A}\ne\bf 0$.

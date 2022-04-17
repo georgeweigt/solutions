@@ -1,0 +1,67 @@
+\section{Section 25.2, problem 3}
+Consider the one-way classification model with $k$ treatments
+$$y_{ij}=\tau_0+\tau_j+\varepsilon_{ij},\quad
+i=1,\ldots,n_j;\quad j=1,\ldots,k$$
+(a) Give an expression for the design matrix using direct sums.
+
+\bigskip
+\noindent
+The obstacle to this problem is that the rightmost index $j$ is
+the treatment number instead of the observation number.
+This results in a
+design matrix that cannot be decomposed into direct sums without
+knowing the $n_j$.
+However, we can work around this by constructing a design matrix
+for a $y_{ij}$ ordered by $i$ first instead of $j$, then use a permutation matrix to reorder the direct sum lexicographically.
+
+%$${\bf X}\beta=\left(\matrix{
+%1 & 1 & 0 & \cdots & 0\cr
+%\vdots & \vdots & \vdots & &\vdots\cr
+%1 & 1 & 0 & \cdots & 0\cr
+%1 & 0 & 1 & \cdots & 0\cr
+%\vdots & \vdots & \vdots & &\vdots\cr
+%1 & 0 & 1 & \cdots & 0\cr
+%1 & 0 & 0 & \cdots & 0\cr
+%\vdots & \vdots & \vdots & &\vdots\cr
+%1 & 0 & 0 & \cdots & 1\cr
+%\vdots & \vdots & \vdots & &\vdots\cr
+%1 & 0 & 0 & \cdots & 1
+%}\right)\left(\matrix{
+%\tau_0\cr
+%\tau_1\cr
+%\vdots\cr
+%\tau_k
+%}\right)
+%$$
+
+\bigskip
+\noindent
+Let $N$ be the total number of observations, that is,
+$$N=\sum_{j=1}^kn_j$$
+Then the design matrix $\bf X$ has $N$ rows and $k+1$ columns.
+Its decomposition into direct sums is
+$${\bf X}={\bf P}\left(\begin{matrix}
+1_N & \displaystyle{\bigoplus_{j=1}^k1_{n_j}}\end{matrix}\right)$$
+where $\bf P$ is the appropriate $N\times N$ permutation matrix
+that reorders the rows of the direct sum lexicographically.
+
+\bigskip
+\noindent
+(b) Suppose that the data are balanced (i.e. $n_j=n\,\forall j$).
+Give an expression for the design matrix using Kronecker products.
+
+\bigskip
+\noindent
+For this we do not need the permutation matrix.
+We just need to create a stack of ${\bf I}_k$.
+Let $N=nk$. Then
+$${\bf X}=\left(\begin{matrix}1_N & 1_n\otimes{\bf I}_k
+\end{matrix}\right)$$
+The above works when $\bf y$ is ordered lexicographically, i.e.
+$${\bf y}=\left(\begin{matrix}
+y_{11}\cr
+y_{12}\cr
+y_{13}\cr
+\vdots
+\end{matrix}\right)
+$$

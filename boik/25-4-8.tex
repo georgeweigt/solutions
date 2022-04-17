@@ -1,0 +1,195 @@
+\section{Section 25.4, problem 8}
+Let $\bf A$ be a $p\times q$ matrix with rank $r$.
+Let ${\bf P}_1$ be a $p\times p$ permutation matrix defined so
+that the first $r$ rows of ${\bf P}_1{\bf A}$ are linearly
+independent.
+Similarly, let ${\bf P}_2$ be a $q\times q$ permutation matrix defined
+so that the first $r$ columns of ${\bf AP}_2$ are linearly
+independent.
+Partition ${\bf P}_1{\bf AP}_2$ as
+$${\bf P}_1{\bf AP}_2=\left(\begin{matrix}
+{\bf A}_{11} & {\bf A}_{12}\cr
+{\bf A}_{21} & {\bf A}_{22}
+\end{matrix}\right)
+$$
+where ${\bf A}_{11}$ is $r\times r$.
+
+\bigskip
+\noindent
+(a) Prove that ${\bf A}_{11}$ has full rank.
+
+\bigskip
+\noindent
+Since only the first $r$ rows of ${\bf P}_1{\bf A}{\bf P}_2$
+are linearly independent, the remaining $p-r$ rows are linearly dependent.
+Therefore there is a matrix $\bf B$ such that
+$$\left(\begin{matrix}
+{\bf I}_r\cr
+{\bf B}
+\end{matrix}\right){\bf A}_{11}=\left(\begin{matrix}
+{\bf A}_{11}\cr
+{\bf A}_{21}
+\end{matrix}\right)
+$$
+Since only the first $r$ columns of ${\bf P}_1{\bf A}{\bf P}_2$
+are linearly independent, the remaining $q-r$ columns are
+linearly dependent.
+Therefore there is a matrix $\bf C$ such that
+$$\left(\begin{matrix}
+{\bf A}_{11}\cr
+{\bf A}_{21}
+\end{matrix}\right)
+\left(\begin{matrix}
+{\bf I}_r & {\bf C}
+\end{matrix}\right)=\left(\begin{matrix}
+{\bf A}_{11} & {\bf A}_{12}\cr
+{\bf A}_{21} & {\bf A}_{22}
+\end{matrix}\right)
+$$
+Hence
+$$
+\left(\begin{matrix}
+{\bf I}_r\cr
+{\bf B}
+\end{matrix}\right){\bf A}_{11}
+\left(\begin{matrix}
+{\bf I}_r & {\bf C}
+\end{matrix}\right)=\left(\begin{matrix}
+{\bf A}_{11} & {\bf A}_{12}\cr
+{\bf A}_{21} & {\bf A}_{22}
+\end{matrix}\right)={\bf P}_1{\bf A}{\bf P}_2
+$$
+Since the rank of ${\bf P}_1{\bf A}{\bf P}_2$ is $r$,
+by Theorem 8.18, the rank of ${\bf A}_{11}$ cannot be less than
+$r$. Therefore ${\bf A}_{11}$ has full rank.
+
+\bigskip
+\noindent
+(b) Prove that
+$${\bf G}={\bf P}_2
+\left(\begin{matrix}
+{\bf A}_{11}^{-1} & {\bf 0}\cr
+{\bf 0} & {\bf 0}
+\end{matrix}\right)
+{\bf P}_1
+$$
+is a generalized inverse of $\bf A$.
+
+\bigskip
+\noindent
+Note that from part (a) we have
+$${\bf P}_1{\bf A}{\bf P}_2
+=
+\left(\begin{matrix}
+{\bf I}_r\cr
+{\bf B}
+\end{matrix}\right){\bf A}_{11}
+\left(\begin{matrix}
+{\bf I}_r & {\bf C}
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+{\bf A}_{11} & {\bf A}_{11}{\bf C}\cr
+{\bf B}{\bf A}_{11} & {\bf B}{\bf A}_{11}{\bf C}
+\end{matrix}\right)
+$$
+By matrix multiplication we have
+\begin{eqnarray*}
+{\bf AGA}
+&=&
+({\bf P}_1'{\bf P}_1){\bf AGA}({\bf P}_2{\bf P}_2')\\
+%&=&
+%{\bf P}_1{\bf A}{\bf G}{\bf A}{\bf P}_2\\
+&=&
+{\bf P}_1'
+({\bf P}_1{\bf A}{\bf P}_2)
+\left(\begin{matrix}
+{\bf A}_{11}^{-1} & {\bf 0}\cr
+{\bf 0} & {\bf 0}
+\end{matrix}\right)
+({\bf P}_1{\bf A}{\bf P}_2)
+{\bf P}_2'\\
+&=&
+{\bf P}_1'
+\left(\begin{matrix}
+{\bf A}_{11} & {\bf A}_{11}{\bf C}\cr
+{\bf B}{\bf A}_{11} & {\bf B}{\bf A}_{11}{\bf C}
+\end{matrix}\right)
+%
+\left(\begin{matrix}
+{\bf A}_{11}^{-1} & {\bf 0}\cr
+{\bf 0} & {\bf 0}
+\end{matrix}\right)
+%
+\left(\begin{matrix}
+{\bf A}_{11} & {\bf A}_{11}{\bf C}\cr
+{\bf B}{\bf A}_{11} & {\bf B}{\bf A}_{11}{\bf C}
+\end{matrix}\right)
+{\bf P}_2'\\
+&=&
+{\bf P}_1'
+\left(\begin{matrix}
+{\bf A}_{11} & {\bf A}_{11}{\bf C}\cr
+{\bf B}{\bf A}_{11} & {\bf B}{\bf A}_{11}{\bf C}
+\end{matrix}\right)
+{\bf P}_2'\\
+&=&
+{\bf P}_1'({\bf P}_1{\bf A}{\bf P}_2){\bf P}_2'\\
+&=&
+{\bf A}
+\end{eqnarray*}
+Hence
+$${\bf A}{\bf G}{\bf A}={\bf A}$$
+Therefore $\bf G$ is a generalized inverse of $\bf A$.
+
+\bigskip
+\noindent
+(c) Use the above result to find a generalized inverse of
+$${\bf A}=\left(\begin{matrix}
+1 & 2 & 3 & 1\cr
+2 & 4 & 6 & 1\cr
+3 & 6 & 9 & 1
+\end{matrix}\right)
+$$
+The third row is two times the second row minus the first row.
+Hence keep the first two rows.
+$${\bf P}_1=\left(\begin{matrix}
+1 & 0 & 0\cr
+0 & 1 & 0\cr
+0 & 0 & 1
+\end{matrix}\right)
+$$
+Columns two and three are multiples of column one.
+Hence use columns one and four.
+$${\bf P}_2=\left(\begin{matrix}
+1 & 0 & 0 & 0\cr
+0 & 0 & 1 & 0\cr
+0 & 0 & 0 & 1\cr
+0 & 1 & 0 & 0
+\end{matrix}\right)
+$$
+Hence
+$${\bf A}_{11}=\left(\begin{matrix}
+1 & 1\cr
+2 & 1
+\end{matrix}\right),\quad{\bf A}_{11}^{-1}=
+\left(\begin{matrix}
+-1 & 1\cr
+2 & -1
+\end{matrix}\right)
+$$
+Therefore
+$${\bf G}=
+{\bf P}_2\left(\begin{matrix}
+-1 & 1 & 0 \cr
+2 & -1 & 0\cr
+0 & 0 & 0\cr
+0 & 0 & 0
+\end{matrix}\right){\bf P}_1
+=\left(\begin{matrix}
+-1 & 1 & 0\cr
+0 & 0 & 0\cr
+0 & 0 & 0\cr
+2 & -1 & 0
+\end{matrix}\right)
+$$

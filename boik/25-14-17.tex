@@ -1,0 +1,50 @@
+
+\section{Section 25.14, problem 17}
+Consider the linear model $\mathbf y\sim N(\mathbf X\bm\beta,
+\sigma^2\mathbf I_n)$ where $\mathbf X: N\times(k+1)$ is the
+design matrix for the one-way classification model
+$y_{ij}=\mu+\tau_i+\varepsilon_{ij}$.
+Partition the design matrix as $\mathbf X=
+\begin{pmatrix}\mathbf X_1 & \mathbf X_2\end{pmatrix}$
+where $\mathbf X_1=\mathbf 1_N$.
+Consider testing $H_0:E(\mathbf y)\in\mathcal R(\mathbf X_1)$
+against $H_a:E(\mathbf y)\in\mathcal R(\mathbf X)$,
+$E(\mathbf y)\not\in\mathcal R(\mathbf X_1)$.
+
+\bigskip
+\noindent
+(a) Verify that the null and alternative hypotheses are equivalent
+to $H_{0'}:\tau_i=\tau_{i'}$ for all $i$, $i'$ versus
+$H_{a'}:\tau_i\ne\tau_{i'}$ for some $i$, $i'$.
+
+\bigskip
+\noindent
+What they mean by $\tau_i=\tau_{i'}$ is
+$\tau_1=\tau_2=\cdots=\tau_k$.
+We have to show that $H_0$ true $\Leftrightarrow$
+$H_{0'}$ true and $H_a$ true $\Leftrightarrow$ $H_{a'}$ true.
+
+\bigskip
+\noindent
+%$H_0\Rightarrow H_{0'}$.
+Let $E(\mathbf y)\in\mathcal R(\mathbf X_1)$.
+Then there is an $\alpha$ such that $E(\mathbf y)=\alpha\mathbf1_N$.
+It follows that $E(y_{ij})=\mu+\tau_i=\alpha$ for all $i$, $j$.
+Therefore $\tau_1=\tau_2=\cdots=\tau_k=\alpha-\mu$.
+Hence $H_0\Rightarrow H_{0'}$.
+
+\bigskip
+\noindent
+Let $\tau_1=\tau_2=\cdots=\tau_k=\theta$.
+Then $E(y_{ij})=\mu+\theta$ for all $i$, $j$.
+It follows that $E(\mathbf y)=(\mu+\theta)\mathbf 1_N$.
+Therefore $E(\mathbf y)\in\mathcal R(\mathbf X_1)$.
+Hence $H_{0'}\Rightarrow H_0$.
+
+\bigskip
+\noindent
+Let $E(\mathbf y)\in\mathcal R(\mathbf X)$,
+$E(\mathbf y)\not\in\mathcal R(\mathbf X_1)$.
+Then there is a $y_{ij}$ and a $y_{kl}$ such that
+$E(y_{ij})\ne E(y_{kl})$.
+

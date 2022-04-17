@@ -1,0 +1,121 @@
+\section{Section 25.9, problem 21}
+Let ${\bf X}:n\times p$ be a rank $r$ matrix and define $\bf H$ as
+${\bf H}={\bf X}({\bf X}'{\bf X})^{-{}}{\bf X}'$.
+Prove the following results.
+
+\bigskip
+\noindent
+(a) $\bf H$ is idempotent.
+
+\bigskip
+\noindent
+By definition of a generalized inverse we have
+$${\bf X}'{\bf X}({\bf X}'{\bf X})^{-{}}{\bf X}'{\bf X}
+={\bf X}'{\bf X}$$
+By Theorem 8.15 (b) on p. 60 we can cancel the leftmost ${\bf X}'$
+on both sides of the above equation
+regardless of the row rank of $\bf X$.
+Therefore
+$${\bf X}({\bf X}'{\bf X})^{-{}}{\bf X}'{\bf X}={\bf X}$$
+Hence
+\begin{eqnarray*}
+{\bf HH}&=&
+\bigg[{\bf X}({\bf X}'{\bf X})^{-{}}{\bf X}'\bigg]\cdot
+\bigg[{\bf X}({\bf X}'{\bf X})^{-{}}{\bf X}'\bigg]\\
+&=&\bigg[{\bf X}({\bf X}'{\bf X})^{-{}}
+{\bf X}'{\bf X}\bigg]({\bf X}'{\bf X})^{-{}}{\bf X}'\\
+&=&{\bf X}({\bf X}'{\bf X})^{-{}}{\bf X}'\\
+&=&{\bf H}
+\end{eqnarray*}
+Therefore $\bf H$ is idempotent.
+
+\bigskip
+\noindent
+(b) ${\bf HX}={\bf X}$.
+
+\bigskip
+\noindent
+By part (a) above we have
+$${\bf X}({\bf X}'{\bf X})^{-{}}{\bf X}'{\bf X}={\bf X}$$
+Therefore
+$${\bf HX}=\bigg[{\bf X}({\bf X}'{\bf X})^{-{}}{\bf X}'\bigg]
+{\bf X}={\bf X}$$
+
+\bigskip
+\noindent
+(c) ${\bf Ha}={\bf a}$ for any ${\bf a}\in{\cal R}({\bf X})$.
+
+\bigskip
+\noindent
+Since ${\bf a}\in{\cal R}({\bf X})$ we have
+${\bf a}={\bf Xb}$ for some $\bf b$.
+Then, because ${\bf HX}={\bf X}$ in part (b) above,
+we have ${\bf HXb}={\bf Xb}$.
+Hence ${\bf Ha}={\bf a}$.
+
+\bigskip
+\noindent
+(d) $\mathop{\rm rank}({\bf H})=\mathop{\rm rank}({\bf X})
+=\mathop{\rm trace}({\bf H})$.
+
+\bigskip
+\noindent
+Since ${\bf X}={\bf HX}$ and
+${\bf H}={\bf X}({\bf X}'{\bf X})^{-{}}{\bf X}'$ we have
+$$
+\mathop{\rm rank}({\bf X})\le
+\mathop{\rm rank}({\bf H})\quad\hbox{and}\quad
+\mathop{\rm rank}({\bf H})\le\mathop{\rm rank}({\bf X})
+$$
+Hence $\mathop{\rm rank}({\bf H})=\mathop{\rm rank}({\bf X})$.
+By Theorem 11.18 (b) on p.\ 92 we have
+$\mathop{\rm trace}({\bf H})=\mathop{\rm rank}({\bf H})$.
+%However, let us go the extra mile and prove it anyway.
+%By Theorem 11.30 we have
+%$${\bf H}={\bf C}({\bf C}'{\bf C})^{-1}{\bf C}'$$
+%where ${\bf X}={\bf CR}$ is the full rank factorization of $\bf X$
+%and ${\bf\Omega}^{-1}={\bf I}_r$.
+%Then
+%\begin{eqnarray*}
+%\mathop{\rm trace}({\bf H})
+%&=&\mathop{\rm trace}[{\bf C}({\bf C}'{\bf C})^{-1}{\bf C}']\\
+%&=&\mathop{\rm trace}[{\bf C}'{\bf C}({\bf C}'{\bf C})^{-1}]\\
+%&=&\mathop{\rm trace}({\bf I}_r)\\
+%&=&r\\
+%&=&\mathop{\rm rank}({\bf X})
+%\end{eqnarray*}
+
+\bigskip
+\noindent
+(e) $\bf H$ doesn't depend on the choice of generalized inverse.
+
+\bigskip
+\noindent
+By Theorem 11.21, $\bf H$ is unique. Hence, choosing a different generalized inverse
+must yield the same $\bf H$.
+Therefore $\bf H$ doesn't depend on the choice of generalized inverse.
+
+\bigskip
+\noindent
+(f) Prove that $\bf H$ is $\mathop{\rm ppo}({\bf X})$.
+
+\bigskip
+\noindent
+By Theorem 11.22 on p.\ 95, $\mathbf H$ is a perpendicular projection
+operator iff $\mathbf H=\mathbf H'$. Consequently,
+we need to show that $\bf H$ is symmetric so let us compute the
+transpose of $\bf H$.
+\begin{eqnarray*}
+\mathbf H'&=&[{\bf X}({\bf X}'{\bf X})^{-{}}{\bf X}']'\\
+%&=&(\mathbf X')'[(\mathbf X'\mathbf X)^{-{}}]'\mathbf X'\\
+&=&\mathbf X[(\mathbf X'\mathbf X)^{-{}}]'\mathbf X'
+\end{eqnarray*}
+Since $\mathbf X'\mathbf X$ is symmetric, we can use Theorem 8.7
+on p.\ 54 to conclude that
+$[(\mathbf X'\mathbf X)^{-{}}]'$ is a generalized inverse of
+$\mathbf X'\mathbf X$.
+By part (e) above, $\bf H$ doesn't depend on the choice of generalized inverse.
+Therefore we must have
+$$\mathbf H=\mathbf X[(\mathbf X'\mathbf X)^{-{}}]'\mathbf X'=
+\mathbf H'$$
+Hence $\mathbf H$ is $\mathop{\rm ppo}(\mathbf X)$.

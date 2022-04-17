@@ -1,0 +1,21 @@
+\section{Section 25.9, problem 17}
+Let $\bf y$ be an $n$-vector and denote the arithmetic mean of $\bf y$
+by $\bar y$. The $n$-vector of deviations from the mean is
+${\bf e}={\bf y}-{\bf 1}_n\bar y$.
+
+\bigskip
+\noindent
+(a) Find an $n\times n$ matrix of constants $\bf T$
+such that ${\bf e}={\bf Ty}$.
+$${\bf T}={\bf I}_n-\hbox{$1\over n$}{\bf J}_n$$
+
+\bigskip
+\noindent
+(b) Verify that $\bf T$ is idempotent.
+\begin{eqnarray*}
+{\bf T}^2&=&({\bf I}_n-\hbox{$1\over n$}{\bf J}_n)^2\\
+&=&{\bf I}_n-2\cdot\hbox{$1\over n$}{\bf J}_n-\hbox{$1\over n^2$}{\bf J}_n^2\\
+&=&{\bf I}_n-2\cdot\hbox{$1\over n$}{\bf J}_n-\hbox{$1\over n$}{\bf J}_n\\
+&=&{\bf I}_n-\hbox{$1\over n$}{\bf J}_n\\
+&=&{\bf T}
+\end{eqnarray*}

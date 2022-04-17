@@ -1,0 +1,90 @@
+\section{Section 25.8, problem 15}
+Let $\bf X$ be an $n\times p$ matrix with rank $r$ and let
+$\bf\Omega$ be an $n\times n$ positive definite matrix.
+
+\bigskip
+\noindent
+(a) Prove that ${\bf\Omega}^{-1}$ is positive definite.
+
+\bigskip
+\noindent
+Since $\bf\Omega$ is positive definite,
+none of its eigenvalues are zero.
+Therefore ${\bf\Omega}^{-1}$ exists.
+For every eigenvalue $\lambda$ of $\bf\Omega$ and its associated eigenvector $\bf x$
+we have
+$${\bf\Omega}{\bf x}=\lambda{\bf x}
+\quad\Longrightarrow\quad
+\lambda^{-1}{\bf x}={\bf\Omega}^{-1}{\bf x}
+$$
+Hence $\lambda^{-1}$ is an eigenvalue of ${\bf\Omega}^{-1}$.
+Since $\lambda>0$ implies $\lambda^{-1}>0$, all eigenvalues
+of ${\bf\Omega}^{-1}$ are greater than zero.
+Hence ${\bf\Omega}^{-1}$ is positive definite.
+
+\bigskip
+\noindent
+(b) Verify that
+$\mathop{\rm Dim}[{\cal R}({\bf X})\cap
+{\cal N}({\bf X}'{\bf\Omega}^{-1})]=0$.
+
+\bigskip
+\noindent
+Let $\bf v$ be a vector such that ${\bf v}\in{\cal R}({\bf X})$ and
+${\bf v}\in{\cal N}({\bf X}'{\bf\Omega}^{-1})$.
+Then ${\bf v}={\bf Xw}$ for some $\bf w$
+and
+$${\bf X}'{\bf\Omega}^{-1}{\bf v}
+={\bf X}'{\bf\Omega}^{-1}{\bf Xw}={\bf 0}$$
+We can multiply both sides of the above equation by ${\bf w}'$
+and obtain
+$${\bf w}'{\bf X}'{\bf\Omega}^{-1}{\bf Xw}=0$$
+Since ${\bf\Omega}^{-1}>0$, by Theorem 9.8 we can factor it and
+obtain
+$${\bf w}'{\bf X}'{\bf\Omega}^{-1/2}{\bf\Omega}^{-1/2}{\bf Xw}
+=({\bf\Omega}^{-1/2}{\bf Xw})'({\bf\Omega}^{-1/2}{\bf Xw)}=0$$
+where ${\bf\Omega}^{-1/2}{\bf\Omega}^{-1/2}={\bf\Omega}^{-1}$,
+${\bf\Omega}^{-1/2}$ is symmetric and ${\bf\Omega}^{-1/2}$ is
+nonsingular.
+Then by Theorem 8.14 on p. 59 we have
+$${\bf\Omega}^{-1/2}{\bf Xw}=\bf0$$
+Since ${\bf\Omega}^{-1/2}$ is nonsingular
+we must have ${\bf Xw}={\bf 0}$ hence ${\bf v}=\bf0$.
+Therefore
+$$\mathop{\rm Dim}[{\cal R}({\bf X})\cap
+{\cal N}({\bf X}'{\bf\Omega}^{-1})]=\mathop{\rm Dim}(\{{\bf0}\})=0$$
+
+\bigskip
+\noindent
+(c) Verify that
+${\cal R}({\bf X})+{\cal N}({\bf X}'{\bf\Omega}^{-1})=\mathbb{R}^n$.
+
+\bigskip
+\noindent
+By definition of column space and null space we have
+$${\cal R}({\bf X})+{\cal N}({\bf X}'{\bf\Omega}^{-1})\subseteq
+\mathbb{R}^n$$
+Since
+${\bf\Omega}^{-1}$ has full row rank we have
+$\mathop{\rm Dim}[{\cal N}({\bf X}'{\bf\Omega}^{-1})]
+=\mathop{\rm Dim}[{\cal N}({\bf X}')]$.
+Then by Theorem 11.6 (c) on p. 83 we have
+$$\mathop{\rm Dim}[{\cal R}({\bf X})]
++\mathop{\rm Dim}[{\cal N}({\bf X}'{\bf\Omega}^{-1})]=n$$
+We have already established that
+$\mathop{\rm Dim}[{\cal R}({\bf X})\cap
+{\cal N}({\bf X}'{\bf\Omega}^{-1})]=0$.
+Therefore by Theorem 11.13 on p. 86 we have
+$$
+\mathop{\rm Dim}[{\cal R}({\bf X})+{\cal N}({\bf X}'{\bf\Omega}^{-1})]
+=\mathop{\rm Dim}[{\cal R}({\bf X})]
++\mathop{\rm Dim}[{\cal N}({\bf X}'{\bf\Omega}^{-1})]=n
+$$
+At this point
+we have established a subset relation and shown equal dimension
+with $\mathbb{R}^n$.
+Therefore, by method 3 on p. 82 we conclude that
+$${\cal R}({\bf X})+{\cal N}({\bf X}'{\bf\Omega}^{-1})=\mathbb{R}^n$$
+
+
+

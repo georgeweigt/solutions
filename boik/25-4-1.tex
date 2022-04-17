@@ -1,0 +1,44 @@
+\section{Section 25.4, problem 1}
+Let
+$${\bf A}=\left(\begin{matrix}
+1 & 0\cr
+0 & 0
+\end{matrix}\right)
+$$
+Find a non-symmetric generalized inverse of {\bf A}.
+
+\bigskip
+\noindent
+Note that ${\bf{AAA}=A}$ hence ${\bf A}$ is a generalized inverse
+of itself.
+Let
+$${\bf G}=\left(\begin{matrix}
+1 & 0\cr
+0 & 0
+\end{matrix}\right),\quad
+{\bf S}=\left(\begin{matrix}
+s_{11} & s_{12}\cr
+s_{21} & s_{22}
+\end{matrix}\right),\quad
+{\bf T}=\left(\begin{matrix}
+t_{11} & t_{12}\cr
+t_{21} & t_{22}
+\end{matrix}\right)
+$$
+Then
+$${\bf G}^*={\bf GAG}+{\bf S}({\bf I}-{\bf AG})
++({\bf I}-{\bf GA}){\bf T}
+=\left(\begin{matrix}
+1 & s_{12}\cr
+t_{21} & s_{22}+t_{22}
+\end{matrix}\right)
+$$
+It follows that ${\bf G}^*$ is a generalized inverse of $\bf A$ for
+all values of $s_{12}$, $t_{21}$, and $s_{22}+t_{22}$.
+Hence
+$${\bf A}^{-{}}=\left(\begin{matrix}
+1 & 1\cr
+0 & 0
+\end{matrix}\right)
+$$
+is a non-symmetric generalized inverse of $\bf A$.

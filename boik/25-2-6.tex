@@ -1,0 +1,87 @@
+\section{Section 25.2, problem 6}
+(a) Give the entries for $\bf y$, $\bf X$, $\vec\beta$, $\vec\varepsilon$.
+$${\bf y}=\left(\begin{matrix}
+y_{11}\cr
+y_{12}\cr
+y_{13}\cr
+y_{14}\cr
+y_{21}\cr
+y_{22}\cr
+y_{23}\cr
+y_{24}\cr
+y_{31}\cr
+y_{32}\cr
+y_{33}\cr
+y_{34}\cr
+y_{41}\cr
+y_{42}\cr
+y_{43}\cr
+y_{44}
+\end{matrix}\right),\quad\vec\beta=\left(\begin{matrix}
+\mu\cr
+\tau_1\cr
+\tau_2\cr
+\tau_3\cr
+\tau_4\cr
+\theta_1\cr
+\theta_2\cr
+\theta_3\cr
+\theta_4\cr
+\gamma_1\cr
+\gamma_2\cr
+\gamma_3\cr
+\gamma_4\cr
+\delta_1\cr
+\delta_2\cr
+\delta_3\cr
+\delta_4
+\end{matrix}\right),\quad\vec\varepsilon=\left(\begin{matrix}
+\varepsilon_{11}\cr
+\varepsilon_{12}\cr
+\varepsilon_{13}\cr
+\varepsilon_{14}\cr
+\varepsilon_{21}\cr
+\varepsilon_{22}\cr
+\varepsilon_{23}\cr
+\varepsilon_{24}\cr
+\varepsilon_{31}\cr
+\varepsilon_{32}\cr
+\varepsilon_{33}\cr
+\varepsilon_{34}\cr
+\varepsilon_{41}\cr
+\varepsilon_{42}\cr
+\varepsilon_{43}\cr
+\varepsilon_{44}
+\end{matrix}\right)
+$$
+In the design matrix $\bf X$, there is no carry over effect for the 1st period.
+$${\bf X}=\left(\begin{array}{ccccccccccccccccccccc}
+1 && 1 & 0 & 0 & 0 && 1 & 0 & 0 & 0 && 1 & 0 & 0 & 0 && 0 & 0 & 0 & 0\cr
+1 && 1 & 0 & 0 & 0 && 0 & 1 & 0 & 0 && 0 & 1 & 0 & 0 && 1 & 0 & 0 & 0\cr
+1 && 1 & 0 & 0 & 0 && 0 & 0 & 1 & 0 && 0 & 0 & 1 & 0 && 0 & 1 & 0 & 0\cr
+1 && 1 & 0 & 0 & 0 && 0 & 0 & 0 & 1 && 0 & 0 & 0 & 1 && 0 & 0 & 1 & 0\cr
+\cr
+1 && 0 & 1 & 0 & 0 && 1 & 0 & 0 & 0 && 0 & 1 & 0 & 0 && 0 & 0 & 0 & 0\cr
+1 && 0 & 1 & 0 & 0 && 0 & 1 & 0 & 0 && 0 & 0 & 0 & 1 && 0 & 1 & 0 & 0\cr
+1 && 0 & 1 & 0 & 0 && 0 & 0 & 1 & 0 && 1 & 0 & 0 & 0 && 0 & 0 & 0 & 1\cr
+1 && 0 & 1 & 0 & 0 && 0 & 0 & 0 & 1 && 0 & 0 & 1 & 0 && 1 & 0 & 0 & 0\cr
+\cr
+1 && 0 & 0 & 1 & 0 && 1 & 0 & 0 & 0 && 0 & 0 & 1 & 0 && 0 & 0 & 0 & 0\cr
+1 && 0 & 0 & 1 & 0 && 0 & 1 & 0 & 0 && 1 & 0 & 0 & 0 && 0 & 0 & 1 & 0\cr
+1 && 0 & 0 & 1 & 0 && 0 & 0 & 1 & 0 && 0 & 0 & 0 & 1 && 1 & 0 & 0 & 0\cr
+1 && 0 & 0 & 1 & 0 && 0 & 0 & 0 & 1 && 0 & 1 & 0 & 0 && 0 & 0 & 0 & 1\cr
+\cr
+1 && 0 & 0 & 0 & 1 && 1 & 0 & 0 & 0 && 0 & 0 & 0 & 1 && 0 & 0 & 0 & 0\cr
+1 && 0 & 0 & 0 & 1 && 0 & 1 & 0 & 0 && 0 & 0 & 1 & 0 && 0 & 0 & 0 & 1\cr
+1 && 0 & 0 & 0 & 1 && 0 & 0 & 1 & 0 && 0 & 1 & 0 & 0 && 0 & 0 & 1 & 0\cr
+1 && 0 & 0 & 0 & 1 && 0 & 0 & 0 & 1 && 1 & 0 & 0 & 0 && 0 & 1 & 0 & 0\cr
+\end{array}\right)
+$$
+
+\bigskip
+\noindent
+(b) Compute the dimensions and the rank of $\bf X$.
+
+\bigskip
+\noindent
+The dimensions of $\bf X$ are $16\times 17$, the rank is 13.

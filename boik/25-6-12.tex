@@ -1,0 +1,31 @@
+\section{Section 25.6, problem 12}
+Suppose that $\bf A$ is pd.
+Verify that all eigenvalues of ${\bf A}+{\bf A}^{-1}$ are greater
+than or equal to 2.
+
+\bigskip
+\noindent
+Since $\bf A$ is pd, by definition it is also symmetric.
+Therefore by Theorem 9.3 it can be diagonalized as
+$${\bf A}={\bf U}{\bf\Lambda}{\bf U'}$$
+where $\bf\Lambda$ is a diagonal matrix of eigenvalues of $\bf A$
+and $\bf U$ is orthogonal.
+We have
+$${\bf A}+{\bf A}^{-1}={\bf U}{\bf\Lambda}{\bf U'}
++{\bf U}{\bf\Lambda}^{-1}{\bf U'}
+={\bf U}({\bf\Lambda}+{\bf\Lambda}^{-1}){\bf U}'
+$$
+Note that if $\lambda$ is a diagonal element in $\bf\Lambda$,
+then $\lambda+\lambda^{-1}$ is a diagonal element
+in ${\bf\Lambda}+{\bf\Lambda}^{-1}$.
+It follows that if $\lambda$ is an eigenvalue of $\bf A$ then
+$\lambda+\lambda^{-1}$ is an eigenvalue of ${\bf A}+{\bf A}^{-1}$.
+To find the minimum, take the derivative and set to zero.
+$${d\over d\lambda}\left(\lambda+{1\over\lambda}\right)=
+1-{1\over\lambda^2}=0$$
+We only consider $\lambda>0$ because $\bf A$ is pd.
+The minimum occurs at $\lambda=1$
+therefore $\lambda+\lambda^{-1}=2$
+is the smallest possible eigenvalue of ${\bf A}+{\bf A}^{-1}$.
+Therefore all eigenvalues of ${\bf A}+{\bf A}^{-1}$ are greater
+than or equal to 2.

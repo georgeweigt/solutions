@@ -1,0 +1,97 @@
+\section{Section 25.2, problem 1}
+(a) $y_i=\mu+\varepsilon_i$, for $i=1,\ldots,4$.
+$${\bf X}=\left(\begin{matrix}1\cr1\cr1\cr1\end{matrix}\right),\quad
+{\beta}=\mu$$
+The rank of $\bf X$ is 1.
+
+\bigskip
+\noindent
+(b) $y_{ij}=\mu+\alpha_i+\varepsilon_{ij}$,
+where $i=1,2,3$; $j=1,\ldots,n_i$; $n_1=1$; $n_2=2$; and $n_3=3$.
+
+\bigskip
+\noindent
+We have
+$$\left(\begin{matrix}
+y_{11}\cr y_{21}\cr y_{22}\cr y_{31}\cr y_{32}\cr y_{33}
+\end{matrix}\right)=
+\left(\begin{matrix}
+1 & 1 & 0 & 0\cr
+1 & 0 & 1 & 0\cr
+1 & 0 & 1 & 0\cr
+1 & 0 & 0 & 1\cr
+1 & 0 & 0 & 1\cr
+1 & 0 & 0 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+\mu\cr\alpha_1\cr\alpha_2\cr\alpha_3
+\end{matrix}\right)
++\left(\begin{matrix}
+\varepsilon_{11}\cr
+\varepsilon_{21}\cr
+\varepsilon_{22}\cr
+\varepsilon_{31}\cr
+\varepsilon_{32}\cr
+\varepsilon_{33}
+\end{matrix}\right)
+$$
+Hence
+$${\bf X}=\left(\begin{matrix}
+1 & 1 & 0 & 0\cr
+1 & 0 & 1 & 0\cr
+1 & 0 & 1 & 0\cr
+1 & 0 & 0 & 1\cr
+1 & 0 & 0 & 1\cr
+1 & 0 & 0 & 1
+\end{matrix}\right),\quad
+{\vec\beta}=\left(\begin{matrix}
+\mu\cr\alpha_1\cr\alpha_2\cr\alpha_3
+\end{matrix}\right)
+$$
+The rank of $\bf X$ is 3.
+
+\bigskip
+\noindent
+(c) $y_{ij}=\mu+i\theta+i^2\gamma+\varepsilon_{ij}$,
+where $i=1,2,3$; $j=1,\ldots,n_i$; $n_1=1$; $n_2=2$; and $n_3=3$.
+
+\bigskip
+\noindent
+We have
+$$\left(\begin{matrix}
+y_{11}\cr y_{21}\cr y_{22}\cr y_{31}\cr y_{32}\cr y_{33}
+\end{matrix}\right)=
+\left(\begin{matrix}
+1 & 1 & 1\cr
+1 & 2 & 4\cr
+1 & 2 & 4\cr
+1 & 3 & 9\cr
+1 & 3 & 9\cr
+1 & 3 & 9
+\end{matrix}\right)
+\left(\begin{matrix}
+\mu\cr\theta\cr\gamma
+\end{matrix}\right)
++\left(\begin{matrix}
+\varepsilon_{11}\cr
+\varepsilon_{21}\cr
+\varepsilon_{22}\cr
+\varepsilon_{31}\cr
+\varepsilon_{32}\cr
+\varepsilon_{33}
+\end{matrix}\right)
+$$
+Hence
+$${\bf X}=\left(\begin{matrix}
+1 & 1 & 1\cr
+1 & 2 & 4\cr
+1 & 2 & 4\cr
+1 & 3 & 9\cr
+1 & 3 & 9\cr
+1 & 3 & 9
+\end{matrix}\right),\quad
+{\vec\beta}=\left(\begin{matrix}
+\mu\cr\theta\cr\gamma
+\end{matrix}\right)
+$$
+The rank of $\bf X$ is 3.

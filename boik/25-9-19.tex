@@ -1,0 +1,81 @@
+\section{Section 25.9, problem 19}
+Let $\bf X$ be an $n\times p$ matrix with rank $r$ and let $\bf G$
+be any generalized inverse of $\bf X$.
+
+\bigskip
+\noindent
+(a) Verify that $\bf XG$, $\bf GX$, ${\bf I}_n-\bf XG$, and
+${\bf I}_p-\bf GX$ are projection operators.
+
+$$({\bf XG})^2=({\bf XGX}){\bf G}={\bf XG}$$
+$$({\bf GX})^2={\bf G}({\bf XGX})={\bf GX}$$
+
+$$({\bf I}_n-{\bf XG})^2={\bf I}_n-2{\bf XG}-({\bf XG})^2
+={\bf I}_n-{\bf XG}$$
+$$({\bf I}_p-{\bf GX})^2={\bf I}_p-2{\bf GX}-({\bf GX})^2
+={\bf I}_p-{\bf GX}$$
+
+\bigskip
+\noindent
+(b) Determine the two spaces associated with each of the
+projection operators.
+
+\bigskip
+\noindent
+By Theorems 11.5 and 11.7 we have the following subset relations.
+Then the equivalence of vector spaces follows from the equivalence
+of matrix rank.
+%
+%\begin{eqnarray*}
+%{\cal R}({\bf XG})\subseteq{\cal R}({\bf X})
+%&\Longrightarrow&{\cal R}({\bf XG})={\cal R}({\bf X})\\
+%%
+%{\cal R}({\bf GX})\subseteq{\cal R}({\bf G})
+%&\Longrightarrow&{\cal R}({\bf GX})={\cal R}({\bf G})\\ \\
+%%
+%{\cal N}({\bf G})\subseteq{\cal N}({\bf XG})
+%&\Longrightarrow&{\cal N}({\bf G})={\cal N}({\bf XG})\\
+%%
+%{\cal N}({\bf X})\subseteq{\cal N}({\bf GX})
+%&\Longrightarrow&{\cal N}({\bf X})={\cal N}({\bf GX})
+%\end{eqnarray*}
+%
+By Theorem 11.5 on p. 83 we have
+$${\cal R}({\bf XG})\subseteq{\cal R}({\bf X})\quad\hbox{and}\quad
+{\cal R}({\bf X})={\cal R}({\bf XGX})\subseteq{\cal R}({\bf XG})$$
+Therefore
+$${\cal R}({\bf XG})={\cal R}({\bf X})$$
+%
+By Theorem 11.7 on p. 85 we have
+$${\cal N}({\bf GX})\subseteq{\cal N}({\bf XGX})={\cal N}({\bf X})
+\quad\hbox{and}\quad
+{\cal N}({\bf X})\subseteq{\cal N}({\bf GX})$$
+Therefore
+$${\cal N}({\bf GX})={\cal N}({\bf X})$$
+By Theorem 11.18 we have 
+${\cal R}({\bf I}-{\bf P})={\cal N}({\bf P})$
+and
+${\cal N}({\bf I}-{\bf P})={\cal R}({\bf P})$.
+Hence
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Operator $\bf P$ & onto ${\cal R}({\bf P})$ & along ${\cal N}({\bf P})$\\
+\hline
+${\bf XG}$ & ${\cal R}({\bf X})$ & ${\cal N}({\bf XG})$\\
+${\bf GX}$ & ${\cal R}({\bf GX})$ & ${\cal N}({\bf X})$\\
+${\bf I}_n-\bf XG$ & ${\cal N}({\bf XG})$ & ${\cal R}({\bf X})$\\
+${\bf I}_p-\bf GX$ & ${\cal N}({\bf X})$ & ${\cal R}({\bf GX})$\\
+\hline
+\end{tabular}
+\end{center}
+
+\bigskip
+\noindent
+(c) Do these spaces depend on the choice of generalized inverse?
+
+\bigskip
+\noindent
+Yes.
+

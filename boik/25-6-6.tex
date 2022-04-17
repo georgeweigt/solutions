@@ -1,0 +1,29 @@
+\section{Section 25.6, problem 6}
+Let $\bf A$ be an $n\times n$ matrix.
+Prove that
+$$\max_{{\bf x}\ne0}
+{{\bf x}'{\bf A}{\bf x}\over{\bf x}'{\bf x}}
+=\hbox{maximum eigenvalue of}\;\;{{\bf A}+{\bf A}'\over 2}
+$$
+
+\bigskip
+\noindent
+Note that since ${\bf x}'{\bf Ax}$ is a scalar,
+it is a fact that ${\bf x}'{\bf Ax}=({\bf x}'{\bf Ax})'$.
+Hence
+$${\bf x}'\left({\bf A}+{\bf A}'\over2\right){\bf x}
+={1\over2}({\bf x}'{\bf A}{\bf x}+{\bf x}'{\bf A}'{\bf x})
+={1\over2}[{\bf x}'{\bf A}{\bf x}+({\bf x}'{\bf A}{\bf x})']
+={\bf x}'{\bf A}{\bf x}
+$$
+Therefore
+$$\max_{{\bf x}\ne0}
+{{\bf x}'{\bf A}{\bf x}\over{\bf x}'{\bf x}}
+=\max_{{\bf x}\ne0}
+{{\bf x}'\left(
+\displaystyle{{\bf A}+{\bf A}'\over2}
+\right){\bf x}\over{\bf x}'{\bf x}}
+=\hbox{maximum eigenvalue of}\;\;{{\bf A}+{\bf A}'\over 2}
+$$
+where the conclusion of maximum eigenvalue is by Theorem 9.6
+on p. 73.

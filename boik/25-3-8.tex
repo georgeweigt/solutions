@@ -1,0 +1,60 @@
+\section{Section 25.3, problem 8}
+(a) Verify that ${\bf Q}'_1{\bf Q}_1={\bf I}_q$ and
+${\bf Q}'_2{\bf Q}_2={\bf I}_{n-q}$.
+
+\bigskip
+\noindent
+The dimensions of ${\bf Q}'_1{\bf Q}_1$ are $q\times q$ and the
+dimensions of ${\bf Q}'_2{\bf Q}_2$ are $(n-q)\times(n-q)$.
+We have
+$${\bf Q}'{\bf Q}=\left(\begin{matrix}
+{\bf Q}'_1\cr
+{\bf Q}'_2
+\end{matrix}\right)\left(\begin{matrix}
+{\bf Q}_1 & {\bf Q}_2\end{matrix}\right)=\left(\begin{matrix}
+{\bf Q}'_1{\bf Q}_1 & {\bf Q}'_1{\bf Q}_2\cr
+{\bf Q}'_2{\bf Q}_1 & {\bf Q}'_2{\bf Q}_2
+\end{matrix}\right)={\bf I}_n=\left(\begin{matrix}
+{\bf I}_q & {\bf 0}\cr
+{\bf 0} & {\bf I}_{n-q}
+\end{matrix}\right)
+$$
+Hence 
+${\bf Q}'_1{\bf Q}_1={\bf I}_q$ and
+${\bf Q}'_2{\bf Q}_2={\bf I}_{n-q}$.
+
+\bigskip
+\noindent
+(b) Verify that ${\bf Q}_1{\bf Q}'_1+{\bf Q}_2{\bf Q}'_2={\bf I}_n$.
+
+\bigskip
+\noindent
+We have
+$$
+{\bf Q}{\bf Q}'
+=
+\left(\begin{matrix}
+{\bf Q}_1 & {\bf Q}_2
+\end{matrix}\right)
+%
+\left(\begin{matrix}
+{\bf Q}'_1\cr
+{\bf Q}'_2
+\end{matrix}\right)
+={\bf Q}_1{\bf Q}'_1+{\bf Q}_2{\bf Q}'_2
+$$
+Since ${\bf Q}{\bf Q}'={\bf I}_n$ it follows that
+$${\bf Q}_1{\bf Q}'_1+{\bf Q}_2{\bf Q}'_2={\bf I}_n$$
+
+\bigskip
+\noindent
+(c) Verify that each of ${\bf Q}^{-1}$ and ${\bf Q}'$ is an
+orthogonal matrix.
+
+\bigskip
+\noindent
+We have
+$${\bf Q}^{-1}({\bf Q}^{-1})'={\bf Q}^{-1}({\bf Q}')^{-1}
+=({\bf Q}'{\bf Q})^{-1}={\bf I}^{-1}={\bf I}$$
+and
+$${\bf Q}'({\bf Q}')'={\bf Q}'{\bf Q}={\bf I}$$

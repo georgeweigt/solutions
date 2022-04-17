@@ -1,0 +1,83 @@
+\section{Section 25.13, problem 7}
+Use the Gauss-Markov Theorem to verify that the BLUE of $\mu$ is
+\[
+\hat\mu=\sum_{i=1}^nw_iy_i
+\]
+where $w_i=1,\ldots,n$ are known positive constants that are
+functions of $a_i,\ldots,a_n$.
+
+\bigskip
+\noindent
+Let $\mathbf X=\mathbf 1_n$ and let $\bm\Omega$ be positive
+definite.
+Then $(\mathbf X^T\bm\Omega^{-1}\mathbf X)^{-{}}$ is a scalar
+and $\mathbf X^T\bm\Omega^{-1}$ is $1\times n$.
+The significant thing is that
+$(\mathbf X^T\bm\Omega^{-1}\mathbf X)^{-{}}\mathbf X^T\bm\Omega^{-1}$
+is $1\times n$ hence we can define the following row vector.
+\[
+(\mathbf X^T\bm\Omega^{-1}\mathbf X)^{-{}}\mathbf X^T\bm\Omega^{-1}
+=\begin{pmatrix}w_1 & \cdots & w_n\end{pmatrix}
+\]
+Then by the Gauss-Markov Theorem BLUE of $\mu$ is
+\[
+\hat\mu=
+(\mathbf X^T\bm\Omega^{-1}\mathbf X)^{-{}}\mathbf X^T\bm\Omega^{-1}
+\mathbf y=\sum_{i=1}^nw_iy_i
+\]
+
+\bigskip
+\noindent
+(a) Derive an expression for $w_i$.
+
+\bigskip
+\noindent
+Let $\mathbf X=\mathbf 1_n$ and let
+\[
+\bm\Omega=
+\begin{pmatrix}
+a_1^{-2} & & 0\\
+& \ddots \\
+0 & & a_n^{-2}
+\end{pmatrix}
+\]
+Then
+\[
+\hat\mu=
+(\mathbf X^T\bm\Omega^{-1}\mathbf X)^{-{}}\mathbf X^T\bm\Omega^{-1}
+\mathbf y=
+\left({1\over\sum_{i=1}^na_i^2}\right)
+\sum_{i=1}^na_i^2y_i
+\]
+Hence
+\[
+w_i={a_i^2\over\sum_{j=1}^na_j^2}
+\]
+
+\bigskip
+\noindent
+(b) The BLUE of $\mu$ can be computed in SAS with PROC REG and the
+WEIGHT statement.
+According to the SAS documentation, ``the weights for the
+observations are proportional to the reciprocals of the
+error variances.''
+For example, the following SAS code yields $\hat\mu=6.16667$.
+\begin{verbatim}
+data foo;
+input y wt;
+datalines;
+4 1
+6 2
+7 3
+;
+proc reg
+data = foo;
+model y=;
+weight wt;
+run;
+\end{verbatim}
+The SAS result 6.16667 matches the result using the equation in
+part (a).
+\[
+{(1\times4)+(2\times6)+(3\times7)\over1+2+3}=6.16667
+\]

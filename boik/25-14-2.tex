@@ -1,0 +1,59 @@
+
+\section{Section 25.14, problem 2}
+Consider the model $\mathbf y\sim N(\mathbf X\bm\beta,
+\sigma^2\bm\Omega)$ where $\mathbf X$ is an $n\times p$ matrix
+with rank $r\le p$ and $\bm\Omega$ is a known positive
+definite matrix.
+Let $\mathbf C$ be a $p\times q$ matrix with rank $q$.
+Suppose that $H_0:\mathbf C^T\bm\beta=\bm\delta_0$ is a testable
+hypothesis.
+
+\bigskip
+\noindent
+(a) What conditions must be satisfied for
+$H_0:\mathbf C^T\bm\beta=\bm\delta_0$
+to be a testable hypothesis?
+
+\bigskip
+\noindent
+$\mathbf C^T\bm\beta$ must be estimable, that is,
+$\mathcal R(\mathbf C)\subseteq\mathcal R(\mathbf X^T)$.
+Also, $\bm\delta_0\in\mathcal R(\mathbf C^T)$.
+
+\bigskip
+\noindent
+(b) Verify that
+$\bigg[\mathbf C^T(\mathbf X^T\bm\Omega^{-1}\mathbf X)^{-{}}
+\mathbf C\bigg]^{-1}$ exists.
+
+\bigskip
+\noindent
+Let $\mathbf C=\mathbf X^T\bm\Omega^{-1}\mathbf{XA}$
+for some matrix $\mathbf A$.
+Then
+\begin{align*}
+\mathbf C^T(\mathbf X^T\bm\Omega^{-1}\mathbf X)^{-{}}
+\mathbf C
+&=
+\mathbf A^T\mathbf X^T\bm\Omega^{-1}
+\mathbf X(\mathbf X^T\bm\Omega^{-1}
+\mathbf X)^{-{}}\mathbf X^T\bm\Omega^{-1}\mathbf{XA}\\
+&=
+\mathbf A^T\mathbf X^T\bm\Omega^{-1}\mathbf X\mathbf A
+\end{align*}
+Note that $\mathop{\rm rank}(\mathbf{XA})\ge q$ because $\mathbf C$
+has rank $q$ and rank cannot increase by multiplication.
+Since $\mathbf{XA}$ is $n\times q$ its rank cannot be greater
+than $q$ therefore $\mathop{\rm rank}(\mathbf{XA})=q$.
+Then by Theorem 9.9 on p.\ 75 we have
+\[
+\mathop{\rm rank}(\mathbf A^T\mathbf X^T\bm\Omega^{-1}\mathbf X\mathbf A)
+=\mathop{\rm rank}(\mathbf{XA})=q
+\]
+Therefore $\mathbf A^T\mathbf X^T\bm\Omega^{-1}\mathbf X\mathbf A$
+which is $q\times q$ must be positive definite.
+
+\bigskip
+\noindent
+(c) Verify that the LRT of $H_0P$ FIXME
+
