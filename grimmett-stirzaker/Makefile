@@ -1,5 +1,3 @@
-.PHONY: default
-
-default:
+grimmett-stirzaker.pdf: *.tex
 	pdflatex grimmett-stirzaker.tex
-	rm -f *.aux *.log *.synctex.gz *.toc
+	rm -f *.aux *.log
