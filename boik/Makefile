@@ -1,5 +1,3 @@
-.PHONY: default
-
-default:
+boik.pdf: *.tex
 	pdflatex boik.tex
-	rm -f *.aux *.log *.synctex.gz *.toc
+	rm -f *.aux *.log
