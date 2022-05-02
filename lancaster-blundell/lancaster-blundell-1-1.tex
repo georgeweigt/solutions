@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{amsmath}
+\usepackage{tikz}
 
 \parindent=0pt
 
@@ -11,7 +12,19 @@ Use Fermat's principle of least time to derive Snell's law.
 \bigskip
 \hrule
 
-\bigskip
+\begin{center}
+\begin{tikzpicture}
+\draw (0,2) -- (0,-2);
+\draw[dashed] (-2,0) -- (2,0);
+\draw (-1.5,1.8) node {air};
+\draw (1.5,1.8) node {glass};
+\draw[thick] (-2,-1.5) node[anchor=east] {$A$} -- (0,0);
+\draw[thick,->] (0,0) -- (2,0.8) node[anchor=west] {$B$};
+\draw (-1.5,-0.5) node {$\theta_1$};
+\draw (1.5,0.3) node {$\theta_2$};
+\end{tikzpicture}
+\end{center}
+
 
 
 
