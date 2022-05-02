@@ -18,14 +18,48 @@ Use Fermat's principle of least time to derive Snell's law.
 \draw[dashed] (-2,0) -- (2,0);
 \draw (-1.5,1.8) node {air};
 \draw (1.5,1.8) node {glass};
-\draw[thick] (-2,-1.5) node[anchor=east] {$A$} -- (0,0);
-\draw[thick,->] (0,0) -- (2,0.8) node[anchor=west] {$B$};
+\draw[thick] (-2,-1.5) node[anchor=east] {$A=(x_1,y_1)$} -- (0,0) node[anchor=north west] {$C=(x,y)$};
+\draw[thick,->] (0,0) -- (2,0.8) node[anchor=west] {$B=(x_2,y_2)$};
 \draw (-1.5,-0.5) node {$\theta_1$};
 \draw (1.5,0.3) node {$\theta_2$};
 \end{tikzpicture}
 \end{center}
 
+A light ray goes from $A$ to $B$ passing through $C$.
+Let $v_1$ be the velocity in air and $v_2$ the velocity in glass.
+The time $t$ to go from $A$ to $B$ is
+\begin{equation*}
+t=\frac{d_1}{v_1}+\frac{d_2}{v_2}
+\end{equation*}
+where
+\begin{equation*}
+d_1=\sqrt{(x-x_1)^2+(y-y_1)^2}\qquad
+d_2=\sqrt{(x-x_2)^2+(y-y_2)^2}
+\end{equation*}
 
+To find $C$ that minimizes $t$,
+differentiate $t$ with respect to $y$ and set to zero
+\begin{equation*}
+\frac{dt}{dy}=\frac{y-y_1}{v_1d_1}+\frac{y-y_2}{v_2d_2}=0
+\end{equation*}
 
+Rewrite as
+\begin{equation*}
+\frac{y-y_1}{v_1d_1}=\frac{y_2-y}{v_2d_2}
+\end{equation*}
+
+Hence
+\begin{equation*}
+\frac{\sin\theta_1}{v_1}=\frac{\sin\theta_2}{v_2}
+\end{equation*}
+
+It follows that
+\begin{equation*}
+n_1\sin\theta_1=n_2\sin\theta_2
+\end{equation*}
+where
+\begin{equation*}
+n_1=\frac{c}{v_1}\qquad n_2=\frac{c}{v_2}
+\end{equation*}
 
 \end{document}
