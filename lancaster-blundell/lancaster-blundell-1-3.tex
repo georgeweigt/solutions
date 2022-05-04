@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(1.3)
+Consider the functional $G[f]=\int g(y,f)\,dy$.
+Show that
+\begin{equation*}
+\frac{\delta G[f]}{\delta f(x)}=\frac{\partial g(x,f)}{\partial f}
+\tag{1.41}
+\end{equation*}
+
+Now consider the functional $H[f]=\int g(y,f,f')\,dy$
+and show that
+\begin{equation*}
+\frac{\delta H[f]}{\delta f(x)}=\frac{\partial g}{\partial f}
+-\frac{d}{dx}\frac{\partial g}{\partial f'}
+\tag{1.42}
+\end{equation*}
+where $f'=\partial f/\partial y$.
+For the functional $J[f]=\int g(y,f,f',f'')\,dy$ show that
+\begin{equation*}
+\frac{\delta J[f]}{\delta f(x)}
+=\frac{\partial g}{\partial f}
+-\frac{d}{dx}\frac{\partial g}{\partial f'}
++\frac{d^2}{dx^2}\frac{\partial g}{\partial f''}
+\tag{1.43}
+\end{equation*}
+where $f''=\partial^2 f/\partial y^2$.
+
+\bigskip
+\hrule
+
+\bigskip
+To show (1.41) we start with
+\begin{equation*}
+\frac{\delta G[f]}{\delta f(x)}
+=\lim_{\epsilon\rightarrow 0}\left(
+\int g(y,f+\epsilon\delta(y-x))\,dy-\int g(y,f)\,dy
+\right)
+\end{equation*}
+
+By equation (1.13)
+\begin{equation*}
+\frac{\delta G[f]}{\delta f(x)}
+=\lim_{\epsilon\rightarrow 0}
+\left(
+\int g(y,f)\,dy
++\epsilon\int\delta(y-x)\frac{\partial g(y,f)}{\partial f}\,dy
+-\int g(y,f)\,dy
+\right)
+\end{equation*}
+
+Hence
+\begin{equation*}
+\frac{\delta G[f]}{\delta f(x)}=\frac{\partial g(x,f)}{\partial f}
+\end{equation*}
+
+\end{document}
