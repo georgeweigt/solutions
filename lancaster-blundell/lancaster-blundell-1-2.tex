@@ -13,7 +13,7 @@ $J[f]=\int\left(\frac{\partial f}{\partial y}\right)^2\,dy$
 of the function $f$.
 Find the functional derivatives
 $\frac{\delta H[f]}{\delta f(z)}$,
-$\frac{\delta^2I(f^3)}{\delta f(x_0)\delta f(x_1)}$
+$\frac{\delta^2I[f^3]}{\delta f(x_0)\delta f(x_1)}$
 and
 $\frac{\delta J[f]}{\delta f(x)}$.
 
@@ -21,5 +21,90 @@ $\frac{\delta J[f]}{\delta f(x)}$.
 \hrule
 
 \bigskip
+For the first functional derivative we have
+\begin{equation*}
+\frac{\delta H[f]}{\delta f(z)}
+=\lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
+\left(
+\int G(x,y)\big(f(y)+\epsilon\delta(y-z)\big)\,dy
+-\int G(x,y)f(y)\,dy
+\right)
+\end{equation*}
+
+The integrals of $G(x,y)f(y)$ cancel and $\epsilon$ cancels.
+\begin{equation*}
+\frac{\delta H[f]}{\delta f(z)}=\int G(x,y)\delta(y-z)\,dy=G(x,z)
+\end{equation*}
+
+For the second functional derivative we have
+\begin{equation*}
+\frac{\delta^2 I[f^3]}{\delta f(x_0)\delta f(x_1)}
+=\frac{\delta}{\delta f(x_0)}
+\lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
+\left(
+\int_{-1}^{1}\big(f(x)+\epsilon\delta(x-x_1)\big)^3\,dx
+-\int_{-1}^{1}f(x)^3\,dx
+\right)
+\end{equation*}
+
+Terms involving $\epsilon^2$ and $\epsilon^3$ vanish in the limit hence
+\begin{multline*}
+\frac{\delta^2 I[f^3]}{\delta f(x_0)\delta f(x_1)}
+\\
+=\frac{\delta}{\delta f(x_0)}
+\lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
+\left(
+\int_{-1}^1\big(f(x)^3\,dx+3f(x)^2\epsilon\delta(x-x_1)\big)\,dx-\int_{-1}^{1}f(x)^3\,dx
+\right)
+\end{multline*}
+
+The integrals of $f(x)^3$ cancel and $\epsilon$ cancels.
+\begin{align*}
+\frac{\delta^2 I[f^3]}{\delta f(x_0)\delta f(x_1)}
+&=\frac{\delta}{\delta f(x_0)}\int_{-1}^13f(x)^2\delta(x-x_1)\,dx
+\\
+&=\frac{\delta}{\delta f(x_0)}
+\begin{cases}
+3f(x_1)^2 & -1\le x_1\le 1
+\\
+0 & \text{otherwise}
+\end{cases}
+\tag{1}
+\end{align*}
+
+Now do the second derivative.
+\begin{equation*}
+\frac{\delta}{\delta f(x_0)}3f(x_1)^2
+=\lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
+\left(
+3\big(f(x_1)+\epsilon\delta(x_1-x_0)\big)^2-3f(x_1)
+\right)
+\end{equation*}
+
+Terms involving $\epsilon^2$ vanish in the limit hence
+\begin{align*}
+\frac{\delta}{\delta f(x_0)}3f(x_1)^2
+&=\lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
+\big(
+3f(x_1)^2+6\epsilon\delta(x_1-x_0)-3f(x_1)^2
+\big)
+\\
+&=\begin{cases}
+6 & x_1=x_0
+\\
+0 & \text{otherwise}
+\end{cases}
+\tag{2}
+\end{align*}
+
+Substitute (2) into (1) to obtain
+\begin{equation*}
+\frac{\delta^2 I[f^3]}{\delta f(x_0)\delta f(x_1)}
+=\begin{cases}
+6 & \text{$x_1=x_0$ and $-1\le x_1\le1$}
+\\
+0 & \text{otherwise}
+\end{cases}
+\end{equation*}
 
 \end{document}
