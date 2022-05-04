@@ -54,7 +54,7 @@ Terms involving $\epsilon^2$ and $\epsilon^3$ vanish in the limit hence
 =\frac{\delta}{\delta f(x_0)}
 \lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
 \left(
-\int_{-1}^1\big(f(x)^3\,dx+3f(x)^2\epsilon\delta(x-x_1)\big)\,dx-\int_{-1}^{1}f(x)^3\,dx
+\int_{-1}^1\big(f(x)^3+3f(x)^2\epsilon\delta(x-x_1)\big)\,dx-\int_{-1}^{1}f(x)^3\,dx
 \right)
 \end{multline*}
 
@@ -74,23 +74,23 @@ The integrals of $f(x)^3$ cancel and $\epsilon$ cancels.
 
 Now do the second derivative.
 \begin{equation*}
-\frac{\delta}{\delta f(x_0)}3f(x_1)^2
+\frac{\delta}{\delta f(x_0)}\left(3f(x_1)^2\right)
 =\lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
 \left(
 3\big(f(x_1)+\epsilon\delta(x_1-x_0)\big)^2-3f(x_1)^2
 \right)
 \end{equation*}
 
-Terms involving $\epsilon^2$ vanish in the limit hence
+The term involving $\epsilon^2$ vanishes in the limit hence
 \begin{align*}
-\frac{\delta}{\delta f(x_0)}3f(x_1)^2
+\frac{\delta}{\delta f(x_0)}\left(3f(x_1)^2\right)
 &=\lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
 \big(
-3f(x_1)^2+6\epsilon\delta(x_1-x_0)-3f(x_1)^2
+3f(x_1)^2+6f(x_1)\epsilon\delta(x_1-x_0)-3f(x_1)^2
 \big)
 \\
 &=\begin{cases}
-6 & x_1=x_0
+6f(x_1) & x_0=x_1
 \\
 0 & \text{otherwise}
 \end{cases}
@@ -101,10 +101,65 @@ Substitute (2) into (1) to obtain
 \begin{equation*}
 \frac{\delta^2 I[f^3]}{\delta f(x_0)\delta f(x_1)}
 =\begin{cases}
-6 & \text{$x_1=x_0$ and $-1\le x_1\le1$}
+6f(x_1) & \text{$x_0=x_1$ and $-1\le x_1\le1$}
 \\
 0 & \text{otherwise}
 \end{cases}
 \end{equation*}
+
+For the third functional derivative we have
+\begin{equation*}
+\frac{\delta J[f]}{\delta f(x)}
+=\lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
+\left(\int\left(
+\frac{\partial f(y)}{\partial y}+\epsilon\frac{\partial\delta(y-x)}{\partial y}
+\right)^2\,dy
+-\int\left(\frac{\partial f(y)}{\partial y}\right)^2\,dy
+\right)
+\end{equation*}
+
+The term involving $\epsilon^2$ vanishes in the limit hence
+\begin{multline*}
+\frac{\delta J[f]}{\delta f(x)}={}
+\\
+\lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
+\left(
+\int\left(\frac{\partial f(y)}{\partial y}\right)^2\,dy
++\epsilon\int\frac{\partial f(y)}{\partial y}\frac{\partial\delta(y-x)}{\partial y}\,dy
+-\int\left(\frac{\partial f(y)}{\partial y}\right)^2\,dy
+\right)
+\end{multline*}
+
+Hence
+\begin{equation*}
+\frac{\delta J[f]}{\delta f(x)}=\int\frac{\partial f(y)}{\partial y}\frac{\partial\delta(y-x)}{\partial y}\,dy
+\end{equation*}
+
+Let
+\begin{equation*}
+u=\frac{\partial f(y)}{\partial y}\qquad v=\delta(y-x)
+\end{equation*}
+
+Then
+\begin{equation*}
+du=\frac{\partial^2 f(y)}{\partial y^2}\,dy
+\qquad
+dv=\frac{\partial\delta(y-x)}{\partial y}\,dy
+\end{equation*}
+and
+\begin{equation*}
+\frac{\delta J[f]}{\delta f(x)}=\int u\,dv
+\end{equation*}
+
+Integrate by parts.
+\begin{align*}
+\frac{\delta J[f]}{\delta f(x)}
+&=uv-\int v\,du
+\\
+&=\frac{\partial f(y)}{\partial y}\delta(y-x)
+-\int\delta(y-x)\frac{\partial^2f(y)}{\partial y}\,dy
+\\
+&=\frac{\partial f(x)}{\partial y}-\frac{\partial^2f(x)}{\partial y}
+\end{align*}
 
 \end{document}
