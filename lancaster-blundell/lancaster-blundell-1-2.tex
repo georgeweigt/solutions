@@ -5,6 +5,7 @@
 
 \begin{document}
 
+(1.2)
 Consider the functionals
 $H[f]=\int G(x,y)f(y)\,dy$,
 $I[f]=\int_{-1}^1f(x)\,dx$
@@ -49,12 +50,12 @@ For the second functional derivative we have
 
 Terms involving $\epsilon^2$ and $\epsilon^3$ vanish in the limit hence
 \begin{multline*}
-\frac{\delta^2 I[f^3]}{\delta f(x_0)\delta f(x_1)}
+\frac{\delta^2 I[f^3]}{\delta f(x_0)\delta f(x_1)}={}
 \\
-=\frac{\delta}{\delta f(x_0)}
+\frac{\delta}{\delta f(x_0)}
 \lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
 \left(
-\int_{-1}^1\big(f(x)^3+3f(x)^2\epsilon\delta(x-x_1)\big)\,dx-\int_{-1}^{1}f(x)^3\,dx
+\int_{-1}^1f(x)^3\,dx+\epsilon\int_{-1}^13f(x)^2\delta(x-x_1)\,dx-\int_{-1}^{1}f(x)^3\,dx
 \right)
 \end{multline*}
 
@@ -112,54 +113,53 @@ For the third functional derivative we have
 \frac{\delta J[f]}{\delta f(x)}
 =\lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
 \left(\int\left(
-\frac{\partial f(y)}{\partial y}+\epsilon\frac{\partial\delta(y-x)}{\partial y}
+\frac{\partial f}{\partial y}+\epsilon\frac{\partial\delta(y-x)}{\partial y}
 \right)^2\,dy
--\int\left(\frac{\partial f(y)}{\partial y}\right)^2\,dy
+-\int\left(\frac{\partial f}{\partial y}\right)^2\,dy
 \right)
 \end{equation*}
 
 The term involving $\epsilon^2$ vanishes in the limit hence
-\begin{multline*}
+\begin{equation*}
 \frac{\delta J[f]}{\delta f(x)}={}
-\\
 \lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
 \left(
-\int\left(\frac{\partial f(y)}{\partial y}\right)^2\,dy
-+\epsilon\int\frac{\partial f(y)}{\partial y}\frac{\partial\delta(y-x)}{\partial y}\,dy
--\int\left(\frac{\partial f(y)}{\partial y}\right)^2\,dy
+\int\left(\frac{\partial f}{\partial y}\right)^2\,dy
++2\epsilon\int\frac{\partial f}{\partial y}\frac{\partial\delta(y-x)}{\partial y}\,dy
+-\int\left(\frac{\partial f}{\partial y}\right)^2\,dy
 \right)
-\end{multline*}
+\end{equation*}
 
-Hence
+After cancellations
 \begin{equation*}
-\frac{\delta J[f]}{\delta f(x)}=\int\frac{\partial f(y)}{\partial y}\frac{\partial\delta(y-x)}{\partial y}\,dy
+\frac{\delta J[f]}{\delta f(x)}=2\int\frac{\partial f}{\partial y}\frac{\partial\delta(y-x)}{\partial y}\,dy
 \end{equation*}
 
 Let
 \begin{equation*}
-u=\frac{\partial f(y)}{\partial y}\qquad v=\delta(y-x)
+u=\frac{\partial f}{\partial y}\qquad v=\delta(y-x)
 \end{equation*}
 
 Then
 \begin{equation*}
-du=\frac{\partial^2 f(y)}{\partial y^2}\,dy
+du=\frac{\partial^2f}{\partial y^2}\,dy
 \qquad
 dv=\frac{\partial\delta(y-x)}{\partial y}\,dy
 \end{equation*}
 and
 \begin{equation*}
-\frac{\delta J[f]}{\delta f(x)}=\int u\,dv
+\frac{\delta J[f]}{\delta f(x)}=2\int u\,dv
 \end{equation*}
 
 Integrate by parts.
 \begin{align*}
 \frac{\delta J[f]}{\delta f(x)}
-&=uv-\int v\,du
+&=2uv-2\int v\,du
 \\
-&=\frac{\partial f(y)}{\partial y}\delta(y-x)
--\int\delta(y-x)\frac{\partial^2f(y)}{\partial y}\,dy
+&=2\frac{\partial f}{\partial y}\delta(y-x)-2\int\delta(y-x)\frac{\partial^2f}{\partial y^2}\,dy
 \\
-&=\frac{\partial f(x)}{\partial y}-\frac{\partial^2f(x)}{\partial y}
+&=-2\frac{\partial^2f}{\partial x^2}
+\qquad\text{see equation (1.19)}
 \end{align*}
 
 \end{document}
