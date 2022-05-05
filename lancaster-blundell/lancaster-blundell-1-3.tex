@@ -33,18 +33,28 @@ where $f''=\partial^2 f/\partial y^2$.
 \hrule
 
 \bigskip
-To show (1.41) we start with
+Let
+\begin{equation*}
+h=f+\epsilon\delta(y-x)
+\qquad
+h'=\frac{\partial h}{\partial y}
+\qquad
+h''=\frac{\partial^2 h}{\partial y^2}
+\end{equation*}
+
+Show (1.41).
 \begin{equation*}
 \frac{\delta G[f]}{\delta f(x)}
-=\lim_{\epsilon\rightarrow 0}\left(
-\int g\big(y,f+\epsilon\delta(y-x)\big)\,dy-\int g(y,f)\,dy
+=\lim_{\epsilon\rightarrow 0}\frac{1}{\epsilon}
+\left(
+\int g(y,h)\,dy-\int g(y,f)\,dy
 \right)
 \end{equation*}
 
-By Taylor series expansion (higher powers of $\epsilon$ vanish in the limit)
+Taylor expand the first integrand ($\epsilon^2$ and higher vanish in the limit).
 \begin{equation*}
 \frac{\delta G[f]}{\delta f(x)}
-=\lim_{\epsilon\rightarrow 0}
+=\lim_{\epsilon\rightarrow 0}\frac{1}{\epsilon}
 \left(
 \int g(y,f)\,dy
 +\int\epsilon\delta(y-x)\frac{\partial g(y,f)}{\partial f}\,dy
@@ -57,24 +67,16 @@ Hence
 \frac{\delta G[f]}{\delta f(x)}=\frac{\partial g(x,f)}{\partial f}
 \end{equation*}
 
-Now show (1.42).
-Let
-\begin{equation*}
-h=f+\epsilon\delta(y-x)
-\qquad
-h'=\frac{\partial h}{\partial y}
-\end{equation*}
-
-Then
+Show (1.42).
 \begin{equation*}
 \frac{\delta H[f]}{\delta f(x)}
-=\lim_{\epsilon\rightarrow 0}
+=\lim_{\epsilon\rightarrow 0}\frac{1}{\epsilon}
 \left(
 \int g(y,h,h')\,dy-\int g(y,f)\,dy
 \right)
 \end{equation*}
 
-Taylor expand the first integrand up to linear powers of $\epsilon$.
+Taylor expand the first integrand.
 \begin{equation*}
 g(y,h,h')=g(y,f,f')
 +\epsilon\delta(y-x)\frac{\partial g(y,f,f')}{\partial f}
