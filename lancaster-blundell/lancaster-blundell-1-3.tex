@@ -72,7 +72,7 @@ Show (1.42).
 \frac{\delta H[f]}{\delta f(x)}
 =\lim_{\epsilon\rightarrow 0}\frac{1}{\epsilon}
 \left(
-\int g(y,h,h')\,dy-\int g(y,f)\,dy
+\int g(y,h,h')\,dy-\int g(y,f,f')\,dy
 \right)
 \end{equation*}
 
@@ -92,12 +92,6 @@ Hence
 \end{equation*}
 
 The first integral is solved by (1.41).
-\begin{equation*}
-\int\delta(y-x)\frac{\partial g(y,f,f')}{\partial f}\,dy
-=\frac{\partial g(x,f,f')}{\partial f}
-\tag{2}
-\end{equation*}
-
 For the second integral, let
 \begin{equation*}
 u=\frac{\partial g(y,f,f')}{\partial f'}
@@ -111,11 +105,6 @@ du=\frac{\partial}{\partial y}\frac{\partial g(y,f,f')}{\partial f'}\,dy
 \qquad
 dv=\frac{\partial\delta(y-x)}{\partial y}\,dy
 \end{equation*}
-and
-\begin{equation*}
-\int\frac{\partial\delta(y-x)}{\partial y}\frac{\partial g(y,f,f')}{\partial f'}\,dy
-=\int u\,dv
-\end{equation*}
 
 Integrate by parts.
 \begin{align*}
@@ -127,14 +116,86 @@ Integrate by parts.
 -\int\delta(y-x)\frac{\partial}{\partial y}\frac{\partial g(y,f,f')}{\partial f'}\,dy
 \\
 &\qquad{}=-\frac{\partial}{\partial x}\frac{\partial g(x,f,f')}{\partial f'}
-\tag{3}
+\tag{2}
 \end{align*}
 
-Substitute (2) and (3) into (1) to obtain (1.42).
+Substitute (1.41) and (2) into (1) to obtain (1.42).
 \begin{equation*}
 \frac{\delta H[f]}{\delta f(x)}
 =\frac{\partial g(x,f,f')}{\partial f}
 -\frac{\partial}{\partial x}\frac{\partial g(x,f,f')}{\partial f'}
+\end{equation*}
+
+Show (1.43).
+\begin{equation*}
+\frac{\delta J[f]}{\delta f(x)}
+=\lim_{\epsilon\rightarrow 0}\frac{1}{\epsilon}
+\left(
+\int g(y,h,h',h'')\,dy-\int g(y,f,f',f'')\,dy
+\right)
+\end{equation*}
+
+Taylor expand the first integrand.
+\begin{align*}
+&g(y,h,h',h'')=g(y,f,f',f'')
++\epsilon\delta(y-x)\frac{\partial g(y,f,f',f'')}{\partial f}
+\\
+&\qquad{}+\epsilon\frac{\partial\delta(y-x)}{\partial y}\frac{\partial g(y,f,f',f'')}{\partial f'}
++\epsilon\frac{\partial^2\delta(y-x)}{\partial y^2}\frac{\partial g(y,f,f',f'')}{\partial f''}
+\end{align*}
+
+Hence
+\begin{equation*}
+\begin{aligned}
+\frac{\delta J[f]}{\delta f(x)}
+&=\int\delta(y-x)\frac{\partial g(y,f,f',f'')}{\partial f}\,dy
+\\
+&\qquad{}+\int\frac{\partial\delta(y-x)}{\partial y}\frac{\partial g(y,f,f',f'')}{\partial f'}\,dy
+\\
+&\qquad{}+\int\frac{\partial^2\delta(y-x)}{\partial y^2}\frac{\partial g(y,f,f',f'')}{\partial f''}\,dy
+\end{aligned}
+\tag{3}
+\end{equation*}
+
+The first and second integrals are solved by (1.42).
+For the third integral, let
+\begin{equation*}
+u=\frac{\partial g(y,f,f',f'')}{\partial f''}
+\qquad
+v=\frac{\partial\delta(y-x)}{\partial y}
+\end{equation*}
+
+Then
+\begin{equation*}
+du=\frac{\partial}{\partial y}\frac{\partial g(y,f,f',f'')}{\partial f''}\,dy
+\qquad
+dv=\frac{\partial^2\delta(y-x)}{\partial y^2}\,dy
+\end{equation*}
+
+Integrate by parts.
+\begin{align*}
+&\int\frac{\partial^2\delta(y-x)}{\partial y^2}\frac{\partial g(y,f,f',f'')}{\partial f''}\,dy
+\\
+&\qquad{}=uv-\int v\,du
+\\
+&\qquad{}=\frac{\partial g(y,f,f',f'')}{\partial f''}\frac{\partial\delta(y-x)}{\partial y}
+-\int\frac{\partial\delta(y-x)}{\partial y}
+\frac{\partial}{\partial y}\frac{\partial g(y,f,f',f'')}{\partial f''}\,dy
+\end{align*}
+
+As before, the $uv$ term vanishes.
+For the remaining integral, use integration by parts as in (2) to obtain
+\begin{equation*}
+{}=\frac{\partial^2}{\partial x^2}\frac{\partial g(x,f,f',f'')}{\partial f''}
+\tag{4}
+\end{equation*}
+
+Substitute (1.42) and (4) into (3) to obtain (1.43).
+\begin{equation*}
+\frac{\delta J[f]}{\delta f(x)}
+=\frac{\partial g(x,f,f',f'')}{\partial f}
+-\frac{\partial}{\partial x}\frac{\partial g(x,f,f',f'')}{\partial f'}
++\frac{\partial^2}{\partial x^2}\frac{\partial g(x,f,f',f'')}{\partial f''}
 \end{equation*}
 
 \end{document}
