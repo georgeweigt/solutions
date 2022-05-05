@@ -37,17 +37,17 @@ To show (1.41) we start with
 \begin{equation*}
 \frac{\delta G[f]}{\delta f(x)}
 =\lim_{\epsilon\rightarrow 0}\left(
-\int g(y,f+\epsilon\delta(y-x))\,dy-\int g(y,f)\,dy
+\int g\big(y,f+\epsilon\delta(y-x)\big)\,dy-\int g(y,f)\,dy
 \right)
 \end{equation*}
 
-By equation (1.13)
+By Taylor series expansion (higher powers of $\epsilon$ vanish in the limit)
 \begin{equation*}
 \frac{\delta G[f]}{\delta f(x)}
 =\lim_{\epsilon\rightarrow 0}
 \left(
 \int g(y,f)\,dy
-+\epsilon\int\delta(y-x)\frac{\partial g(y,f)}{\partial f}\,dy
++\int\epsilon\delta(y-x)\frac{\partial g(y,f)}{\partial f}\,dy
 -\int g(y,f)\,dy
 \right)
 \end{equation*}
@@ -55,6 +55,84 @@ By equation (1.13)
 Hence
 \begin{equation*}
 \frac{\delta G[f]}{\delta f(x)}=\frac{\partial g(x,f)}{\partial f}
+\end{equation*}
+
+Now show (1.42).
+Let
+\begin{equation*}
+h=f+\epsilon\delta(y-x)
+\qquad
+h'=\frac{\partial h}{\partial y}
+\end{equation*}
+
+Then
+\begin{equation*}
+\frac{\delta H[f]}{\delta f(x)}
+=\lim_{\epsilon\rightarrow 0}
+\left(
+\int g(y,h,h')\,dy-\int g(y,f)\,dy
+\right)
+\end{equation*}
+
+Taylor expand the first integrand up to linear powers of $\epsilon$.
+\begin{equation*}
+g(y,h,h')=g(y,f,f')
++\epsilon\delta(y-x)\frac{\partial g(y,f,f')}{\partial f}
++\epsilon\frac{\partial\delta(y-x)}{\partial y}\frac{\partial g(y,f,f')}{\partial f'}
+\end{equation*}
+
+Hence
+\begin{equation*}
+\frac{\delta H[f]}{\delta f(x)}
+=\int\delta(y-x)\frac{\partial g(y,f,f')}{\partial f}\,dy
++\int\frac{\partial\delta(y-x)}{\partial y}\frac{\partial g(y,f,f')}{\partial f'}\,dy
+\tag{1}
+\end{equation*}
+
+The first integral is solved by (1.41).
+\begin{equation*}
+\int\delta(y-x)\frac{\partial g(y,f,f')}{\partial f}\,dy
+=\frac{\partial g(x,f,f')}{\partial f}
+\tag{2}
+\end{equation*}
+
+For the second integral, let
+\begin{equation*}
+u=\frac{\partial g(y,f,f')}{\partial f'}
+\qquad
+v=\delta(y-x)
+\end{equation*}
+
+Then
+\begin{equation*}
+du=\frac{\partial}{\partial y}\frac{\partial g(y,f,f')}{\partial f'}\,dy
+\qquad
+dv=\frac{\partial\delta(y-x)}{\partial y}\,dy
+\end{equation*}
+and
+\begin{equation*}
+\int\frac{\partial\delta(y-x)}{\partial y}\frac{\partial g(y,f,f')}{\partial f'}\,dy
+=\int u\,dv
+\end{equation*}
+
+Integrate by parts.
+\begin{align*}
+&\int\frac{\partial\delta(y-x)}{\partial y}\frac{\partial g(y,f,f')}{\partial f'}\,dy
+\\
+&\qquad{}=uv-\int v\,du
+\\
+&\qquad{}=\frac{\partial g(y,f,f')}{\partial f'}\delta(y-x)
+-\int\delta(y-x)\frac{\partial}{\partial y}\frac{\partial g(y,f,f')}{\partial f'}\,dy
+\\
+&\qquad{}=-\frac{\partial}{\partial x}\frac{\partial g(x,f,f')}{\partial f'}
+\tag{3}
+\end{align*}
+
+Substitute (2) and (3) into (1) to obtain (1.42).
+\begin{equation*}
+\frac{\delta H[f]}{\delta f(x)}
+=\frac{\partial g(x,f,f')}{\partial f}
+-\frac{\partial}{\partial x}\frac{\partial g(x,f,f')}{\partial f'}
 \end{equation*}
 
 \end{document}
