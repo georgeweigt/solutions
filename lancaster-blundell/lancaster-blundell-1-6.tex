@@ -24,13 +24,7 @@ where $\Delta(x)=\Delta(-x)$ then
 \hrule
 
 \bigskip
-We have
-\begin{equation*}
-\frac{\delta Z_0[J]}{\delta J(z_1)}=\lim_{\epsilon\rightarrow0}
-\frac{\exp(-I/2)-Z_0[J]}{\epsilon}
-\tag{1}
-\end{equation*}
-where
+Let
 \begin{equation*}
 I=\int d^4x\,d^4y\,
 \big(J(x)+\epsilon\delta(x-z_1)\big)
@@ -38,7 +32,14 @@ I=\int d^4x\,d^4y\,
 \big(J(y)+\epsilon\delta(y-z_1)\big)
 \end{equation*}
 
-Expand the integrand to obtain
+Then
+\begin{equation*}
+\frac{\delta Z_0[J]}{\delta J(z_1)}=\lim_{\epsilon\rightarrow0}
+\frac{\exp(-I/2)-Z_0[J]}{\epsilon}
+\tag{1}
+\end{equation*}
+
+Expand the integrand of $I$ to obtain
 \begin{equation*}
 I=I_1+\epsilon I_2+\epsilon I_3+\epsilon^2 I_4
 \end{equation*}
