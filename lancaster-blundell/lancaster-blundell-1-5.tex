@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(1.5)
+For a three-dimensional elastic medium, the potential energy is
+\begin{equation*}
+V=\frac{\mathcal T}{2}\int d^3x\,(\nabla\psi)^2
+\tag{1.46}
+\end{equation*}
+and the kinetic energy is
+\begin{equation*}
+T=\frac{\rho}{2}\int d^3x\,\left(\frac{\partial\psi}{\partial t}\right)^2
+\tag{1.47}
+\end{equation*}
+
+Use these results, and the functional derivative approach,
+to show that $\psi$ obeys the wave equation
+\begin{equation*}
+\nabla^2\psi=\frac{1}{v^2}\frac{\partial^2\psi}{\partial t^2}
+\end{equation*}
+where $v$ is the velocity of the wave.
+
+\bigskip
+\hrule
+
+\bigskip
+By equation (1.19)
+\begin{equation*}
+\frac{\delta V}{\delta\psi}=-\mathcal T\nabla^2\psi
+\qquad
+\frac{\delta T}{\delta\psi}=-\rho\frac{\partial^2\psi}{\partial t^2}
+\end{equation*}
+
+By equation (1.22)
+\begin{equation*}
+\mathcal T\nabla^2\psi=\rho\frac{\partial^2\psi}{\partial t^2}
+\end{equation*}
+
+Then for $v^2=\mathcal T/\rho$ we have
+\begin{equation*}
+v^2\nabla^2\psi=\frac{\partial^2\psi}{\partial t^2}
+\end{equation*}
+
+\end{document}
