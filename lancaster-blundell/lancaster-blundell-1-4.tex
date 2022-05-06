@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(1.4)
+Show that
+\begin{equation*}
+\frac{\delta\phi(x)}{\delta\phi(y)}=\delta(x-y)
+\tag{1.44}
+\end{equation*}
+and
+\begin{equation*}
+\frac{\delta\dot\phi(t)}{\delta\phi(t_0)}=\frac{d}{dt}\delta(t-t_0)
+\tag{1.45}
+\end{equation*}
+
+\bigskip
+\hrule
+
+\bigskip
+Let $F$ be the trivial functional $F[\phi]=\phi(x)$.
+\begin{equation*}
+\frac{\delta F}{\delta\phi(y)}
+=\lim_{\epsilon\rightarrow0}
+\frac{\phi(x)+\epsilon\delta(x-y)-\phi(x)}{\epsilon}
+=\delta(x-y)
+\end{equation*}
+
+Show (1.45).
+\begin{equation*}
+\frac{\delta\dot\phi(t)}{\delta\phi(t_0)}
+=\lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}
+\left(
+\frac{d\big(\phi(t)-\epsilon\delta(t-t_0)\big)}{dt}-\frac{d\phi(t)}{dt}
+\right)
+=\frac{d}{dt}\delta(x-y)
+\end{equation*}
+
+\end{document}
