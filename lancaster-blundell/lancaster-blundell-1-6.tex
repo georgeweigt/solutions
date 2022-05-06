@@ -7,7 +7,8 @@
 Show that if $Z_0[J]$ is given by
 \begin{equation*}
 Z_0[J]=\exp\left(
--\frac{1}{2}\int d^4x\,d^4y\,J(x)\Delta(x-y)J(y)\right)
+-\frac{1}{2}\int d^4x\,d^4y\,J(x)\Delta(x-y)J(y)
+\right)
 \tag{1.49}
 \end{equation*}
 where $\Delta(x)=\Delta(-x)$ then
@@ -21,5 +22,65 @@ where $\Delta(x)=\Delta(-x)$ then
 
 \bigskip
 \hrule
+
+\bigskip
+We have
+\begin{equation*}
+\frac{\delta Z_0[J]}{\delta J(z_1)}=\lim_{\epsilon\rightarrow0}
+\frac{\exp(-I/2)-Z_0[J]}{\epsilon}
+\tag{1}
+\end{equation*}
+where
+\begin{equation*}
+I=\int d^4x\,d^4y\,
+\big(J(x)+\epsilon\delta(x-z_1)\big)
+\Delta(x-y)
+\big(J(y)+\epsilon\delta(y-z_1)\big)
+\end{equation*}
+
+Expand the integrand to obtain
+\begin{equation*}
+I=I_1+\epsilon I_2+\epsilon I_3+\epsilon^2 I_4
+\end{equation*}
+where
+\begin{align*}
+I_1&=\int d^4x\,d^4y\,J(x)\Delta(x-y)J(y)
+\\
+I_2&=\int d^4x\,d^4y\,\delta(x-z_1)\Delta(x-y)J(y)=\int d^4y\,\Delta(z_1-y)J(y)
+\\
+I_3&=\int d^4x\,d^4y\,J(x)\Delta(x-y)\delta(y-z_1)=\int d^4x\,\Delta(x-z_1)J(x)
+\\
+I_4&=\int d^4x\,d^4y\,\delta(x-z_1)\Delta(x-y)\delta(y-z_1)=\Delta(0)
+\end{align*}
+
+Noting that $\Delta(x-y)=\Delta(y-x)$ we have
+\begin{equation*}
+I_2+I_3=2I_2
+\end{equation*}
+
+The product $\epsilon^2I_4$ vanishes in the limit hence
+\begin{equation*}
+I=I_1+2\epsilon I_2
+\tag{2}
+\end{equation*}
+
+Substitute (2) into (1) to obtain
+\begin{equation*}
+\frac{\delta Z_0[J]}{\delta J(z_1)}=\lim_{\epsilon\rightarrow0}
+\frac{\exp(-I_1/2-\epsilon I_2)-Z_0[J]}{\epsilon}
+\end{equation*}
+
+Let $X=-I_1/2$ and $\epsilon=-h/I_2$.
+Then
+\begin{equation*}
+\frac{\delta Z_0[J]}{\delta J(z_1)}=-I_2\lim_{h\rightarrow0}
+\frac{\exp(X+h)-\exp(X)}{h}
+=-I_2\exp(X)
+\end{equation*}
+
+Hence
+\begin{equation*}
+\frac{\delta Z_0[J]}{\delta J(z_1)}=-\left(\int d^4y\,\Delta(z_1-y)J(y)\right)Z_0[J]
+\end{equation*}
 
 \end{document}
