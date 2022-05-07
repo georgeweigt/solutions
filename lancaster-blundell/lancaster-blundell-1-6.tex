@@ -73,11 +73,14 @@ Substitute (2) into (1) to obtain
 
 Let $X=I_1/2$ and $\epsilon=h/I_2$.
 Then
-\begin{equation*}
-\frac{\delta Z_0[J]}{\delta J(z_1)}=I_2\lim_{h\rightarrow0}
-\frac{\exp(-X-h)-\exp(-X)}{h}
-=-I_2\exp(-X)
-\end{equation*}
+\begin{align*}
+\frac{\delta Z_0[J]}{\delta J(z_1)}
+&=I_2\lim_{h\rightarrow0}\frac{\exp(-X-h)-\exp(-X)}{h}
+\\
+&=I_2\frac{d}{dX}\exp(-X)
+\\
+&=-I_2\exp(-X)
+\end{align*}
 
 Hence
 \begin{equation*}
