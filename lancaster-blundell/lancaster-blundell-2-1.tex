@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(2.1)
+For the one-dimensional harmonic oscillator, show
+that with creation and annihilation operators defined
+as in eqns 2.9 and 2.10, $[\hat a,\hat a]=0$,
+$[\hat a^\dag,\hat a^\dag]=0$,
+$[\hat a,\hat a^\dag]=1$ and
+$\hat H=\hbar\omega\left(\hat a^\dag\hat a+\tfrac{1}{2}\right)$.
+\begin{align*}
+\hat a&=\sqrt{\frac{m\omega}{2\hbar}}
+\left(\hat x+\frac{i}{m\omega}\hat p\right)
+\tag{2.9}
+\\
+\hat a^\dag&=\sqrt{\frac{m\omega}{2\hbar}}
+\left(\hat x-\frac{i}{m\omega}\hat p\right)
+\tag{2.10}
+\end{align*}
+
+\bigskip
+\hrule
+
+\bigskip
+We have
+\begin{equation*}
+[\hat a,\hat a]=\hat a\hat a-\hat a\hat a=0
+\qquad
+[\hat a^\dag,\hat a^\dag]=\hat a^\dag\hat a^\dag-\hat a^\dag\hat a^\dag=0
+\end{equation*}
+
+For the next commutator we have
+\begin{align*}
+\hat a\hat a^\dag
+&=\frac{m\omega}{2\hbar}
+\left(
+\hat x\left(\hat x-\frac{i}{m\omega}\hat p\right)
++\frac{i}{m\omega}\hat p\left(\hat x-\frac{i}{m\omega}\hat p\right)
+\right)
+\\
+&=\frac{m\omega}{2\hbar}
+\left(
+\hat x^2-\frac{i}{m\omega}\hat x\hat p+\frac{i}{m\omega}\hat p\hat x+\frac{1}{m^2\omega^2}\hat p^2\right)
+\end{align*}
+
+Rewrite as
+\begin{equation*}
+\hat a\hat a^\dag
+=\frac{m\omega}{2\hbar}\hat x^2-\frac{i}{2\hbar}[\hat x,\hat p]+\frac{1}{2\hbar m\omega}\hat p^2
+\end{equation*}
+
+From example 2.1
+\begin{equation*}
+[\hat x,\hat p]=i\hbar
+\end{equation*}
+
+It follows that
+\begin{equation*}
+\hat a\hat a^\dag
+=\frac{m\omega}{2\hbar}\hat x^2+\frac{1}{2\hbar m\omega}\hat p^2+\frac{1}{2}
+\tag{1}
+\end{equation*}
+
+By similar argument
+\begin{equation*}
+\hat a^\dag\hat a
+=\frac{m\omega}{2\hbar}\hat x^2+\frac{1}{2\hbar m\omega}\hat p^2-\frac{1}{2}
+\tag{2}
+\end{equation*}
+
+Hence
+\begin{equation*}
+[\hat a,\hat a^\dag]=\hat a\hat a^\dag-\hat a^\dag\hat a=\frac{1}{2}-\left(-\frac{1}{2}\right)=1
+\end{equation*}
+
+Multiply equation (2) by $\omega\hbar$ to obtain
+\begin{equation*}
+\omega\hbar\left(\hat a^\dag\hat a\right)=\frac{m\omega^2}{2}\hat x^2+\frac{1}{2m}\hat p^2-\frac{\omega\hbar}{2}
+\end{equation*}
+
+Rewrite as
+\begin{equation*}
+\omega\hbar\left(\hat a^\dag\hat a+\tfrac{1}{2}\right)
+=\frac{m\omega^2}{2}\hat x^2+\frac{1}{2m}\hat p^2
+\end{equation*}
+
+Then by equation (2.6)
+\begin{equation*}
+\hat H=\frac{\hat p^2}{2m}+\frac{1}{2}m\omega^2\hat x^2
+\tag{2.6}
+\end{equation*}
+we have
+\begin{equation*}
+\hat H=\omega\hbar\left(\hat a^\dag\hat a+\tfrac{1}{2}\right)
+\end{equation*}
+
+\end{document}
