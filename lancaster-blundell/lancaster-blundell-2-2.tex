@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(2.2)
+For the Hamiltonian
+$\hat H=\frac{\hat p^2}{2m}+\frac{1}{2}m\omega^2\hat x^2+\lambda\hat x^4$,
+where $\lambda$ is small, show by writing the Hamiltonian
+in terms of creation and annihilation operators and
+using perturbation theory, that the energy eigenvalues
+of all the levels are given by
+\begin{equation*}
+E_n=\left(n+\frac{1}{2}\right)\hbar\omega
++\frac{3\lambda}{4}\left(\frac{\hbar}{m\omega}\right)^2
+\left(2n^2+2n+1\right)
+\tag{2.67}
+\end{equation*}
+
+\bigskip
+\hrule
+
+\bigskip
+Consider equations (2.12) and (2.14).
+\begin{align*}
+\hat x&=\sqrt{\frac{\hbar}{2m\omega}}\left(\hat a+\hat a^\dag\right)
+\tag{2.12}
+\\
+\hat H&=\hbar\omega\left(\hat a^\dag\hat a+\frac{1}{2}\right)
+\tag{2.14}
+\end{align*}
+
+Then the Hamiltonian for this problem is
+\begin{equation*}
+\hat H=\hbar\omega\left(\hat a^\dag\hat a+\frac{1}{2}\right)
++\lambda\left(\sqrt{\frac{\hbar}{2m\omega}}\left(\hat a+\hat a^\dag\right)\right)^4
+\tag{1}
+\end{equation*}
+
+Noting that
+\begin{equation*}
+\left(\hat a+\hat a^\dag\right)^2
+=\hat a\hat a^\dag+\hat a^\dag\hat a
+\end{equation*}
+we have by the commutator $\hat a\hat a^\dag-\hat a^\dag\hat a=1$ that
+\begin{equation*}
+\left(\hat a+\hat a^\dag\right)^2
+=(1+\hat a^\dag\hat a)+\hat a^\dag\hat a=2\hat a^\dag\hat a+1
+\tag{2}
+\end{equation*}
+
+Substitute (2) into (1) to obtain
+\begin{equation*}
+\hat H=\hbar\omega\left(\hat a^\dag\hat a+\frac{1}{2}\right)
++\lambda\left(\frac{\hbar}{2m\omega}\left(2\hat a^\dag\hat a+1\right)\right)^2
+\end{equation*}
+
+Rewrite using the number operator $\hat n=\hat a^\dag\hat a$.
+\begin{equation*}
+\hat H=\hbar\omega\left(\hat n+\frac{1}{2}\right)
++\lambda\left(\frac{\hbar}{2m\omega}\left(2\hat n+1\right)\right)^2
+\end{equation*}
+
+Expand the quadratic term.
+\begin{equation*}
+\hat H=\hbar\omega\left(\hat n+\frac{1}{2}\right)
++\lambda\left(\frac{\hbar}{m\omega}\right)^2\left(\hat n^2+\hat n+\frac{1}{4}\right)
+\end{equation*}
+
+Hence
+\begin{equation*}
+\hat H\vert n\rangle
+=\hbar\omega\left(n+\frac{1}{2}\right)\vert n\rangle
++\lambda\left(\frac{\hbar}{m\omega}\right)^2\left(n^2+n+\frac{1}{4}\right)\vert n\rangle
+\end{equation*}
+
+\end{document}
