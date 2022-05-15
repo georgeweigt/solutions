@@ -21,116 +21,110 @@ E_n=\left(n+\frac{1}{2}\right)\hbar\omega
 \hrule
 
 \bigskip
-Consider equations (2.12) and (2.14).
-\begin{align*}
-\hat x&=\sqrt{\frac{\hbar}{2m\omega}}\left(\hat a+\hat a^\dag\right)
-\tag{2.12}
-\\
-\hat H&=\hbar\omega\left(\hat a^\dag\hat a+\frac{1}{2}\right)
-\tag{2.14}
-\end{align*}
-
-Then the Hamiltonian for this problem is
-\begin{equation*}
-\hat H=\hbar\omega\left(\hat a^\dag\hat a+\frac{1}{2}\right)
-+\lambda\left(\sqrt{\frac{\hbar}{2m\omega}}\left(\hat a+\hat a^\dag\right)\right)^4
-\tag{1}
-\end{equation*}
-
-Noting that
-\begin{equation*}
-\left(\hat a+\hat a^\dag\right)^2
-=\hat a\hat a^\dag+\hat a^\dag\hat a
-\end{equation*}
-we have by the commutator $\hat a\hat a^\dag-\hat a^\dag\hat a=1$ that
-\begin{equation*}
-\left(\hat a+\hat a^\dag\right)^2
-=(1+\hat a^\dag\hat a)+\hat a^\dag\hat a=2\hat a^\dag\hat a+1
-\tag{2}
-\end{equation*}
-
-Substitute (2) into (1) to obtain
-\begin{equation*}
-\hat H=\hbar\omega\left(\hat a^\dag\hat a+\frac{1}{2}\right)
-+\lambda\left(\frac{\hbar}{2m\omega}\left(2\hat a^\dag\hat a+1\right)\right)^2
-\end{equation*}
-
-Rewrite using the number operator $\hat n=\hat a^\dag\hat a$.
-\begin{equation*}
-\hat H=\hbar\omega\left(\hat n+\frac{1}{2}\right)
-+\lambda\left(\frac{\hbar}{2m\omega}\left(2\hat n+1\right)\right)^2
-\end{equation*}
-
-Expand the quadratic term.
-\begin{equation*}
-\hat H=\hbar\omega\left(\hat n+\frac{1}{2}\right)
-+\lambda\left(\frac{\hbar}{m\omega}\right)^2\left(\hat n^2+\hat n+\frac{1}{4}\right)
-\end{equation*}
-
-Let $\hat H=\hat H_0+\lambda\hat H_1$ where
-\begin{equation*}
-\hat H_0=\hbar\omega\left(\hat n+\frac{1}{2}\right)
-\qquad
-\hat H_1=\left(\frac{\hbar}{m\omega}\right)^2\left(\hat n^2+\hat n+\frac{1}{4}\right)
-\end{equation*}
-
 From perturbation theory we have
 \begin{multline*}
-\left(\hat H_0+\lambda\hat H_1\right)\left(\psi_0+\lambda\psi_1+\lambda^2\psi_2+\cdots\right)
+\left(\hat H_0+\lambda\hat V\right)\left(\psi_0+\lambda\psi_1+\lambda^2\psi_2+\cdots\right)
 \\
 =\left(E_0+\lambda E_1+\lambda^2 E_2+\cdots\right)\left(\psi_0+\lambda\psi_1+\lambda^2\psi_2+\cdots\right)
 \end{multline*}
 
 Because $\lambda$ is small, discard powers of $\lambda$.
 \begin{equation*}
-\hat H_0(\psi_0+\lambda\psi_1)+\lambda \hat H_1\psi_0=E_0(\psi_0+\lambda\psi_1)+\lambda E_1\psi_0
+\hat H_0(\psi_0+\lambda\psi_1)+\lambda \hat V\psi_0=E_0(\psi_0+\lambda\psi_1)+\lambda E_1\psi_0
 \end{equation*}
 
 Cancel $\hat H_0\psi_0$ with $E_0\psi_0$.
 \begin{equation*}
-\lambda\hat H_0\psi_1+\lambda \hat H_1\psi_0=\lambda E_0\psi_1+\lambda E_1\psi_0
+\lambda\hat H_0\psi_1+\lambda \hat V\psi_0=\lambda E_0\psi_1+\lambda E_1\psi_0
 \end{equation*}
 
 Cancel $\lambda$.
 \begin{equation*}
-\hat H_0\psi_1+\hat H_1\psi_0=E_0\psi_1+E_1\psi_0
+\hat H_0\psi_1+\hat V\psi_0=E_0\psi_1+E_1\psi_0
 \end{equation*}
 
 It follows that
 \begin{equation*}
 \langle\psi_0|\hat H_0|\psi_1\rangle
-+\langle\psi_0|\hat H_1|\psi_0\rangle
++\langle\psi_0|\hat V|\psi_0\rangle
 =E_0\langle\psi_0|\psi_1\rangle
 +E_1\langle\psi_0|\psi_0\rangle
-\tag{3}
+\tag{1}
 \end{equation*}
 
 Because $\hat H_0$ is Hermitian we have
 \begin{equation*}
-\langle\psi_0|\hat H_0|\psi_1\rangle=\left(\hat H_0|\psi_0\rangle\right)^\dag|\psi_1\rangle
+\langle\psi_0|\hat H_0|\psi_1\rangle
+=\left(\hat H_0|\psi_0\rangle\right)^\dag|\psi_1\rangle
+=\left(E_0|\psi_0\rangle\right)^\dag|\psi_1\rangle
 =E_0\langle\psi_0|\psi_1\rangle
 \end{equation*}
 
-Hence the first and third terms in equation (3) cancel leaving
+Hence the first and third terms in equation (1) cancel leaving
 \begin{equation*}
-\langle\psi_0|\hat H_1|\psi_0\rangle
+\langle\psi_0|\hat V|\psi_0\rangle
 =E_1\langle\psi_0|\psi_0\rangle
 \end{equation*}
 
-Hence
+It follows that
 \begin{equation*}
-E_1=\frac{\langle\psi_0\vert\hat H_1\vert\psi_0\rangle}{\langle\psi_0\vert\psi_0\rangle}
+E_1=\frac{\langle\psi_0\vert\hat V\vert\psi_0\rangle}{\langle\psi_0\vert\psi_0\rangle}
 \end{equation*}
 
-For $|\psi_0\rangle=|n\rangle$ we have
+Then for $|\psi_0\rangle=|n\rangle$ we have
 \begin{equation*}
-E_1=\frac{\langle n\vert\hat H_1\vert n\rangle}{\langle n\vert n\rangle}
-=\left(\frac{\hbar}{m\omega}\right)^2\left(n^2+n+\frac{1}{4}\right)
+E_1=\frac{\langle n\vert\hat V\vert n\rangle}{\langle n\vert n\rangle}
+=\langle n\vert\hat V\vert n\rangle
+\end{equation*}
+
+Let $\hat V=\hat x^4$.
+Then from equation (2.12)
+\begin{equation*}
+\hat x=\sqrt{\frac{\hbar}{2m\omega}}\left(\hat a+\hat a^\dag\right)
+\tag{2.12}
+\end{equation*}
+we have
+\begin{equation*}
+E_1=\left(\frac{\hbar}{2m\omega}\right)^2
+\langle n|\left(\hat a+\hat a^\dag\right)^4|n\rangle
+\end{equation*}
+
+The only terms that contribute to the expectation value are
+\begin{align*}
+\langle n|\hat a\hat a\hat a^\dag\hat a^\dag|n\rangle
+&=\sqrt{n+1}\sqrt{n+2}\sqrt{n+2}\sqrt{n+1}
+& {}&=n^2+3n+2
+\\
+\langle n|\hat a\hat a^\dag\hat a\hat a^\dag|n\rangle
+&=\sqrt{n+1}\sqrt{n+1}\sqrt{n+1}\sqrt{n+1}
+& {}&=n^2+2n+1
+\\
+\langle n|\hat a\hat a^\dag\hat a^\dag\hat a|n\rangle
+&=\sqrt{n + 1}\sqrt{n + 1}\sqrt{n}\sqrt{n}
+& {}&=n^2+n
+\\
+\langle n|\hat a^\dag\hat a\hat a\hat a^\dag|n\rangle
+&=\sqrt{n}\sqrt{n}\sqrt{n+1}\sqrt{n+1}
+& {}&=n^2+n
+\\
+\langle n|\hat a^\dag\hat a\hat a^\dag\hat a|n\rangle
+&=\sqrt{n}\sqrt{n}\sqrt{n}\sqrt{n}
+& {}&=n^2
+\\
+\langle n|\hat a^\dag\hat a^\dag\hat a\hat a|n\rangle
+&=\sqrt{n}\sqrt{n-1}\sqrt{n-1}\sqrt{n}
+& {}&=n^2-n
+\end{align*}
+
+Hence
+\begin{equation*}
+E_1=\left(\frac{\hbar}{2m\omega}\right)^2\left(6n^2+6n+3\right)
 \end{equation*}
 
 Therefore
 \begin{equation*}
-E_n=E_0+\lambda E_1=\hbar\omega\left(n+\frac{1}{2}\right)+\lambda\left(\frac{\hbar}{m\omega}\right)^2\left(n^2+n+\frac{1}{4}\right)
+E_n=E_0+\lambda E_1=\hbar\omega\left(n+\frac{1}{2}\right)
++\lambda\left(\frac{\hbar}{2m\omega}\right)^2\left(6n^2+6n+3\right)
 \end{equation*}
 
 \end{document}
