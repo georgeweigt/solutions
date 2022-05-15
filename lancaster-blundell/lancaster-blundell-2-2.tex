@@ -67,11 +67,70 @@ Expand the quadratic term.
 +\lambda\left(\frac{\hbar}{m\omega}\right)^2\left(\hat n^2+\hat n+\frac{1}{4}\right)
 \end{equation*}
 
+Let $\hat H=\hat H_0+\lambda\hat H_1$ where
+\begin{equation*}
+\hat H_0=\hbar\omega\left(\hat n+\frac{1}{2}\right)
+\qquad
+\hat H_1=\left(\frac{\hbar}{m\omega}\right)^2\left(\hat n^2+\hat n+\frac{1}{4}\right)
+\end{equation*}
+
+From perturbation theory we have
+\begin{multline*}
+\left(\hat H_0+\lambda\hat H_1\right)\left(\psi_0+\lambda\psi_1+\lambda^2\psi_2+\cdots\right)
+\\
+=\left(E_0+\lambda E_1+\lambda^2 E_2+\cdots\right)\left(\psi_0+\lambda\psi_1+\lambda^2\psi_2+\cdots\right)
+\end{multline*}
+
+Because $\lambda$ is small, discard powers of $\lambda$.
+\begin{equation*}
+\hat H_0(\psi_0+\lambda\psi_1)+\lambda \hat H_1\psi_0=E_0(\psi_0+\lambda\psi_1)+\lambda E_1\psi_0
+\end{equation*}
+
+Cancel $\hat H_0\psi_0$ with $E_0\psi_0$.
+\begin{equation*}
+\lambda\hat H_0\psi_1+\lambda \hat H_1\psi_0=\lambda E_0\psi_1+\lambda E_1\psi_0
+\end{equation*}
+
+Cancel $\lambda$.
+\begin{equation*}
+\hat H_0\psi_1+\hat H_1\psi_0=E_0\psi_1+E_1\psi_0
+\end{equation*}
+
+It follows that
+\begin{equation*}
+\langle\psi_0|\hat H_0|\psi_1\rangle
++\langle\psi_0|\hat H_1|\psi_0\rangle
+=E_0\langle\psi_0|\psi_1\rangle
++E_1\langle\psi_0|\psi_0\rangle
+\tag{3}
+\end{equation*}
+
+Because $\hat H_0$ is Hermitian we have
+\begin{equation*}
+\langle\psi_0|\hat H_0|\psi_1\rangle=\left(\hat H_0|\psi_0\rangle\right)^\dag|\psi_1\rangle
+=E_0\langle\psi_0|\psi_1\rangle
+\end{equation*}
+
+Hence the first and third terms in equation (3) cancel leaving
+\begin{equation*}
+\langle\psi_0|\hat H_1|\psi_0\rangle
+=E_1\langle\psi_0|\psi_0\rangle
+\end{equation*}
+
 Hence
 \begin{equation*}
-\hat H\vert n\rangle
-=\hbar\omega\left(n+\frac{1}{2}\right)\vert n\rangle
-+\lambda\left(\frac{\hbar}{m\omega}\right)^2\left(n^2+n+\frac{1}{4}\right)\vert n\rangle
+E_1=\frac{\langle\psi_0\vert\hat H_1\vert\psi_0\rangle}{\langle\psi_0\vert\psi_0\rangle}
+\end{equation*}
+
+For $|\psi_0\rangle=|n\rangle$ we have
+\begin{equation*}
+E_1=\frac{\langle n\vert\hat H_1\vert n\rangle}{\langle n\vert n\rangle}
+=\left(\frac{\hbar}{m\omega}\right)^2\left(n^2+n+\frac{1}{4}\right)
+\end{equation*}
+
+Therefore
+\begin{equation*}
+E_n=E_0+E_1=\hbar\omega\left(n+\frac{1}{2}\right)+\lambda\left(\frac{\hbar}{m\omega}\right)^2\left(n^2+n+\frac{1}{4}\right)
 \end{equation*}
 
 \end{document}
