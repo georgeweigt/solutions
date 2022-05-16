@@ -21,6 +21,15 @@ E_n=\left(n+\frac{1}{2}\right)\hbar\omega
 \hrule
 
 \bigskip
+Let
+\begin{equation*}
+\hat H_0=\frac{\hat p^2}{2m}+\frac{1}{2}m\omega^2\hat x^2
+\end{equation*}
+and
+\begin{equation*}
+\hat V=\hat x^4
+\end{equation*}
+
 From perturbation theory we have
 \begin{multline*}
 \left(\hat H_0+\lambda\hat V\right)\left(\psi_0+\lambda\psi_1+\lambda^2\psi_2+\cdots\right)
@@ -77,15 +86,16 @@ E_1=\frac{\langle n\vert\hat V\vert n\rangle}{\langle n\vert n\rangle}
 =\langle n\vert\hat V\vert n\rangle
 \end{equation*}
 
-Let $\hat V=\hat x^4$.
-Then from equation (2.12)
+From $\hat V=\hat x^4$ and from equation (2.12)
 \begin{equation*}
 \hat x=\sqrt{\frac{\hbar}{2m\omega}}\left(\hat a+\hat a^\dag\right)
 \tag{2.12}
 \end{equation*}
 we have
 \begin{equation*}
-E_1=\left(\frac{\hbar}{2m\omega}\right)^2
+E_1=\langle n\vert\hat V\vert n\rangle
+=\langle n\vert\hat x^4\vert n\rangle
+=\left(\frac{\hbar}{2m\omega}\right)^2
 \langle n|\left(\hat a+\hat a^\dag\right)^4|n\rangle
 \end{equation*}
 
