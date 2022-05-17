@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(3.1)
+For boson operators satisfying
+\begin{equation*}
+\left[\hat a_{\mathbf p},\hat a_{\mathbf q}^\dag\right]=\delta_\mathbf{pq}
+\tag{3.41}
+\end{equation*}
+show that
+\begin{equation*}
+\frac{1}{\mathcal V}\sum_\mathbf{pq}
+\exp(i(\mathbf p\cdot\mathbf x-\mathbf q\cdot\mathbf y))
+\left[\hat a_{\mathbf p},\hat a_{\mathbf q}^\dag\right]
+=\delta^{(3)}(\mathbf x-\mathbf y)
+\tag{3.42}
+\end{equation*}
+where $\mathcal V$ is the volume of space over which the system
+is defined.
+Repeat this for fermion commutator operators.
+
+\bigskip
+\hrule
+
+\bigskip
+Substitute (3.41) into the left-hand side of (3.42).
+\begin{equation*}
+\frac{1}{\mathcal V}\sum_\mathbf{pq}
+\exp(i(\mathbf p\cdot\mathbf x-\mathbf q\cdot\mathbf y))
+\delta_\mathbf{pq}
+\end{equation*}
+
+By the sifting property of $\delta_\mathbf{pq}$ we have
+\begin{equation*}
+\frac{1}{\mathcal V}\sum_\mathbf{p}
+\exp(i\mathbf p\cdot(\mathbf x-\mathbf y))
+\tag{1}
+\end{equation*}
+
+Consider the following identity derived from page 25.
+\begin{equation*}
+\sum_p\exp(ip(x-y))=N\delta_{x,y}
+\tag{2}
+\end{equation*}
+
+Substitute (2) into (1) to obtain
+\begin{equation*}
+\frac{N^3}{\mathcal V}\delta^{(3)}(\mathbf x-\mathbf y)
+\end{equation*}
+
+Hence (3.42) is true in the limit $\mathcal V\rightarrow\infty$.
+\begin{equation*}
+\lim_{\mathcal V\rightarrow\infty}\frac{N^3}{\mathcal V}=1
+\end{equation*}
+
+\end{document}
