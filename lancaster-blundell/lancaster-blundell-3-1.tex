@@ -25,34 +25,36 @@ Repeat this for fermion commutator operators.
 \hrule
 
 \bigskip
-Substitute (3.41) into the left-hand side of (3.42).
+Substitute (3.41) into the left-hand side of (3.42) and call it $I$.
 \begin{equation*}
-\frac{1}{\mathcal V}\sum_\mathbf{pq}
+I=\frac{1}{\mathcal V}\sum_\mathbf{pq}
 \exp(i(\mathbf p\cdot\mathbf x-\mathbf q\cdot\mathbf y))
 \delta_\mathbf{pq}
 \end{equation*}
 
 By the sifting property of $\delta_\mathbf{pq}$ we have
 \begin{equation*}
-\frac{1}{\mathcal V}\sum_\mathbf{p}
+I=\frac{1}{\mathcal V}\sum_\mathbf{p}
 \exp(i\mathbf p\cdot(\mathbf x-\mathbf y))
 \tag{1}
 \end{equation*}
 
-Consider the following identity derived from page 25.
+Consider the following identity where $N$ is the number of momentum states.
 \begin{equation*}
-\sum_p\exp(ip(x-y))=N\delta_{x,y}
+\sum_p\exp(ip(x-y))=N\delta_{xy}
 \tag{2}
 \end{equation*}
 
 Substitute (2) into (1) to obtain
 \begin{equation*}
-\frac{N^3}{\mathcal V}\delta^{(3)}(\mathbf x-\mathbf y)
+I=\frac{N^3}{\mathcal V}\delta_\mathbf{xy}
 \end{equation*}
 
-Hence (3.42) is true in the limit $\mathcal V\rightarrow\infty$.
+Hence (3.42) is true in the limit $N\rightarrow\infty$.
 \begin{equation*}
-\lim_{\mathcal V\rightarrow\infty}\frac{N^3}{\mathcal V}=1
+\lim_{N\rightarrow\infty}\frac{N^3}{\mathcal V}
+\delta_\mathbf{xy}
+=\delta^{(3)}(\mathbf x-\mathbf y)
 \end{equation*}
 
 \end{document}
