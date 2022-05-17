@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(2.4)
+Using $\hat a|0\rangle=0$ and eqns 2.9 and 2.10 together with
+$\langle x|\hat p|\psi\rangle=-i\hbar\frac{d}{dx}\langle x|\psi\rangle$, show that
+\begin{equation*}
+0=\left(x+\frac{\hbar}{m\omega}\frac{d}{dx}\right)
+\langle x|0\rangle
+\tag{2.69}
+\end{equation*}
+and hence
+\begin{equation*}
+\langle x|0\rangle=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}
+\exp\left(-\frac{m\omega x^2}{2\hbar}\right)
+\tag{2.70}
+\end{equation*}
+
+\hrule
+
+\begin{align*}
+\hat a&=\sqrt{\frac{m\omega}{2\hbar}}
+\left(\hat x+\frac{i}{m\omega}\hat p\right)
+\tag{2.9}
+\\
+\hat a^\dag&=\sqrt{\frac{m\omega}{2\hbar}}
+\left(\hat x-\frac{i}{m\omega}\hat p\right)
+\tag{2.10}
+\end{align*}
+
+We have
+\begin{equation*}
+\left(x+\frac{\hbar}{m\omega}\frac{d}{dx}\right)\langle x|0\rangle
+=\langle x|\left(\hat x+\frac{i}{m\omega}\hat p\right)|0\rangle
+=\langle x|\hat a|0\rangle
+=0
+\end{equation*}
+
+Let
+\begin{equation*}
+f=\exp\left(-\frac{m\omega x^2}{2\hbar}\right)
+\end{equation*}
+
+Then
+\begin{equation*}
+\frac{d}{dx}f=-\frac{m\omega x}{\hbar}\exp\left(-\frac{m\omega x^2}{2\hbar}\right)
+\end{equation*}
+
+It follows that
+\begin{equation*}
+\frac{\hbar}{m\omega}\frac{d}{dx}f=-xf
+\end{equation*}
+
+Hence equation (2.70) is a solution to the differential equation (2.69).
+
+\end{document}
