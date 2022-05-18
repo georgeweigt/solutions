@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(7.1)
+For the Lagrangian $\mathcal L$ given by
+\begin{equation*}
+\mathcal L=\frac{1}{2}\partial^\mu\partial_\mu\phi
+-\frac{1}{2}m^2\phi^2-\sum_{n=1}^\infty\lambda_n\phi^{2n+2}
+\tag{7.20}
+\end{equation*}
+show that the equation of motion is given by
+\begin{equation*}
+(\partial^2+m^2)\phi
++\sum_{n=1}^\infty\lambda_n(2n+2)\phi^{2n+1}=0
+\tag{7.21}
+\end{equation*}
+
+\bigskip
+\hrule
+
+\bigskip
+For the Lagrangian $\mathcal L$ given in (7.20) we have
+\begin{equation*}
+\frac{\partial\mathcal L}{\partial\phi}=-m^2\phi-\sum_{n=1}^\infty\lambda_n(2n+2)\phi^{2n+1}
+\tag{1}
+\end{equation*}
+and
+\begin{equation*}
+\frac{\partial\mathcal L}{\partial(\partial_\mu\phi)}
+=\frac{\partial}{\partial(\partial_\mu\phi)}\left(\frac{1}{2}\partial^2\phi\right)
+=\partial^\mu\phi
+\tag{2}
+\end{equation*}
+
+Consider the following Euler-Lagrange equation.
+\begin{equation*}
+\partial_\mu\left(\frac{\partial\mathcal L}{\partial(\partial_\mu\phi)}\right)-\frac{\partial\mathcal L}{\partial\phi}=0
+\tag{3}
+\end{equation*}
+
+Substitute (1) and (2) into (3) to obtain
+\begin{equation*}
+\partial_\mu\partial^\mu\phi+m^2\phi+\sum_{n=1}^\infty\lambda_n(2n+2)\phi^{2n+1}=0
+\end{equation*}
+which is equivalent to (7.21).
+
+\bigskip
+Note: Recall that
+\begin{equation*}
+\partial^\mu\partial_\mu\phi=\partial_\mu\partial^\mu\phi=\partial^2\phi
+\end{equation*}
+
+\end{document}
