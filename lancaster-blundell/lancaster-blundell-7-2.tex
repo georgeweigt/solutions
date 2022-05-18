@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(7.2)
+Consider a massive scalar field $\phi(x)$ coupled to
+a source $J(x)$, described by the Lagrangian of
+eqn 7.10. Show that the equations of motion are
+those of eqn 7.11.
+
+\bigskip
+\hrule
+
+\bigskip
+\begin{gather*}
+\mathcal L=\frac{1}{2}[\partial_u\phi(x)]^2-\frac{1}{2}m^2[\phi(x)]^2
++J(x)\phi(x)
+\tag{7.10}
+\\
+(\partial_\mu\partial^\mu+m^2)\phi(x)=J(x)
+\tag{7.11}
+\end{gather*}
+
+For the Lagrangian $\mathcal L$ given in (7.10) we have
+\begin{equation*}
+\frac{\partial\mathcal L}{\partial\phi}=-m^2\phi(x)+J(x)
+\end{equation*}
+and
+\begin{equation*}
+\frac{\partial\mathcal L}{\partial(\partial_\mu\phi)}
+=\partial^\mu\phi(x)
+\end{equation*}
+
+Then by the Euler-Lagrange equation we have
+\begin{equation*}
+\partial_\mu\partial^\mu\phi(x)+m^2\phi(x)-J(x)=0
+\end{equation*}
+which is equivalent to (7.11).
+
+\end{document}
