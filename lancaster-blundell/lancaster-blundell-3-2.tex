@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(3.2)
+Show that for the simple harmonic oscillator:
+
+\bigskip
+(a) $\left[\hat a,(\hat a^\dag)^n\right]=n(\hat a^\dag)^{n-1}$,
+
+(b) $\langle0|\hat a^n(\hat a^\dag)^m|0\rangle=n!\delta_{nm}$,
+
+(c) $\langle m|\hat a^\dag|n\rangle=\sqrt{n+1}\delta_{m,n+1}$,
+
+(d) $\langle m|\hat a|n\rangle=\sqrt{n}\delta_{m,n-1}$.
+
+\bigskip
+\hrule
+
+\bigskip
+(a) We have for $r=m+n-1$
+\begin{align*}
+\left[\hat a,(\hat a^\dag)^n\right]|m\rangle
+&=\hat a(\hat a^\dag)^n|m\rangle-(\hat a^\dag)^n\hat a|m\rangle
+\\
+&=\sqrt{m+n}\left(\prod_{k=1}^n\sqrt{m+k}\right)|r\rangle
+-\left(\prod_{k=1}^n\sqrt{m-1+k}\right)\sqrt{m}|r\rangle
+\end{align*}
+
+It follows that
+\begin{equation*}
+\left[\hat a,(\hat a^\dag)^n\right]|m\rangle
+=(m+n)\left(\prod_{k=1}^{n-1}\sqrt{m+k}\right)|r\rangle
+-m\left(\prod_{k=2}^n\sqrt{m-1+k}\right)|r\rangle
+\end{equation*}
+
+Noting that
+\begin{equation*}
+\prod_{k=1}^{n-1}\sqrt{m+k}=\prod_{k=2}^n\sqrt{m-1+k}
+\end{equation*}
+we have
+\begin{equation*}
+\left[\hat a,(\hat a^\dag)^n\right]|m\rangle
+=n\left(\prod_{k=1}^{n-1}\sqrt{m+k}\right)|m+n-1\rangle
+\end{equation*}
+
+Hence
+\begin{equation*}
+\left[\hat a,(\hat a^\dag)^n\right]|m\rangle=n(\hat a^\dag)^{n-1}|m\rangle
+\end{equation*}
+
+
+\end{document}
