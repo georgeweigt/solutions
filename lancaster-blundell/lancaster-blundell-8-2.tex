@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(8.2)
+For the Hamiltonian
+\begin{equation*}
+\hat H=\sum_kE_k\hat a_k^\dag\hat a_k
+\tag{8.21}
+\end{equation*}
+use the Heisenberg equation of motion to show that
+the time dependence of the operator $\hat a_k^\dag$ is given by
+\begin{equation*}
+\hat a_k^\dag(t)=\hat a_k^\dag(0)\exp\left(\frac{iE_kt}{\hbar}\right)
+\tag{8.22}
+\end{equation*}
+and find a similar expression for $\hat a_k(t)$.
+
+\bigskip
+\hrule
+
+\bigskip
+The Heisenberg equation of motion is
+\begin{equation*}
+\frac{d}{dt}\hat a^\dag(t)=-\frac{i}{\hbar}\left[\hat a^\dag(t),\hat H\right]
+\tag{8.15}
+\end{equation*}
+
+Substitute (8.22) into the right-hand side of (8.15) and call it $I$.
+\begin{equation*}
+I=-\frac{i}{\hbar}\exp\left(\frac{iE_kt}{\hbar}\right)
+\left(\hat a_k^\dag(0)\hat H-\hat H\hat a_k^\dag(0)\right)
+\tag{1}
+\end{equation*}
+
+Rewrite the Hamiltonian in equation (8.21) as
+\begin{equation*}
+\hat H=\sum_jE_j\hat n_j
+\tag{2}
+\end{equation*}
+
+Substitute (2) into (1). Note that $\hat H$ commutes with $\hat a_k^\dag(0)$ for $j\ne k$.
+\begin{equation*}
+I=-\frac{i}{\hbar}E_k\exp\left(\frac{iE_kt}{\hbar}\right)
+\left(\hat a_k^\dag(0)\hat n_k-\hat n_k\hat a_k^\dag(0)\right)
+\end{equation*}
+
+Note that
+\begin{equation*}
+\hat n_k\hat a_k^\dag(0)|n\rangle=(n+1)|n+1\rangle=(n+1)\hat a_k^\dag(0)|n\rangle
+\end{equation*}
+and
+\begin{equation*}
+\hat a_k^\dag(0)\hat n_k|n\rangle=n|n+1\rangle=n\hat a_k^\dag(0)|n\rangle
+\end{equation*}
+
+Hence
+\begin{align*}
+I&=-\frac{i}{\hbar}E_k\exp\left(\frac{iE_kt}{\hbar}\right)
+\left(n\hat a_k^\dag(0)-(n+1)\hat a_k^\dag(0)\right)
+\\
+&=\frac{i}{\hbar}E_k\exp\left(\frac{iE_kt}{\hbar}\right)\hat a_k^\dag(0)
+\\
+&=\frac{i}{\hbar}E_k\hat a_k^\dag(t)
+\tag{3}
+\end{align*}
+
+Substitute (8.22) into the left-hand side of (8.15) to obtain
+\begin{equation*}
+\frac{d}{dt}\hat a^\dag(t)=\frac{i}{\hbar}E_k\hat a_k^\dag(t)
+\tag{4}
+\end{equation*}
+
+By the equivalence of (3) and (4) we have
+\begin{equation*}
+\frac{d}{dt}\hat a^\dag(t)=-\frac{i}{\hbar}\left[\hat a^\dag(t),\hat H\right]
+\end{equation*}
+for the $\hat a^\dag(t)$ given in (8.22).
+
+\end{document}
