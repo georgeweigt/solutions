@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(5.1)
+If the Lagrangian does depend explicitly on time,
+then
+\begin{equation*}
+\frac{dL}{dt}=\frac{\partial L}{\partial t}
++\frac{\partial L}{\partial x_i}\dot x_i
++\frac{\partial L}{\partial\dot x_i}\ddot x_i
+\tag{5.57}
+\end{equation*}
+
+In this case show that
+\begin{equation*}
+\frac{\partial L}{\partial t}=-\frac{dH}{dt}
+\tag{5.58}
+\end{equation*}
+
+\bigskip
+\hrule
+
+\bigskip
+Recall that $d/dt$ is the total time derivative.
+
+\bigskip
+Consider equation (5.6).
+\begin{equation*}
+H=p_i\dot q_i-L
+\tag{5.6}
+\end{equation*}
+
+Applying the total time derivative to $H$ we have
+\begin{equation*}
+\frac{dH}{dt}
+=\frac{\partial(p_i\dot q_i)}{\partial p_i}\dot p_i
++\frac{\partial(p_i\dot q_i)}{\partial\dot q_i}\ddot q_i
+-\frac{dL}{dt}
+\end{equation*}
+
+Hence
+\begin{equation*}
+\frac{dH}{dt}
+=\dot p_i\dot q_i+p_i\ddot q_i
+-\frac{dL}{dt}
+\end{equation*}
+
+Substitute
+\begin{equation*}
+p_i=\frac{\partial L}{\partial\dot x_i}
+\qquad
+q_i=x_i
+\end{equation*}
+to obtain
+\begin{equation*}
+\frac{dH}{dt}
+=\left(\frac{d}{dt}\frac{\partial L}{\partial\dot x_i}\right)\dot x_i
++\frac{\partial L}{\partial\dot x_i}\ddot x_i
+-\frac{dL}{dt}
+\tag{1}
+\end{equation*}
+
+Consider the following Euler-Lagrange equation.
+\begin{equation*}
+\frac{d}{dt}\frac{\partial L}{\partial\dot x_i}=\frac{\partial L}{\partial x_i}
+\tag{2}
+\end{equation*}
+
+Substitute (2) into (1) to obtain
+\begin{equation*}
+\frac{dH}{dt}
+=\frac{\partial L}{\partial x_i}\dot x_i
++\frac{\partial L}{\partial\dot x_i}\ddot x_i
+-\frac{dL}{dt}
+=-\frac{\partial L}{\partial t}
+\end{equation*}
+
+\end{document}
