@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(5.2)
+Show that Poisson brackets anticommute
+\begin{equation*}
+\{A,B\}_\mathrm{PB}=-\{B,A\}_\mathrm{PB}
+\tag{5.59}
+\end{equation*}
+and also satisfy the Jacobi identity
+\begin{equation*}
+\left\{\{A,B\}_\mathrm{PB},C\right\}_\mathrm{PB}
++\left\{\{C,A\}_\mathrm{PB},B\right\}_\mathrm{PB}
++\left\{\{B,C\}_\mathrm{PB},A\right\}_\mathrm{PB}
+=0
+\tag{5.60}
+\end{equation*}
+and show that quantum mechanical commutators
+also have the same properties.
+
+\bigskip
+\hrule
+
+\bigskip
+From equation (5.11)
+\begin{equation*}
+\{A,B\}_\mathrm{PB}
+=\frac{\partial A}{\partial q_i}\frac{\partial B}{\partial p_i}
+-\frac{\partial A}{\partial p_i}\frac{\partial B}{\partial q_i}
+\tag{5.11}
+\end{equation*}
+
+Hence
+\begin{align*}
+&\left\{\{A,B\}_\mathrm{PB},C\right\}_\mathrm{PB}
+\\
+&\quad{}=\frac{\partial}{\partial q_i}
+\left(
+\frac{\partial A}{\partial q_i}\frac{\partial B}{\partial p_i}
+-\frac{\partial A}{\partial p_i}\frac{\partial B}{\partial q_i}
+\right)
+\frac{\partial C}{\partial p_i}
+-\frac{\partial}{\partial p_i}
+\left(
+\frac{\partial A}{\partial q_i}\frac{\partial B}{\partial p_i}
+-\frac{\partial A}{\partial p_i}\frac{\partial B}{\partial q_i}
+\right)
+\frac{\partial C}{\partial q_i}
+\\
+&\quad{}=
+\left(
+\frac{\partial^2A}{\partial q_i^2}
+\frac{\partial^2B}{\partial p_i\partial q_i}
+-
+\frac{\partial^2A}{\partial p_i\partial q_i}
+\frac{\partial^2B}{\partial q_i^2}
+\right)
+\frac{\partial C}{\partial p_i}
+-
+\left(
+\frac{\partial^2A}{\partial p_i\partial q_i}
+\frac{\partial^2B}{\partial p_i^2}
+-
+\frac{\partial^2A}{\partial p_i^2}
+\frac{\partial^2B}{\partial p_i\partial q_i}
+\right)
+\frac{\partial C}{\partial q_i}
+\end{align*}
+
+Eigenmath proof
+\begin{verbatim}
+PB(f,g) = d(f,q) d(g,p) - d(f,p) d(g,q)
+
+A = a(p,q)
+B = b(p,q)
+C = c(p,q)
+
+PB(PB(A,B),C) + PB(PB(C,A),B) + PB(PB(B,C),A) == 0
+\end{verbatim}
+
+\end{document}
