@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(5.3)
+Show that the commutator of two Hermitian operators
+$\hat A$ and $\hat B$ is anti-Hermitian, i.e., that
+\begin{equation*}
+[\hat A,\hat B]^\dag=-[\hat A,\hat B]
+\tag{5.61}
+\end{equation*}
+
+The factor of $i$ in many commutator expressions
+(e.g.~$[\hat x,\hat p]=i\hbar$,
+$[\hat L_x,\hat L_y]=i\hbar\hat L_z$, and
+$[\hat A,\hat B]=\frac{1}{i\hbar}\{A,B\}_\mathrm{PB}$)
+makes sure that this property is obeyed.
+
+\bigskip
+\hrule
+
+\bigskip
+We have
+\begin{align*}
+[\hat A,\hat B]^\dag
+&=(\hat A\hat B-\hat B\hat A)^\dag
+\\
+&=(\hat A\hat B)^\dag-(\hat B\hat A)^\dag
+\\
+&=\hat B^\dag\hat A^\dag-\hat A^\dag\hat B^\dag
+\end{align*}
+
+Then by Hermiticity
+\begin{align*}
+\hat B^\dag\hat A^\dag-\hat A^\dag\hat B^\dag
+&=\hat B\hat A-\hat A\hat B
+\\
+&=-[\hat A,\hat B]
+\end{align*}
+
+\end{document}
