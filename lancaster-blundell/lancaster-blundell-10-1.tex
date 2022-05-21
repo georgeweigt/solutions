@@ -12,35 +12,37 @@ the conserved charges from spacetime translation
 \hrule
 
 \bigskip
-\begin{align*}
-P^\alpha&=\int d^3x\,T^{0\alpha}
-\tag{10.28}
-\\
-P^0&=\int d^3x\,\mathcal H
-\tag{10.29}
-\\
-P^k&=\int d^3x\,\pi(x)\partial^k\phi(x)
-\tag{10.30}
-\end{align*}
-
-$T^{\mu\nu}$ is the energy-momentum tensor
+Consider equation (10.25) where $\hat Q_N$ is a conserved charge.
 \begin{equation*}
-T^{\mu\nu}=\Pi^\mu\partial^\nu\phi(x)-g^{\mu\nu}\mathcal L
+\left[\hat Q_N,\hat\phi\right]=-iD\hat\phi
+\tag{10.25}
 \end{equation*}
 
-$\Pi^\mu(x)$ is momentum density.
+By equation (10.25) we have
 \begin{equation*}
-\Pi^\mu(x)=\frac{\partial\mathcal L}{\partial(\partial_\mu\phi)}
-\tag{10.10}
+[\phi(x),P]=iD\phi(x)
+\tag{1}
+\end{equation*}
+
+Consider equation (10.7) where $a^\mu$ is a spacetime translation.
+\begin{equation*}
+D\phi=a^\mu\partial_\mu\phi
+\tag{10.7}
+\end{equation*}
+
+Substitute (10.7) into (1) to obtain
+\begin{equation*}
+[\phi(x),P]=ia^\mu\partial_\mu\phi(x)=ia_\mu\partial^\mu\phi(x)
+\end{equation*}
+
+In component notation $P^\mu$ we have
+\begin{equation*}
+a_\mu[\phi(x),P^\mu]=ia_\mu\partial^\mu\phi(x)
 \end{equation*}
 
 Hence
-\begin{align*}
-[\phi(x),P^k]
-&=\phi(x)\left(\int d^3y\,\pi(y)\partial^k\phi(y)\right)
--\left(\int d^3y\,\pi(y)\partial^k\phi(y)\right)\phi(x)
-\\
-&=\int d^3y\,\pi(y)\bigg(\phi(x)\partial^k\phi(y)-\partial^k\phi(y)\phi(x)\bigg)
-\end{align*}
+\begin{equation*}
+[\phi(x),P^\mu]=i\partial^\mu\phi(x)
+\end{equation*}
 
 \end{document}
