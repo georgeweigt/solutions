@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(10.1)
+Show that $[\phi(x),P^\alpha]=i\partial^\alpha\phi(x)$, where $P^\alpha$ is
+the conserved charges from spacetime translation
+(eqn 10.28).
+
+\bigskip
+\hrule
+
+\bigskip
+\begin{align*}
+P^\alpha&=\int d^3x\,T^{0\alpha}
+\tag{10.28}
+\\
+P^0&=\int d^3x\,\mathcal H
+\tag{10.29}
+\\
+P^k&=\int d^3x\,\pi(x)\partial^k\phi(x)
+\tag{10.30}
+\end{align*}
+
+$T^{\mu\nu}$ is the energy-momentum tensor
+\begin{equation*}
+T^{\mu\nu}=\Pi^\mu\partial^\nu\phi(x)-g^{\mu\nu}\mathcal L
+\end{equation*}
+
+$\Pi^\mu(x)$ is momentum density.
+\begin{equation*}
+\Pi^\mu(x)=\frac{\partial\mathcal L}{\partial(\partial_\mu\phi)}
+\tag{10.10}
+\end{equation*}
+
+Hence
+\begin{align*}
+[\phi(x),P^k]
+&=\phi(x)\left(\int d^3y\,\pi(y)\partial^k\phi(y)\right)
+-\left(\int d^3y\,\pi(y)\partial^k\phi(y)\right)\phi(x)
+\\
+&=\int d^3y\,\pi(y)\bigg(\phi(x)\partial^k\phi(y)-\partial^k\phi(y)\phi(x)\bigg)
+\end{align*}
+
+\end{document}
