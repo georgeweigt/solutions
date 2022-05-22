@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(10.3)
+For the Lagrangian
+\begin{equation*}
+\mathcal L=\frac{1}{2}(\partial_\mu\phi)^2-\frac{1}{2}m^2\phi^2
+\tag{10.42}
+\end{equation*}
+evaluate $T^{\mu\nu}$ and show that $T^{00}$ agrees with what
+you would expect from the Hamiltonian for this Lagrangian.
+Show that $\partial_\mu T^{\mu\nu}=0$. Derive expressions
+for $P^0=\int d^3x\,T^{00}$ and $P^i=\int d^3x\,T^{0i}$.
+
+\bigskip
+\hrule
+
+\bigskip
+From equation (10.27) we have
+\begin{equation*}
+T^{\mu\nu}=\Pi^\mu\partial^\nu\phi-g^{\mu\nu}\mathcal L
+\end{equation*}
+where
+\begin{equation*}
+\Pi^\mu=\frac{\partial\mathcal L}{\partial(\partial_\mu\phi)}
+\end{equation*}
+
+Hence
+\begin{equation*}
+T^{\mu\nu}=\frac{\partial\mathcal L}{\partial(\partial_\mu\phi)}\partial^\nu\phi-g^{\mu\nu}\mathcal L
+\end{equation*}
+
+It follows from $g^{00}=1$ that
+\begin{equation*}
+T^{00}=\frac{\partial\mathcal L}{\partial(\partial_0\phi)}\partial^0\phi-\mathcal L
+\end{equation*}
+
+Noting that $\partial^0=\partial_0$, we have $T^{00}=H$ where $H$ is the expected Hamiltonian
+\begin{equation*}
+H=p\dot q-\mathcal L=\frac{\partial\mathcal L}{\partial(\partial_0\phi)}\partial_0\phi-\mathcal L
+\end{equation*}
+
+\end{document}
