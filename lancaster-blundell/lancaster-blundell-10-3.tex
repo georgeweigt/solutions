@@ -18,6 +18,29 @@ for $P^0=\int d^3x\,T^{00}$ and $P^i=\int d^3x\,T^{0i}$.
 \hrule
 
 \bigskip
+Note that $\partial_\mu\phi$ is the vector
+\begin{equation*}
+\partial_\mu\phi=\begin{pmatrix}
+\partial_0\phi
+\\
+\partial_1\phi
+\\
+\partial_2\phi
+\\
+\partial_3\phi
+\end{pmatrix}
+\end{equation*}
+
+Hence
+\begin{align*}
+(\partial_\mu\phi)^2
+&=\partial_\mu\phi g^{\mu\nu}\partial_\nu\phi
+\\
+&=(\partial_0\phi)^2-(\partial_1\phi)^2-(\partial_2\phi)^2-(\partial_3\phi)^2
+\\
+&=(\partial_0\phi)^2-(\nabla\phi)^2
+\end{align*}
+
 From the book near equation (10.27) we have
 \begin{equation*}
 T^{\mu\nu}=\Pi^\mu\partial^\nu\phi-g^{\mu\nu}\mathcal L
@@ -39,19 +62,14 @@ For the Lagrangian given in (10.42) we have
 \end{equation*}
 
 Hence
-\begin{equation*}
-T^{00}=\partial_0\phi\partial^0\phi-\mathcal L
-\end{equation*}
-
-Noting that
-\begin{equation*}
-\partial_0\phi\partial^0\phi=(\partial_0\phi)^2
-\end{equation*}
-
-we have
-\begin{equation*}
-T^{00}=(\partial_0\phi)^2-\mathcal L=\frac{1}{2}(\partial_0\phi)^2+\frac{1}{2}m^2\phi^2
-\end{equation*}
+\begin{align*}
+T^{00}
+&=\partial_0\phi\partial^0\phi-\mathcal L
+\\
+&=(\partial_0\phi)^2-\mathcal L
+\\
+&=\frac{1}{2}(\partial_0\phi)^2+\frac{1}{2}(\nabla\phi)^2+\frac{1}{2}m^2\phi^2
+\end{align*}
 
 The expected Hamiltonian $H$ is
 \begin{equation*}
