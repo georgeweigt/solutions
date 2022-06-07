@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(11.1)
+One of the criteria we had for a successful theory
+of a scalar field was that the commutator for space-like
+separations would be zero. Let's see if our scalar
+field has this feature. Show that
+\begin{equation*}
+[\hat\phi(x),\hat\phi(y)]=\int
+\frac{d^3p}{(2\pi)^3}\frac{1}{2E_p}
+\big(
+\exp(-ip\cdot(x-y))-\exp(-ip\cdot(y-x))
+\big)
+\tag{11.51}
+\end{equation*}
+
+For space-like separation we are able to swap $(y-x)$
+in the second term to $(x-y)$. This gives us zero,
+as required.
+
+\bigskip
+\hrule
+
+\bigskip
+Consider equation (11.12).
+\begin{equation*}
+\hat\phi(x)=\int\frac{d^3p}{(2\pi)^{3/2}}\frac{1}{(2E_p)^{1/2}}
+\left(\hat a_p\exp(-ip\cdot x)+\hat a_p^\dag\exp(ip\cdot x)\right)
+\tag{11.12}
+\end{equation*}
+
+It follows from (11.12) that
+\begin{equation*}
+[\hat\phi(x),\hat\phi(y)]=\frac{1}{(2\pi)^3}\frac{1}{2E_p}
+\int d^3p\int d^3q\,(PQ-QP)
+\tag{1}
+\end{equation*}
+where
+\begin{align*}
+P&=\hat a_p\exp(-ip\cdot x)+\hat a_p^\dag\exp(ip\cdot x)
+\\
+Q&=\hat a_q\exp(-iq\cdot y)+\hat a_q^\dag\exp(iq\cdot y)
+\end{align*}
+
+Expanding the commutator in (1) we have
+\begin{multline*}
+PQ-QP=
+[\hat a_p,\hat a_q]\exp(-ip\cdot x-iq\cdot y)
++[\hat a_p,\hat a_q^\dag]\exp(-ip\cdot x+iq\cdot y)
+\\
+{}+[\hat a_p^\dag,\hat a_q]\exp(ip\cdot x-iq\cdot y)
++[\hat a_p^\dag,\hat a_q^\dag]\exp(ip\cdot x+iq\cdot y)
+\end{multline*}
+
+Then from the commutation relations
+\begin{equation*}
+[\hat a_p,\hat a_q]=0
+\qquad
+[\hat a_p^\dag,\hat a_q^\dag]=0
+\qquad
+[\hat a_p,\hat a_q^\dag]=\delta(p-q)
+\end{equation*}
+we have
+\begin{equation*}
+PQ-QP=\delta(p-q)\exp(-ip\cdot x+iq\cdot y)-\delta(p-q)\exp(ip\cdot x-iq\cdot y)
+\end{equation*}
+
+The integral over $q$ in (1) vanishes by the delta function and we obtain
+\begin{equation*}
+[\hat\phi(x),\hat\phi(y)]=\frac{1}{(2\pi)^3}\frac{1}{2E_p}
+\int d^3p\,\big(\exp(-ip\cdot(x-y))-\exp(-ip\cdot(y-x))\big)
+\end{equation*}
+
+\end{document}
