@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(12.1)
+Fill in the missing steps of the algebra that led to
+eqn 12.6.
+
+\bigskip
+\hrule
+
+\bigskip
+Consider (12.5).
+\begin{equation*}
+\begin{aligned}
+\hat\psi(x)&=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}
+\left(\hat a_p\exp(-ip\cdot x)+\hat b_p^\dag\exp(ip\cdot x)\right)
+\\
+\hat\psi(x)^\dag&=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}
+\left(\hat a_p^\dag\exp(ip\cdot x)+\hat b_p\exp(-ip\cdot x)\right)
+\end{aligned}
+\tag{12.5}
+\end{equation*}
+
+Consider (12.6).
+\begin{align*}
+N[\hat H]&=\int d^3p\,E_p\left(\hat a_p^\dag\hat a_p+\hat b_p^\dag\hat b_p\right)
+\\
+&=\int d^3p\,E_p\left(\hat n_p^{(a)}+\hat n_p^{(b)}\right)
+\tag{12.6}
+\end{align*}
+
+The Hamiltonian density is given by (12.3).
+\begin{equation*}
+\mathcal H=\partial_0\psi^\dag(x)\partial_0\psi(x)+\nabla\psi^\dag(x)\cdot\nabla\psi(x)+m^2\psi^\dag(x)\psi(x)
+\tag{12.3}
+\end{equation*}
+
+From equation (11.24), the Hamiltonian operator is given by the volume integral of the Hamiltonian density.
+\begin{equation*}
+\hat H
+=\int d^3x\,\partial_0\psi^\dag(x)\partial_0\psi(x)
++\int d^3x\,\nabla\psi^\dag(x)\cdot\nabla\psi(x)
++\int d^3x\,m^2\psi^\dag(x)\psi(x)
+\tag{1}
+\end{equation*}
+
+Recall that
+\begin{equation*}
+p\cdot x=p_0x_0-p_1x_1-p_2x_2-p_3x_3
+\end{equation*}
+
+It follows that (see equation 11.25)
+\begin{equation*}
+\begin{aligned}
+\partial_\mu\hat\psi(x)
+&=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}(-ip_\mu)
+\left(\hat a_p\exp(-ip\cdot x)-\hat b_p^\dag\exp(ip\cdot x)\right)
+\\
+\partial_\mu\hat\psi^\dag(x)
+&=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}(ip_\mu)
+\left(\hat a_p^\dag\exp(ip\cdot x)-\hat b_p\exp(-ip\cdot x)\right)
+\end{aligned}
+\end{equation*}
+
+Hence
+\begin{multline*}
+\int d^3x\,\partial_0\psi^\dag(x)\partial_0\psi(x)
+=\frac{1}{(2\pi)^3}\int\frac{d^3x\,d^3p\,d^3q}{(2E_p)^\frac{1}{2}(2E_q)^\frac{1}{2}}
+(iE_p)(-iE_q)
+\\
+{}\times
+\left(\hat a_p^\dag\exp(ip\cdot x)-\hat b_p\exp(-ip\cdot x)\right)
+\left(\hat a_q\exp(-iq\cdot x)-\hat b_q^\dag\exp(iq\cdot x)\right)
+\end{multline*}
+
+
+\end{document}

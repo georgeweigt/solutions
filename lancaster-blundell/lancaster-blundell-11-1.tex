@@ -27,15 +27,15 @@ as required.
 \bigskip
 Consider equation (11.12).
 \begin{equation*}
-\hat\phi(x)=\int\frac{d^3p}{(2\pi)^{3/2}}\frac{1}{(2E_p)^{1/2}}
+\hat\phi(x)=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}
 \left(\hat a_p\exp(-ip\cdot x)+\hat a_p^\dag\exp(ip\cdot x)\right)
 \tag{11.12}
 \end{equation*}
 
 It follows from (11.12) that
 \begin{equation*}
-[\hat\phi(x),\hat\phi(y)]=\frac{1}{(2\pi)^3}\frac{1}{2E_p}
-\int d^3p\int d^3q\,(PQ-QP)
+[\hat\phi(x),\hat\phi(y)]=\frac{1}{(2\pi)^3}
+\int\frac{d^3p}{(2E_p)^\frac{1}{2}}\int\frac{d^3q}{(2E_q)^\frac{1}{2}}(PQ-QP)
 \tag{1}
 \end{equation*}
 where
@@ -65,13 +65,14 @@ Then from the commutation relations
 \end{equation*}
 we have
 \begin{equation*}
-PQ-QP=\delta(p-q)\exp(-ip\cdot x+iq\cdot y)-\delta(p-q)\exp(ip\cdot x-iq\cdot y)
+PQ-QP=\delta(p-q)\big(\exp(-ip\cdot x+iq\cdot y)-\exp(ip\cdot x-iq\cdot y)\big)
+\tag{2}
 \end{equation*}
 
-The integral over $q$ in (1) vanishes by the delta function and we obtain
+Substitute (2) into (1) to obtain
 \begin{equation*}
-[\hat\phi(x),\hat\phi(y)]=\frac{1}{(2\pi)^3}\frac{1}{2E_p}
-\int d^3p\,\big(\exp(-ip\cdot(x-y))-\exp(-ip\cdot(y-x))\big)
+[\hat\phi(x),\hat\phi(y)]=\frac{1}{(2\pi)^3}
+\int\frac{d^3p}{2E_p}\big(\exp(-ip\cdot(x-y))-\exp(-ip\cdot(y-x))\big)
 \end{equation*}
 
 % FIXME The notation $\hat a(p)$ would be more symmetrical with $\hat\phi(x)$.
