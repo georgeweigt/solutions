@@ -24,12 +24,14 @@ Consider (12.5).
 \end{equation*}
 
 Consider (12.6).
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 N[\hat H]&=\int d^3p\,E_p\left(\hat a_p^\dag\hat a_p+\hat b_p^\dag\hat b_p\right)
 \\
 &=\int d^3p\,E_p\left(\hat n_p^{(a)}+\hat n_p^{(b)}\right)
+\end{aligned}
 \tag{12.6}
-\end{align*}
+\end{equation*}
 
 The Hamiltonian density is given by (12.3).
 \begin{equation*}
@@ -37,18 +39,14 @@ The Hamiltonian density is given by (12.3).
 \tag{12.3}
 \end{equation*}
 
-From equation (11.24), the Hamiltonian operator is given by the volume integral of the Hamiltonian density.
+From equation (11.24), the Hamiltonian operator is the volume integral of the Hamiltonian density.
 \begin{equation*}
-\hat H
-=\int d^3x\,\partial_0\psi^\dag(x)\partial_0\psi(x)
-+\int d^3x\,\nabla\psi^\dag(x)\cdot\nabla\psi(x)
-+\int d^3x\,m^2\psi^\dag(x)\psi(x)
-\tag{1}
+\hat H=\int d^3x\,\mathcal H
 \end{equation*}
 
 Recall that
 \begin{equation*}
-p\cdot x=p_0x_0-p_1x_1-p_2x_2-p_3x_3
+p\cdot x=p_0x_0-p_1x_1-p_2x_2-p_3x_3,\qquad p_0=E_p
 \end{equation*}
 
 It follows that (see equation 11.25)
@@ -65,15 +63,90 @@ It follows that (see equation 11.25)
 \end{equation*}
 
 Hence
-\begin{multline*}
-\int d^3x\,\partial_0\psi^\dag(x)\partial_0\psi(x)
-=\frac{1}{(2\pi)^3}\int\frac{d^3x\,d^3p\,d^3q}{(2E_p)^\frac{1}{2}(2E_q)^\frac{1}{2}}
-(iE_p)(-iE_q)
+\begin{align*}
+&\hat H=\frac{1}{(2\pi)^3}\int\frac{d^3x\,d^3p\,d^3q}{(2E_p)^\frac{1}{2}(2E_q)^\frac{1}{2}}
+\bigg[
+(E_pE_q+p_1q_1+p_2q_2+p_3q_3)
 \\
-{}\times
+&{}\times
 \left(\hat a_p^\dag\exp(ip\cdot x)-\hat b_p\exp(-ip\cdot x)\right)
 \left(\hat a_q\exp(-iq\cdot x)-\hat b_q^\dag\exp(iq\cdot x)\right)
-\end{multline*}
+\\
+&{}+m^2
+\left(\hat a_p^\dag\exp(ip\cdot x)+\hat b_p\exp(-ip\cdot x)\right)
+\left(\hat a_q\exp(-iq\cdot x)+\hat b_q^\dag\exp(iq\cdot x)\right)
+\bigg]
+\end{align*}
 
+Rewrite as
+\begin{align*}
+&\hat H=\frac{1}{(2\pi)^3}\int\frac{d^3x\,d^3p\,d^3q}{(2E_p)^\frac{1}{2}(2E_q)^\frac{1}{2}}
+\\
+&{}\times\bigg[(E_pE_q+p_1q_1+p_2q_2+p_3q_3)(A-B-C+D)+m^2(A+B+C+D)\bigg]
+\end{align*}
+where
+\begin{align*}
+A&=\hat a_p^\dag\hat a_q\exp(i(p-q)\cdot x)
+\\
+B&=\hat a_p^\dag\hat b_q^\dag\exp(i(p+q)\cdot x)
+\\
+C&=\hat b_p\hat a_q\exp(-i(p+q)\cdot x)
+\\
+D&=\hat b_p\hat b_q^\dag\exp(-i(p-q)\cdot x)
+\end{align*}
+
+Integrate over $x$ using $\int d^3x\,\exp(ip\cdot x)=(2\pi)^3\delta^{(3)}(p)$ to obtain
+\begin{align*}
+&\hat H
+=\int\frac{d^3p\,d^3q}{(2E_p)^\frac{1}{2}(2E_q)^\frac{1}{2}}
+\\
+&{}\times\bigg[(E_pE_q+p_1q_1+p_2q_2+p_3q_3)(A'-B'-C'+D')
+\\
+&\qquad{}+m^2(A'+B'+C'+D')\bigg]
+\end{align*}
+where
+\begin{align*}
+A'&=\delta^{(3)}(p-q)\hat a_p^\dag\hat a_q\exp(i(E_p-E_q)t)
+\\
+B'&=\delta^{(3)}(p+q)\hat a_p^\dag\hat b_q^\dag\exp(i(E_p+E_q)t)
+\\
+C'&=\delta^{(3)}(p+q)\hat b_p\hat a_q\exp(-i(E_p+E_q)t)
+\\
+D'&=\delta^{(3)}(p-q)\hat b_p\hat b_q^\dag\exp(-i(E_p-E_q)t)
+\end{align*}
+
+Rewrite as
+\begin{align*}
+&\hat H=\int\frac{d^3p\,d^3q}{(2E_p)^\frac{1}{2}(2E_q)^\frac{1}{2}}
+\\
+&{}\times\bigg[(E_pE_q+p_1q_1+p_2q_2+p_3q_3+m^2)(A'+D')
+\\
+&\qquad{}-(E_pE_q+p_1q_1+p_2q_2+p_3q_3-m^2)(B'+C')\bigg]
+\end{align*}
+
+Integrate over $q$ to obtain
+\begin{align*}
+&\hat H=\int\frac{d^3p}{2E_p}
+\\
+&{}\times\bigg[(E_p^2+p_1^2+p_2^2+p_3^2+m^2)
+\left(\hat a_p^\dag\hat a_p+\hat b_p\hat b_p^\dag\right)
+\\
+&\qquad{}-(E_p^2-p_1^2-p_2^2-p_3^2-m^2)
+\left(\hat a_p^\dag\hat b_{-p}^\dag+\hat b_p\hat a_{-p}\right)\bigg]
+\end{align*}
+
+Then from
+\begin{equation*}
+E_p^2=p_1^2+p_2^2+p_3^2+m^2
+\end{equation*}
+we have
+\begin{equation*}
+\hat H=\int d^3p\,E_p\left(\hat a_p^\dag\hat a_p+\hat b_p\hat b_p^\dag\right)
+\end{equation*}
+
+Apply normal ordering.
+\begin{equation*}
+N[\hat H]=\int d^3p\,E_p\left(\hat a_p^\dag\hat a_p+\hat b_p^\dag\hat b_p\right)
+\end{equation*}
 
 \end{document}
