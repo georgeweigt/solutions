@@ -11,7 +11,7 @@ eqn 12.6.
 \hrule
 
 \bigskip
-Consider (12.5).
+Consider equations (12.5) and (12.6).
 \begin{equation*}
 \begin{aligned}
 \hat\psi(x)&=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}
@@ -22,8 +22,6 @@ Consider (12.5).
 \end{aligned}
 \tag{12.5}
 \end{equation*}
-
-Consider (12.6).
 \begin{equation*}
 \begin{aligned}
 N[\hat H]&=\int d^3p\,E_p\left(\hat a_p^\dag\hat a_p+\hat b_p^\dag\hat b_p\right)
@@ -33,7 +31,10 @@ N[\hat H]&=\int d^3p\,E_p\left(\hat a_p^\dag\hat a_p+\hat b_p^\dag\hat b_p\right
 \tag{12.6}
 \end{equation*}
 
-The Hamiltonian density is given by (12.3).
+The ``missing steps'' are the substitution of (12.5) into the Hamiltonian to obtain (12.6).
+
+\bigskip
+The Hamiltonian density $\mathcal H$ is given by (12.3).
 \begin{equation*}
 \mathcal H=\partial_0\psi^\dag(x)\partial_0\psi(x)+\nabla\psi^\dag(x)\cdot\nabla\psi(x)+m^2\psi^\dag(x)\psi(x)
 \tag{12.3}
@@ -49,7 +50,7 @@ Recall that
 p\cdot x=p_0x_0-p_1x_1-p_2x_2-p_3x_3,\qquad p_0=E_p
 \end{equation*}
 
-It follows that (see equation 11.25)
+Hence (see equation 11.25)
 \begin{equation*}
 \begin{aligned}
 \partial_\mu\hat\psi(x)
@@ -62,9 +63,32 @@ It follows that (see equation 11.25)
 \end{aligned}
 \end{equation*}
 
+It follows that
+\begin{align*}
+\partial_0\psi(x)&=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}(-iE_p)
+\left(\hat a_p\exp(-ip\cdot x)-\hat b_p^\dag\exp(ip\cdot x)\right)
+\\
+\partial_0\psi^\dag(x)&=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}(iE_p)
+\left(\hat a_p^\dag\exp(ip\cdot x)-\hat b_p\exp(-ip\cdot x)\right)
+\end{align*}
+and
+\begin{align*}
+\nabla\psi(x)&=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}
+\begin{pmatrix}
+ip_1\\ip_2\\ip_3
+\end{pmatrix}
+\left(\hat a_p\exp(-ip\cdot x)-\hat b_p^\dag\exp(ip\cdot x)\right)
+\\
+\nabla\psi^\dag(x)&=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}
+\begin{pmatrix}
+-ip_1\\-ip_2\\-ip_3
+\end{pmatrix}
+\left(\hat a_p^\dag\exp(ip\cdot x)-\hat b_p\exp(-ip\cdot x)\right)
+\end{align*}
+
 Hence
 \begin{align*}
-&\hat H=\frac{1}{(2\pi)^3}\int\frac{d^3x\,d^3p\,d^3q}{(2E_p)^\frac{1}{2}(2E_q)^\frac{1}{2}}
+&\hat H=\int d^3x\,\mathcal H=\frac{1}{(2\pi)^3}\int\frac{d^3x\,d^3p\,d^3q}{(2E_p)^\frac{1}{2}(2E_q)^\frac{1}{2}}
 \bigg[
 (E_pE_q+p_1q_1+p_2q_2+p_3q_3)
 \\
@@ -135,11 +159,7 @@ Integrate over $q$ to obtain
 \left(\hat a_p^\dag\hat b_{-p}^\dag+\hat b_p\hat a_{-p}\right)\bigg]
 \end{align*}
 
-Noting that
-\begin{equation*}
-E_p^2=p_1^2+p_2^2+p_3^2+m^2
-\end{equation*}
-we have
+Noting that $E_p^2=p_1^2+p_2^2+p_3^2+m^2$ we have
 \begin{equation*}
 \hat H=\int d^3p\,E_p\left(\hat a_p^\dag\hat a_p+\hat b_p\hat b_p^\dag\right)
 \end{equation*}
