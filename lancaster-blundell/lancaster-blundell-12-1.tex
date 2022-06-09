@@ -47,7 +47,7 @@ From equation (11.24), the Hamiltonian operator is the volume integral of the Ha
 
 Recall that
 \begin{equation*}
-p\cdot x=p_0x_0-p_1x_1-p_2x_2-p_3x_3,\qquad p_0=E_p
+p\cdot x=E_pt-p_1x_1-p_2x_2-p_3x_3,\qquad E_p=\sqrt{p_1^2+p_2^2+p_3^2+m^2}
 \end{equation*}
 
 Hence (see equation 11.25)
@@ -130,13 +130,13 @@ Integrate over $x$ using $\int d^3x\,\exp(ip\cdot x)=(2\pi)^3\delta^{(3)}(p)$ to
 \end{multline*}
 where
 \begin{align*}
-A'&=\delta^{(3)}(p-q)\hat a_p^\dag\hat a_q\exp(i(E_p-E_q)t)
+A'&=\delta(p_1-q_1)\delta(p_2-q_2)\delta(p_3-q_3)\,\hat a_p^\dag\hat a_q\exp(i(E_p-E_q)t)
 \\
-B'&=\delta^{(3)}(p+q)\hat a_p^\dag\hat b_q^\dag\exp(i(E_p+E_q)t)
+B'&=\delta(p_1+q_1)\delta(p_2+q_2)\delta(p_3+q_3)\,\hat a_p^\dag\hat b_q^\dag\exp(i(E_p+E_q)t)
 \\
-C'&=\delta^{(3)}(p+q)\hat b_p\hat a_q\exp(-i(E_p+E_q)t)
+C'&=\delta(p_1+q_1)\delta(p_2+q_2)\delta(p_3+q_3)\,\hat b_p\hat a_q\exp(-i(E_p+E_q)t)
 \\
-D'&=\delta^{(3)}(p-q)\hat b_p\hat b_q^\dag\exp(-i(E_p-E_q)t)
+D'&=\delta(p_1-q_1)\delta(p_2-q_2)\delta(p_3-q_3)\,\hat b_p\hat b_q^\dag\exp(-i(E_p-E_q)t)
 \end{align*}
 
 Integrate over $q$ to obtain
