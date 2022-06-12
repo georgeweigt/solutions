@@ -28,19 +28,30 @@ K_0(\mathbf x_b,t_b,\mathbf x_a,t_a)
 \bigskip
 Let
 \begin{equation*}
-T=t_b-t_a
+T=t_b-t_a,
 \qquad
 (X_1,X_2,X_3)=\mathbf x_b-\mathbf x_a
 \end{equation*}
 
 In component notation
 \begin{equation*}
-\mathbf p\cdot(\mathbf x_b-\mathbf x_a)=p_1X_1+p_2X_2+p_3X_3
+\mathbf p\cdot(\mathbf x_b-\mathbf x_a)=p_1X_1+p_2X_2+p_3X_3,
 \qquad
 p^2=\mathbf p\cdot\mathbf p=p_1^2+p_2^2+p_3^2
 \end{equation*}
 
-Rewrite equation (4.64) in component notation.
+Hence from (4.64)
+\begin{multline*}
+K_0(\mathbf x_b,t_b,\mathbf x_a,t_a)=\frac{1}{(2\pi\hbar)^3}
+\\
+{}\times\INT
+\exp\left(\frac{i}{\hbar}\left(
+p_1X_1+p_2X_2+p_3X_3-\frac{p_1^2+p_2^2+p_3^2}{2m}\,T
+\right)\right)
+\,dp_1\,dp_2\,dp_3
+\end{multline*}
+
+Rewrite as
 \begin{multline*}
 K_0(\mathbf x_b,t_b,\mathbf x_a,t_a)=\frac{1}{(2\pi\hbar)^3}\INT
 \exp\left(\frac{i}{\hbar}p_1X_1-\frac{i}{\hbar}\frac{p_1^2}{2m}T\right)
