@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(13.4)
+The Lagrangian for electromagnetism in vacuo is
+$\mathcal L=-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}$.
+Show that this can be rewritten as
+\begin{equation*}
+\mathcal L=-\frac{1}{2}
+\left(\partial_\mu A_\nu\partial^\mu A^\nu
+-\partial_\mu A_\nu\partial^\nu A^\mu\right)
+\tag{13.42}
+\end{equation*}
+and hence show that using the transverse projection
+operator, it may be expressed as
+\begin{equation*}
+\mathcal L=\frac{1}{2}A^\mu P_{\mu\nu}^T\partial^2A^\nu
+\tag{13.43}
+\end{equation*}
+
+This shows that $\mathcal L$ only includes the transverse
+components of the field, squaring with the idea of
+electromagnetic waves only representing vibrations
+transverse to the direction of propagation.
+
+\bigskip
+\hrule
+
+\bigskip
+Consider equation (5.28).
+\begin{equation*}
+F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu
+\tag{5.28}
+\end{equation*}
+
+It follows that
+\begin{equation*}
+F^{\mu\nu}F_{\mu\nu}=(\partial^\mu A^\nu-\partial^\nu A^\mu)(\partial_\mu A_\nu-\partial_\nu A_\mu)
+\end{equation*}
+
+Expand the right-hand side.
+\begin{equation*}
+F^{\mu\nu}F_{\mu\nu}
+=\partial^\mu A^\nu\partial_\mu A_\nu
+-\partial^\mu A^\nu\partial_\nu A_\mu
+-\partial^\nu A^\mu\partial_\mu A_\nu
++\partial^\nu A^\mu\partial_\nu A_\mu
+\end{equation*}
+
+Make sums explicit.
+\begin{equation*}
+F^{\mu\nu}F_{\mu\nu}
+=\underbrace{\sum_{\mu,\nu}\partial^\mu A^\nu\partial_\mu A_\nu}_{\Sigma_1}
+-\underbrace{\sum_{\mu,\nu}\partial^\mu A^\nu\partial_\nu A_\mu}_{\Sigma_2}
+-\underbrace{\sum_{\mu,\nu}\partial^\nu A^\mu\partial_\mu A_\nu}_{\Sigma_3}
++\underbrace{\sum_{\mu,\nu}\partial^\nu A^\mu\partial_\nu A_\mu}_{\Sigma_4}
+\end{equation*}
+
+Noting that $\Sigma_1=\Sigma_4$ and $\Sigma_2=\Sigma_3$ we have
+\begin{equation*}
+F^{\mu\nu}F_{\mu\nu}
+=2\sum_{\mu,\nu}\partial^\mu A^\nu\partial_\mu A_\nu
+-2\sum_{\mu,\nu}\partial^\mu A^\nu\partial_\nu A_\mu
+\end{equation*}
+
+Hence
+\begin{equation*}
+F^{\mu\nu}F_{\mu\nu}
+=2\left(\partial^\mu A^\nu\partial_\mu A_\nu-\partial^\mu A^\nu\partial_\nu A_\mu\right)
+\end{equation*}
+
+%TODO 2nd part
+
+\end{document}
