@@ -10,9 +10,91 @@ Fill in the algebra leading to eqn 14.32.
 \hrule
 
 \bigskip
-We have
+Consider equation (14.31).
 \begin{equation*}
-E=\begin{pmatrix}
+\hat A^\mu(x)=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}
+\sum_{\lambda=1}^2
+\left(
+\epsilon_\lambda^\mu(p)\hat a_{p\lambda}\exp(-ip\cdot x)
++\epsilon_\lambda^{\mu*}(p)\hat a_{p\lambda}^\dag\exp(ip\cdot x)
+\right)
+\tag{14.31}
+\end{equation*}
+
+Let
+\begin{equation*}
+\hat A^\mu=\begin{pmatrix}\hat A_0\\\hat A_1\\\hat A_2\\\hat A_3\end{pmatrix},
+\qquad
+\epsilon_\lambda^\mu(p)=\begin{pmatrix}
+\epsilon_{0,p\lambda}\\\epsilon_{1,p\lambda}\\\epsilon_{2,p\lambda}\\\epsilon_{3,p\lambda}
+\end{pmatrix}
+\end{equation*}
+
+Then in vector form we have
+\begin{equation*}
+\begin{pmatrix}\hat A_0\\\hat A_1\\\hat A_2\\\hat A_3\end{pmatrix}
+=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{\hat a}{(2E_p)^\frac{1}{2}}
+\end{equation*}
+where
+\begin{multline*}
+\hat a=\begin{pmatrix}\epsilon_{0,p1}\\\epsilon_{1,p1}\\\epsilon_{2,p1}\\\epsilon_{3,p1}\end{pmatrix}
+\hat a_{p1}\exp(-ip\cdot x)
++\begin{pmatrix}\epsilon_{0,p1}^*\\\epsilon_{1,p1}^*\\\epsilon_{2,p1}^*\\\epsilon_{3,p1}^*\end{pmatrix}
+\hat a_{p1}^\dag\exp(ip\cdot x)
+\\
+{}+\begin{pmatrix}\epsilon_{0,p2}\\\epsilon_{1,p2}\\\epsilon_{2,p2}\\\epsilon_{3,p2}\end{pmatrix}
+\hat a_{p2}\exp(-ip\cdot x)
++\begin{pmatrix}\epsilon_{0,p2}^*\\\epsilon_{1,p2}^*\\\epsilon_{2,p2}^*\\\epsilon_{3,p2}^*\end{pmatrix}
+\hat a_{p2}^\dag\exp(ip\cdot x)
+\end{multline*}
+
+Hence
+\begin{multline*}
+\hat A_\nu=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}
+\\
+{}\times
+\left[
+(\epsilon_{\nu,p1}\hat a_{p1}+\epsilon_{\nu,p2}\hat a_{p2})\exp(-ip\cdot x)
++(\epsilon_{\nu,p1}^*\hat a_{p1}^\dag+\epsilon_{\nu,p2}^*\hat a_{p2}^\dag)\exp(ip\cdot x)
+\right]
+\end{multline*}
+
+Recall that
+\begin{equation*}
+p\cdot x=E_pt-p_1x_1-p_2x_2-p_3x_3
+\end{equation*}
+
+Hence the partial derivative of $\hat A_\nu$ is
+\begin{multline*}
+\partial_\mu\hat A_\nu=\int\frac{d^3p}{(2\pi)^\frac{3}{2}}\frac{1}{(2E_p)^\frac{1}{2}}
+\\
+{}\times
+\left[
+-ip_\mu(\epsilon_{\nu,p1}\hat a_{p1}+\epsilon_{\nu,p2}\hat a_{p2})\exp(-ip\cdot x)
++ip_\mu(\epsilon_{\nu,p1}^*\hat a_{p1}^\dag+\epsilon_{\nu,p2}^*\hat a_{p2}^\dag)\exp(ip\cdot x)
+\right]
+\end{multline*}
+
+Consider equation (14.28).
+\begin{equation*}
+\mathcal H=\frac{1}{2}(\mathbf E^2+\mathbf B^2)
+\tag{14.28}
+\end{equation*}
+
+We need to integrate Hamiltonian density $\mathcal H$ to obtain $\hat H$, that is,
+\begin{equation*}
+\hat H=\int d^3x\,\mathcal H
+\tag{1}
+\end{equation*}
+
+Substitute (14.28) into (1).
+\begin{equation*}
+\hat H=\frac{1}{2}\int d^3x\,\left(E_1^2+E_2^2+E_3^2+B_1^2+B_2^2+B_3^2\right)
+\end{equation*}
+
+From equations (5.28) and (5.29) we have
+\begin{equation*}
+\mathbf E=\begin{pmatrix}
 \partial_0A_1-\partial_1A_0
 \\
 \partial_0A_2-\partial_2A_0
@@ -20,7 +102,7 @@ E=\begin{pmatrix}
 \partial_0A_3-\partial_3A_0
 \end{pmatrix},
 \qquad
-B=\begin{pmatrix}
+\mathbf B=\begin{pmatrix}
 \partial_3A_2-\partial_2A_3
 \\
 \partial_1A_3-\partial_3A_1
@@ -28,5 +110,68 @@ B=\begin{pmatrix}
 \partial_2A_1-\partial_1A_2
 \end{pmatrix}
 \end{equation*}
+
+Start with $E_1^2$.
+\begin{equation*}
+E_1^2=(\partial_0\hat A_1)^2
+-(\partial_0\hat A_1)(\partial_1\hat A_0)
+-(\partial_1\hat A_0)(\partial_0\hat A_1)
++(\partial_1\hat A_0)^2
+\end{equation*}
+
+Let
+\begin{equation*}
+I_1=\frac{1}{2}\int d^3x\,(\partial_0\hat A_1)^2
+\end{equation*}
+
+Hence
+\begin{align*}
+I_1&=\frac{1}{2}\int
+\frac{d^3x\,d^3p\,d^3q}{(2\pi)^3}\frac{1}{(2E_p)^\frac{1}{2}(2E_q)^\frac{1}{2}}
+\\
+&\qquad
+{}\times\sum_{\lambda=1}^2
+\left(
+-iE_p\epsilon_\lambda^1(p)\hat a_{p\lambda}\exp(-ip\cdot x)
++iE_p\epsilon_\lambda^{1*}(p)\hat a_{p\lambda}^\dag\exp(ip\cdot x)
+\right)
+\\
+&\qquad
+{}\times\sum_{\lambda=1}^2
+\left(
+-iE_q\epsilon_\lambda^1(q)\hat a_{q\lambda}\exp(-iq\cdot x)
++iE_q\epsilon_\lambda^{1*}(q)\hat a_{q\lambda}^\dag\exp(iq\cdot x)
+\right)
+\end{align*}
+
+Using the integral
+\begin{equation*}
+\int d^3x\,\exp(ip\cdot x)=(2\pi)^3\exp(iE_pt)\delta^{(3)}(\mathbf p)
+\end{equation*}
+we have
+\begin{align*}
+I_1&=\frac{1}{2}\int
+\frac{d^3p\,d^3q}{(2E_p)^\frac{1}{2}(2E_q)^\frac{1}{2}}
+\\
+&\qquad
+{}\times
+\delta^{(3)}(\mathbf p)
+\sum_{\lambda=1}^2
+\left(
+-iE_p\epsilon_\lambda^1(p)\hat a_{p\lambda}\exp(-iE_pt)
++iE_p\epsilon_\lambda^{1*}(p)\hat a_{p\lambda}^\dag\exp(iE_pt)
+\right)
+\\
+&\qquad
+{}\times
+\delta^{(3)}(\mathbf q)
+\sum_{\lambda=1}^2
+\left(
+-iE_q\epsilon_\lambda^1(q)\hat a_{q\lambda}\exp(-iE_qt)
++iE_q\epsilon_\lambda^{1*}(q)\hat a_{q\lambda}^\dag\exp(iE_qt)
+\right)
+\end{align*}
+
+% FIXME incomplete and some parts are wrong
 
 \end{document}
