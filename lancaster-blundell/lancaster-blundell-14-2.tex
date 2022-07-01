@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+(14.2)
+{\it A demonstration that the photon has spin-1, with
+only two spin polarizations.}
+
+\bigskip
+A photon $\gamma$ propagates with momentum
+$q^\mu=(|\mathbf q|,0,0,|\mathbf q|)$.
+Working with a basis where the two transverse photon polarizations are
+$\epsilon_{\lambda=1}^\mu(q)=(0,1,0,0)$
+and $\epsilon_{\lambda=2}^\mu(q)=(0,0,1,0)$, it may be
+shown, using Noether's theorem, that the operator
+$\hat S^z$, whose eigenvalue is the $z$-component spin
+angular momentum of the photon, obeys the commutation relation
+\begin{equation*}
+\left[\hat S^z,\hat a_{\mathbf q\lambda}^\dag\right]
+=i\epsilon_\lambda^{\mu=1*}(q)\hat a_{\mathbf q\lambda=2}^\dag
+-i\epsilon_\lambda^{\mu=2*}(q)\hat a_{\mathbf q\lambda=1}^\dag
+\tag{14.36}
+\end{equation*}
+
+(i) Define creation operators for the circular polarizations via
+\begin{equation*}
+\begin{aligned}
+\hat b_{\mathbf qR}^\dag&=-\frac{1}{\sqrt2}
+\left(\hat a_{\mathbf q1}^\dag+i\hat a_{\mathbf q2}^\dag\right)
+\\
+\hat b_{\mathbf qL}^\dag&=\frac{1}{\sqrt2}
+\left(\hat a_{\mathbf q1}^\dag-i\hat a_{\mathbf q2}^\dag\right)
+\end{aligned}
+\tag{14.37}
+\end{equation*}
+
+Show that
+\begin{equation*}
+\begin{aligned}
+\left[\hat S^z,\hat b_{\mathbf qR}^\dag\right]&=\hat b_{\mathbf qR}^\dag
+\\
+\left[\hat S^z,\hat b_{\mathbf qL}^\dag\right]&=-\hat b_{\mathbf qL}^\dag
+\end{aligned}
+\tag{14.38}
+\end{equation*}
+
+\end{document}
