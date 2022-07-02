@@ -45,8 +45,9 @@ Equation (4.28) is the time-independent Schrodinger equation.
 The eigenvalues $E_j$ of $\mathbf H$ are solutions to $\det(\mathbf H-E_j\mathbf I)=0$.
 Hence
 \begin{align*}
-0=\det(\mathbf H-E_j\mathbf I)
-&=\left|
+&\det(\mathbf H-E_j\mathbf I)
+\\
+&\quad{}=\left|
 \begin{matrix}
 \frac{\hbar\omega}{2}n_z-E_j & \frac{\hbar\omega}{2}(n_x-in_y)
 \\[1ex]
@@ -54,7 +55,10 @@ Hence
 \end{matrix}
 \right|
 \\
-&=E_j^2-\left(\frac{\hbar\omega}{2}\right)^2\left(n_x^2+n_y^2+n_z^2\right)
+&\quad{}=\left(\frac{\hbar\omega}{2}n_z-E_j\right)\left(-\frac{\hbar\omega}{2}n_z-E_j\right)
+-\left(\frac{\hbar\omega}{2}(n_x-in_y)\right)\left(\frac{\hbar\omega}{2}(n_x+in_y)\right)
+\\
+&\quad{}=E_j^2-\left(\frac{\hbar\omega}{2}\right)^2\left(n_x^2+n_y^2+n_z^2\right)=0
 \end{align*}
 
 By hypothesis $\vec n$ is a unit vector hence
@@ -67,29 +71,27 @@ Therefore the eigenvalues are
 E_1=\frac{\hbar\omega}{2},\qquad E_2=-\frac{\hbar\omega}{2}
 \end{equation*}
 
-To find the eigenvectors we use the formula
-\begin{equation*}
-(\mathbf H-E_j\mathbf I)|E_j\rangle=\begin{pmatrix}0\\0\end{pmatrix}
-\end{equation*}
-
-Let
+To find the eigenvectors, let
 \begin{equation*}
 |E_j\rangle=\begin{pmatrix}\cos\alpha\\\sin\alpha\end{pmatrix}
 \end{equation*}
 
-Then
+Then by (4.28) we have
 \begin{equation*}
+\frac{\hbar\omega}{2}
 \begin{pmatrix}
-\frac{\hbar\omega}{2}n_z-E_j & \frac{\hbar\omega}{2}(n_x-in_y)
-\\[1ex]
-\frac{\hbar\omega}{2}(n_x+in_y) & -\frac{\hbar}{\omega}{2}n_z-E_j
+n_z & n_x-in_y
+\\
+n_x+in_y & -n_z
 \end{pmatrix}
-\begin{pmatrix}\cos\alpha\\\sin\alpha\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}
+\begin{pmatrix}\cos\alpha\\\sin\alpha\end{pmatrix}
+=E_j\begin{pmatrix}\cos\alpha\\\sin\alpha\end{pmatrix}
 \end{equation*}
 
 By multiplication of the first row times $|E_j\rangle$ we have
 \begin{equation*}
-\left(\frac{\hbar\omega}{2}n_z-E_j\right)\cos\alpha+\frac{\hbar\omega}{2}(n_x-in_y)\sin\alpha=0
+\frac{\hbar\omega}{2}n_z\cos\alpha+\frac{\hbar\omega}{2}(n_x-in_y)\sin\alpha
+=E_j\cos\alpha
 \tag{1}
 \end{equation*}
 
@@ -107,19 +109,16 @@ n_z&=\cos\theta
 
 Substitute (2) into (1) to obtain
 \begin{equation*}
-\left(\frac{\hbar\omega}{2}\cos\theta-E_j\right)\cos\alpha
+\frac{\hbar\omega}{2}\cos\theta\cos\alpha
 +\frac{\hbar\omega}{2}\sin\theta\cos\phi\sin\alpha
--i\frac{\hbar\omega}{2}\sin\theta\sin\phi\sin\alpha=0
+-i\frac{\hbar\omega}{2}\sin\theta\sin\phi\sin\alpha
+=E_j\cos\alpha
 \end{equation*}
 
-The imaginary term must vanish hence we take $\phi=0$ leaving
+The imaginary term must vanish hence substitute $\phi=0$ to obtain
 \begin{equation*}
-\left(\frac{\hbar\omega}{2}\cos\theta-E_j\right)\cos\alpha+\frac{\hbar\omega}{2}\sin\theta\sin\alpha=0
-\end{equation*}
-
-Rewrite as
-\begin{equation*}
-\frac{\hbar\omega}{2}(\cos\theta\cos\alpha+\sin\theta\sin\alpha)=E_j\cos\alpha
+\frac{\hbar\omega}{2}\cos\theta\cos\alpha+\frac{\hbar\omega}{2}\sin\theta\sin\alpha
+=E_j\cos\alpha
 \end{equation*}
 
 By angle difference identity
