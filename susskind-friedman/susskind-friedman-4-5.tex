@@ -74,7 +74,7 @@ E_1=\frac{\hbar\omega}{2},\qquad E_2=-\frac{\hbar\omega}{2}
 
 To find the eigenvectors, let
 \begin{equation*}
-|E_j\rangle=\begin{pmatrix}\cos\alpha\\\sin\alpha\end{pmatrix}
+|E_j\rangle=\begin{pmatrix}\cos\alpha\\\sin\alpha\exp(i\phi)\end{pmatrix}
 \end{equation*}
 
 Then by (4.28) we have
@@ -85,13 +85,13 @@ n_z & n_x-in_y
 \\
 n_x+in_y & -n_z
 \end{pmatrix}
-\begin{pmatrix}\cos\alpha\\\sin\alpha\end{pmatrix}
-=E_j\begin{pmatrix}\cos\alpha\\\sin\alpha\end{pmatrix}
+\begin{pmatrix}\cos\alpha\\\sin\alpha\exp(i\phi)\end{pmatrix}
+=E_j\begin{pmatrix}\cos\alpha\\\sin\alpha\exp(i\phi)\end{pmatrix}
 \end{equation*}
 
 From the first row we have
 \begin{equation*}
-\frac{\hbar\omega}{2}n_z\cos\alpha+\frac{\hbar\omega}{2}(n_x-in_y)\sin\alpha
+\frac{\hbar\omega}{2}n_z\cos\alpha+\frac{\hbar\omega}{2}(n_x-in_y)\sin\alpha\exp(i\phi)
 =E_j\cos\alpha
 \tag{1}
 \end{equation*}
@@ -111,14 +111,14 @@ n_z&=\cos\theta
 Substitute (2) into (1) to obtain
 \begin{equation*}
 \frac{\hbar\omega}{2}\cos\theta\cos\alpha
-+\frac{\hbar\omega}{2}\sin\theta\cos\phi\sin\alpha
--i\frac{\hbar\omega}{2}\sin\theta\sin\phi\sin\alpha
++\frac{\hbar\omega}{2}\sin\theta(\cos\phi-i\sin\phi)\sin\alpha\exp(i\phi)
 =E_j\cos\alpha
 \end{equation*}
 
-The imaginary term must vanish hence substitute $\phi=0$ to obtain
+Noting that $\cos\phi-i\sin\phi=\exp(-i\phi)$ we have
 \begin{equation*}
-\frac{\hbar\omega}{2}\cos\theta\cos\alpha+\frac{\hbar\omega}{2}\sin\theta\sin\alpha
+\frac{\hbar\omega}{2}\cos\theta\cos\alpha
++\frac{\hbar\omega}{2}\sin\theta\sin\alpha
 =E_j\cos\alpha
 \end{equation*}
 
@@ -140,7 +140,7 @@ It follows that
 
 Hence
 \begin{equation*}
-|E_1\rangle=\begin{pmatrix}\cos\frac{\theta}{2}\\[1ex]\sin\frac{\theta}{2}\end{pmatrix}
+|E_1\rangle=\begin{pmatrix}\cos\frac{\theta}{2}\\[1ex]\sin\frac{\theta}{2}\exp(i\phi)\end{pmatrix}
 \end{equation*}
 
 Substitute $E_j=E_2=-\hbar\omega/2$ into (3) to obtain
@@ -162,12 +162,12 @@ Hence
 \begin{equation*}
 |E_2\rangle=\begin{pmatrix}\cos\left(\frac{\theta}{2}+\frac{\pi}{2}\right)
 \\[1ex]
-\sin\left(\frac{\theta}{2}+\frac{\pi}{2}\right)
+\sin\left(\frac{\theta}{2}+\frac{\pi}{2}\right)\exp(i\phi)
 \end{pmatrix}
 =\begin{pmatrix}
 -\sin\frac{\theta}{2}
 \\[1ex]
-\cos\frac{\theta}{2}
+\cos\frac{\theta}{2}\exp(i\phi)
 \end{pmatrix}
 \end{equation*}
 
