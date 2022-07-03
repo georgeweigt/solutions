@@ -11,25 +11,23 @@ between $a$ and $b$ is zero.
 \hrule
 
 \bigskip
-Recall that
+We have
 \begin{equation*}
-\langle ab\rangle=\sum_aa\sum_bbP(a,b),
-\quad
-\langle a\rangle=\sum_aaP_A(a),
-\quad
-\langle b\rangle=\sum_bbP_B(b)
+\langle a\rangle\langle b\rangle
+=\left(\sum_aaP_A(a)\right)\left(\sum_bbP_B(b)\right)
+=\sum_a\sum_babP(a)P(b)
+\tag{1}
 \end{equation*}
 
-If $P(a,b)$ factorizes then
+If $P_A(a)P_B(b)=P(a,b)$ then
 \begin{equation*}
-\langle ab\rangle=\sum_aa\sum_bbP(a,b)
-=\sum_aaP_A(a)\sum_bbP_B(b)
-=\langle a\rangle\langle b\rangle
+\sum_a\sum_babP(a)P(b)=\sum_a\sum_babP(a,b)=\langle ab\rangle
+\tag{2}
 \end{equation*}
 
-It follows that
+By (1) and (2) we have
 \begin{equation*}
-\langle ab\rangle-\langle a\rangle\langle b\rangle=0
+\langle a\rangle\langle b\rangle=\langle ab\rangle
 \end{equation*}
 
 Hence the correlation between $a$ and $b$ is zero.
