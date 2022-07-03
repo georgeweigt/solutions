@@ -1,5 +1,6 @@
-Psi = exp(-i omega t / 2) (1,0) / sqrt(2) +
-      exp(i omega t / 2) (0,1) / sqrt(2)
+a = i omega t / 2
+
+Psi = (exp(-a),exp(a)) / sqrt(2)
 
 u = (1,0)
 d = (0,1)
