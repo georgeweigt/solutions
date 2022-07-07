@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\begin{document}
+
+Exercise 6.3.
+Prove that the state $|\text{\it sing}\rangle$ cannot be written
+as a product state.
+
+\bigskip
+\hrule
+
+\bigskip
+Consider the formula for the singlet state.
+\begin{equation*}
+|\text{\it sing}\rangle=\frac{1}{\sqrt2}\left(|ud\rangle+|du\rangle\right)
+\end{equation*}
+
+Consider the product state for $|u\rangle$ and $|d\rangle$.
+\begin{equation*}
+\alpha_u\beta_u|uu\rangle
++\alpha_u\beta_d|ud\rangle
++\alpha_d\beta_u|du\rangle
++\alpha_d\beta_d|dd\rangle
+\tag{6.5}
+\end{equation*}
+
+By (6.5) we have for the singlet state
+\begin{align*}
+\alpha_u\beta_u&=0
+\\[1ex]
+\alpha_u\beta_d&=\frac{1}{\sqrt2}
+\\[1ex]
+\alpha_d\beta_u&=\frac{1}{\sqrt2}
+\\[1ex]
+\alpha_d\beta_d&=0
+\end{align*}
+
+If $\alpha_u=0$ then $\alpha_u\beta_d$ vanishes.
+If $\beta_u=0$ then $\alpha_d\beta_u$ vanishes.
+
+\bigskip
+Hence $|\text{\it sing}\rangle$ cannot be a product state.
+
+\end{document}
