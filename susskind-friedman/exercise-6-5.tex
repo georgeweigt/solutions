@@ -23,14 +23,20 @@ Let $\psi$ be the product state
 \begin{equation*}
 \psi=\psi_A\otimes\psi_B
 \end{equation*}
+where
+\begin{equation*}
+\psi_A=\alpha_u|u\}+\alpha_d|d\},
+\qquad
+\psi_B=\beta_u|u\rangle+\beta_d|d\rangle
+\end{equation*}
 
-For the spin operator $\vec\sigma$ we have the product state
+For $\vec\sigma$ we have the product state
 \begin{equation*}
 \vec\sigma\psi=\vec\sigma\psi_A\otimes\psi_B
 \tag{1}
 \end{equation*}
 
-For the spin operator $\vec\tau$ we have the product state
+For $\vec\tau$ we have the product state
 \begin{equation*}
 \vec\tau\psi=\psi_A\otimes\vec\tau\psi_B
 \tag{2}
@@ -57,9 +63,15 @@ By normalization we have $\psi_B^*\psi_B=1$ hence
 \langle\vec\sigma\rangle=\psi_A^*\vec\sigma\psi_A
 \end{equation*}
 
-Repeating the same argument for $\vec\tau$ we have
+Hence the expectation $\langle\vec\sigma\rangle$
+is the same for the product state and the single spin state.
 \begin{equation*}
-\langle\vec\tau\rangle=\psi_B^*\vec\tau\psi_B
+\langle\vec\sigma\rangle=\psi^*\vec\sigma\psi=\psi_A^*\vec\sigma\psi_A
+\end{equation*}
+
+By a similar argument for $\vec\tau$ we have
+\begin{equation*}
+\langle\vec\tau\rangle=\psi^*\vec\tau\psi=\psi_B^*\vec\tau\psi_B
 \end{equation*}
 
 \end{document}
