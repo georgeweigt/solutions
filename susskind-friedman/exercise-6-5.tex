@@ -30,37 +30,47 @@ where
 \psi_B=\beta_u|u\rangle+\beta_d|d\rangle
 \end{equation*}
 
-For $\vec\sigma$ we have the product state
+For $\vec\sigma$ we have
 \begin{equation*}
 \vec\sigma\psi=\vec\sigma\psi_A\otimes\psi_B
 \tag{1}
 \end{equation*}
 
-For $\vec\tau$ we have the product state
+For $\vec\tau$ we have
 \begin{equation*}
 \vec\tau\psi=\psi_A\otimes\vec\tau\psi_B
 \tag{2}
 \end{equation*}
 
-Hence by (1) and (2) the theorem is proved.
+By the fact that (1) and (2) are product states, the theorem is proved.
 
 \bigskip
-For the second part of the exercise we have
+For the second part of the exercise, let
 \begin{equation*}
-\langle\vec\sigma\rangle
-=\psi^*\vec\sigma\psi
-=\psi^*(\vec\sigma\psi_A\otimes\psi_B)
-=\psi^*\vec\sigma\psi_A\otimes\psi^*\psi_B
+\vec\sigma\psi_A=\vec c_u|u\}+\vec c_d|d\}
 \end{equation*}
 
-By orthogonality of $\psi_A$ and $\psi_B$ we have
+It follows that
 \begin{equation*}
-\langle\vec\sigma\rangle=\psi_A^*\vec\sigma\psi_A\otimes\psi_B^*\psi_B
+\vec\sigma\psi=\vec c_u\beta_u|uu\rangle+\vec c_u\beta_d|ud\rangle+\vec c_d\beta_u|du\rangle+\vec c_d\beta_d|dd\rangle
 \end{equation*}
 
-By normalization we have $\psi_B^*\psi_B=1$ hence
+Then the expectation $\langle\vec\sigma\rangle$ is
 \begin{equation*}
-\langle\vec\sigma\rangle=\psi_A^*\vec\sigma\psi_A
+\langle\vec\sigma\rangle=\psi^*\vec\sigma\psi
+=\alpha_u^*\vec c_u\beta_u^*\beta_u+\alpha_u^*\vec c_u\beta_d^*\beta_d
++\alpha_d^*\vec c_d\beta_u^*\beta_u+\alpha_d^*\vec c_d\beta_d^*\beta_d
+\end{equation*}
+
+Rewrite as
+\begin{equation*}
+\langle\vec\sigma\rangle=\alpha_u^*\vec c_u(\beta_u^*\beta_u+\beta_d^*\beta_d)
++\alpha_d^*\vec c_d(\beta_u^*\beta_u+\beta_d^*\beta_d)
+\end{equation*}
+
+By normalization we have $\beta_u^*\beta_u+\beta_d^*\beta_d=1$ hence
+\begin{equation*}
+\langle\vec\sigma\rangle=\alpha_u^*\vec c_u+\alpha_d^*\vec c_d=\psi_A^*\vec\sigma\psi_A
 \end{equation*}
 
 Hence the expectation $\langle\vec\sigma\rangle$
