@@ -57,9 +57,15 @@ It follows that
 \sigma\psi=\alpha_u'\beta_u|uu\rangle+\alpha_u'\beta_d|ud\rangle+\alpha_d'\beta_u|du\rangle+\alpha_d'\beta_d|dd\rangle
 \end{equation*}
 
-The expectation of $\sigma$ is
+The expectation value for Alice's spin operator is
 \begin{equation*}
 \langle\sigma\rangle=\psi^*\sigma\psi
+\tag{3}
+\end{equation*}
+
+The result is
+\begin{equation*}
+\langle\sigma\rangle
 =\alpha_u^*\alpha_u'\beta_u^*\beta_u+\alpha_u^*\alpha_u'\beta_d^*\beta_d
 +\alpha_d^*\alpha_d'\beta_u^*\beta_u+\alpha_d^*\alpha_d'\beta_d^*\beta_d
 \end{equation*}
@@ -73,16 +79,20 @@ Rewrite as
 By normalization we have $\beta_u^*\beta_u+\beta_d^*\beta_d=1$ hence
 \begin{equation*}
 \langle\sigma\rangle=\alpha_u^*\alpha_u'+\alpha_d^*\alpha_d'=\psi_A^*\sigma\psi_A
+\tag{4}
 \end{equation*}
 
-Hence the expectation is the same for the product state and the single spin state.
+By (3) and (4) we have
 \begin{equation*}
 \langle\sigma\rangle=\psi^*\sigma\psi=\psi_A^*\sigma\psi_A
 \end{equation*}
 
-By a similar argument for $\tau$ we have
+By a similar argument for Bob's spin operator we have
 \begin{equation*}
 \langle\tau\rangle=\psi^*\tau\psi=\psi_B^*\tau\psi_B
 \end{equation*}
+
+Hence the expectation value of a spin operator is the same for a product state and its
+corresponding single spin state.
 
 \end{document}
