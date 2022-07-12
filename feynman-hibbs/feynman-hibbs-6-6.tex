@@ -18,6 +18,19 @@ v(\breve{\mathbf p})=v(\breve p)=\frac{4\pi\hbar}{\breve p}
 \tag{6.45}
 \end{equation*}
 
+Suppose $v(r)$ is the Coulomb potential $-Ze^2/r$.
+In this case the integral for $v(\breve p)$ is oscillatory at the upper limit.
+But convergence of the integral can be artificially forced by
+introducing the factor $e^{-\epsilon r}$ and then taking the limit
+of the result as $\epsilon\rightarrow0$.
+Following through this calculation,
+show that the cross section corresponds to the Rutherford cross section
+\begin{equation*}
+\frac{d\sigma_\text{Ruth}}{d\Omega}
+=\frac{4m^2Z^2e^4}{\breve p^4}
+\tag{6.46}
+\end{equation*}
+
 \bigskip
 \hrule
 
@@ -65,21 +78,7 @@ The above result is due to the integrals
 \int_0^\pi\sin(A\cos\theta)\sin\theta\,d\theta&=0
 \end{align*}
 
-(6-6 cont'd)
-Suppose $v(r)$ is the Coulomb potential $-Ze^2/r$.
-In this case the integral for $v(\breve p)$ is oscillatory at the upper limit.
-But convergence of the integral can be artificially forced by
-introducing the factor $e^{-\epsilon r}$ and then taking the limit
-of the result as $\epsilon\rightarrow0$.
-Following through this calculation,
-show that the cross section corresponds to the Rutherford cross section
-\begin{equation*}
-\frac{d\sigma_\text{Ruth}}{d\Omega}
-=\frac{4m^2Z^2e^4}{\breve p^4}
-\tag{6.46}
-\end{equation*}
-
-From (6.45) and the above hypothesis we have
+Given the Coulomb potential and integration trick we have
 \begin{equation*}
 v(\breve p)=-\frac{4\pi\hbar Ze^2}{\breve p}
 \int_0^\infty\sin\left(\frac{\breve pr}{\hbar}\right)\exp(-\epsilon r)\,dr
