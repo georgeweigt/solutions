@@ -1,3 +1,5 @@
+"Exercise 4.5"
+
 nx = sin(theta) cos(phi)
 ny = sin(theta) sin(phi)
 nz = cos(theta)

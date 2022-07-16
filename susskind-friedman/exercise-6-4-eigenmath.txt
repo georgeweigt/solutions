@@ -1,4 +1,4 @@
-"Verify spin operator table"
+"Exercise 6.4"
 
 u = (1,0)
 d = (0,1)
