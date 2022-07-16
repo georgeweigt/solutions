@@ -1,4 +1,4 @@
-"Verify exercise 6.6"
+"Exercise 6.6"
 
 u = (1,0)
 d = (0,1)
@@ -26,10 +26,10 @@ tauz = kronecker(I,tauz)
 taux = kronecker(I,taux)
 tauy = kronecker(I,tauy)
 
-sing = (ud - du) / sqrt(2)
+S = (ud - du) / sqrt(2) -- singlet state
 
-check(dot(tauy,sing) == (-i uu - i dd) / sqrt(2))
-check(dot(sigmax,tauy,sing) == (-i du - i ud) / sqrt(2))
-check(dot(sing,sigmax,tauy,sing) == 0)
+check(dot(tauy,S) == (-i uu - i dd) / sqrt(2))
+check(dot(sigmax,tauy,S) == (-i du - i ud) / sqrt(2))
+check(dot(conj(S),sigmax,tauy,S) == 0)
 
 "ok"
