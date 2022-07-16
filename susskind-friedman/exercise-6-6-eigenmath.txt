@@ -1,5 +1,3 @@
--- spin states
-
 u = (1,0)
 d = (0,1)
 
@@ -7,8 +5,6 @@ uu = kronecker(u,u)
 ud = kronecker(u,d)
 du = kronecker(d,u)
 dd = kronecker(d,d)
-
--- spin operators
 
 sigmaz = ((1,0),(0,-1))
 sigmax = ((0,1),(1,0))
@@ -27,38 +23,6 @@ sigmay = kronecker(sigmay,I)
 tauz = kronecker(I,tauz)
 taux = kronecker(I,taux)
 tauy = kronecker(I,tauy)
-
-check(dot(sigmaz,uu) == uu)
-check(dot(sigmaz,ud) == ud)
-check(dot(sigmaz,du) == -du)
-check(dot(sigmaz,dd) == -dd)
-
-check(dot(sigmax,uu) == du)
-check(dot(sigmax,ud) == dd)
-check(dot(sigmax,du) == uu)
-check(dot(sigmax,dd) == ud)
-
-check(dot(sigmay,uu) == i du)
-check(dot(sigmay,ud) == i dd)
-check(dot(sigmay,du) == -i uu)
-check(dot(sigmay,dd) == -i ud)
-
-check(dot(tauz,uu) == uu)
-check(dot(tauz,ud) == -ud)
-check(dot(tauz,du) == du)
-check(dot(tauz,dd) == -dd)
-
-check(dot(taux,uu) == ud)
-check(dot(taux,ud) == uu)
-check(dot(taux,du) == dd)
-check(dot(taux,dd) == du)
-
-check(dot(tauy,uu) == i ud)
-check(dot(tauy,ud) == -i uu)
-check(dot(tauy,du) == i dd)
-check(dot(tauy,dd) == -i du)
-
-"ok"
 
 "Verify exercise 6.6"
 
